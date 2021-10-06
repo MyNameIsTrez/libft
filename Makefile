@@ -1,6 +1,6 @@
 MAIN_TEST := main_test
 HEADER_FILES :=
-OBJECT_FILES := main_test.o obj/isalpha/ft_isalpha.o obj/isalpha/test_ft_isalpha.o
+OBJECT_FILES := obj/main_test.o obj/ft_isalpha.o obj/test_ft_isalpha.o
 LD_FLAGS ?= -fsanitize=address
 C_FLAGS ?= -Wall -Wextra -Werror -fsanitize=address
 
@@ -10,8 +10,8 @@ all: $(MAIN_TEST)
 $(MAIN_TEST): $(OBJECT_FILES)
 	$(CC) $(LD_FLAGS) -o $@ $^
 
-obj/%.o: src/%.c $(HEADER_FILES)
-	@mkdir -p $(@D)
+obj/%.o: %.c $(HEADER_FILES)
+#	@mkdir -p $(@D)
 	$(CC) -c $(C_FLAGS) -o $@ $<
 
 clean:
