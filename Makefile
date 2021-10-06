@@ -1,22 +1,21 @@
-NAME := main_test
-HEADERFILES :=
-OBJFILES := main_test.o obj/isalpha/ft_isalpha.o obj/isalpha/test_ft_isalpha.o
-LDFLAGS ?=
-CFLAGS ?= -Wall -Wextra -Werror -fsanitize=address
+MAIN_TEST := main_test
+HEADER_FILES :=
+OBJECT_FILES := main_test.o obj/isalpha/ft_isalpha.o obj/isalpha/test_ft_isalpha.o
+LD_FLAGS ?= -fsanitize=address
+C_FLAGS ?= -Wall -Wextra -Werror -fsanitize=address
 
 
-all: $(NAME)
+all: $(MAIN_TEST)
 
-$(NAME): $(OBJFILES)
-	$(CC) $(LDFLAGS) -o $@ $^
+$(MAIN_TEST): $(OBJECT_FILES)
+	$(CC) $(LD_FLAGS) -o $@ $^
 
-obj/%.o: src/%.c $(HEADERFILES)
-#	TODO: ${@D} instead of ${dir $@} as it's shorter?
-	@mkdir -p $(dir $@)
-	$(CC) -c $(CFLAGS) -o $@ $<
+obj/%.o: src/%.c $(HEADER_FILES)
+	@mkdir -p $(@D)
+	$(CC) -c $(C_FLAGS) -o $@ $<
 
 clean:
-	rm --force $(NAME) $(OBJFILES)
+	rm -f $(MAIN_TEST) $(OBJECT_FILES)
 
 # fclean: clean
 #	remove .o and other made files (such as libft.a)
@@ -24,5 +23,6 @@ clean:
 # bonus:
 #	compile with bonus
 
+# ar rcs ${MAIN_TEST}.a
 
 .PHONY: all clean fclean bonus
