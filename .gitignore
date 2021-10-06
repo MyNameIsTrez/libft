@@ -1,0 +1,17 @@
+# Ignore everything
+*
+
+# Allow folders
+!*/
+
+# Allow .c and .h files
+!*.[ch]
+
+# Allow Makefiles
+!Makefile
+
+# Allow helper Makefiles
+!*.mk
+
+# Allow repos to contain their own .gitignore
+!.gitignore
