@@ -1,12 +1,12 @@
 # make -f tester.mk tester && ./tester
+# make -f tester.mk fclean_tester
 
 
 include Makefile
 
 
 # TODO: Move this tester block to a different file
-TESTER_OBJECTS := ${addprefix obj/,${TESTER_OBJECT_NAMES}}
-
+TESTER_OBJECTS := ${addprefix obj/test_,${LIBFT_OBJECT_FILENAMES}}
 
 tester: tester.c libft.a ${TESTER_OBJECTS}
 	@$(CC) $(LINKER_FLAGS) -o tester tester.c libft.a ${TESTER_OBJECTS}

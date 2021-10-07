@@ -1,7 +1,9 @@
-include constants.mk
+include names.mk
+include settings.mk
 
 
-LIBFT_OBJECTS := ${addprefix obj/,${LIBFT_OBJECT_NAMES}}
+LIBFT_OBJECT_FILENAMES := ${addsuffix .o,${addprefix ft_,${LIBFT_OBJECT_NAMES}}}
+LIBFT_OBJECTS := ${addprefix obj/,${LIBFT_OBJECT_FILENAMES}}
 
 
 all: $(NAME)
