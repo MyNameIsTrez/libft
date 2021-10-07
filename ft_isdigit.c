@@ -6,13 +6,11 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/05 15:16:20 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/07 14:07:20 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/07 15:02:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	return (0);
+	return ('0' <= c && c <= '9');
 }

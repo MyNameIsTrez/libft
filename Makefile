@@ -1,7 +1,7 @@
 NAME := libft.a
 
 # TODO: Move the test_ functions down to the tester recipe
-LIBFT_OBJECTS := obj/ft_isalpha.o obj/ft_isdigit.o
+LIBFT_OBJECTS := obj/ft_isalpha.o obj/ft_isdigit.o obj/ft_isalnum.o
 HEADERS :=
 
 C_FLAGS ?= -Wall -Wextra -Werror -fsanitize=address
@@ -32,7 +32,7 @@ re: fclean all
 
 
 # TODO: Move this tester block to a different file
-TESTER_OBJECTS = obj/test_ft_isalpha.o obj/test_ft_isdigit.o
+TESTER_OBJECTS = obj/test_ft_isalpha.o obj/test_ft_isdigit.o obj/test_ft_isalnum.o
 LINKER_FLAGS ?= -fsanitize=address # TODO: Rename LD to something more verbose
 
 tester: tester.c libft.a ${TESTER_OBJECTS}

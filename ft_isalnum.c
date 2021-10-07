@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   tester.c                                           :+:    :+:            */
+/*   ft_isalnum.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/05 15:40:45 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/07 15:05:02 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/07 14:24:17 by sbos          #+#    #+#                 */
+/*   Updated: 2021/10/07 15:01:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include "libft.h"
 
-int	main(void)
+int	ft_isalnum(int c)
 {
-	test_ft_isalpha();
-	test_ft_isdigit();
-	test_ft_isalnum();
-	return (0);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
