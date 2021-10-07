@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   tester.c                                           :+:    :+:            */
+/*   test_ft_isdigit.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/05 15:40:45 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/07 14:08:32 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/07 14:03:08 by sbos          #+#    #+#                 */
+/*   Updated: 2021/10/07 14:09:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <assert.h>
 
-int	test_ft_isalpha(void);
-int	test_ft_isdigit(void);
+#include <ctype.h>
 
-int	main(void)
+int	ft_isdigit(int c);
+
+int	test_ft_isdigit(void)
 {
-	test_ft_isalpha();
-	test_ft_isdigit();
+	printf("\nTesting ft_isdigit...\n");
+	assert(ft_isdigit('3') == isdigit('3'));
+	assert(ft_isdigit(';') == isdigit(';'));
+	printf("Done.\n");
 	return (0);
 }

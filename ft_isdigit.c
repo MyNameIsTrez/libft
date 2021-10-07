@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   tester.c                                           :+:    :+:            */
+/*   ft_isdigit.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/05 15:40:45 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/07 14:08:32 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/05 15:16:20 by sbos          #+#    #+#                 */
+/*   Updated: 2021/10/07 14:07:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	test_ft_isalpha(void);
-int	test_ft_isdigit(void);
-
-int	main(void)
+int	ft_isdigit(int c)
 {
-	test_ft_isalpha();
-	test_ft_isdigit();
+	if (48 <= c && c <= 57)
+		return (1);
 	return (0);
 }
