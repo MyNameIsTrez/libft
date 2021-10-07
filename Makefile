@@ -1,29 +1,37 @@
-MAIN_TEST := main_test
-MAIN_TEST_AR := $(MAIN_TEST).a
-HEADER_FILES :=
-OBJECT_FILES := obj/main_test.o obj/ft_isalpha.o obj/test_ft_isalpha.o
-LD_FLAGS ?=  -fsanitize=address
+NAME := libft.a
+
+LIBFT_OBJECTS := obj/test_ft_isalpha.o obj/ft_isalpha.o
+HEADERS :=
+
 C_FLAGS ?= -Wall -Wextra -Werror
 
 
-all: $(MAIN_TEST)
+all: $(NAME)
 
-$(MAIN_TEST): $(OBJECT_FILES)
-	@ar rcs $(MAIN_TEST_AR) $^
-	@$(CC) $(LD_FLAGS) -o $@ $(MAIN_TEST_AR)
+$(NAME): $(LIBFT_OBJECTS)
+	@ar rcs ${NAME} $^
 
-obj/%.o: %.c $(HEADER_FILES)
+obj/%.o: %.c $(HEADERS)
+	@printf "%s\n" $<
 	@mkdir -p $(@D)
 	@$(CC) -c $(C_FLAGS) -o $@ $<
 
 clean:
-	@rm -f $(OBJECT_FILES)
+	@rm -f $(LIBFT_OBJECTS)
 
 fclean: clean
-	@rm -f $(MAIN_TEST) $(MAIN_TEST_AR) $(OBJECT_FILES)
+	@rm -f $(NAME) $(OBJECT_FILES)
+
+re: fclean all
 
 # bonus:
 #	compile with bonus
 
-
 .PHONY: all clean fclean bonus
+
+
+# TODO: Move this tester block to a different file
+LINKER_FLAGS ?= -fsanitize=address # TODO: Rename LD to something more verbose
+
+tester: tester.c libft.a
+	@$(CC) $(LINKER_FLAGS) -o tester tester.c libft.a
