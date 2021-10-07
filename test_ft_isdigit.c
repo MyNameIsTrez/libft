@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/07 14:03:08 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/07 14:22:15 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/07 15:18:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@
 
 int	test_ft_isdigit(void)
 {
-	printf("\nTesting ft_isdigit...\n");
+	printf("Testing ft_isdigit...\n");
 	assert(ft_isdigit('3') == isdigit('3'));
 	assert(ft_isdigit(';') == isdigit(';'));
-	printf("Done.\n");
 	return (0);
 }
