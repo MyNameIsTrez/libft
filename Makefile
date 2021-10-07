@@ -13,7 +13,7 @@ $(NAME): $(LIBFT_OBJECTS)
 	@ar rcs ${NAME} $^
 
 obj/%.o: %.c $(HEADERS)
-	@printf "%s\n" $<
+#	@printf "%s\n" $<
 	@mkdir -p $(@D)
 	@$(CC) -c $(C_FLAGS) -o $@ $<
 
@@ -39,7 +39,6 @@ tester: tester.c libft.a ${TESTER_OBJECTS}
 	@$(CC) $(LINKER_FLAGS) -o tester tester.c libft.a ${TESTER_OBJECTS}
 
 clean_tester:
-	@rm -f $(TESTER_OBJECTS)
+	@rm -f $(TESTER_OBJECTS) tester
 
 fclean_tester: fclean clean_tester
-	@rm -f tester
