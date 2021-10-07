@@ -6,14 +6,13 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/05 15:40:45 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/07 14:08:32 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/07 14:22:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	test_ft_isalpha(void);
-int	test_ft_isdigit(void);
+#include "libft.h"
 
 int	main(void)
 {

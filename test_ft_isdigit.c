@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/07 14:03:08 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/07 14:09:57 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/07 14:22:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <ctype.h>
 
-int	ft_isdigit(int c);
+#include "libft.h"
 
 int	test_ft_isdigit(void)
 {

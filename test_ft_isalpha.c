@@ -6,14 +6,14 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/05 14:38:46 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/07 12:12:01 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/07 14:22:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <assert.h>
 
-int	ft_isalpha(int c);
+#include "libft.h"
 
 int	test_ft_isalpha(void)
 {
