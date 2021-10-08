@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/07 14:03:08 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/07 16:25:00 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/07 16:30:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@
 
 int	test_ft_isprint(void)
 {
+	int	c;
+
 	printf("Testing ft_isprint...\n");
-	assert(ft_isprint('x') == isprint('x'));
-	assert(ft_isprint('3') == isprint('3'));
-	assert(ft_isprint(' ') == isprint(' '));
+	c = 0;
+	while (c <= 255)
+	{
+		assert(ft_isprint(c) == isprint(c));
+		c++;
+	}
 	return (0);
 }
