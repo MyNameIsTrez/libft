@@ -6,15 +6,18 @@
 
 
 include Makefile
+include additional.mk
 
 
-# TODO: Move this tester block to a different file
 TESTER_OBJECTS := ${addprefix obj/test_,${OBJECT_FILENAMES}}
 
-tester: tester.c libft.a ${TESTER_OBJECTS}
+
+# tester also tests functions in the additional/ folder
+tester: tester.c libft.a ${ADDITIONAL_OBJECTS} ${TESTER_OBJECTS}
 	@$(CC) $(LINKER_FLAGS) -o tester tester.c libft.a ${TESTER_OBJECTS}
 
 clean_tester:
-	@rm -f $(TESTER_OBJECTS) tester
+	@rm -f $(TESTER_OBJECTS)
 
 fclean_tester: fclean clean_tester
+	@rm -f tester

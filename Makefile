@@ -66,19 +66,11 @@ PART_2_BONUS :=\
 	ft_lstmap
 
 
-ADDITIONAL_UNSORTED :=\
-	strcmp\
-	strstr
-
-
 PART_1 := ${PART_1_IS} ${PART_1_UNSORTED} ${PART_1_MALLOC}
 PART_2 := ${PART_2_UNSORTED} ${PART_2_BONUS}
-ADDITIONAL := ${ADDITIONAL_UNSORTED}
 
 
-OBJECT_STEMS := ${PART_1} ${PART_2} ${ADDITIONAL}
-
-
+OBJECT_STEMS := ${PART_1} ${PART_2}
 OBJECT_FILENAMES := ${addsuffix .o,${addprefix ft_,${OBJECT_STEMS}}}
 OBJECT_PATHS := ${addprefix obj/,${OBJECT_FILENAMES}}
 
