@@ -1,6 +1,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+// LIBRARIES //
+
 // TODO: It isn't specified whether I'm allowed to use this header! #define it?
 # include <stddef.h> // size_t
 
@@ -8,6 +10,8 @@
 # include <assert.h> // assert()
 # include <ctype.h> // isalnum()
 # include <string.h> // strlen()
+
+// FUNCTIONS //
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -19,7 +23,7 @@ size_t	ft_strlen(const char *s);
 
 void	*ft_memset(void *b, int c, size_t len);
 
-//
+// TESTS //
 
 int		test_ft_isalpha(void);
 int		test_ft_isdigit(void);
