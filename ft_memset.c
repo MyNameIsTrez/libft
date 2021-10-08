@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_isascii.c                                  :+:    :+:            */
+/*   ft_memset.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/07 14:03:08 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/08 11:24:05 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/07 14:24:17 by sbos          #+#    #+#                 */
+/*   Updated: 2021/10/08 11:50:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	test_ft_isascii(void)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int	c;
+	size_t	i;
+	char	*d;
 
-	printf("Testing ft_isascii...\n");
-	c = 0;
-	while (c <= 255)
+	d = (char *)b;
+	i = 0;
+	while (i < len)
 	{
-		assert(ft_isascii(c) == isascii(c));
-		c++;
+		d[i] = c;
+		i++;
 	}
-	return (0);
+	return ((void *)d);
 }

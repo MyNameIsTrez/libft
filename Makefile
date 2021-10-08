@@ -15,7 +15,10 @@ LIBFT_OBJECT_STEMS :=\
 	isalnum\
 	isascii\
 	isprint\
-	strlen
+	\
+	strlen\
+	\
+	memset
 
 
 LIBFT_OBJECT_FILENAMES := ${addsuffix .o,${addprefix ft_,${LIBFT_OBJECT_STEMS}}}

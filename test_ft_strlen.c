@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <assert.h>
-
-#include <string.h>
-
 #include "libft.h"
 
 int	test_ft_strlen(void)
