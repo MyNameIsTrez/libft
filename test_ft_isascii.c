@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/07 14:03:08 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/07 15:44:18 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/08 10:21:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@
 
 int	test_ft_isascii(void)
 {
+	int	c;
+
 	printf("Testing ft_isascii...\n");
-	assert(ft_isascii('x') == isascii('x'));
-	assert(ft_isascii('3') == isascii('3'));
-	assert(ft_isascii(';') == isascii(';'));
+	c = 0;
+	while (c <= 255)
+	{
+		assert(ft_isascii(c) == ft_isascii(c));
+		c++;
+	}
 	return (0);
 }

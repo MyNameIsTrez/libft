@@ -1,6 +1,9 @@
 # make -f tester.mk tester && ./tester
 # make -f tester.mk fclean_tester
 
+# TODO: Verify with Marius if I did the Makefiles right:
+# https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
+
 
 include Makefile
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/07 14:03:08 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/07 15:18:05 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/08 10:20:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,14 @@
 
 int	test_ft_isalpha(void)
 {
+	int	c;
+
 	printf("Testing ft_isalpha...\n");
-	assert(ft_isalpha('x') == isalpha('x'));
-	assert(ft_isalpha(';') == isalpha(';'));
+	c = 0;
+	while (c <= 255)
+	{
+		assert(ft_isalpha(c) == ft_isalpha(c));
+		c++;
+	}
 	return (0);
 }
