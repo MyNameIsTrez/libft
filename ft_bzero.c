@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_isalpha.c                                  :+:    :+:            */
+/*   ft_bzero.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/07 14:03:08 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/08 16:32:45 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/07 14:24:17 by sbos          #+#    #+#                 */
+/*   Updated: 2021/10/08 15:03:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	test_ft_isalpha(void)
+void	ft_bzero(void *s, size_t n)
 {
-	int	c;
-
-	printf("Testing ft_isalpha...\n");
-	c = 0;
-	while (c <= 255)
-	{
-		assert(ft_isalpha(c) == isalpha(c));
-		c++;
-	}
+	ft_memset(s, '\0', n);
 }

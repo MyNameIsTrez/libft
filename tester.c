@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/05 15:40:45 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/08 11:51:14 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/08 15:05:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(void)
 	test_is();
 	test_ft_strlen();
 	test_ft_memset();
+	// test_ft_bzero(); // TODO: This one doesn't work.
 	printf("All tests passed!\n");
 	return (0);
 }
