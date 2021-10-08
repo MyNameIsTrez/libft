@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isascii.c                                       :+:    :+:            */
+/*   test_ft_strlen.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/07 14:24:17 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/08 10:45:14 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/07 14:03:08 by sbos          #+#    #+#                 */
+/*   Updated: 2021/10/07 16:30:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include <stdio.h>
+#include <assert.h>
+
+#include <string.h>
+
+#include "libft.h"
+
+int	test_ft_strlen(void)
 {
-	return (0 <= c && c <= 127);
+	printf("Testing ft_strlen...\n");
+	assert(ft_strlen("") == strlen(""));
+	assert(ft_strlen("f") == strlen("f"));
+	assert(ft_strlen("fo") == strlen("fo"));
+	assert(ft_strlen("foo") == strlen("foo"));
+	return (0);
 }

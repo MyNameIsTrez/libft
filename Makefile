@@ -1,8 +1,8 @@
 NAME := libft.a
 
-CC := cc # TODO: Use gcc instead?
+CC := cc # TODO: Use gcc instead? https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
 
-C_FLAGS ?= -Wall -Wextra -Werror -fsanitize=address
+C_FLAGS ?= -Wall -Wextra -Werror -fsanitize=address # TODO: Add -g flag? https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
 
 HEADERS :=
 
@@ -14,7 +14,8 @@ LIBFT_OBJECT_STEMS :=\
 	isdigit\
 	isalnum\
 	isascii\
-	isprint
+	isprint\
+	strlen
 
 
 LIBFT_OBJECT_FILENAMES := ${addsuffix .o,${addprefix ft_,${LIBFT_OBJECT_STEMS}}}
