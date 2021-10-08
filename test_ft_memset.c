@@ -14,7 +14,7 @@
 
 int	test_ft_memset(void)
 {
-	char	str[] = { 'f', 'o', 'o', '\0' };
+	char	str[] = "foo";
 
 	printf("Testing ft_memset...\n");
 	assert(ft_memset(str, 'c', 2) == memset(str, 'c', 2));
