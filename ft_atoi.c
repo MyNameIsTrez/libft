@@ -6,7 +6,11 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 13:19:17 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/11 16:04:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	ft_atoi(const char *str)
+{
+
+}

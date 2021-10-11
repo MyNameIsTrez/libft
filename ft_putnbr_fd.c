@@ -6,7 +6,11 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:31 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 12:40:31 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/11 16:34:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	ft_putnbr_fd(int n, int fd)
+{
+
+}

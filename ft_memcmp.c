@@ -6,7 +6,11 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:44 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 12:40:44 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/11 16:04:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+
+}

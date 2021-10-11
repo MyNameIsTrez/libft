@@ -6,7 +6,13 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:50 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 12:40:50 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/11 16:36:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
+{
+
+}

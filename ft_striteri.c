@@ -6,7 +6,11 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:17 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 12:40:17 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/11 16:33:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+
+}

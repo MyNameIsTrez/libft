@@ -6,7 +6,13 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:10 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 12:40:10 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/11 16:23:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+
+}

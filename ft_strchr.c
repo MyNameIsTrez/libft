@@ -6,7 +6,11 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:22 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 12:40:22 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/11 16:26:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+char	*ft_strchr(const char *s, int c)
+{
+
+}

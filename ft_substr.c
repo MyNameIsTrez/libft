@@ -6,7 +6,13 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:55 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 12:39:56 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/11 16:27:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+
+}

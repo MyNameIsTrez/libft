@@ -1,24 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   test_ft_memcpy.c                                   :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: sbos <sbos@student.codam.nl>                 +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2021/10/11 12:38:12 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 14:13:51 by sbos          ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../libft.h"
+#include "../tests.h"
 
 void	test_ft_memcpy(void)
 {
-	const void	*dst;
-	void		*src;
-	size_t		n;
+	char	dst[30] = "foo";
+	char	dst2[30] = "foo";
+	char	src[30] = "bar";
+	size_t	n;
 
 	n = 2;
 	printf("Testing ft_memcpy...\n");
-	printf(ft_memcpy(dst, src, n));
+	printf("ft: %s\n", ft_memcpy(dst, src, n));
+	printf("original: %s\n", memcpy(dst2, src, n));
 }

@@ -6,7 +6,11 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:58 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 12:39:58 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/11 16:30:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+char	*ft_strtrim(char const *s1, char const *set)
+{
+
+}

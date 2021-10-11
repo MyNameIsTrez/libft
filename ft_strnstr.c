@@ -6,7 +6,11 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:02 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 12:40:02 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/11 16:03:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+
+}
