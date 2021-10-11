@@ -41,29 +41,29 @@ PART_1_MALLOC :=\
 
 
 PART_2_UNSORTED :=\
-	ft_substr\
-	ft_strjoin\
-	ft_strtrim\
-	ft_split\
-	ft_itoa\
-	ft_strmapi\
-	ft_striteri\
-	ft_putchar_fd\
-	ft_putstr_fd\
-	ft_putendl_fd\
-	ft_putnbr_fd
+	substr\
+	strjoin\
+	strtrim\
+	split\
+	itoa\
+	strmapi\
+	striteri\
+	putchar_fd\
+	putstr_fd\
+	putendl_fd\
+	putnbr_fd
 
 
 PART_2_BONUS :=\
-	ft_lstnew\
-	ft_lstadd_front\
-	ft_lstsize\
-	ft_lstlast\
-	ft_lstadd_back\
-	ft_lstdelone\
-	ft_lstclear\
-	ft_lstiter\
-	ft_lstmap
+	lstnew\
+	lstadd_front\
+	lstsize\
+	lstlast\
+	lstadd_back\
+	lstdelone\
+	lstclear\
+	lstiter\
+	lstmap
 
 
 PART_1 := ${PART_1_IS} ${PART_1_UNSORTED} ${PART_1_MALLOC}

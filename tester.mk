@@ -9,15 +9,19 @@ include Makefile
 include additional.mk
 
 
-TESTER_OBJECTS := ${addprefix obj/test_,${OBJECT_FILENAMES}}
+TESTER_OBJECTS := $(addprefix obj/test_,$(OBJECT_FILENAMES))
 
 
 # tester also tests functions in the additional/ folder
-tester: tester.c libft.a ${ADDITIONAL_OBJECTS} ${TESTER_OBJECTS}
-	@$(CC) $(LINKER_FLAGS) -o tester tester.c libft.a ${TESTER_OBJECTS}
+tester: tester.c libft.a $(TESTER_OBJECTS) $(ADDITIONAL_OBJECTS)
+	@$(CC) $(LINKER_FLAGS) -o tester tester.c libft.a $(TESTER_OBJECTS)
+
+obj/%.o: tests/%.c $(HEADERS)
+	@mkdir -p $(@D)
+	@$(CC) -c $(C_FLAGS) -o $@ $<
 
 clean_tester:
-	@rm -f $(TESTER_OBJECTS)
+	@rm -f $(TESTER_OBJECTS) $(ADDITIONAL_OBJECTS)
 
 fclean_tester: fclean clean_tester
 	@rm -f tester
