@@ -18,6 +18,7 @@ int	main(void)
 	test_ft_memset();
 	test_ft_memcpy();
 	// test_ft_bzero(); // TODO: This test doesn't work.
+	test_ft_strlcpy();
 	printf("All tests passed!\n");
 	return (0);
 }
