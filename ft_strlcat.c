@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:12 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/12 15:54:05 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/12 17:31:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,25 @@
 #include <unistd.h>
 
 
+static size_t	ft_strnlen(const char *s, size_t maxlen)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len] != '\0' && len < maxlen)
+	{
+		len++;
+	}
+	return (len);
+}
+
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	initial_dst_len;
 	size_t	i;
 	// printf("foo1\n");
 
-	initial_dst_len = ft_strlen(dst);
+	initial_dst_len = ft_strnlen(dst, dstsize);
 	if (dstsize == 0)
 	{
 		// printf("foo2\n");
@@ -33,23 +45,23 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	// printf("foo3\n");
 	i = 0;
-	while (i + dstsize < dstsize - 1 && src[i] != '\0')
+	while (i + initial_dst_len < dstsize - 1 && src[i] != '\0')
 	{
-		dst[i + dstsize] = src[i];
+		dst[i + initial_dst_len] = src[i];
 		i++;
 	}
 	// printf("foo4\n");
 
-	if (i + dstsize < dstsize)
+	if (i + initial_dst_len < dstsize)
 	{
-		dst[i + dstsize] = '\0';
+		dst[i + initial_dst_len] = '\0';
 	}
 	// printf("foo5\n");
 
 	if (i + 1 < dstsize)
 	{
 		// printf("foo6\n");
-		return (ft_strlen(src) + dstsize);
+		return (ft_strlen(src) + initial_dst_len);
 	}
 	else
 	{

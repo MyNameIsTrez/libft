@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/12 16:31:00 by sbos          #+#    #+#                  #
-#    Updated: 2021/10/12 16:58:48 by sbos          ########   odam.nl          #
+#    Updated: 2021/10/12 17:08:58 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC := cc # TODO: Use gcc instead? https://github.com/BinaryBenji/Libft.42/blob/m
 # C_FLAGS ?= -Wall -Wextra -Werror -fsanitize=address # TODO: Add -g flag? https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
 C_FLAGS ?= -g -Wall -Wextra -fsanitize=address # TODO: Add -g flag? https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
 
-HEADERS :=
+HEADERS := libft.h
 
 LINKER_FLAGS ?= -fsanitize=address
 

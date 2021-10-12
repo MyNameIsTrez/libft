@@ -25,4 +25,5 @@ void	test_ft_strlcat(void)
 
 	write(2, "\n", 1);
 	write(2, dst, 15);
+	// printf("bar1\n");
 }
