@@ -5,7 +5,6 @@ void	test_ft_isprint(void)
 {
 	int	c;
 
-	printf("Testing ft_isprint...\n");
 	c = 0;
 	while (c <= 255)
 	{

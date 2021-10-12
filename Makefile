@@ -3,7 +3,7 @@ NAME := libft.a
 CC := cc # TODO: Use gcc instead? https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
 
 # C_FLAGS ?= -Wall -Wextra -Werror -fsanitize=address # TODO: Add -g flag? https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
-C_FLAGS ?= -Wall -Wextra -fsanitize=address # TODO: Add -g flag? https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
+C_FLAGS ?= -g -Wall -Wextra -fsanitize=address # TODO: Add -g flag? https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
 
 HEADERS :=
 

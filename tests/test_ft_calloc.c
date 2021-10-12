@@ -3,6 +3,5 @@
 
 void	test_ft_calloc(void)
 {
-	printf("Testing ft_calloc...\n");
 
 }

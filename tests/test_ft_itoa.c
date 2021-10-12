@@ -3,6 +3,5 @@
 
 void	test_ft_itoa(void)
 {
-	printf("Testing ft_itoa...\n");
 
 }

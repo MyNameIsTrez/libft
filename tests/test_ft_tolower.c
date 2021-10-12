@@ -3,6 +3,5 @@
 
 void	test_ft_tolower(void)
 {
-	printf("Testing ft_tolower...\n");
 
 }

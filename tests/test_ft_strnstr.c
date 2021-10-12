@@ -3,6 +3,5 @@
 
 void	test_ft_strnstr(void)
 {
-	printf("Testing ft_strnstr...\n");
 
 }

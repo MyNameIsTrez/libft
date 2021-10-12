@@ -5,7 +5,6 @@ void	test_ft_isascii(void)
 {
 	int	c;
 
-	printf("Testing ft_isascii...\n");
 	c = 0;
 	while (c <= 255)
 	{

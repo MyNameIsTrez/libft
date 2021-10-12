@@ -9,6 +9,5 @@ void	test_ft_memset(void)
 	str[1] = 'o';
 	str[2] = 'o';
 	str[3] = '\0';
-	printf("Testing ft_memset...\n");
 	assert(ft_memset(str, 'c', 2) == memset(str, 'c', 2));
 }

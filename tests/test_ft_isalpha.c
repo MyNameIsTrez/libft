@@ -5,7 +5,6 @@ void	test_ft_isalpha(void)
 {
 	int	c;
 
-	printf("Testing ft_isalpha...\n");
 	c = 0;
 	while (c <= 255)
 	{

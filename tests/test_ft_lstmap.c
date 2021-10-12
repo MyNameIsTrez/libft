@@ -3,6 +3,5 @@
 
 void	test_ft_lstmap(void)
 {
-	printf("Testing ft_lstmap...\n");
 
 }

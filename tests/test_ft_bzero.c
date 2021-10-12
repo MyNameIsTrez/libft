@@ -10,7 +10,6 @@ void	test_ft_bzero(void)
 	str_ft[1] = 'o';
 	str_ft[2] = 'o';
 	str_ft[3] = '\0';
-	printf("Testing ft_bzero...\n");
 	ft_bzero(str_ft, 2);
 	printf("a%sb", str_ft);
 }

@@ -3,6 +3,5 @@
 
 void	test_ft_lstiter(void)
 {
-	printf("Testing ft_lstiter...\n");
 
 }

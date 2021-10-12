@@ -5,7 +5,6 @@ void	test_ft_isalnum(void)
 {
 	int	c;
 
-	printf("Testing ft_isalnum...\n");
 	c = 0;
 	while (c <= 255)
 	{

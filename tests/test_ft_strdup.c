@@ -3,6 +3,5 @@
 
 void	test_ft_strdup(void)
 {
-	printf("Testing ft_strdup...\n");
 
 }

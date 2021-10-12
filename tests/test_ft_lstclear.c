@@ -3,6 +3,5 @@
 
 void	test_ft_lstclear(void)
 {
-	printf("Testing ft_lstclear...\n");
 
 }

@@ -3,7 +3,6 @@
 
 void	test_ft_strlen(void)
 {
-	printf("Testing ft_strlen...\n");
 	assert(ft_strlen("") == strlen(""));
 	assert(ft_strlen("f") == strlen("f"));
 	assert(ft_strlen("fo") == strlen("fo"));

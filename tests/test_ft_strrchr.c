@@ -3,6 +3,5 @@
 
 void	test_ft_strrchr(void)
 {
-	printf("Testing ft_strrchr...\n");
 
 }

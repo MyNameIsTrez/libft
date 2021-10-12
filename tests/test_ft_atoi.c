@@ -3,6 +3,5 @@
 
 void	test_ft_atoi(void)
 {
-	printf("Testing ft_atoi...\n");
 
 }

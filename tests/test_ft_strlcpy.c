@@ -9,6 +9,5 @@ void	test_ft_strlcpy(void)
 	char	src[] = "lorem ipsum dolor sit amet";
 	size_t	dstsize = 15;
 
-	printf("Testing ft_strlcpy...\n");
-	printf("size: %d\nsrc: %s\ndst: %s\n", ft_strlcpy(dst, src, dstsize), src, dst);
+	// printf("size: %zu\nsrc: %s\ndst: %s\n", ft_strlcpy(dst, src, dstsize), src, dst);
 }

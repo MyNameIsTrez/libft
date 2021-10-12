@@ -3,6 +3,5 @@
 
 void	test_ft_split(void)
 {
-	printf("Testing ft_split...\n");
 
 }

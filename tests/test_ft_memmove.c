@@ -3,6 +3,5 @@
 
 void	test_ft_memmove(void)
 {
-	printf("Testing ft_memmove...\n");
 
 }
