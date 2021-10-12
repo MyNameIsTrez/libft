@@ -65,7 +65,8 @@ void	test_ft_lstmap(void);
 
 //// ## ADDITIONAL ## ////
 
-void	test_ft_strcmp(void);
-void	test_ft_strstr(void);
+void	test_ADDITIONAL_ft_strcmp(void);
+void	test_ADDITIONAL_ft_strstr(void);
+void	test_ADDITIONAL_ft_strnlen(void);
 
 #endif
