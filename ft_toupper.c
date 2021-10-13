@@ -6,11 +6,15 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:51 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 16:25:46 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/13 11:56:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-
+	if ('a' <= c && c <= 'z')
+	{
+		return (c - ('a' - 'A'));
+	}
+	return (c);
 }

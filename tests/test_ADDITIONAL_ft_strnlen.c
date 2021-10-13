@@ -3,7 +3,7 @@
 
 void	test_ADDITIONAL_ft_strnlen(void)
 {
-	char	*buffer = "foo";
+	// char	*buffer = "foo";
 
-	printf("%i\n", ft_strnlen(buffer, 2));
+	// printf("%i\n", ft_strnlen(buffer, 2));
 }

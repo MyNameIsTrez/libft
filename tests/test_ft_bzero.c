@@ -11,5 +11,5 @@ void	test_ft_bzero(void)
 	str_ft[2] = 'o';
 	str_ft[3] = '\0';
 	ft_bzero(str_ft, 2);
-	printf("a%sb", str_ft);
+	// printf("a%sb", str_ft);
 }

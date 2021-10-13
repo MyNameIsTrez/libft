@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:12 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/13 11:46:20 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/13 11:52:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (start_dst_len
 			+ ft_strlcpy(dst + start_dst_len, src, dstsize - start_dst_len));
 	}
-	else
-	{
-		return (dstsize + ft_strlen(src));
-	}
+	return (dstsize + ft_strlen(src));
 }

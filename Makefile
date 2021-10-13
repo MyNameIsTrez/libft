@@ -6,16 +6,15 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/12 16:31:00 by sbos          #+#    #+#                  #
-#    Updated: 2021/10/12 17:08:58 by sbos          ########   odam.nl          #
+#    Updated: 2021/10/13 12:27:05 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a
 
-CC := cc # TODO: Use gcc instead? https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
+CC := gcc
 
-# C_FLAGS ?= -Wall -Wextra -Werror -fsanitize=address # TODO: Add -g flag? https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
-C_FLAGS ?= -g -Wall -Wextra -fsanitize=address # TODO: Add -g flag? https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
+C_FLAGS ?= -g -Wall -Wextra -fsanitize=address
 
 HEADERS := libft.h
 
