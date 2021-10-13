@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:12 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/13 10:40:57 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/13 10:44:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	else
 	{
 		// printf("foo8\n");
-		return (ft_strlen(src) + 1);
+		return (ft_strlen(src) + dstsize);
 	}
 }
