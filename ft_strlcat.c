@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:12 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/13 11:15:58 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/13 11:46:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,13 @@ static size_t	ft_strnlen(const char *s, size_t maxlen)
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	initial_dst_len;
-	size_t	i;
+	size_t	start_dst_len;
 
-	initial_dst_len = ft_strnlen(dst, dstsize);
-	i = 0;
-	while (i + initial_dst_len + 1 < dstsize && src[i] != '\0')
+	start_dst_len = ft_strnlen(dst, dstsize);
+	if (start_dst_len < dstsize)
 	{
-		dst[i + initial_dst_len] = src[i];
-		i++;
-	}
-	if (i + initial_dst_len < dstsize)
-	{
-		dst[i + initial_dst_len] = '\0';
-		return (initial_dst_len + ft_strlen(src));
+		return (start_dst_len
+			+ ft_strlcpy(dst + start_dst_len, src, dstsize - start_dst_len));
 	}
 	else
 	{
