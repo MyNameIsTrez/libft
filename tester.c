@@ -46,7 +46,7 @@ int	main(void)
 	// TEST(test_ft_putnbr_fd);
 	// TEST(test_ft_putstr_fd);
 	// TEST(test_ft_split);
-	TEST(test_ft_strchr);
+	// TEST(test_ft_strchr);
 	// TEST(test_ft_strdup);
 	// TEST(test_ft_striteri);
 	// TEST(test_ft_strjoin);
@@ -56,7 +56,7 @@ int	main(void)
 	// TEST(test_ft_strmapi);
 	// TEST(test_ft_strncmp);
 	// TEST(test_ft_strnstr);
-	// TEST(test_ft_strrchr);
+	TEST(test_ft_strrchr);
 	// TEST(test_ft_strtrim);
 	// TEST(test_ft_substr);
 	// TEST(test_ft_tolower);
