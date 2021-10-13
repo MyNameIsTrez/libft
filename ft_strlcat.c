@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:12 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/13 10:56:06 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/13 11:15:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (i + initial_dst_len < dstsize)
 	{
 		dst[i + initial_dst_len] = '\0';
-	}
-	if (i + 1 < dstsize)
-	{
 		return (initial_dst_len + ft_strlen(src));
 	}
 	else

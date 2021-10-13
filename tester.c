@@ -28,7 +28,7 @@ int	main(void)
 	TEST(test_ft_memset);
 	TEST(test_ft_memcpy);
 	// TEST(test_ft_bzero); // TODO: This test doesn't work.
-	TEST(test_ft_strlcpy);
+	// TEST(test_ft_strlcpy);
 	TEST(test_ft_strlcat);
 	// TEST(test_ADDITIONAL_ft_strstr);
 	// TEST(test_ADDITIONAL_ft_strnlen);
