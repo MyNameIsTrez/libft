@@ -17,11 +17,11 @@ void	test_ft_strlcat(void)
 	memset(dst, 0, 15);
 	memset(dst, 'r', 6);
 
-	dst[11] = 'a';
+	dst[10] = 'a';
 	// memset(dst, 'r', 15);
 
-	// ft_print_result(ft_strlcat(dst, "lorem ipsum dolor sit amet", 5));
-	ft_print_result(ft_strlcat(dst, "lorem", 15));
+	ft_print_result(ft_strlcat(dst, "lorem ipsum dolor sit amet", 0));
+	// ft_print_result(ft_strlcat(dst, "lorem", 15));
 
 	write(2, "\n", 1);
 	write(2, dst, 15);

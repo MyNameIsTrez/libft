@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:12 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/12 17:31:26 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/13 10:40:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,38 +34,32 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	initial_dst_len;
 	size_t	i;
+
 	// printf("foo1\n");
-
 	initial_dst_len = ft_strnlen(dst, dstsize);
-	if (dstsize == 0)
-	{
-		// printf("foo2\n");
-		return (ft_strlen(src));
-	}
-
-	// printf("foo3\n");
 	i = 0;
-	while (i + initial_dst_len < dstsize - 1 && src[i] != '\0')
+	// printf("foo2\n");
+	while (i + initial_dst_len + 1 < dstsize && src[i] != '\0')
 	{
+		// printf("foo3\n");
 		dst[i + initial_dst_len] = src[i];
 		i++;
 	}
 	// printf("foo4\n");
-
 	if (i + initial_dst_len < dstsize)
 	{
+		// printf("foo5\n");
 		dst[i + initial_dst_len] = '\0';
 	}
-	// printf("foo5\n");
-
+	// printf("foo6\n");
 	if (i + 1 < dstsize)
 	{
-		// printf("foo6\n");
+		// printf("foo7\n");
 		return (ft_strlen(src) + initial_dst_len);
 	}
 	else
 	{
-		// printf("foo7\n");
+		// printf("foo8\n");
 		return (ft_strlen(src) + 1);
 	}
 }
