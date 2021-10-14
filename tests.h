@@ -63,10 +63,10 @@ void	test_ft_lstclear(void);
 void	test_ft_lstiter(void);
 void	test_ft_lstmap(void);
 
-//// ## ADDITIONAL ## ////
+//// ## EXTRA ## ////
 
-void	test_ADDITIONAL_ft_strcmp(void);
-void	test_ADDITIONAL_ft_strstr(void);
-void	test_ADDITIONAL_ft_strnlen(void);
+void	test_EXTRA_ft_strcmp(void);
+void	test_EXTRA_ft_strstr(void);
+void	test_EXTRA_ft_strnlen(void);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/12 16:31:00 by sbos          #+#    #+#                  #
-#    Updated: 2021/10/13 13:21:53 by sbos          ########   odam.nl          #
+#    Updated: 2021/10/14 10:59:07 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,6 +86,8 @@ SOURCES := $(PART_1) $(PART_2)
 OBJECT_FILENAMES := $(addprefix ft_,$(SOURCES:.c=.o))
 OBJECT_PATHS := $(addprefix obj/,$(OBJECT_FILENAMES))
 
+INCLUDES := $(addprefix -I ,$(dir $(HEADERS)))
+
 
 all: $(NAME)
 
@@ -94,7 +96,7 @@ $(NAME): $(OBJECT_PATHS)
 
 obj/%.o: %.c $(HEADERS)
 	@mkdir -p $(@D)
-	@$(CC) $(C_FLAGS) -c $< -o $@
+	@$(CC) $(C_FLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	@rm -f $(OBJECT_PATHS)

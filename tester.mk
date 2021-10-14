@@ -1,4 +1,4 @@
-# clear && make -f tester.mk tester && ./tester
+# clear && make -f tester.mk tester && ./tester 2> out
 # clear && make -f tester.mk fclean_tester
 
 # TODO: Verify with Marius if the Makefiles are correct using this:
@@ -6,22 +6,22 @@
 
 
 include Makefile
-include additional.mk
+include extra.mk
 
 
 TESTER_OBJECTS := $(addprefix obj/test_,$(OBJECT_FILENAMES))
 
 
-# tester also tests functions in the additional/ folder
-tester: tester.c libft.a $(TESTER_OBJECTS) $(ADDITIONAL_OBJECTS) $(ADDITIONAL_TESTER_OBJECTS)
-	@$(CC) $(LINKER_FLAGS) -o tester tester.c libft.a $(TESTER_OBJECTS) $(ADDITIONAL_OBJECTS) $(ADDITIONAL_TESTER_OBJECTS)
+# tester also tests functions in the extra/ folder
+tester: tester.c libft.a $(TESTER_OBJECTS) $(EXTRA_OBJECTS) $(EXTRA_TESTER_OBJECTS)
+	@$(CC) $(LINKER_FLAGS) -o tester tester.c libft.a $(TESTER_OBJECTS) $(EXTRA_OBJECTS) $(EXTRA_TESTER_OBJECTS)
 
 obj/%.o: tests/%.c $(HEADERS)
 	@mkdir -p $(@D)
-	@$(CC) -c $(C_FLAGS) -o $@ $<
+	@$(CC) -c $(C_FLAGS) $(INCLUDES) -o $@ $<
 
 clean_tester:
-	@rm -f $(TESTER_OBJECTS) $(ADDITIONAL_OBJECTS)
+	@rm -f $(TESTER_OBJECTS) $(EXTRA_OBJECTS)
 
 fclean_tester: fclean clean_tester
 	@rm -f tester
