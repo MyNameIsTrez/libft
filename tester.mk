@@ -21,7 +21,7 @@ obj/%.o: tests/%.c $(HEADERS)
 	@$(CC) -c $(C_FLAGS) $(INCLUDES) -o $@ $<
 
 clean_tester:
-	@rm -f $(TESTER_OBJECTS) $(EXTRA_OBJECTS)
+	@rm -f $(TESTER_OBJECTS) $(EXTRA_OBJECTS) $(EXTRA_TESTER_OBJECTS)
 
 fclean_tester: fclean clean_tester
 	@rm -f tester

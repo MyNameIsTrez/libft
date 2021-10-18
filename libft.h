@@ -38,7 +38,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *string);
 
 ////// ### USING MALLOC ### //////
 
@@ -73,8 +73,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 //// ## EXTRA ## ////
 
-// int		ft_strcmp(const char *s1, const char *s2);
-// char	*ft_strstr(const char *haystack, const char *needle);
+int		ft_char_to_int(const char c);
+int		ft_strcmp(const char *s1, const char *s2);
 // size_t	ft_strnlen(const char *s, size_t maxlen);
+char	*ft_strstr(const char *haystack, const char *needle);
+char	*ft_strtrim_whitespace(char const *string);
+int		ft_isspace(int c);
 
 #endif

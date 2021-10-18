@@ -15,9 +15,12 @@ int	main(void)
 {
 	printf("Starting tests...\n");
 
+	// TEST(test_EXTRA_ft_char_to_int);
 	// TEST(test_EXTRA_ft_strcmp);
 	// TEST(test_EXTRA_ft_strnlen);
 	// TEST(test_EXTRA_ft_strstr);
+	// TEST(test_EXTRA_ft_strtrim_whitespace);
+	TEST(test_EXTRA_ft_isspace);
 	// TEST(test_ft_atoi);
 	// TEST(test_ft_bzero);
 	// TEST(test_ft_calloc);
@@ -55,7 +58,7 @@ int	main(void)
 	// TEST(test_ft_strlen);
 	// TEST(test_ft_strmapi);
 	// TEST(test_ft_strncmp);
-	TEST(test_ft_strnstr);
+	// TEST(test_ft_strnstr);
 	// TEST(test_ft_strrchr);
 	// TEST(test_ft_strtrim);
 	// TEST(test_ft_substr);

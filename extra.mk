@@ -1,7 +1,10 @@
-EXTRA_UNSORTED :=	\
-	strcmp.c			\
-	strstr.c			\
-	strnlen.c
+EXTRA_UNSORTED :=			\
+	char_to_int.c			\
+	strcmp.c				\
+	strnlen.c				\
+	strstr.c				\
+	strtrim_whitespace.c	\
+	isspace.c
 
 
 EXTRA_SOURCES := $(EXTRA_UNSORTED)

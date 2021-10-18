@@ -65,8 +65,11 @@ void	test_ft_lstmap(void);
 
 //// ## EXTRA ## ////
 
+void	test_EXTRA_ft_char_to_int(void);
 void	test_EXTRA_ft_strcmp(void);
-void	test_EXTRA_ft_strstr(void);
 void	test_EXTRA_ft_strnlen(void);
+void	test_EXTRA_ft_strstr(void);
+void	test_EXTRA_ft_strtrim_whitespace(void);
+void	test_EXTRA_ft_isspace(void);
 
 #endif

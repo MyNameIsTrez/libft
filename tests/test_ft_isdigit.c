@@ -3,12 +3,14 @@
 
 void	test_ft_isdigit(void)
 {
-	int	c;
+	// printf("%d\n", ft_isdigit('5'));
+	// printf("%d\n", ft_isdigit('a'));
 
-	c = 0;
-	while (c <= 255)
-	{
-		assert(ft_isdigit(c) == isdigit(c));
-		c++;
-	}
+	// int	c;
+	// c = 0;
+	// while (c <= 255)
+	// {
+	// 	assert(ft_isdigit(c) == isdigit(c));
+	// 	c++;
+	// }
 }
