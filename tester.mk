@@ -1,3 +1,4 @@
+# clear && make -f tester.mk tester && ./tester
 # clear && make -f tester.mk tester && ./tester 2> out
 # clear && make -f tester.mk fclean_tester
 
@@ -20,7 +21,7 @@ obj/%.o: tests/%.c $(HEADERS)
 	@mkdir -p $(@D)
 	@$(CC) -c $(C_FLAGS) $(INCLUDES) -o $@ $<
 
-clean_tester:
+clean_tester: clean
 	@rm -f $(TESTER_OBJECTS) $(EXTRA_OBJECTS) $(EXTRA_TESTER_OBJECTS)
 
 fclean_tester: fclean clean_tester

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:58 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/18 15:30:34 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/18 16:31:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ static unsigned int	get_end_index(char const *string, char const *trim_set)
 char	*ft_strtrim(char const *string, char const *trim_set)
 {
 	unsigned int	start;
+	unsigned int	end;
 	size_t			len;
 
 	if (string == NULL || trim_set == NULL)
 		return (NULL);
 	start = get_start_index(string, trim_set);
-	len = get_end_index(string, trim_set) - start;
+	end = get_end_index(string, trim_set);
+	len = end - start;
 	return (ft_substr(string, start, len + 1));
 }

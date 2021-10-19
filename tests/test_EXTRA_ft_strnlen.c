@@ -1,9 +1,21 @@
 #include "../libft.h"
 #include "../tests.h"
 
+static size_t	ft_strnlen(const char *s, size_t maxlen)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len] != '\0' && len < maxlen)
+	{
+		len++;
+	}
+	return (len);
+}
+
 void	test_EXTRA_ft_strnlen(void)
 {
-	printf("%d\n", ft_strnlen("foo", 2));
-	printf("%d\n", ft_strnlen("foo", 3));
-	printf("%d\n", ft_strnlen("foo", 4));
+	printf("%zu\n", ft_strnlen("foo", 2));
+	printf("%zu\n", ft_strnlen("foo", 3));
+	printf("%zu\n", ft_strnlen("foo", 4));
 }

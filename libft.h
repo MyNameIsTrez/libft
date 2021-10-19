@@ -73,11 +73,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 //// ## EXTRA ## ////
 
-int		ft_char_to_int(const char c);
-int		ft_strcmp(const char *s1, const char *s2);
+// int		ft_char_to_int(const char c);
+// int		ft_strcmp(const char *s1, const char *s2);
 // size_t	ft_strnlen(const char *s, size_t maxlen);
-char	*ft_strstr(const char *haystack, const char *needle);
-char	*ft_strtrim_whitespace(char const *string);
-int		ft_isspace(int c);
+// char	*ft_strstr(const char *haystack, const char *needle);
+// char	*ft_strtrim_whitespace(char const *string);
+// int		ft_isspace(int c);
 
 #endif

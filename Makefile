@@ -35,34 +35,36 @@ PART_1_UNSORTED :=	\
 	atoi.c
 
 PART_1_MALLOC :=	\
-	calloc.c		\
-	strdup.c
+	calloc.c
+	# strdup.c
 
 
 PART_2_UNSORTED :=	\
 	substr.c		\
-	strjoin.c		\
-	strtrim.c		\
-	split.c			\
-	itoa.c			\
-	strmapi.c		\
-	striteri.c		\
-	putchar_fd.c	\
-	putstr_fd.c		\
-	putendl_fd.c	\
-	putnbr_fd.c
+	strtrim.c
+
+	# split.c			\
+	# itoa.c			\
+	# strmapi.c		\
+	# striteri.c		\
+	# putchar_fd.c	\
+	# putstr_fd.c		\
+	# putendl_fd.c	\
+	# putnbr_fd.c
+
+	# strjoin.c		\
 
 
-PART_2_BONUS :=		\
-	lstnew.c		\
-	lstadd_front.c	\
-	lstsize.c		\
-	lstlast.c		\
-	lstadd_back.c	\
-	lstdelone.c		\
-	lstclear.c		\
-	lstiter.c		\
-	lstmap.c
+PART_2_BONUS :=
+	# lstnew.c		\
+	# lstadd_front.c	\
+	# lstsize.c		\
+	# lstlast.c		\
+	# lstadd_back.c	\
+	# lstdelone.c		\
+	# lstclear.c		\
+	# lstiter.c		\
+	# lstmap.c
 
 
 PART_1 := $(PART_1_IS) $(PART_1_UNSORTED) $(PART_1_MALLOC)

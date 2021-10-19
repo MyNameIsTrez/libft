@@ -1,6 +1,11 @@
 #include "../libft.h"
 #include "../tests.h"
 
+static int	ft_isspace(int c)
+{
+	return (ft_strchr(" \t\n\v\f\r", c) != NULL);
+}
+
 void	test_EXTRA_ft_isspace(void)
 {
 	assert(ft_isspace(' ') == 1);

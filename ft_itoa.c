@@ -6,11 +6,38 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:10 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 16:31:22 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/18 16:11:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_itoa(int n)
 {
+	// mag = 0;
+	// while (foo)
+	// {
+	// 	foo = foo / 10;
+	// 	mag++;
+	// }
 
+	// // mag is nu 2
+
+	// str = malloc(mag + 1 + 1);
+	// str[mag + 1] = '\0';
+
+	// while (foo)
+	// {
+	// 	digit = foo % 10;
+	// 	str[mag] = digit;
+	// 	mag--;
+	// 	foo = foo / 10;
+	// }
+
+	// 152 / 10 -> 15
+	// 152 % 10 = 2;
+
+	// 15 / 10 -> 1
+	// 15 % 10 = 5;
+
+	// 1 / 10 -> 0
+	// 1 % 10 = 1;
 }

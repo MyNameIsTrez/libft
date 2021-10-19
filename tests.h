@@ -6,6 +6,7 @@
 # include <ctype.h>		// isalnum(), isascii()
 # include <string.h>	// strlen()
 # include <strings.h>	// bzero()
+# include <unistd.h>	// write()
 
 //// ## PART 1 ## ////
 
