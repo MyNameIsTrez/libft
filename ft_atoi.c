@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/19 11:29:50 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/19 11:53:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,9 @@ int	ft_atoi(const char *old_string)
 	char	*string;
 	int		sign;
 
+	printf("'%s'\n", ft_strtrim(old_string, " \t\n\v\f\r"));
 	string = ft_strtrim_whitespace(old_string);
-	// printf(2, "'%s'\n", string);
+	printf("'%s'\n", string);
 	sign = 1;
 	if (string[0] == '-')
 	{

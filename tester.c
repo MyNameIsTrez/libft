@@ -21,7 +21,7 @@ int	main(void)
 	// TEST(test_EXTRA_ft_strstr);
 	// TEST(test_EXTRA_ft_strtrim_whitespace);
 	// TEST(test_EXTRA_ft_isspace);
-	TEST(test_ft_atoi);
+	// TEST(test_ft_atoi);
 	// TEST(test_ft_bzero);
 	// TEST(test_ft_calloc);
 	// TEST(test_ft_isalnum);
@@ -60,7 +60,7 @@ int	main(void)
 	// TEST(test_ft_strncmp);
 	// TEST(test_ft_strnstr);
 	// TEST(test_ft_strrchr);
-	// TEST(test_ft_strtrim);
+	TEST(test_ft_strtrim);
 	// TEST(test_ft_substr);
 	// TEST(test_ft_tolower);
 	// TEST(test_ft_toupper);

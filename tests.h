@@ -1,7 +1,7 @@
 #ifndef TESTS_H
 # define TESTS_H
 
-# include <stdio.h>		// printf()
+# include <stdio.h>		// printf(), dprintf()
 # include <assert.h>	// assert()
 # include <ctype.h>		// isalnum(), isascii()
 # include <string.h>	// strlen()

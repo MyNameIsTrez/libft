@@ -2,11 +2,11 @@ NAME := libft.a
 
 CC := gcc
 
-C_FLAGS ?= -g -Wall -Wextra -fsanitize=address
+C_FLAGS ?= -g -Wall -Wextra
 
 HEADERS := libft.h
 
-LINKER_FLAGS ?= -fsanitize=address
+LINKER_FLAGS ?=
 
 
 PART_1_IS :=		\

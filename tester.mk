@@ -1,6 +1,5 @@
-# clear && make -f tester.mk tester && ./tester
-# clear && make -f tester.mk tester && ./tester 2> out
-# clear && make -f tester.mk fclean_tester
+# make -f tester.mk re_tester && ./tester
+# make -f tester.mk re_tester && ./tester 2> out
 
 # TODO: Verify with Marius if the Makefiles are correct using this:
 # https://github.com/BinaryBenji/Libft.42/blob/master/Makefile
@@ -26,3 +25,7 @@ clean_tester: clean
 
 fclean_tester: fclean clean_tester
 	@rm -f tester
+
+re_tester: fclean_tester tester
+
+.PHONY: tester clean_tester fclean_tester re_tester
