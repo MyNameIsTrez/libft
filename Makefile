@@ -42,13 +42,13 @@ PART_1_MALLOC :=	\
 PART_2_UNSORTED :=	\
 	substr.c		\
 	strtrim.c		\
+	putchar_fd.c	\
 	strjoin.c
 
 	# split.c			\
 	# itoa.c			\
 	# strmapi.c		\
 	# striteri.c		\
-	# putchar_fd.c	\
 	# putstr_fd.c		\
 	# putendl_fd.c	\
 	# putnbr_fd.c
