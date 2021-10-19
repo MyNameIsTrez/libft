@@ -12,24 +12,15 @@
 
 #include "libft.h"
 
+static int	ft_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
+}
+
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	unsigned char	*src1;
-	unsigned char	*src2;
-	size_t			i;
-	int				diff;
-
-	src1 = (unsigned char *)s1;
-	src2 = (unsigned char *)s2;
-	i = 0;
-	while (src1[i] != '\0' && src2[i] != '\0')
-	{
-		diff = src1[i] - src2[i];
-		if (diff != 0)
-		{
-			return (diff);
-		}
-		i++;
-	}
-	return (0);
+	return (ft_strncmp(s1, s2, ft_max(ft_strlen(s1), ft_strlen(s2))));
 }

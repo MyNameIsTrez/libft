@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:40 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 15:55:16 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/19 16:14:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,10 @@ static void	*ft_memcpy_reverse(void *dst, const void *src, size_t len)
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	if (src > dst)
-	{
 		return (ft_memcpy(dst, src, len));
-	}
 	else
-	{
 		return (ft_memcpy_reverse(dst, src, len));
-	}
 }

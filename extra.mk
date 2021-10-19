@@ -1,10 +1,12 @@
 EXTRA_UNSORTED :=			\
 	char_to_int.c			\
+	isspace.c				\
+	max.c					\
+	min.c					\
 	strcmp.c				\
 	strnlen.c				\
 	strstr.c				\
-	strtrim_whitespace.c	\
-	isspace.c
+	strtrim_whitespace.c
 
 
 EXTRA_SOURCES := $(EXTRA_UNSORTED)

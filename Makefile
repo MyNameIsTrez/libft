@@ -6,7 +6,7 @@ C_FLAGS ?= -g -Wall -Wextra
 
 HEADERS := libft.h
 
-LINKER_FLAGS ?=
+LINKER_FLAGS ?= -fsanitize=address
 
 
 PART_1_IS :=		\
@@ -35,8 +35,8 @@ PART_1_UNSORTED :=	\
 	atoi.c
 
 PART_1_MALLOC :=	\
-	calloc.c
-	# strdup.c
+	calloc.c		\
+	strdup.c
 
 
 PART_2_UNSORTED :=	\
