@@ -41,7 +41,8 @@ PART_1_MALLOC :=	\
 
 PART_2_UNSORTED :=	\
 	substr.c		\
-	strtrim.c
+	strtrim.c		\
+	strjoin.c
 
 	# split.c			\
 	# itoa.c			\
@@ -52,7 +53,6 @@ PART_2_UNSORTED :=	\
 	# putendl_fd.c	\
 	# putnbr_fd.c
 
-	# strjoin.c		\
 
 
 PART_2_BONUS :=
