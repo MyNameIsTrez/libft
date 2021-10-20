@@ -9,14 +9,12 @@ HEADERS := libft.h
 LINKER_FLAGS ?= -fsanitize=address
 
 
-PART_1_IS :=		\
+PART_1_UNSORTED :=	\
 	isalpha.c		\
 	isdigit.c		\
 	isalnum.c		\
 	isascii.c		\
-	isprint.c
-
-PART_1_UNSORTED :=	\
+	isprint.c		\
 	strlen.c		\
 	memset.c		\
 	bzero.c			\
@@ -32,9 +30,7 @@ PART_1_UNSORTED :=	\
 	memchr.c		\
 	memcmp.c		\
 	strnstr.c		\
-	atoi.c
-
-PART_1_MALLOC :=	\
+	atoi.c			\
 	calloc.c		\
 	strdup.c
 
@@ -43,31 +39,30 @@ PART_2_UNSORTED :=	\
 	substr.c		\
 	strtrim.c		\
 	putchar_fd.c	\
-	strjoin.c
+	strjoin.c		\
+	putstr_fd.c
 
-	# split.c			\
-	# itoa.c			\
+	# split.c		\
+	# itoa.c		\
 	# strmapi.c		\
-	# striteri.c		\
-	# putstr_fd.c		\
+	# striteri.c	\
 	# putendl_fd.c	\
 	# putnbr_fd.c
 
 
-
 PART_2_BONUS :=
-	# lstnew.c		\
+	# lstnew.c			\
 	# lstadd_front.c	\
-	# lstsize.c		\
-	# lstlast.c		\
-	# lstadd_back.c	\
+	# lstsize.c			\
+	# lstlast.c			\
+	# lstadd_back.c		\
 	# lstdelone.c		\
 	# lstclear.c		\
-	# lstiter.c		\
+	# lstiter.c			\
 	# lstmap.c
 
 
-PART_1 := $(PART_1_IS) $(PART_1_UNSORTED) $(PART_1_MALLOC)
+PART_1 := $(PART_1_UNSORTED)
 PART_2 := $(PART_2_UNSORTED) $(PART_2_BONUS)
 
 
