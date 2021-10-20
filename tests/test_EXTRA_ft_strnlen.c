@@ -15,7 +15,7 @@ static size_t	ft_strnlen(const char *s, size_t maxlen)
 
 void	test_EXTRA_ft_strnlen(void)
 {
-	printf("%zu\n", ft_strnlen("foo", 2));
-	printf("%zu\n", ft_strnlen("foo", 3));
-	printf("%zu\n", ft_strnlen("foo", 4));
+	printf("%lu\n", ft_strnlen("foo", 2));
+	printf("%lu\n", ft_strnlen("foo", 3));
+	printf("%lu\n", ft_strnlen("foo", 4));
 }

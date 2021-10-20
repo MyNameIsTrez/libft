@@ -41,16 +41,16 @@ PART_2_UNSORTED :=	\
 	putchar_fd.c	\
 	strjoin.c		\
 	putstr_fd.c		\
-	putendl_fd.c
+	putendl_fd.c	\
+	itoa.c			\
+	#putnbr_fd.c	\
 
 	# split.c		\
-	# itoa.c		\
 	# strmapi.c		\
 	# striteri.c	\
-	# putnbr_fd.c
 
 
-PART_2_BONUS :=
+PART_2_BONUS :=			\
 	# lstnew.c			\
 	# lstadd_front.c	\
 	# lstsize.c			\

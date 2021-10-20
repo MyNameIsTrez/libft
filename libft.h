@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/19 16:23:33 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/20 13:20:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 // # LIBRARIES # //
 
 # include <stddef.h>	// size_t
+# include <stdbool.h>	// bool
 
 // # STRUCTS # //
 
@@ -85,10 +86,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 //// ## EXTRA ## ////
 
-// int		ft_char_to_int(const char c);
+// int		ft_char_to_digit(const char c);
+// char	ft_digit_to_char(const int n);
+// size_t	ft_get_number_len(int n);
 // int		ft_isspace(int c);
 // int		ft_max(int a, int b);
 // int		ft_min(int a, int b);
+// char	*ft_stralloc(size_t n);
 // int		ft_strcmp(const char *s1, const char *s2);
 // size_t	ft_strnlen(const char *s, size_t maxlen);
 // char	*ft_strstr(const char *haystack, const char *needle);

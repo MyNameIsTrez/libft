@@ -1,8 +1,11 @@
 EXTRA_UNSORTED :=			\
-	char_to_int.c			\
+	char_to_digit.c			\
+	digit_to_char.c			\
+	get_number_len.c		\
 	isspace.c				\
 	max.c					\
 	min.c					\
+	stralloc.c				\
 	strcmp.c				\
 	strnlen.c				\
 	strstr.c				\

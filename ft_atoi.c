@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/19 16:16:33 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/20 12:07:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ static char	*ft_strtrim_whitespace(char const *string)
 static int	digit_to_value(const char c)
 {
 	if ('0' <= c && c <= '9')
-	{
 		return (c - '0');
-	}
 	return (-1);
 }
 
@@ -38,9 +36,7 @@ static int	get_positive_integer(const char *string)
 	{
 		character = string[index];
 		if (digit_to_value(character) == -1)
-		{
 			return (0);
-		}
 		integer *= 10;
 		integer += digit_to_value(character);
 		index++;
