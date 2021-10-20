@@ -6,11 +6,10 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:10 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/20 13:14:00 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/20 14:31:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdlib.h>
 
 static char	*ft_stralloc(size_t n)
@@ -18,13 +17,27 @@ static char	*ft_stralloc(size_t n)
 	char	*str;
 
 	str = malloc(n + 1);
-	str[n] = '\0';
+	if (str)
+		str[n] = '\0';
 	return (str);
 }
 
+static size_t	ft_get_number_len(int n)
+{
+	size_t	len;
 
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n != 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
 
-static char	ft_digit_to_char(const int n)
+static char	ft_digit_to_char(int n)
 {
 	if (0 <= n && n <= 9)
 	{
@@ -33,32 +46,16 @@ static char	ft_digit_to_char(const int n)
 	return ('\0');
 }
 
-// mag is 2
-
-// while (foo)
-// {
-// 	digit = foo % 10;
-// 	str[mag] = digit;
-// 	mag--;
-// 	foo = foo / 10;
-// }
-
-// 152 / 10 -> 15
-// 152 % 10 = 2;
-
-// 15 / 10 -> 1
-// 15 % 10 = 5;
-
-// 1 / 10 -> 0
-// 1 % 10 = 1;
-static void	add_digits_to_str(char *str, size_t i, int n, size_t number_len)
+static void	add_digits_to_str(char *str, int n, size_t number_len)
 {
 	int	digit;
 
-	while (n)
+	if (n == 0)
+		str[0] = '0';
+	while (n != 0)
 	{
-		digit = n % 10;
-		str[number_len] = ft_digit_to_char(digit);
+		digit = -(n % 10);
+		str[number_len - 1] = ft_digit_to_char(digit);
 		number_len--;
 		n /= 10;
 	}
@@ -66,18 +63,16 @@ static void	add_digits_to_str(char *str, size_t i, int n, size_t number_len)
 
 char	*ft_itoa(int n)
 {
-	// char			*str;
-	// const size_t	number_len = ft_get_number_len(n);
-	// const int		is_negative = n < 0;
-	// size_t			i;
+	char			*str;
+	const size_t	number_len = ft_get_number_len(n);
 
-	// str = ft_stralloc(number_len + is_negative);
-	// i = 0;
-	// if (is_negative)
-	// {
-	// 	str[0] = '-';
-	// 	i++;
-	// }
-	// add_digits_to_str(str, i, n, number_len);
-	// return (str);
+	str = ft_stralloc(number_len);
+	if (!str)
+		return (NULL);
+	if (n >= 0)
+		n = -n;
+	else
+		str[0] = '-';
+	add_digits_to_str(str, n, number_len);
+	return (str);
 }
