@@ -40,13 +40,13 @@ PART_2_UNSORTED :=	\
 	strtrim.c		\
 	putchar_fd.c	\
 	strjoin.c		\
-	putstr_fd.c
+	putstr_fd.c		\
+	putendl_fd.c
 
 	# split.c		\
 	# itoa.c		\
 	# strmapi.c		\
 	# striteri.c	\
-	# putendl_fd.c	\
 	# putnbr_fd.c
 
 
