@@ -51,7 +51,7 @@ int	main(void)
 	// TEST(test_ft_memset);
 	// TEST(test_ft_putchar_fd);
 	// TEST(test_ft_putendl_fd);
-	// TEST(test_ft_putnbr_fd);
+	TEST(test_ft_putnbr_fd);
 	// TEST(test_ft_putstr_fd);
 	// TEST(test_ft_split);
 	// TEST(test_ft_strchr);

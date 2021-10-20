@@ -1,5 +1,4 @@
 # make -f tester.mk re_tester && ./tester
-# make -f tester.mk re_tester && ./tester 2> out
 
 # TODO: Verify with Marius if the Makefiles are correct using this:
 # https://github.com/BinaryBenji/Libft.42/blob/master/Makefile

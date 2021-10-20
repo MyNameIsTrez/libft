@@ -8,7 +8,8 @@ static char	*ft_stralloc(size_t n)
 	char	*str;
 
 	str = malloc(n + 1);
-	str[n] = '\0';
+	if (str)
+		str[n] = '\0';
 	return (str);
 }
 

@@ -3,5 +3,5 @@
 
 void	test_ft_putnbr_fd(void)
 {
-	ft_putnbr_fd(42, 1);
+	ft_putnbr_fd(-123, 1);
 }

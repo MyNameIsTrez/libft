@@ -7,11 +7,15 @@
 # Allow .c and .h files
 !*.[ch]
 
+# But disallow test and extra files
+*test*
+*EXTRA*
+
 # Allow Makefiles
 !Makefile
 
 # Allow helper Makefiles
-!*.mk
+# !*.mk
 
 # Allow repos to contain their own .gitignore
-!.gitignore
+# !.gitignore

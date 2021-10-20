@@ -43,8 +43,7 @@ PART_2_UNSORTED :=	\
 	putstr_fd.c		\
 	putendl_fd.c	\
 	itoa.c			\
-	#putnbr_fd.c	\
-
+	putnbr_fd.c		\
 	# split.c		\
 	# strmapi.c		\
 	# striteri.c	\
