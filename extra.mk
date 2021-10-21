@@ -5,11 +5,14 @@ EXTRA_UNSORTED :=			\
 	isspace.c				\
 	max.c					\
 	min.c					\
+	str_not_chr.c			\
 	stralloc.c				\
 	strcmp.c				\
 	strnlen.c				\
 	strstr.c				\
-	strtrim_whitespace.c
+	strtrim_whitespace.c	\
+	# free.c				\
+	# nd_array.c			\
 
 
 EXTRA_SOURCES := $(EXTRA_UNSORTED)

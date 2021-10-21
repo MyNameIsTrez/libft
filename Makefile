@@ -2,11 +2,11 @@ NAME := libft.a
 
 CC := gcc
 
-C_FLAGS ?= -g -Wall -Wextra
+C_FLAGS ?= -Wall -Wextra
 
 HEADERS := libft.h
 
-LINKER_FLAGS ?= -fsanitize=address
+LINKER_FLAGS ?= #-fsanitize=address -g
 
 
 PART_1_UNSORTED :=	\
@@ -46,7 +46,7 @@ PART_2_UNSORTED :=	\
 	putnbr_fd.c		\
 	striteri.c		\
 	strmapi.c		\
-	# split.c		\
+	split.c			\
 
 
 PART_2_BONUS :=			\

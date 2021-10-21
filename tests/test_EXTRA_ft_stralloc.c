@@ -5,12 +5,7 @@
 
 static char	*ft_stralloc(size_t n)
 {
-	char	*str;
-
-	str = malloc(n + 1);
-	if (str)
-		str[n] = '\0';
-	return (str);
+	return (ft_calloc(n + 1, sizeof(char)));
 }
 
 static int	ft_max(int a, int b)

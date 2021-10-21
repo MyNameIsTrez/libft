@@ -11,6 +11,8 @@ static void	test(const char *function_name, void function(void))
 	function();
 }
 
+#include <stdlib.h>
+
 int	main(void)
 {
 	printf("Starting tests...\n");
@@ -21,6 +23,7 @@ int	main(void)
 	// TEST(test_EXTRA_ft_isspace);
 	// TEST(test_EXTRA_ft_max);
 	// TEST(test_EXTRA_ft_min);
+	// TEST(test_EXTRA_ft_str_not_chr);
 	// TEST(test_EXTRA_ft_stralloc);
 	// TEST(test_EXTRA_ft_strcmp);
 	// TEST(test_EXTRA_ft_strnlen);
@@ -53,7 +56,7 @@ int	main(void)
 	// TEST(test_ft_putendl_fd);
 	// TEST(test_ft_putnbr_fd);
 	// TEST(test_ft_putstr_fd);
-	// TEST(test_ft_split);
+	TEST(test_ft_split);
 	// TEST(test_ft_strchr);
 	// TEST(test_ft_strdup);
 	// TEST(test_ft_striteri);
@@ -61,7 +64,7 @@ int	main(void)
 	// TEST(test_ft_strlcat);
 	// TEST(test_ft_strlcpy);
 	// TEST(test_ft_strlen);
-	TEST(test_ft_strmapi);
+	// TEST(test_ft_strmapi);
 	// TEST(test_ft_strncmp);
 	// TEST(test_ft_strnstr);
 	// TEST(test_ft_strrchr);
@@ -70,6 +73,7 @@ int	main(void)
 	// TEST(test_ft_tolower);
 	// TEST(test_ft_toupper);
 
+	system("leaks tester");
 	printf("All tests passed!\n");
 	return (0);
 }

@@ -72,6 +72,7 @@ void	test_EXTRA_ft_get_number_len(void);
 void	test_EXTRA_ft_isspace(void);
 void	test_EXTRA_ft_max(void);
 void	test_EXTRA_ft_min(void);
+void	test_EXTRA_ft_str_not_chr(void);
 void	test_EXTRA_ft_stralloc(void);
 void	test_EXTRA_ft_strcmp(void);
 void	test_EXTRA_ft_strnlen(void);

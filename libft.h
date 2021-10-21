@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/20 13:20:16 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/21 11:37:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 // int		ft_isspace(int c);
 // int		ft_max(int a, int b);
 // int		ft_min(int a, int b);
+// char	*ft_str_not_chr(const char *s, int c)
 // char	*ft_stralloc(size_t n);
 // int		ft_strcmp(const char *s1, const char *s2);
 // size_t	ft_strnlen(const char *s, size_t maxlen);
