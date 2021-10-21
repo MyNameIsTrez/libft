@@ -56,12 +56,12 @@ int	main(void)
 	// TEST(test_ft_split);
 	// TEST(test_ft_strchr);
 	// TEST(test_ft_strdup);
-	TEST(test_ft_striteri);
+	// TEST(test_ft_striteri);
 	// TEST(test_ft_strjoin);
 	// TEST(test_ft_strlcat);
 	// TEST(test_ft_strlcpy);
 	// TEST(test_ft_strlen);
-	// TEST(test_ft_strmapi);
+	TEST(test_ft_strmapi);
 	// TEST(test_ft_strncmp);
 	// TEST(test_ft_strnstr);
 	// TEST(test_ft_strrchr);

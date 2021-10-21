@@ -6,20 +6,15 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:10 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/20 17:38:23 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/21 11:22:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static char	*ft_stralloc(size_t n)
 {
-	char	*str;
-
-	str = malloc(n + 1);
-	if (str)
-		str[n] = '\0';
-	return (str);
+	return (ft_calloc(n + 1, sizeof(char)));
 }
 
 // TODO: Replace this with log()!
