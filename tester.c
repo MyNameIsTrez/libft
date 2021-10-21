@@ -51,12 +51,12 @@ int	main(void)
 	// TEST(test_ft_memset);
 	// TEST(test_ft_putchar_fd);
 	// TEST(test_ft_putendl_fd);
-	TEST(test_ft_putnbr_fd);
+	// TEST(test_ft_putnbr_fd);
 	// TEST(test_ft_putstr_fd);
 	// TEST(test_ft_split);
 	// TEST(test_ft_strchr);
 	// TEST(test_ft_strdup);
-	// TEST(test_ft_striteri);
+	TEST(test_ft_striteri);
 	// TEST(test_ft_strjoin);
 	// TEST(test_ft_strlcat);
 	// TEST(test_ft_strlcpy);

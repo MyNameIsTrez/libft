@@ -44,9 +44,9 @@ PART_2_UNSORTED :=	\
 	putendl_fd.c	\
 	itoa.c			\
 	putnbr_fd.c		\
+	striteri.c		\
 	# split.c		\
 	# strmapi.c		\
-	# striteri.c	\
 
 
 PART_2_BONUS :=			\

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:10 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/20 14:31:33 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/20 17:38:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static char	*ft_stralloc(size_t n)
 	return (str);
 }
 
+// TODO: Replace this with log()!
 static size_t	ft_get_number_len(int n)
 {
 	size_t	len;
