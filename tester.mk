@@ -1,5 +1,6 @@
 # make -f tester.mk re_tester && ./tester
 # make f > /dev/null && ./run_test ft_strmapi
+# sh grademe.sh ft_strmapi
 
 # TODO: Verify with Marius if the Makefiles are correct using this:
 # https://github.com/BinaryBenji/Libft.42/blob/master/Makefile

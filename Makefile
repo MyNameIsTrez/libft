@@ -50,7 +50,7 @@ PART_2_UNSORTED :=	\
 
 
 PART_2_BONUS :=			\
-	# lstnew.c			\
+	lstnew.c			\
 	# lstadd_front.c	\
 	# lstsize.c			\
 	# lstlast.c			\

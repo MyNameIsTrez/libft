@@ -7,6 +7,7 @@
 # include <string.h>	// strlen()
 # include <strings.h>	// bzero()
 # include <unistd.h>	// write()
+# include <stdlib.h>	// malloc(), free()
 
 //// ## PART 1 ## ////
 

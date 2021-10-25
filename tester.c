@@ -45,7 +45,7 @@ int	main(void)
 	// TEST(test_ft_lstiter);
 	// TEST(test_ft_lstlast);
 	// TEST(test_ft_lstmap);
-	// TEST(test_ft_lstnew);
+	TEST(test_ft_lstnew);
 	// TEST(test_ft_lstsize);
 	// TEST(test_ft_memchr);
 	// TEST(test_ft_memcmp);
@@ -56,7 +56,7 @@ int	main(void)
 	// TEST(test_ft_putendl_fd);
 	// TEST(test_ft_putnbr_fd);
 	// TEST(test_ft_putstr_fd);
-	TEST(test_ft_split);
+	// TEST(test_ft_split);
 	// TEST(test_ft_strchr);
 	// TEST(test_ft_strdup);
 	// TEST(test_ft_striteri);
