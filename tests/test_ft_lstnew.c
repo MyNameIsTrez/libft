@@ -1,16 +1,26 @@
 #include "../libft.h"
 #include "../tests.h"
 
-static void	free_t_list(t_list **lst)
+static void	*ft_free(void **a)
 {
-	free(*lst);
+	free(*a);
+	*a = NULL;
+	return (NULL);
 }
 
 void	test_ft_lstnew(void)
 {
-	t_list	*lst = ft_lstnew("foo");
-	// printf("%s\n", lst);
-	printf("%s\n", lst->content);
-	// printf("%s\n", lst->next);
-	free_t_list(&lst);
+	char	foo[] = "bar";
+
+	t_list	*lst = ft_lstnew(foo);
+	// t_list	*lst = ft_lstnew("foo");
+	// printf("'%s'\n", lst);
+	// printf("'%s'\n", lst->content);
+	// printf("'%s'\n", lst->next);
+	printf("'%p'\n", lst);
+	ft_free((void *)&lst);
+	// free(lst);
+	// lst = NULL;
+	printf("'%p'\n", lst);
+	// printf("'%s'\n", lst->content);
 }
