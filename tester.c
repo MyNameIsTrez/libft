@@ -1,6 +1,8 @@
 #include "libft.h"
 #include "tests.h"
 
+#include <stdlib.h>
+
 
 #define TEST(f) test(#f, f)
 
@@ -11,7 +13,6 @@ static void	test(const char *function_name, void function(void))
 	function();
 }
 
-#include <stdlib.h>
 
 int	main(void)
 {
@@ -19,6 +20,7 @@ int	main(void)
 
 	// TEST(test_EXTRA_ft_char_to_digit);
 	// TEST(test_EXTRA_ft_digit_to_char);
+	// TEST(test_EXTRA_ft_free);
 	// TEST(test_EXTRA_ft_get_number_len);
 	// TEST(test_EXTRA_ft_isspace);
 	// TEST(test_EXTRA_ft_max);
@@ -40,12 +42,12 @@ int	main(void)
 	// TEST(test_ft_itoa);
 	// TEST(test_ft_lstadd_back);
 	// TEST(test_ft_lstadd_front);
-	// TEST(test_ft_lstclear);
+	TEST(test_ft_lstclear);
 	// TEST(test_ft_lstdelone);
 	// TEST(test_ft_lstiter);
 	// TEST(test_ft_lstlast);
 	// TEST(test_ft_lstmap);
-	TEST(test_ft_lstnew);
+	// TEST(test_ft_lstnew);
 	// TEST(test_ft_lstsize);
 	// TEST(test_ft_memchr);
 	// TEST(test_ft_memcmp);
@@ -73,7 +75,7 @@ int	main(void)
 	// TEST(test_ft_tolower);
 	// TEST(test_ft_toupper);
 
-	system("leaks tester");
+	system("leaks --quiet tester");
 	printf("All tests passed!\n");
 	return (0);
 }
