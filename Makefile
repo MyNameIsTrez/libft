@@ -2,11 +2,13 @@ NAME := libft.a
 
 CC := gcc
 
+OBJ_DIR := obj
+
 C_FLAGS ?= -Wall -Wextra
 
 HEADERS := libft.h
 
-LINKER_FLAGS ?= #-fsanitize=address -g
+LINKER_FLAGS ?= # -fsanitize=address -g
 
 
 PART_1_UNSORTED :=	\
@@ -49,26 +51,25 @@ PART_2_UNSORTED :=	\
 	split.c			\
 
 
-PART_2_BONUS :=			\
-	lstnew.c			\
+PART_2_BONUS :=		\
+	lstnew.c		\
+	lstdelone.c		\
+	lstclear.c		\
 	# lstadd_front.c	\
-	# lstsize.c			\
-	# lstlast.c			\
-	# lstadd_back.c		\
-	# lstdelone.c		\
-	# lstclear.c		\
-	# lstiter.c			\
+	# lstsize.c		\
+	# lstlast.c		\
+	# lstadd_back.c	\
+	# lstiter.c		\
 	# lstmap.c
 
 
-PART_1 := $(PART_1_UNSORTED)
-PART_2 := $(PART_2_UNSORTED) $(PART_2_BONUS)
+SOURCES := $(PART_1_UNSORTED) $(PART_2_UNSORTED)
 
+ifdef BONUS
+SOURCES += $(PART_2_BONUS)
+endif
 
-SOURCES := $(PART_1) $(PART_2)
-
-OBJECT_FILENAMES := $(addprefix ft_,$(SOURCES:.c=.o))
-OBJECT_PATHS := $(addprefix obj/,$(OBJECT_FILENAMES))
+OBJECT_PATHS := $(addprefix $(OBJ_DIR)/ft_,$(SOURCES:.c=.o))
 
 INCLUDES := $(addprefix -I ,$(dir $(HEADERS)))
 
@@ -76,21 +77,21 @@ INCLUDES := $(addprefix -I ,$(dir $(HEADERS)))
 all: $(NAME)
 
 $(NAME): $(OBJECT_PATHS)
-	@ar rcs $(NAME) $^
+	@ar rcs $(NAME) $(OBJECT_PATHS)
 
-obj/%.o: %.c $(HEADERS)
+$(OBJ_DIR)/%.o: %.c $(HEADERS)
 	@mkdir -p $(@D)
-	@$(CC) $(C_FLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) $(C_FLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	@rm -f $(OBJECT_PATHS)
+	@rm -rf $(OBJ_DIR)/
 
 fclean: clean
-	@rm -f $(NAME) $(OBJECT_FILES)
+	@rm -f $(NAME)
 
 re: fclean all
 
-# bonus:
-#	compile with bonus
+bonus:
+	@$(MAKE) BONUS=1 all
 
 .PHONY: all clean fclean re bonus
