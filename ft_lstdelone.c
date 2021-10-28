@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:01 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/11 16:38:36 by sbos          ########   odam.nl         */
+/*   Updated: 2021/10/28 17:00:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	if (lst == NULL)
 		return ;
 	if (del != NULL)
-		del(lst->content);
+		del((*lst).content);
 	ft_free(&lst);
 }
