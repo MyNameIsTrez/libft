@@ -69,6 +69,7 @@ void	test_ft_lstmap(void);
 
 void	test_EXTRA_ft_char_to_digit(void);
 void	test_EXTRA_ft_digit_to_char(void);
+void	test_EXTRA_ft_free(void);
 void	test_EXTRA_ft_get_number_len(void);
 void	test_EXTRA_ft_isspace(void);
 void	test_EXTRA_ft_max(void);
