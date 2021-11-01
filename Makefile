@@ -71,13 +71,20 @@ endif
 
 OBJECT_PATHS := $(addprefix $(OBJ_DIR)/ft_,$(SOURCES:.c=.o))
 
-INCLUDES := $(addprefix -I ,$(dir $(HEADERS)))
+# Only cleans when MAKE_DATA changes.
+DATA_FILE := .make_data
+MAKE_DATA = $(C_FLAGS) $(LINKER_FLAGS) $(SOURCES)
+PRE_RULES =
+ifneq ($(shell echo "$(MAKE_DATA)"), $(shell cat "$(DATA_FILE)" 2> /dev/null))
+PRE_RULES += clean
+endif
 
 
-all: $(NAME)
+all: $(PRE_RULES) $(NAME)
 
 $(NAME): $(OBJECT_PATHS)
-	@ar rcs $(NAME) $(OBJECT_PATHS)
+	ar rcs $(NAME) $(OBJECT_PATHS)
+	@echo "$(MAKE_DATA)" > $(DATA_FILE)
 
 $(OBJ_DIR)/%.o: %.c $(HEADERS)
 	@mkdir -p $(@D)
