@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 
-#define TEST(f) test(#f, f)
+#define TEST(fun) test(#fun, fun)
 
 
 static void	test(const char *function_name, void function(void))
@@ -42,7 +42,7 @@ int	main(void)
 	// TEST(test_ft_itoa);
 	// TEST(test_ft_lstadd_back);
 	// TEST(test_ft_lstadd_front);
-	TEST(test_ft_lstclear);
+	// TEST(test_ft_lstclear);
 	// TEST(test_ft_lstdelone);
 	// TEST(test_ft_lstiter);
 	// TEST(test_ft_lstlast);

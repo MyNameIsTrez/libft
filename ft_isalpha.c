@@ -6,11 +6,11 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/05 15:16:20 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/07 15:03:13 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 14:34:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isalpha(int chr)
 {
-	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'));
+	return (('A' <= chr && chr <= 'Z') || ('a' <= chr && chr <= 'z'));
 }

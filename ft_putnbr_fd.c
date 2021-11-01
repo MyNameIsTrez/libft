@@ -6,74 +6,67 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:31 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/20 16:22:12 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 16:07:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <unistd.h>
+#include "libft.h"
 
-static size_t	ft_get_number_len(int n)
+static size_t	ft_get_number_len(int nbr)
 {
 	size_t	len;
 
 	len = 0;
-	if (n <= 0)
+	if (nbr <= 0)
 		len++;
-	while (n != 0)
+	while (nbr != 0)
 	{
-		n /= 10;
+		nbr /= 10;
 		len++;
 	}
 	return (len);
 }
 
-static char	ft_digit_to_char(int n)
+static char	ft_digit_to_char(int digit)
 {
-	if (0 <= n && n <= 9)
+	if (0 <= digit && digit <= 9)
 	{
-		return (n + '0');
+		return (digit + '0');
 	}
 	return ('\0');
 }
 
-// [1]23, [2]3, [3]
-static void	write_digits(int n, size_t number_len, int fd)
+static void	write_digits(int nbr, size_t nbr_len, int fd)
 {
 	int		n_copy;
 	int		i;
 	int		j;
 	int		digit;
-	char	c;
 
-	if (n == 0)
-		write(fd, "0", 1);
-	n_copy = n;
-	i = number_len;
-	// printf("number_len: %lu\n\n", number_len);
+	if (nbr == 0)
+		ft_putchar_fd('0', fd);
+	n_copy = nbr;
+	i = nbr_len;
 	while (i > 0)
 	{
-		n_copy = n;
+		n_copy = nbr;
 		j = i;
 		while (j > 0)
 		{
 			digit = -(n_copy % 10);
-			// printf("digit: %d, n: %d, i: %d, j: %d\n", digit, n, i, j);
 			n_copy /= 10;
 			j--;
 		}
-		c = ft_digit_to_char(digit);
-		// printf("writing '%c'\n\n", c);
-		write(fd, &c, 1);
+		ft_putchar_fd(ft_digit_to_char(digit), fd);
 		i--;
 	}
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int nbr, int fd)
 {
-	if (n >= 0)
-		n = -n;
+	if (nbr >= 0)
+		nbr = -nbr;
 	else
-		write(fd, "-", 1);
-	write_digits(n, ft_get_number_len(n) - 1, fd);
+		ft_putchar_fd('-', fd);
+	write_digits(nbr, ft_get_number_len(nbr) - 1, fd);
 }

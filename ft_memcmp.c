@@ -6,31 +6,27 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:44 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/14 10:09:15 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 15:24:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
-// TODO: The warmachine tester doesn't think it's necessary, but maybe add this:
-// src1[i] != '\0' && src2[i] != '\0'
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *str1, const void *str2, size_t len)
 {
 	unsigned char	*src1;
 	unsigned char	*src2;
 	size_t			i;
 	int				diff;
 
-	src1 = (unsigned char *)s1;
-	src2 = (unsigned char *)s2;
+	src1 = (unsigned char *)str1;
+	src2 = (unsigned char *)str2;
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
 		diff = src1[i] - src2[i];
 		if (diff != 0)
-		{
 			return (diff);
-		}
 		i++;
 	}
 	return (0);

@@ -6,23 +6,23 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:46 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/13 13:07:37 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 16:04:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *ptr, int chr, size_t len)
 {
 	size_t	i;
+	char	*chr_ptr;
 
+	chr_ptr = (char *)ptr;
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		if (((char *)s)[i] == c)
-		{
-			return ((void *)s + i);
-		}
+		if (chr_ptr[i] == chr)
+			return ((void *)&chr_ptr[i]);
 		i++;
 	}
 	return (NULL);

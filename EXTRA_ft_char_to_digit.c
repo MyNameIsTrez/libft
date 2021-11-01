@@ -6,17 +6,13 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/20 13:19:51 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/20 13:19:53 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 14:07:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_char_to_digit(const char c)
+int	ft_char_to_digit(const char chr)
 {
-	if ('0' <= c && c <= '9')
-	{
-		return (c - '0');
-	}
+	if ('0' <= chr && chr <= '9')
+		return (chr - '0');
 	return (-1);
 }

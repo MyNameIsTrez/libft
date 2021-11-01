@@ -1,12 +1,12 @@
 #include "../libft.h"
 #include "../tests.h"
 
-static size_t	ft_strnlen(const char *s, size_t maxlen)
+static size_t	ft_strnlen(const char *s, const size_t max_len)
 {
 	size_t	len;
 
 	len = 0;
-	while (s[len] != '\0' && len < maxlen)
+	while (s[len] != '\0' && len < max_len)
 	{
 		len++;
 	}

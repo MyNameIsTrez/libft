@@ -6,11 +6,11 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/07 14:24:17 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/08 10:44:56 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 14:35:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+int	ft_isprint(int chr)
 {
-	return (32 <= c && c <= 126);
+	return (32 <= chr && chr <= 126);
 }

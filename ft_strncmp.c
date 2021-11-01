@@ -6,23 +6,23 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:04 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/19 16:17:22 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 14:55:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *str1, const char *str2, size_t len)
 {
 	unsigned char	*src1;
 	unsigned char	*src2;
 	size_t			i;
 	int				diff;
 
-	src1 = (unsigned char *)s1;
-	src2 = (unsigned char *)s2;
+	src1 = (unsigned char *)str1;
+	src2 = (unsigned char *)str2;
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
 		diff = src1[i] - src2[i];
 		if (diff != 0)

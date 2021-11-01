@@ -6,13 +6,13 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/14 16:00:04 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/18 16:13:35 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 14:24:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim_whitespace(char const *string)
+char	*ft_strtrim_whitespace(char const *str)
 {
-	return (ft_strtrim(string, " \t\n\v\f\r"));
+	return (ft_strtrim(str, " \t\n\v\f\r"));
 }

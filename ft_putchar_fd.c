@@ -6,13 +6,13 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:36 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/19 17:09:33 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 14:44:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char chr, int fd)
 {
-	write(fd, &c, 1);
+	write(fd, &chr, 1);
 }

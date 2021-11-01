@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
-size_t	ft_strnlen(const char *s, size_t maxlen)
+size_t	ft_strnlen(const char *str, const size_t max_len)
 {
 	size_t	len;
 
 	len = 0;
-	while (s[len] != '\0' && len < maxlen)
+	while (str[len] != '\0' && len < max_len)
 	{
 		len++;
 	}

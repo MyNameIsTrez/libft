@@ -17,9 +17,9 @@ void	test_ft_strlcpy(void)
 	memset(dst, 0, 15);
 	memset(dst, 'r', 6);
 	char	src[] = "lorem ipsum dolor sit amet";
-	size_t	dstsize = 0;
+	size_t	dst_size = 0;
 
-	ft_print_result(ft_strlcpy(dst, src, dstsize));
+	ft_print_result(ft_strlcpy(dst, src, dst_size));
 
 	write(2, "\n", 1);
 	write(2, dst, 15);

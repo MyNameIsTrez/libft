@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_stralloc(size_t n)
+char	*ft_stralloc(const size_t len)
 {
-	return (ft_calloc(n + 1, sizeof(char)));
+	return (ft_calloc(len + 1, sizeof(char)));
 }

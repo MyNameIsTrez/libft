@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:29 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/20 11:10:10 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 14:48:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 #include <unistd.h>
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *str, int fd)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
+	if (str != NULL)
+		write(fd, str, ft_strlen(str));
 }

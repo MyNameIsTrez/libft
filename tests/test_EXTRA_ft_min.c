@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include "../tests.h"
 
-static int	ft_min(int a, int b)
+static int	ft_min(const int a, const int b)
 {
 	if (a < b)
 		return (a);

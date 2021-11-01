@@ -6,11 +6,11 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/19 14:34:05 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/19 14:39:07 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 15:29:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_max(int a, int b)
+int	ft_max(const int a, const int b)
 {
 	if (a > b)
 		return (a);

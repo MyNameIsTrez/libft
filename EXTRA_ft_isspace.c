@@ -6,13 +6,16 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/14 13:47:28 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/18 15:50:42 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 15:29:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+int	ft_isspace(const int chr)
 {
-	return (ft_strchr(" \t\n\v\f\r", c) != NULL);
+	if (chr == '\t' || chr == '\n' || chr == '\v'
+		|| chr == '\f' || chr == '\r' || chr == ' ')
+		return (1);
+	return (0);
 }

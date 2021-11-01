@@ -6,11 +6,11 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/19 14:33:17 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/19 14:39:14 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 15:31:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_min(int a, int b)
+int	ft_min(const int a, const int b)
 {
 	if (a < b)
 		return (a);

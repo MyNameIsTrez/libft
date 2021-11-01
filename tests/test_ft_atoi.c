@@ -4,8 +4,8 @@
 
 void	test_ft_atoi(void)
 {
-	// char	string[] = "4";
-	// printf("%d\n", ft_atoi(string));
+	// char	str[] = "4";
+	// printf("%d\n", ft_atoi(str));
 	// printf("%d\n", ft_atoi(""));
 	// printf("%d\n", ft_atoi("4"));
 	// printf("%d\n", ft_atoi("42"));
