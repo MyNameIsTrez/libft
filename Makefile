@@ -4,7 +4,7 @@ CC := gcc
 
 OBJ_DIR := obj
 
-C_FLAGS ?= -Wall -Wextra
+C_FLAGS ?= -Wall -Wextra -Werror #-Wconversion
 
 HEADERS := libft.h
 
@@ -63,6 +63,9 @@ PART_2_BONUS :=		\
 	lstmap.c
 
 
+INCLUDES := $(addprefix -I ,$(dir $(HEADERS)))
+
+
 SOURCES := $(PART_1_UNSORTED) $(PART_2_UNSORTED)
 
 ifdef BONUS
@@ -70,6 +73,12 @@ SOURCES += $(PART_2_BONUS)
 endif
 
 OBJECT_PATHS := $(addprefix $(OBJ_DIR)/ft_,$(SOURCES:.c=.o))
+
+
+ifdef DEBUG
+C_FLAGS += -g
+LINKER_FLAGS += -g
+endif
 
 # Only cleans when MAKE_DATA changes.
 DATA_FILE := .make_data
