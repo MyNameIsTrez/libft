@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:05 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/28 17:00:30 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 12:06:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		*lst = new;
 	else
 	{
-		(*new).next = *lst;
+		new->next = *lst;
 		*lst = new;
 	}
 }
