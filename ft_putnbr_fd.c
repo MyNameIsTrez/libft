@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:31 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 16:07:45 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 17:14:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ static size_t	ft_get_number_len(int nbr)
 static char	ft_digit_to_char(int digit)
 {
 	if (0 <= digit && digit <= 9)
-	{
 		return (digit + '0');
-	}
 	return ('\0');
 }
 

@@ -18,8 +18,6 @@ size_t	ft_strnlen(const char *str, const size_t max_len)
 
 	len = 0;
 	while (str[len] != '\0' && len < max_len)
-	{
 		len++;
-	}
 	return (len);
 }

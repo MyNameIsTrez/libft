@@ -6,13 +6,13 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:58 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 14:24:56 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/01 16:56:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	get_start_index(char const *str, char const *trim_set)
+static unsigned int	get_start_index(const char *str, const char *trim_set)
 {
 	unsigned int	start;
 
@@ -22,7 +22,7 @@ static unsigned int	get_start_index(char const *str, char const *trim_set)
 	return (start);
 }
 
-static unsigned int	get_end_index(char const *str, char const *trim_set)
+static unsigned int	get_end_index(const char *str, const char *trim_set)
 {
 	unsigned int	end;
 
@@ -32,14 +32,12 @@ static unsigned int	get_end_index(char const *str, char const *trim_set)
 	return (end);
 }
 
-char	*ft_strtrim(char const *str, char const *trim_set)
+char	*ft_strtrim(const char *str, const char *trim_set)
 {
 	unsigned int	start;
 	unsigned int	end;
 	size_t			len;
 
-	if (str == NULL || trim_set == NULL)
-		return (NULL);
 	start = get_start_index(str, trim_set);
 	if (str[start] == '\0')
 		return (ft_strdup(""));
