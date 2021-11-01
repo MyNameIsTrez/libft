@@ -55,12 +55,12 @@ PART_2_BONUS :=		\
 	lstnew.c		\
 	lstdelone.c		\
 	lstclear.c		\
-	# lstadd_front.c	\
-	# lstsize.c		\
-	# lstlast.c		\
-	# lstadd_back.c	\
-	# lstiter.c		\
-	# lstmap.c
+	lstsize.c		\
+	lstlast.c		\
+	lstadd_back.c	\
+	lstadd_front.c	\
+	lstiter.c		\
+	lstmap.c
 
 
 SOURCES := $(PART_1_UNSORTED) $(PART_2_UNSORTED)
