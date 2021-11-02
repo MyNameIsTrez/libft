@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:26 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/02 12:34:28 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/02 13:52:34 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ static size_t	get_word_count(char *str, char chr)
 			break ;
 		end_of_word = ft_strchr(start_of_word, chr);
 		str = end_of_word;
+		word_count++;
 		if (str == NULL)
 			break ;
-		word_count++;
 	}
 	return (word_count);
 }
