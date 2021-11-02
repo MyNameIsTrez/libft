@@ -1,14 +1,6 @@
 #include "../libft.h"
 #include "../tests.h"
 
-static int	ft_max(const int a, const int b)
-{
-	if (a > b)
-		return (a);
-	else
-		return (b);
-}
-
 void	test_EXTRA_ft_max(void)
 {
 	assert(ft_max(1, 2) == 2);

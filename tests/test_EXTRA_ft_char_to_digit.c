@@ -1,15 +1,6 @@
 #include "../libft.h"
 #include "../tests.h"
 
-static int	ft_char_to_digit(const char c)
-{
-	if ('0' <= c && c <= '9')
-	{
-		return (c - '0');
-	}
-	return (-1);
-}
-
 void	test_EXTRA_ft_char_to_digit(void)
 {
 	int	i = 0;

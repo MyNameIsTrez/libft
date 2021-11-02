@@ -3,24 +3,6 @@
 
 #include <stdlib.h>
 
-static char	*ft_stralloc(const size_t len)
-{
-	return (ft_calloc(len + 1, sizeof(char)));
-}
-
-static int	ft_max(const int a, const int b)
-{
-	if (a > b)
-		return (a);
-	else
-		return (b);
-}
-
-static int	ft_strcmp(const char *str1, const char *str2)
-{
-	return (ft_strncmp(str1, str2, ft_max(ft_strlen(str1), ft_strlen(str2))));
-}
-
 void	test_EXTRA_ft_stralloc(void)
 {
 	char	*str;

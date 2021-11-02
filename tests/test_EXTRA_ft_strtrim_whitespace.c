@@ -1,33 +1,6 @@
 #include "../libft.h"
 #include "../tests.h"
 
-static char	*ft_strtrim_whitespace(char const *str)
-{
-	return (ft_strtrim(str, " \t\n\v\f\r"));
-}
-
-static int	ft_strcmp(const char *str1, const char *str2)
-{
-	unsigned char	*src1;
-	unsigned char	*src2;
-	size_t			i;
-	int				diff;
-
-	src1 = (unsigned char *)str1;
-	src2 = (unsigned char *)str2;
-	i = 0;
-	while (src1[i] != '\0' && src2[i] != '\0')
-	{
-		diff = src1[i] - src2[i];
-		if (diff != 0)
-		{
-			return (diff);
-		}
-		i++;
-	}
-	return (0);
-}
-
 void	test_EXTRA_ft_strtrim_whitespace(void)
 {
 	printf("'%s'\n", ft_strtrim_whitespace(" a"));

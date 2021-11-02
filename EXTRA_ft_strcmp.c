@@ -11,14 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_max(const int a, const int b)
-{
-	if (a > b)
-		return (a);
-	else
-		return (b);
-}
+#include "extra.h"
 
 int	ft_strcmp(const char *str1, const char *str2)
 {

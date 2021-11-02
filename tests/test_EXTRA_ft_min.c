@@ -1,14 +1,6 @@
 #include "../libft.h"
 #include "../tests.h"
 
-static int	ft_min(const int a, const int b)
-{
-	if (a < b)
-		return (a);
-	else
-		return (b);
-}
-
 void	test_EXTRA_ft_min(void)
 {
 	assert(ft_min(1, 2) == 1);

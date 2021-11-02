@@ -1,16 +1,9 @@
 #include "../libft.h"
 #include "../tests.h"
 
-static void	*ft_free(void **a)
-{
-	free(*a);
-	*a = NULL;
-	return (NULL);
-}
-
 static void	free_t_list_content(void *content)
 {
-	ft_free(&content);
+	ft_free(content);
 }
 
 void	test_ft_lstdelone(void)
