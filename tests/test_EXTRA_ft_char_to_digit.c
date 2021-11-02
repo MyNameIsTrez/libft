@@ -7,7 +7,7 @@ void	test_EXTRA_ft_char_to_digit(void)
 
 	while (i <= 9)
 	{
-		assert(ft_char_to_digit(i + '0') == i);
+		assert(ft_char_to_digit((char)(i + '0')) == i);
 		i++;
 	}
 

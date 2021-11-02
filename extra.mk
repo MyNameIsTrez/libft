@@ -11,7 +11,7 @@ EXTRA_UNSORTED :=			\
 	strnlen.c				\
 	strstr.c				\
 	strtrim_whitespace.c	\
-	# free.c				\
+	free.c					\
 	# nd_array.c			\
 
 

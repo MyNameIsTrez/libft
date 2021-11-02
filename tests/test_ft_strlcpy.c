@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include "../tests.h"
 
-static void	ft_print_result(int n)
+static void	ft_print_result(size_t n)
 {
 	char	c;
 

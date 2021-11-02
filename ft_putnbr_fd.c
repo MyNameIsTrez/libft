@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:31 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 17:14:13 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/02 12:31:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,29 +30,29 @@ static size_t	ft_get_number_len(int nbr)
 static char	ft_digit_to_char(int digit)
 {
 	if (0 <= digit && digit <= 9)
-		return (digit + '0');
+		return ((char)digit + '0');
 	return ('\0');
 }
 
 static void	write_digits(int nbr, size_t nbr_len, int fd)
 {
-	int		n_copy;
-	int		i;
-	int		j;
+	int		nbr_copy;
 	int		digit;
+	size_t	i;
+	size_t	j;
 
 	if (nbr == 0)
 		ft_putchar_fd('0', fd);
-	n_copy = nbr;
+	nbr_copy = nbr;
 	i = nbr_len;
 	while (i > 0)
 	{
-		n_copy = nbr;
+		nbr_copy = nbr;
 		j = i;
 		while (j > 0)
 		{
-			digit = -(n_copy % 10);
-			n_copy /= 10;
+			digit = -(nbr_copy % 10);
+			nbr_copy /= 10;
 			j--;
 		}
 		ft_putchar_fd(ft_digit_to_char(digit), fd);

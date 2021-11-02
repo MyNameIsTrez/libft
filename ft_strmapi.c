@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:06 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 16:56:33 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/02 12:32:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static char	*ft_stralloc(const size_t len)
 
 char	*ft_strmapi(const char *input_str, char (*fun)(unsigned int, char))
 {
-	char	*output_str;
-	size_t	i;
+	char			*output_str;
+	unsigned int	i;
 
 	output_str = ft_stralloc(ft_strlen(input_str));
 	if (output_str == NULL)

@@ -4,7 +4,7 @@ CC := gcc
 
 OBJ_DIR := obj
 
-C_FLAGS ?= -Wall -Wextra -Werror #-Wconversion
+C_FLAGS ?= -Wall -Wextra -Werror -Wconversion
 
 HEADERS := libft.h
 

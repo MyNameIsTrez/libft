@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/07 14:24:17 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 14:44:33 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/02 12:22:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memset(void *dst, int chr, size_t len)
 	i = 0;
 	while (i < len)
 	{
-		dst_copy[i] = chr;
+		dst_copy[i] = (char)chr;
 		i++;
 	}
 	return (dst);

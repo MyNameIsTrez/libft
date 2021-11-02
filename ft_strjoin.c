@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:15 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 16:56:12 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/02 12:29:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static char	*ft_stralloc(const size_t len)
 
 char	*ft_strjoin(const char *str1, const char *str2)
 {
-	int		str1_len;
-	int		str2_len;
+	size_t	str1_len;
+	size_t	str2_len;
 	char	*joined;
 
 	str1_len = ft_strlen(str1);

@@ -15,5 +15,6 @@
 
 int	ft_strcmp(const char *str1, const char *str2)
 {
-	return (ft_strncmp(str1, str2, ft_max(ft_strlen(str1), ft_strlen(str2))));
+	return (ft_strncmp(str1, str2,
+			(size_t)ft_max((int)ft_strlen(str1), (int)ft_strlen(str2))));
 }

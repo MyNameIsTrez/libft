@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:58 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 16:56:19 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/02 12:28:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static unsigned int	get_start_index(const char *str, const char *trim_set)
 	return (start);
 }
 
-static unsigned int	get_end_index(const char *str, const char *trim_set)
+static size_t	get_end_index(const char *str, const char *trim_set)
 {
-	unsigned int	end;
+	size_t	end;
 
 	end = ft_strlen(str) - 1;
 	while (end > 0 && ft_strchr(trim_set, str[end]) != NULL)
@@ -35,7 +35,7 @@ static unsigned int	get_end_index(const char *str, const char *trim_set)
 char	*ft_strtrim(const char *str, const char *trim_set)
 {
 	unsigned int	start;
-	unsigned int	end;
+	size_t			end;
 	size_t			len;
 
 	start = get_start_index(str, trim_set);

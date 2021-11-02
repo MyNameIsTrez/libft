@@ -1,9 +1,9 @@
 #include "../libft.h"
 #include "../tests.h"
 
-void	ft_print_result(char const *s)
+void	ft_print_result(const char *s)
 {
-	int		len;
+	size_t	len;
 
 	len = 0;
 	while (s[len])

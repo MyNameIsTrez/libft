@@ -1,6 +1,8 @@
 #ifndef TESTS_H
 # define TESTS_H
 
+# include "extra.h"
+
 # include <stdio.h>		// printf(), dprintf()
 # include <assert.h>	// assert()
 # include <ctype.h>		// isalnum(), isascii()
