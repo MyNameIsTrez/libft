@@ -21,12 +21,6 @@ obj/%.o: tests/%.c $(HEADERS)
 	@mkdir -p $(@D)
 	@$(CC) -c $(C_FLAGS) -g $(INCLUDES) -o $@ $<
 
-clean_tester: clean
-	@rm -f $(TESTER_OBJECTS) $(EXTRA_OBJECTS) $(EXTRA_TESTER_OBJECTS)
+re_tester: fclean tester
 
-fclean_tester: fclean clean_tester
-	@rm -f tester
-
-re_tester: fclean_tester tester
-
-.PHONY: tester clean_tester fclean_tester re_tester
+.PHONY: tester re_tester
