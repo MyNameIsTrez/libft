@@ -1,8 +1,6 @@
 #include "../libft.h"
 #include "../tests.h"
 
-#include <stdlib.h>
-
 void	test_EXTRA_ft_stralloc(void)
 {
 	char	*str;

@@ -1,8 +1,6 @@
 #include "../libft.h"
 #include "../tests.h"
 
-#include <stddef.h>
-
 void	test_EXTRA_ft_get_number_len(void)
 {
 	// printf("number_len: %lu\n", ft_get_number_len(123));

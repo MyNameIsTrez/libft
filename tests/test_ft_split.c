@@ -3,7 +3,7 @@
 
 static void	ft_print_result(char const *s)
 {
-	int		len;
+	size_t	len;
 
 	len = 0;
 	while (s[len])

@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include "../tests.h"
 
-void *		lstmap_f(void *content) {
+static void *	lstmap_f(void *content) {
 	(void)content;
 	return ("OK !");
 }

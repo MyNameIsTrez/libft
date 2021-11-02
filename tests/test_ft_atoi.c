@@ -1,6 +1,5 @@
 #include "../libft.h"
 #include "../tests.h"
-#include <stdint.h>
 
 void	test_ft_atoi(void)
 {

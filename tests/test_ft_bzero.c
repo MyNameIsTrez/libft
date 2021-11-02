@@ -1,7 +1,6 @@
 #include "../libft.h"
 #include "../tests.h"
 
-// bzero(str, 2));
 void	test_ft_bzero(void)
 {
 	char	str_ft[4];
