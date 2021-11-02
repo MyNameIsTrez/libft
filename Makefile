@@ -93,17 +93,17 @@ all: $(PRE_RULES) $(NAME)
 
 $(NAME): $(OBJECT_PATHS)
 	ar rcs $(NAME) $(OBJECT_PATHS)
-	@echo "$(MAKE_DATA)" > $(DATA_FILE)
+	echo "$(MAKE_DATA)" > $(DATA_FILE)
 
 $(OBJ_DIR)/%.o: %.c $(HEADERS)
 	@mkdir -p $(@D)
 	$(CC) $(C_FLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJ_DIR)/
+	rm -rf $(OBJ_DIR)/
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME) tester
 
 re: fclean all
 
