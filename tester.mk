@@ -1,6 +1,6 @@
 # make -f tester.mk tester && ./tester
-# make libclean all && ./run_test ft_lstmap
-# sh grademe.sh -u -n -f -ob
+# make libclean all && ./run_test
+# sh grademe.sh -u
 
 
 export DEBUG=1
