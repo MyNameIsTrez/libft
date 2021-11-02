@@ -11,7 +11,7 @@ HEADERS := libft.h
 LINKER_FLAGS ?= # -fsanitize=address -g
 
 
-PART_1 :=	\
+PART_1_SOURCES :=	\
 	ft_isalpha.c	\
 	ft_isdigit.c	\
 	ft_isalnum.c	\
@@ -37,7 +37,7 @@ PART_1 :=	\
 	ft_strdup.c
 
 
-PART_2 :=	\
+PART_2_SOURCES :=	\
 	ft_substr.c		\
 	ft_strtrim.c	\
 	ft_putchar_fd.c	\
@@ -51,7 +51,7 @@ PART_2 :=	\
 	ft_split.c		\
 
 
-PART_2_BONUS :=			\
+BONUS_SOURCES :=		\
 	ft_lstnew.c			\
 	ft_lstdelone.c		\
 	ft_lstclear.c		\
@@ -66,10 +66,10 @@ PART_2_BONUS :=			\
 INCLUDES := $(addprefix -I ,$(dir $(HEADERS)))
 
 
-SOURCES := $(PART_1) $(PART_2)
+SOURCES := $(PART_1_SOURCES) $(PART_2_SOURCES)
 
-ifdef BONUS
-SOURCES += $(PART_2_BONUS)
+ifdef ADD_BONUS
+SOURCES += $(BONUS_SOURCES)
 endif
 
 OBJECT_PATHS := $(addprefix $(OBJ_DIR)/,$(SOURCES:.c=.o))
@@ -112,6 +112,6 @@ fclean: clean
 re: fclean all
 
 bonus:
-	@$(MAKE) BONUS=1 all
+	@$(MAKE) ADD_BONUS=1 all
 
 .PHONY: all clean fclean re bonus
