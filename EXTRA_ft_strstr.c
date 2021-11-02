@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:02 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 13:18:15 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/02 14:25:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strstr(const char *haystack, const char *needle)
 		{
 			offset++;
 			if (needle[offset] == '\0')
-				return ((char *)haystack + first_index);
+				return (&((char *)haystack)[first_index]);
 		}
 		else
 		{

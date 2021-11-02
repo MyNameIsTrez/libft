@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:55 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 16:54:32 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/02 14:29:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 
 	if (ft_strlen(str) <= start)
 		return (ft_strdup(""));
-	new_len = ft_strnlen(str + start, len);
-	substr = malloc(new_len + 1);
+	new_len = ft_strnlen(&str[start], len);
+	substr = malloc((new_len + 1) * sizeof(char));
 	if (substr != NULL)
 	{
 		substr[new_len] = '\0';
-		ft_memcpy(substr, str + start, new_len);
+		ft_memcpy(substr, &str[start], new_len);
 	}
 	return (substr);
 }

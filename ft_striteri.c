@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:17 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/02 12:32:37 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/02 14:26:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_striteri(char *str, void (*fun)(unsigned int, char*))
 	i = 0;
 	while (str[i] != '\0')
 	{
-		fun(i, str + i);
+		fun(i, &str[i]);
 		i++;
 	}
 }

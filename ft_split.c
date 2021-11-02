@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:26 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/02 13:52:34 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/02 14:25:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ static char	*ft_str_not_chr(const char *str, const int chr)
 	while (str[i] != '\0')
 	{
 		if (str[i] != chr)
-			return ((char *)str + i);
+			return (&((char *)str)[i]);
 		i++;
 	}
 	if (chr == '\0')
-		return ((char *)str + i);
+		return (&((char *)str)[i]);
 	else
 		return (NULL);
 }
