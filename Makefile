@@ -4,14 +4,14 @@ CC := gcc
 
 OBJ_DIR := obj
 
-C_FLAGS ?= -Wall -Wextra -Werror -Wconversion
+C_FLAGS ?= -Wall -Wextra -Werror
 
 HEADERS := libft.h
 
 LINKER_FLAGS ?= # -fsanitize=address -g
 
 
-PART_1_UNSORTED :=	\
+PART_1 :=	\
 	ft_isalpha.c	\
 	ft_isdigit.c	\
 	ft_isalnum.c	\
@@ -37,7 +37,7 @@ PART_1_UNSORTED :=	\
 	ft_strdup.c
 
 
-PART_2_UNSORTED :=	\
+PART_2 :=	\
 	ft_substr.c		\
 	ft_strtrim.c	\
 	ft_putchar_fd.c	\
@@ -66,7 +66,7 @@ PART_2_BONUS :=			\
 INCLUDES := $(addprefix -I ,$(dir $(HEADERS)))
 
 
-SOURCES := $(PART_1_UNSORTED) $(PART_2_UNSORTED)
+SOURCES := $(PART_1) $(PART_2)
 
 ifdef BONUS
 SOURCES += $(PART_2_BONUS)
@@ -79,7 +79,7 @@ FCLEANED_FILES := ${NAME}
 
 
 ifdef DEBUG
-C_FLAGS += -g
+C_FLAGS += -g -Wconversion
 LINKER_FLAGS += -g
 FCLEANED_FILES += tester
 endif
