@@ -10,7 +10,7 @@ include Makefile
 include extra.mk
 
 
-TESTER_OBJECTS := $(addprefix $(OBJ_DIR)/test_ft_,$(SOURCES:.c=.o))
+TESTER_OBJECTS := $(addprefix $(OBJ_DIR)/test_,$(SOURCES:.c=.o))
 
 
 # tester also tests functions in the additional/ folder
