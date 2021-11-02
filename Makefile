@@ -75,9 +75,13 @@ endif
 OBJECT_PATHS := $(addprefix $(OBJ_DIR)/,$(SOURCES:.c=.o))
 
 
+FCLEANED_FILES := ${NAME}
+
+
 ifdef DEBUG
 C_FLAGS += -g
 LINKER_FLAGS += -g
+FCLEANED_FILES += tester
 endif
 
 # Only cleans when MAKE_DATA changes.
@@ -103,7 +107,7 @@ clean:
 	rm -rf $(OBJ_DIR)/
 
 fclean: clean
-	rm -f $(NAME) tester
+	rm -f ${FCLEANED_FILES}
 
 re: fclean all
 
