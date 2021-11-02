@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:00 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 14:55:58 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/02 13:54:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 char	*ft_strrchr(const char *str, int chr)
 {
-	int	i;
+	size_t	i;
 
 	i = ft_strlen(str);
-	while (i >= 0)
-	{
-		if (str[i] == chr)
-			return ((char *)str + i);
-		i--;
-	}
 	if (chr == '\0')
-		return ((char *)str + i);
-	else
-		return (NULL);
+		return ((char *)&str[i]);
+	while (i > 0)
+	{
+		i--;
+		if (str[i] == chr)
+			return ((char *)&str[i]);
+	}
+	return (NULL);
 }
