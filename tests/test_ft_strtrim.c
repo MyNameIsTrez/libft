@@ -1,17 +1,17 @@
 #include "../libft.h"
 #include "../tests.h"
 
-void	ft_print_result(const char *s)
-{
-	size_t	len;
+// static void	ft_print_result(const char *s)
+// {
+// 	size_t	len;
 
-	len = 0;
-	while (s[len])
-		len++;
-	write(2, "<", 1);
-	write(2, s, len);
-	write(2, ">\n", 2);
-}
+// 	len = 0;
+// 	while (s[len])
+// 		len++;
+// 	write(2, "<", 1);
+// 	write(2, s, len);
+// 	write(2, ">\n", 2);
+// }
 
 void	test_ft_strtrim(void)
 {

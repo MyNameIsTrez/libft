@@ -58,7 +58,7 @@ int	main(void)
 	// TEST(test_ft_putendl_fd);
 	// TEST(test_ft_putnbr_fd);
 	// TEST(test_ft_putstr_fd);
-	// TEST(test_ft_split);
+	TEST(test_ft_split);
 	// TEST(test_ft_strchr);
 	// TEST(test_ft_strdup);
 	// TEST(test_ft_striteri);
@@ -75,7 +75,8 @@ int	main(void)
 	// TEST(test_ft_tolower);
 	// TEST(test_ft_toupper);
 
-	system("leaks --quiet tester");
+	// system("leaks --quiet tester");
+
 	printf("All tests passed!\n");
 	return (0);
 }
