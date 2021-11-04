@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:12 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 13:31:04 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 14:36:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static size_t	ft_strnlen(const char *str, const size_t max_len)
  * @param src
  * @param dst_size
  * @return The total length of the string this function tried to create,
-   which is the initial length of @p dst plus the length of @p src.\n
+   which is the initial length of @p dst plus the length of @p src;\n
    If the initial length of @p dst >= @p dst_size,
    then @p dst_size + the length of @p src is returned instead.
  */

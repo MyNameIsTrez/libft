@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:55 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 13:54:27 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 14:39:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ static size_t	ft_strnlen(const char *str, const size_t max_len)
  * @param str
  * @param start
  * @param len
- * @return The substring. NULL if the allocation fails.
+ * @return The substring;\n
+   NULL if the allocation fails.
  */
 char	*ft_substr(const char *str, unsigned int start, size_t len)
 {

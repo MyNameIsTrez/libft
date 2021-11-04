@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/03 14:33:54 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 14:42:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	get_positive_integer(const char *str)
  * @brief Converts @p str to a signed int.
  *
  * @param str May start with whitespace, and the first encountered number will
- *            be converted.
+   be converted.
  * @return
  */
 int	ft_atoi(const char *str)

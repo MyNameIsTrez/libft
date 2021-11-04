@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:58 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 13:49:03 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 14:38:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ static size_t	get_end_index(const char *str, const char *trim_set)
  *
  * @param str
  * @param trim_set
- * @return The trimmed string. NULL if the allocation fails.
+ * @return The trimmed string;\n
+   NULL if the allocation fails.
  */
 char	*ft_strtrim(const char *str, const char *trim_set)
 {
