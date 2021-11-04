@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:54 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/03 15:26:23 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 14:19:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /**
  * @brief Creates a new chain of lists by running @p fun
- *        on the content of @p lst and all of its successors.
+   on the content of @p lst and all of its successors.
  *
  * @param lst
  * @param fun Transforms content.
