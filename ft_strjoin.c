@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:15 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 12:27:42 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 15:54:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ static char	*ft_stralloc(const size_t len)
 /**
  * @brief Concatenates @p str1 and @p str2 as a new string.
  *
- * @param str1
- * @param str2
- * @return The concatenated string.
+ * @param str1 The prefix string.
+ * @param str2 The suffix string.
+ * @return The new string;\n
+   NULL if the allocation fails.
  */
 char	*ft_strjoin(const char *str1, const char *str2)
 {

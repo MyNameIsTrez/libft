@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:58 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 14:18:41 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 15:52:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
  * @brief Runs the function @p fun on the content of @p lst
    and on all of @p lst its successors.
  *
- * @param lst
- * @param fun
+ * @param lst The address of a pointer to an element.
+ * @param fun The address of the function used to iterate on the list.
  * @return
  */
 void	ft_lstiter(t_list *lst, void (*fun)(void *))

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:50 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/03 15:24:01 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 16:00:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 /**
  * @brief Counts how many lists are connected.
  *
- * @param lst
- * @return
+ * @param lst The beginning of the list.
+ * @return Length of the list.
  */
 int	ft_lstsize(t_list *lst)
 {

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:06 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 12:08:13 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 15:34:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static char	*ft_stralloc(const size_t len)
    passing the character's index and value to @p fun.\n
    A new string is created from the successive application of @p fun.
  *
- * @param input_str
- * @param fun
+ * @param input_str The string on which to iterate.
+ * @param fun The function to apply to each character.
  * @return The string created from the successive application of @p fun;\n
            NULL if the allocation fails.
  */

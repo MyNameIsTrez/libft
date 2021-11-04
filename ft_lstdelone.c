@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:01 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 14:17:50 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 15:51:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
  * @brief Deletes the content of a single @p lst using @p del,
    and then frees lst.
  *
- * @param lst
- * @param del
+ * @param lst The element to free.
+ * @param del The address of the function used to delete the content.
  * @return
  */
 void	ft_lstdelone(t_list *lst, void (*del)(void *))

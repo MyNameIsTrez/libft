@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:31 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/03 16:46:47 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 15:36:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ static void	write_digits(int nbr, size_t nbr_len, int fd)
 /**
  * @brief Writes an int.
  *
- * @param nbr
- * @param fd
+ * @param nbr The integer to output.
+ * @param fd The file descriptor on which to write.
  */
 void	ft_putnbr_fd(int nbr, int fd)
 {

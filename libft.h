@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 14:12:04 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 15:47:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,17 @@
 
 // STRUCTS //
 
-typedef struct s_list	t_list;
-struct s_list
+/**
+ * @brief A singly linked list.
+ *
+ * @param content The data contained in the element.
+ * @param next The next element’s address or NULL if it’s the last element.
+ */
+typedef struct s_list
 {
-	void	*content;
-	t_list	*next;
-};
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 // FUNCTIONS //
 

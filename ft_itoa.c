@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:10 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/03 16:46:36 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 15:56:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,9 @@ static void	add_digits_to_str(char *str, int nbr, size_t number_len)
 /**
  * @brief Converts signed int @p nbr to a string.
  *
- * @param nbr
- * @return
+ * @param nbr The integer to convert.
+ * @return The string representing the integer;\n
+   NULL if the allocation fails.
  */
 char	*ft_itoa(int nbr)
 {

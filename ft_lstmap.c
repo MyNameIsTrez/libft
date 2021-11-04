@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:54 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 14:19:31 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 16:01:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
  * @brief Creates a new chain of lists by running @p fun
    on the content of @p lst and all of its successors.
  *
- * @param lst
- * @param fun Transforms content.
- * @param del Ran when a malloc fails.
- * @return
+ * @param lst The address of a pointer to an element.
+ * @param fun The address of the function used to iterate on the list.
+ * @param del The address of the function used to
+   delete the content of an element, if needed.
+ * @return The new list;\n
+   NULL if the allocation fails.
  */
 t_list	*ft_lstmap(t_list *lst, void *(*fun)(void *), void (*del)(void *))
 {

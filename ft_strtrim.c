@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:58 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 14:38:52 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 15:32:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ static size_t	get_end_index(const char *str, const char *trim_set)
    with the characters specified in @p trim_set removed
    from the beginning and end of the string.
  *
- * @param str
- * @param trim_set
+ * @param str The string to be trimmed.
+ * @param trim_set The reference set of characters to trim.
  * @return The trimmed string;\n
    NULL if the allocation fails.
  */

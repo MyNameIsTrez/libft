@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:05 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 14:17:39 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 15:48:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
  * @brief Adds @p new to the front of @p lst.
    If lst is NULL then lst is set to new.
  *
- * @param lst
- * @param new
+ * @param lst The address of a pointer to the first link of a list.
+ * @param new The address of a pointer to the element to be added to the list.
  * @return
  */
 

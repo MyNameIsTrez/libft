@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:17 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 12:03:35 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 15:58:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
    passing the character's index and address to @p fun.\n
    @p fun is able to modify the characters in @p str using the address.
  *
- * @param str
- * @param fun
+ * @param str The string on which to iterate.
+ * @param fun The function to apply to each character.
  */
 void	ft_striteri(char *str, void (*fun)(unsigned int, char*))
 {
