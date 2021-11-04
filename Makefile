@@ -4,11 +4,9 @@ CC := gcc
 
 OBJ_DIR := obj
 
-C_FLAGS ?= -Wall -Wextra -Werror
+C_FLAGS ?= -Wall -Wextra -Werror # -fsanitize=address -g
 
 HEADERS := libft.h
-
-LINKER_FLAGS ?= # -fsanitize=address -g
 
 
 PART_1_SOURCES :=	\
@@ -80,13 +78,12 @@ FCLEANED_FILES := ${NAME}
 
 ifdef DEBUG
 C_FLAGS += -g -Wconversion
-LINKER_FLAGS += -g
 FCLEANED_FILES += tester
 endif
 
 # Only cleans when MAKE_DATA changes.
 DATA_FILE := .make_data
-MAKE_DATA = $(C_FLAGS) $(LINKER_FLAGS) $(SOURCES)
+MAKE_DATA = $(C_FLAGS) $(SOURCES)
 PRE_RULES =
 ifneq ($(shell echo "$(MAKE_DATA)"), $(shell cat "$(DATA_FILE)" 2> /dev/null))
 PRE_RULES += clean
