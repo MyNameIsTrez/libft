@@ -6,19 +6,23 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:42 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/03 15:23:20 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 14:27:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
 /**
- * @brief Copies a memory area dangerously.
+ * @brief Copies @p len bytes from memory area @p src
+   to memory area @p dst.\n
+   If @p dst and @p src overlap, behavior is undefined.\n
+   Applications in which dst and src might overlap should use ft_memmove()
+   instead.
  *
  * @param dst
  * @param src
  * @param len
- * @return
+ * @return The original value of @p dst.
  */
 void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
