@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 16:40:12 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 14:12:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		ft_isprint(int chr);
 
 size_t	ft_strlen(const char *str);
 void	*ft_memset(void *dst, int chr, size_t len);
-void	ft_bzero(void *str, size_t nbr);
+void	ft_bzero(void *ptr, size_t size);
 void	*ft_memcpy(void *dst, const void *src, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size);
@@ -49,7 +49,7 @@ char	*ft_strchr(const char *str, int chr);
 char	*ft_strrchr(const char *str, int chr);
 int		ft_strncmp(const char *str1, const char *str2, size_t len);
 void	*ft_memchr(const void *ptr, int chr, size_t len);
-int		ft_memcmp(const void *str1, const void *str2, size_t len);
+int		ft_memcmp(const void *src1, const void *src2, size_t len);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 
@@ -63,7 +63,7 @@ char	*ft_strdup(const char *str);
 char	*ft_substr(const char *str, unsigned int start, size_t len);
 char	*ft_strjoin(const char *str1, const char *str2);
 char	*ft_strtrim(const char *str, const char *trim_set);
-char	**ft_split(const char *str, char chr);
+char	**ft_split(const char *str, char sep);
 char	*ft_itoa(int nbr);
 char	*ft_strmapi(const char *input_str, char (*fun)(unsigned int, char));
 void	ft_striteri(char *str, void (*fun)(unsigned int, char*));

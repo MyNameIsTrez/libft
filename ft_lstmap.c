@@ -6,12 +6,21 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:54 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 14:38:48 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/03 15:26:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Creates a new chain of lists by running @p fun
+ *        on the content of @p lst and all of its successors.
+ *
+ * @param lst
+ * @param fun Transforms content.
+ * @param del Ran when a malloc fails.
+ * @return
+ */
 t_list	*ft_lstmap(t_list *lst, void *(*fun)(void *), void (*del)(void *))
 {
 	t_list	*mapped_lst_head;

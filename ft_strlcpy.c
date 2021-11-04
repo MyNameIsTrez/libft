@@ -6,12 +6,21 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:10 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 14:51:38 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 13:32:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Overwrites @p dst with @p src.\n
+   Guarantees null termination when @p dst_size >= 1.
+ *
+ * @param dst
+ * @param src
+ * @param dst_size
+ * @return The length of @p src.
+ */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size)
 {
 	size_t	i;

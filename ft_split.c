@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:26 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/02 14:25:51 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 11:01:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,16 +91,23 @@ static void	add_words_to_split(char *str, char chr, char ***split)
 	}
 }
 
-char	**ft_split(const char *str, char chr)
+/**
+ * @brief Splits the string @p str by removing all occurrences of @p sep.
+ *
+ * @param str
+ * @param sep
+ * @return An array of strings.
+ */
+char	**ft_split(const char *str, char sep)
 {
 	size_t	word_count;
 	char	**split;
 
-	word_count = get_word_count((char *)str, chr);
+	word_count = get_word_count((char *)str, sep);
 	split = malloc((word_count + 1) * sizeof(char *));
 	if (split == NULL)
 		return (NULL);
 	split[word_count] = NULL;
-	add_words_to_split((char *)str, chr, &split);
+	add_words_to_split((char *)str, sep, &split);
 	return (split);
 }

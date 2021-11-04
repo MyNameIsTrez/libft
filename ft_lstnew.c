@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:52 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/01 12:08:28 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/03 15:24:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 #include <stdlib.h>
 
+/**
+ * @brief Creates a new list initialized with @p content.
+ *
+ * @param content
+ * @return
+ */
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*lst;

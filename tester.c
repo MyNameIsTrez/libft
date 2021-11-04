@@ -21,7 +21,7 @@ int	main(void)
 	// TEST(test_EXTRA_ft_char_to_digit);
 	// TEST(test_EXTRA_ft_digit_to_char);
 	// TEST(test_EXTRA_ft_free);
-	// TEST(test_EXTRA_ft_get_number_len);
+	// TEST(test_EXTRA_ft_get_number_of_digits);
 	// TEST(test_EXTRA_ft_isspace);
 	// TEST(test_EXTRA_ft_max);
 	// TEST(test_EXTRA_ft_min);

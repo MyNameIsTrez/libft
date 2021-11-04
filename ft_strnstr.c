@@ -6,12 +6,24 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:02 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/02 14:28:56 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 13:43:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
+/**
+ * @brief Locates a substring in a string.\n
+   Not more than @p len characters are searched.
+ *
+ * @param haystack
+ * @param needle
+ * @param len
+ * @return If @p needle is an empty string, @p haystack is returned;\n
+   If @p needle occurs nowhere in @p haystack, NULL is returned;\n
+   Otherwise, a pointer to the first character
+   of the first occurrence of @p needle is returned.
+ */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	first_index;

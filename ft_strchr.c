@@ -6,12 +6,20 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:22 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/02 14:26:19 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 13:45:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
+/**
+ * @brief Locates the first @p chr in @p str.
+ *
+ * @param str
+ * @param chr
+ * @return A pointer to the first @p chr in @p str;\n
+   NULL if @p chr isn't in @p str.
+ */
 char	*ft_strchr(const char *str, int chr)
 {
 	int	i;

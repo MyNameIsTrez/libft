@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:10 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/02 12:30:17 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/03 16:46:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static char	*ft_stralloc(const size_t len)
 	return (ft_calloc(len + 1, sizeof(char)));
 }
 
-static size_t	ft_get_number_len(int nbr)
+static size_t	ft_get_number_of_digits(int nbr)
 {
 	size_t	len;
 
@@ -54,10 +54,16 @@ static void	add_digits_to_str(char *str, int nbr, size_t number_len)
 	}
 }
 
+/**
+ * @brief Converts signed int @p nbr to a string.
+ *
+ * @param nbr
+ * @return
+ */
 char	*ft_itoa(int nbr)
 {
 	char			*str;
-	const size_t	number_len = ft_get_number_len(nbr);
+	const size_t	number_len = ft_get_number_of_digits(nbr);
 
 	str = ft_stralloc(number_len);
 	if (str == NULL)

@@ -6,12 +6,20 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:40 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/19 16:14:38 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/03 15:19:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copies a memory area safely.
+ *
+ * @param dst
+ * @param src
+ * @param len
+ * @return
+ */
 static void	*ft_memcpy_reverse(void *dst, const void *src, size_t len)
 {
 	char	*dst_copy;
