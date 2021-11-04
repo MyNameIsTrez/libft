@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:26 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 15:56:04 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 16:23:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ static void	add_words_to_split(char *str, char chr, char ***split)
 /**
  * @brief Splits the string @p str by removing all occurrences of @p sep.
  *
- * @param str The string to be split.
+ * @param str 💥 The string to be split.
  * @param sep The delimiter character.
  * @return The array of new strings resulting from the split;\n
    NULL if the allocation fails.
@@ -104,6 +104,8 @@ char	**ft_split(const char *str, char sep)
 	size_t	word_count;
 	char	**split;
 
+	if (str == NULL)
+		return (NULL);
 	word_count = get_word_count((char *)str, sep);
 	split = malloc((word_count + 1) * sizeof(char *));
 	if (split == NULL)
