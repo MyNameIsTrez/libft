@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:46 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 15:27:27 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/04 16:10:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 /**
  * @brief Scans the initial @p len bytes of the memory area pointed to by @p ptr
-   for the first instance of @p chr.\n
-   Both @p chr and the bytes of the memory area pointed to by @p ptr
-   are interpreted as unsigned char.
+   for the first instance of @p chr.
  *
  * @param ptr
  * @param chr
@@ -26,11 +24,11 @@
  */
 void	*ft_memchr(const void *ptr, int chr, size_t len)
 {
-	char			*ptr_;
+	unsigned char	*ptr_;
 	unsigned char	chr_;
 	size_t			i;
 
-	ptr_ = (char *)ptr;
+	ptr_ = (unsigned char *)ptr;
 	chr_ = (unsigned char)chr;
 	i = 0;
 	while (i < len)
