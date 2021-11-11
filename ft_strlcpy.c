@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:10 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 13:32:20 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/09 15:54:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /**
  * @brief Overwrites @p dst with @p src.\n
    Guarantees null termination when @p dst_size >= 1.
+   TODO: Use ft_memcpy() here.
  *
  * @param dst
  * @param src

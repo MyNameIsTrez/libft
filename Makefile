@@ -4,7 +4,7 @@ CC := gcc
 
 OBJ_DIR := obj
 
-C_FLAGS ?= -Wall -Wextra -Werror # -fsanitize=address -g
+CFLAGS ?= -Wall -Wextra -Werror
 
 HEADERS := libft.h
 
@@ -77,13 +77,15 @@ FCLEANED_FILES := ${NAME}
 
 
 ifdef DEBUG
-C_FLAGS += -g -Wconversion
+HEADERS += tests.h
+CFLAGS += -g -Wconversion -I$(HOME)/.brew/Cellar/criterion/2.3.3/include
+# CFLAGS += -fsanitize=address
 FCLEANED_FILES += tester
 endif
 
 # Only cleans when MAKE_DATA changes.
 DATA_FILE := .make_data
-MAKE_DATA = $(C_FLAGS) $(SOURCES)
+MAKE_DATA = $(CFLAGS) $(SOURCES)
 PRE_RULES =
 ifneq ($(shell echo "$(MAKE_DATA)"), $(shell cat "$(DATA_FILE)" 2> /dev/null))
 PRE_RULES += clean
@@ -98,7 +100,7 @@ $(NAME): $(OBJECT_PATHS)
 
 $(OBJ_DIR)/%.o: %.c $(HEADERS)
 	@mkdir -p $(@D)
-	$(CC) $(C_FLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR)/
