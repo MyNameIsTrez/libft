@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/07 14:24:17 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 13:34:04 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/11 17:07:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 /**
  * @brief Counts the length of @p str.\n
-   Requires @p str to be null-terminated.
+   Requires @p str to be null-terminated.\n
+   Doesn't count the null-terminator.
  *
  * @param str
  * @return The length of @p str.

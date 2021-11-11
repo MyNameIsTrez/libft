@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:58 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 15:52:49 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/11 17:01:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  */
 void	ft_lstiter(t_list *lst, void (*fun)(void *))
 {
-	while (lst != NULL)
+	while (lst != NULL && fun != NULL)
 	{
 		fun(lst->content);
 		lst = lst->next;

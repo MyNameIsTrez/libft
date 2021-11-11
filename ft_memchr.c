@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:46 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 16:10:00 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/11 18:05:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	*ft_memchr(const void *ptr, int chr, size_t len)
 	while (i < len)
 	{
 		if (ptr_[i] == chr_)
-			return ((void *)&ptr_[i]);
+			return (&ptr_[i]);
 		i++;
 	}
 	return (NULL);

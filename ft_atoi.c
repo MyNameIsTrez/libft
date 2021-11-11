@@ -6,15 +6,18 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 14:42:08 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/11 18:02:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-static char	*ft_strtrim_whitespace(const char *str)
+static int	ft_isspace(const int chr)
 {
-	return (ft_strtrim(str, "\t\n\v\f\r "));
+	if (chr == '\t' || chr == '\n' || chr == '\v'
+		|| chr == '\f' || chr == '\r' || chr == ' ')
+		return (1);
+	return (0);
 }
 
 static int	digit_to_value(const char chr)
@@ -49,13 +52,14 @@ static int	get_positive_integer(const char *str)
  *
  * @param str May start with whitespace, and the first encountered number will
    be converted.
- * @return
+ * @return The converted value or 0 on error.
  */
 int	ft_atoi(const char *str)
 {
-	int		sign;
+	int	sign;
 
-	str = (const char *)ft_strtrim_whitespace(str);
+	while (ft_isspace(str[0]))
+		str++;
 	sign = 1;
 	if (str[0] == '-')
 	{
