@@ -85,7 +85,7 @@ FCLEANED_FILES := ${NAME}
 
 ifdef DEBUG
 HEADERS += tests.h
-CFLAGS += -g -Wconversion -I$(HOME)/.brew/Cellar/criterion/2.3.3/include
+CFLAGS += -g -Wconversion -I$(HOME)/.brew/Cellar/criterion/2.3.3/include # TODO: Change -g to -g3?
 # CFLAGS += -fsanitize=address
 FCLEANED_FILES += tester
 endif
