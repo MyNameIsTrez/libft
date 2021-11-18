@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstadd_front.c                                  :+:    :+:            */
+/*   ft_lstiter_bonus.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/11 12:41:05 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/11 17:00:38 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/11 12:40:58 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/15 18:39:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Adds @p new to the front of @p lst.
-   If lst is NULL then lst is set to new.
+ * @brief Runs the function @p fun on the content of @p lst
+   and on all of @p lst its successors.
  *
- * @param lst The address of a pointer to the first link of a list.
- * @param new The address of a pointer to the element to be added to the list.
+ * @param lst The address of a pointer to an element.
+ * @param fun The address of the function used to iterate on the list.
  * @return
  */
-
-/**
- * @copydoc ft_lstadd_back()
- */
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstiter(t_list *lst, void (*fun)(void *))
 {
-	if (*lst == NULL)
-		*lst = new;
-	else if (new != NULL)
+	while (lst != NULL)
 	{
-		new->next = *lst;
-		*lst = new;
+		fun(lst->content);
+		lst = lst->next;
 	}
 }

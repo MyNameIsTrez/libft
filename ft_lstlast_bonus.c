@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstnew.c                                        :+:    :+:            */
+/*   ft_lstlast_bonus.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/11 12:40:52 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 16:00:01 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/11 12:40:56 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/16 11:33:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdlib.h>
-
 /**
- * @brief Creates a new list initialized with @p content.
+ * @brief Returns the last lst.
  *
- * @param content  The content to create the new element with.
- * @return The new element.
+ * @param lst The beginning of the list.
+ * @return Last element of the list.
  */
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*lst;
-
-	lst = malloc(sizeof(t_list));
 	if (lst == NULL)
 		return (NULL);
-	lst->content = content;
-	lst->next = NULL;
+	while (lst->next != NULL)
+		lst = lst->next;
 	return (lst);
 }

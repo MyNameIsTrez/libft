@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstiter.c                                       :+:    :+:            */
+/*   ft_lstsize_bonus.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/11 12:40:58 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/11 17:01:23 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/11 12:40:50 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/17 14:48:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Runs the function @p fun on the content of @p lst
-   and on all of @p lst its successors.
+ * @brief Counts how many lists are connected.
  *
- * @param lst The address of a pointer to an element.
- * @param fun The address of the function used to iterate on the list.
- * @return
+ * @param lst The beginning of the list.
+ * @return Length of the list.
  */
-void	ft_lstiter(t_list *lst, void (*fun)(void *))
+int	ft_lstsize(t_list *lst)
 {
-	while (lst != NULL && fun != NULL)
-	{
-		fun(lst->content);
-		lst = lst->next;
-	}
+	if (lst == NULL)
+		return (0);
+	return (1 + ft_lstsize(lst->next));
 }

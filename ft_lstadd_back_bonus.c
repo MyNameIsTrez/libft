@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstsize.c                                       :+:    :+:            */
+/*   ft_lstadd_back_bonus.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/11 12:40:50 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 16:00:13 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/16 11:33:27 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/16 11:33:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Counts how many lists are connected.
+ * @brief Adds @p new to the back of @p lst.\n
+          If @p lst is NULL then @p lst is set to @p new.
  *
- * @param lst The beginning of the list.
- * @return Length of the list.
+ * @param lst The address of a pointer to the first link of a list.
+ * @param new The address of a pointer to the element to be added to the list.
+ * @return
  */
-int	ft_lstsize(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	size;
-
-	size = 0;
-	while (lst != NULL)
-	{
-		lst = lst->next;
-		size++;
-	}
-	return (size);
+	if (*lst == NULL)
+		*lst = new;
+	else
+		ft_lstlast(*lst)->next = new;
 }

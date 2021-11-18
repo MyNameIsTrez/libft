@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstclear.c                                      :+:    :+:            */
+/*   ft_lstnew_bonus.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/11 12:41:03 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 15:52:02 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/11 12:40:52 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/15 18:14:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * @brief Deletes the content of and frees @p lst and all of its successors.
- *
- * @param lst The address of a pointer to an element.
- * @param del The address of the function used to delete the content
-   of the element.
- * @return
- */
-void	ft_lstclear(t_list **lst, void (*del)(void *))
-{
-	t_list	*next_lst;
+#include <stdlib.h>
 
-	while (*lst != NULL)
-	{
-		next_lst = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = next_lst;
-	}
+/**
+ * @brief Creates a new list initialized with @p content.
+ *
+ * @param content The content to create the new element with.
+ * @return The new element.
+ */
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*lst;
+
+	lst = malloc(sizeof(t_list));
+	if (lst == NULL)
+		return (NULL);
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
 }

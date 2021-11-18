@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstlast.c                                       :+:    :+:            */
+/*   ft_lstclear_bonus.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/11 12:40:56 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 16:00:51 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/11 12:41:03 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/16 11:33:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Returns the last lst.
+ * @brief Deletes the content of and frees @p lst and all of its successors.
  *
- * @param lst The beginning of the list.
- * @return Last element of the list.
+ * @param lst The address of a pointer to an element.
+ * @param del The address of the function used to delete the content
+   of the element.
+ * @return
  */
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (lst == NULL)
-		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+	t_list	*next_lst;
+
+	while (*lst != NULL)
+	{
+		next_lst = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = next_lst;
+	}
 }
