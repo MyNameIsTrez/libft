@@ -1,7 +1,7 @@
 # Testers:
-# https://github.com/alelievr/libft-unit-test
-# https://github.com/ska42/libft-war-machine
-# https://github.com/Tripouille/libftTester.git
+# git clone https://github.com/alelievr/libft-unit-test
+# git clone https://github.com/ska42/libft-war-machine
+# git clone https://github.com/Tripouille/libftTester.git
 
 
 NAME := libft.a
