@@ -1,10 +1,17 @@
+# Testers:
+# https://github.com/alelievr/libft-unit-test
+# https://github.com/ska42/libft-war-machine
+# https://github.com/Tripouille/libftTester.git
+
+
 NAME := libft.a
 
-CC := gcc
+CC := cc
 
 OBJ_DIR := obj
 
-CFLAGS ?= -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror
+CFLAGS += -O3 # -O1 adds tail recursion detection, which I need, so we might as well turn the optimizing up to 11 with -O3
 
 HEADERS := libft.h
 
@@ -49,16 +56,16 @@ PART_2_SOURCES :=	\
 	ft_split.c		\
 
 
-BONUS_SOURCES :=		\
-	ft_lstnew.c			\
-	ft_lstdelone.c		\
-	ft_lstclear.c		\
-	ft_lstsize.c		\
-	ft_lstlast.c		\
-	ft_lstadd_back.c	\
-	ft_lstadd_front.c	\
-	ft_lstiter.c		\
-	ft_lstmap.c
+BONUS_SOURCES :=			\
+	ft_lstnew_bonus.c		\
+	ft_lstdelone_bonus.c	\
+	ft_lstclear_bonus.c		\
+	ft_lstsize_bonus.c		\
+	ft_lstlast_bonus.c		\
+	ft_lstadd_back_bonus.c	\
+	ft_lstadd_front_bonus.c	\
+	ft_lstiter_bonus.c		\
+	ft_lstmap_bonus.c
 
 
 INCLUDES := $(addprefix -I ,$(dir $(HEADERS)))
@@ -81,6 +88,10 @@ HEADERS += tests.h
 CFLAGS += -g -Wconversion -I$(HOME)/.brew/Cellar/criterion/2.3.3/include
 # CFLAGS += -fsanitize=address
 FCLEANED_FILES += tester
+endif
+
+ifdef CUSTOM_MAIN
+CFLAGS += -DCUSTOM_MAIN=1
 endif
 
 # Only cleans when MAKE_DATA changes.
