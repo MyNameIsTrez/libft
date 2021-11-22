@@ -1,16 +1,20 @@
 # CLONE TESTERS
 # git clone https://github.com/alelievr/libft-unit-test && git clone https://github.com/ska42/libft-war-machine && git clone https://github.com/Tripouille/libftTester.git
 
+
 # RUN TESTERS
 
-# Change LIBFTDIR = ../libft to LIBFTDIR = ../
-# cd libft-unit-test && make f
+# TODO: Remove _bonus from the filenames under BONUS_SOURCES in this Makefile
 
-# Remove _bonus from 9 files and in the Makefile
-# cd libft-war-machine && sh grademe.sh && sh grademe.sh
+# LIBFT-UNIT-TEST
+# TODO: Change LIBFTDIR = ../libft to LIBFTDIR = ../
+# make remove_bonus_suffix && cd libft-unit-test && make f
 
-# No path change necessary
-# cd libftTester && make
+# LIBFT-WAR-MACHINE
+# cd ../libft-war-machine && sh grademe.sh && sh grademe.sh
+
+# LIBFTTESTER
+# cd ../libftTester && make
 
 
 NAME := libft.a
