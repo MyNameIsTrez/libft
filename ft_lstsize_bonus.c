@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:50 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/17 14:48:54 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/22 14:25:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,13 @@
  */
 int	ft_lstsize(t_list *lst)
 {
-	if (lst == NULL)
-		return (0);
-	return (1 + ft_lstsize(lst->next));
+	size_t	size;
+
+	size = 0;
+	while (lst != NULL)
+	{
+		size++;
+		lst = lst->next;
+	}
+	return (size);
 }

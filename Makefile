@@ -11,7 +11,7 @@ CC := cc
 OBJ_DIR := obj
 
 CFLAGS := -Wall -Wextra -Werror
-CFLAGS += -O3 # -O1 adds tail recursion detection, which I need, so we might as well turn the optimizing up to 11 with -O3
+#CFLAGS += -O1 # -O1 adds tail recursion detection, which I need, so we might as well turn the optimizing up to 11 with -O3
 
 HEADERS := libft.h
 
@@ -68,7 +68,7 @@ BONUS_SOURCES :=			\
 	ft_lstmap_bonus.c
 
 
-INCLUDES := $(addprefix -I ,$(dir $(HEADERS)))
+INCLUDES := $(addprefix -I,$(dir $(HEADERS)))
 
 
 SOURCES := $(PART_1_SOURCES) $(PART_2_SOURCES)
@@ -80,12 +80,12 @@ endif
 OBJECT_PATHS := $(addprefix $(OBJ_DIR)/,$(SOURCES:.c=.o))
 
 
-FCLEANED_FILES := ${NAME}
+FCLEANED_FILES := $(NAME)
 
 
 ifdef DEBUG
 HEADERS += tests.h
-CFLAGS += -g -Wconversion -I$(HOME)/.brew/Cellar/criterion/2.3.3/include # TODO: Change -g to -g3?
+CFLAGS += -g3 -Wconversion -I$(HOME)/.brew/Cellar/criterion/2.3.3/include
 # CFLAGS += -fsanitize=address
 FCLEANED_FILES += tester
 endif
@@ -107,7 +107,7 @@ all: $(PRE_RULES) $(NAME)
 
 $(NAME): $(OBJECT_PATHS)
 	ar rcs $(NAME) $(OBJECT_PATHS)
-	echo "$(MAKE_DATA)" > $(DATA_FILE)
+	@echo "$(MAKE_DATA)" > $(DATA_FILE)
 
 $(OBJ_DIR)/%.o: %.c $(HEADERS)
 	@mkdir -p $(@D)
@@ -117,7 +117,7 @@ clean:
 	rm -rf $(OBJ_DIR)/
 
 fclean: clean
-	rm -f ${FCLEANED_FILES}
+	rm -f $(FCLEANED_FILES)
 
 re: fclean all
 
