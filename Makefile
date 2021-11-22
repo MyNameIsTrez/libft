@@ -2,9 +2,15 @@
 # git clone https://github.com/alelievr/libft-unit-test && git clone https://github.com/ska42/libft-war-machine && git clone https://github.com/Tripouille/libftTester.git
 
 # RUN TESTERS
-# cd libft-unit-test   && make
-# cd libft-war-machine && sh grademe.sh
-# cd libftTester       && make
+
+# Change LIBFTDIR = ../libft to LIBFTDIR = ../
+# cd libft-unit-test && make f
+
+# Remove _bonus from 9 files and in the Makefile
+# cd libft-war-machine && sh grademe.sh && sh grademe.sh
+
+# No path change necessary
+# cd libftTester && make
 
 
 NAME := libft.a
@@ -127,4 +133,28 @@ re: fclean all
 bonus:
 	@$(MAKE) ADD_BONUS=1 all
 
-.PHONY: all clean fclean re bonus
+
+remove_bonus_suffix:
+	mv ft_lstadd_back_bonus.c  ft_lstadd_back.c
+	mv ft_lstadd_front_bonus.c ft_lstadd_front.c
+	mv ft_lstclear_bonus.c     ft_lstclear.c
+	mv ft_lstdelone_bonus.c    ft_lstdelone.c
+	mv ft_lstiter_bonus.c      ft_lstiter.c
+	mv ft_lstlast_bonus.c      ft_lstlast.c
+	mv ft_lstmap_bonus.c       ft_lstmap.c
+	mv ft_lstnew_bonus.c       ft_lstnew.c
+	mv ft_lstsize_bonus.c      ft_lstsize.c
+
+add_bonus_suffix:
+	mv ft_lstadd_back.c  ft_lstadd_back_bonus.c
+	mv ft_lstadd_front.c ft_lstadd_front_bonus.c
+	mv ft_lstclear.c     ft_lstclear_bonus.c
+	mv ft_lstdelone.c    ft_lstdelone_bonus.c
+	mv ft_lstiter.c      ft_lstiter_bonus.c
+	mv ft_lstlast.c      ft_lstlast_bonus.c
+	mv ft_lstmap.c       ft_lstmap_bonus.c
+	mv ft_lstnew.c       ft_lstnew_bonus.c
+	mv ft_lstsize.c      ft_lstsize_bonus.c
+
+
+.PHONY: all clean fclean re bonus remove_bonus_suffix add_bonus_suffix
