@@ -8,10 +8,10 @@
 
 # LIBFT-UNIT-TEST
 # TODO: Change LIBFTDIR = ../libft to LIBFTDIR = ../
-# make remove_bonus_suffix && cd libft-unit-test && make f
+# cd libft-unit-test && make f
 
 # LIBFT-WAR-MACHINE
-# cd ../libft-war-machine && sh grademe.sh && sh grademe.sh
+# cd .. && make remove_bonus_suffix && cd libft-war-machine && sh grademe.sh && sh grademe.sh
 
 # LIBFTTESTER
 # cd ../libftTester && make
