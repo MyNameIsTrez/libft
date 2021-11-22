@@ -1,7 +1,10 @@
-# Testers:
-# git clone https://github.com/alelievr/libft-unit-test
-# git clone https://github.com/ska42/libft-war-machine
-# git clone https://github.com/Tripouille/libftTester.git
+# CLONE TESTERS
+# git clone https://github.com/alelievr/libft-unit-test && git clone https://github.com/ska42/libft-war-machine && git clone https://github.com/Tripouille/libftTester.git
+
+# RUN TESTERS
+# cd libft-unit-test   && make
+# cd libft-war-machine && sh grademe.sh
+# cd libftTester       && make
 
 
 NAME := libft.a
