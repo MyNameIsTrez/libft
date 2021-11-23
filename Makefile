@@ -153,6 +153,7 @@ bonus: $(OBJECT_PATHS) $(BONUS_OBJECT_PATHS)
 #   Calling Make recursively can cause a race condition with testers, which'll cause them to mark files as missing
 #   One of the race condition causes is the --jobs <thread_count> flag in the testers, but I haven't been able to find the other cause
 #	@$(MAKE) ADD_BONUS=1 all
+
 	ar rcs $(NAME) $(OBJECT_PATHS) $(BONUS_OBJECT_PATHS)
 
 
