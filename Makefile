@@ -9,11 +9,14 @@
 # cd libft-unit-test && make f
 
 # LIBFT-WAR-MACHINE
-# TODO: Remove _bonus from the filenames under BONUS_SOURCES in this Makefile
+# TODO: Manually remove _bonus from the filenames under BONUS_SOURCES in this Makefile
 # cd .. && make remove_bonus_suffix && cd libft-war-machine && sh grademe.sh && sh grademe.sh
 
 # LIBFTTESTER
 # cd ../libftTester && make
+
+
+################################################################################################################################
 
 
 NAME := libft.a
@@ -26,6 +29,9 @@ CFLAGS := -Wall -Wextra -Werror
 #CFLAGS += -O1 # -O1 adds tail recursion detection, which I need, so we might as well turn the optimizing up to 11 with -O3
 
 HEADERS := libft.h
+
+
+################################################################################################################################
 
 
 PART_1_SOURCES :=	\
@@ -80,14 +86,17 @@ BONUS_SOURCES :=			\
 	ft_lstmap_bonus.c
 
 
+################################################################################################################################
+
+
 INCLUDES := $(addprefix -I,$(dir $(HEADERS)))
 
 
 SOURCES := $(PART_1_SOURCES) $(PART_2_SOURCES)
 
-ifdef ADD_BONUS
-SOURCES += $(BONUS_SOURCES)
-endif
+# ifdef ADD_BONUS
+# SOURCES += $(BONUS_SOURCES)
+# endif
 
 OBJECT_PATHS := $(addprefix $(OBJ_DIR)/,$(SOURCES:.c=.o))
 BONUS_OBJECT_PATHS := $(addprefix $(OBJ_DIR)/,$(BONUS_SOURCES:.c=.o))
@@ -96,6 +105,7 @@ BONUS_OBJECT_PATHS := $(addprefix $(OBJ_DIR)/,$(BONUS_SOURCES:.c=.o))
 FCLEANED_FILES := $(NAME)
 
 
+# DEBUG is set to 1 when tester.mk includes this file
 ifdef DEBUG
 HEADERS += tests.h
 CFLAGS += -g3 -Wconversion -I$(HOME)/.brew/Cellar/criterion/2.3.3/include
@@ -103,17 +113,22 @@ CFLAGS += -g3 -Wconversion -I$(HOME)/.brew/Cellar/criterion/2.3.3/include
 FCLEANED_FILES += tester
 endif
 
+# Causes tester.c to run its own main(), instead of letting the unit tester Criterion use its own main()
+# This is necessary as Criterion doesn't run the leaks program hooked to its POST_FINI event if an assert fails, while it should
 ifdef CUSTOM_MAIN
 CFLAGS += -DCUSTOM_MAIN=1
 endif
 
 # Only cleans when MAKE_DATA changes.
 # DATA_FILE := .make_data
-# MAKE_DATA = $(CFLAGS) $(SOURCES)
-PRE_RULES =
+# MAKE_DATA := $(CFLAGS) $(SOURCES)
+PRE_RULES :=
 # ifneq ($(shell echo "$(MAKE_DATA)"), $(shell cat "$(DATA_FILE)" 2> /dev/null))
 # PRE_RULES += clean
 # endif
+
+
+################################################################################################################################
 
 
 all: $(PRE_RULES) $(NAME)
@@ -135,9 +150,16 @@ fclean: clean
 re: fclean all
 
 bonus: $(OBJECT_PATHS) $(BONUS_OBJECT_PATHS)
+#   Calling Make recursively can cause a race condition with testers, which'll cause them to mark files as missing
+#   One of the race condition causes is the --jobs <thread_count> flag in the testers, but I haven't been able to find the other cause
+#	@$(MAKE) ADD_BONUS=1 all
 	ar rcs $(NAME) $(OBJECT_PATHS) $(BONUS_OBJECT_PATHS)
 
 
+################################################################################################################################
+
+
+# libft-war-machine and libftTester don't work if bonuses end with _bonus.c
 remove_bonus_suffix:
 	mv ft_lstadd_back_bonus.c  ft_lstadd_back.c
 	mv ft_lstadd_front_bonus.c ft_lstadd_front.c
@@ -149,6 +171,7 @@ remove_bonus_suffix:
 	mv ft_lstnew_bonus.c       ft_lstnew.c
 	mv ft_lstsize_bonus.c      ft_lstsize.c
 
+# libft-unit-test needs bonuses to end with _bonus.c
 add_bonus_suffix:
 	mv ft_lstadd_back.c  ft_lstadd_back_bonus.c
 	mv ft_lstadd_front.c ft_lstadd_front_bonus.c
@@ -159,6 +182,9 @@ add_bonus_suffix:
 	mv ft_lstmap.c       ft_lstmap_bonus.c
 	mv ft_lstnew.c       ft_lstnew_bonus.c
 	mv ft_lstsize.c      ft_lstsize_bonus.c
+
+
+################################################################################################################################
 
 
 .PHONY: all clean fclean re bonus remove_bonus_suffix add_bonus_suffix
