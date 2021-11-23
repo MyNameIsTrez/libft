@@ -182,6 +182,7 @@ remove_bonus_suffix:
 	mv ft_lstnew_bonus.c       ft_lstnew.c
 	mv ft_lstsize_bonus.c      ft_lstsize.c
 
+
 # libft-unit-test needs bonuses to end with _bonus.c
 add_bonus_suffix:
 	mv ft_lstadd_back.c  ft_lstadd_back_bonus.c
