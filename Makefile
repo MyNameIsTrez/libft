@@ -90,6 +90,7 @@ SOURCES += $(BONUS_SOURCES)
 endif
 
 OBJECT_PATHS := $(addprefix $(OBJ_DIR)/,$(SOURCES:.c=.o))
+BONUS_OBJECT_PATHS := $(addprefix $(OBJ_DIR)/,$(BONUS_SOURCES:.c=.o))
 
 
 FCLEANED_FILES := $(NAME)
@@ -107,19 +108,19 @@ CFLAGS += -DCUSTOM_MAIN=1
 endif
 
 # Only cleans when MAKE_DATA changes.
-DATA_FILE := .make_data
-MAKE_DATA = $(CFLAGS) $(SOURCES)
+# DATA_FILE := .make_data
+# MAKE_DATA = $(CFLAGS) $(SOURCES)
 PRE_RULES =
-ifneq ($(shell echo "$(MAKE_DATA)"), $(shell cat "$(DATA_FILE)" 2> /dev/null))
-PRE_RULES += clean
-endif
+# ifneq ($(shell echo "$(MAKE_DATA)"), $(shell cat "$(DATA_FILE)" 2> /dev/null))
+# PRE_RULES += clean
+# endif
 
 
 all: $(PRE_RULES) $(NAME)
 
 $(NAME): $(OBJECT_PATHS)
 	ar rcs $(NAME) $(OBJECT_PATHS)
-	@echo "$(MAKE_DATA)" > $(DATA_FILE)
+# @echo "$(MAKE_DATA)" > $(DATA_FILE)
 
 $(OBJ_DIR)/%.o: %.c $(HEADERS)
 	@mkdir -p $(@D)
@@ -133,8 +134,8 @@ fclean: clean
 
 re: fclean all
 
-bonus:
-	@$(MAKE) ADD_BONUS=1 all
+bonus: $(OBJECT_PATHS) $(BONUS_OBJECT_PATHS)
+	ar rcs $(NAME) $(OBJECT_PATHS) $(BONUS_OBJECT_PATHS)
 
 
 remove_bonus_suffix:
