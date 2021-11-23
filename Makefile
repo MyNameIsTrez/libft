@@ -6,14 +6,14 @@
 
 # LIBFT-UNIT-TEST
 # TODO: Change LIBFTDIR = ../libft to LIBFTDIR = ../
-# cd libft-unit-test && make f
+# cd libft-unit-test && make && ./run_test
+
+# LIBFTTESTER
+# cd ../libftTester && make
 
 # LIBFT-WAR-MACHINE
 # TODO: Manually remove _bonus from the filenames under BONUS_SOURCES in this Makefile
 # cd .. && make remove_bonus_suffix && cd libft-war-machine && sh grademe.sh && sh grademe.sh
-
-# LIBFTTESTER
-# cd ../libftTester && make
 
 
 ################################################################################################################################
