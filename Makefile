@@ -132,7 +132,7 @@ endif
 # Only cleans when MAKE_DATA changes.
 # DATA_FILE := .make_data
 # MAKE_DATA := $(CFLAGS) $(SOURCES)
-PRE_RULES :=
+# PRE_RULES :=
 # ifneq ($(shell echo "$(MAKE_DATA)"), $(shell cat "$(DATA_FILE)" 2> /dev/null))
 # PRE_RULES += clean
 # endif
@@ -141,11 +141,17 @@ PRE_RULES :=
 ################################################################################################################################
 
 
-all: $(PRE_RULES) $(NAME)
+# all: $(PRE_RULES) $(NAME)
+#	@echo ADD_BONUS=$(ADD_BONUS)
+#	@echo SOURCES=$(SOURCES)
+#	@echo OBJECT_PATHS=$(OBJECT_PATHS)
+
+all: $(NAME)
 
 $(NAME): $(OBJECT_PATHS)
+	@echo hello world
 	ar rcs $(NAME) $(OBJECT_PATHS)
-# @echo "$(MAKE_DATA)" > $(DATA_FILE)
+#	@echo "$(MAKE_DATA)" > $(DATA_FILE)
 
 $(OBJ_DIR)/%.o: %.c $(HEADERS)
 	@mkdir -p $(@D)
@@ -159,18 +165,29 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(OBJECT_PATHS) $(BONUS_OBJECT_PATHS)
-#   Calling Make recursively can cause a race condition with testers, which'll cause them to mark files as missing
-#   One of the race condition causes is the --jobs <thread_count> flag in the testers, but I haven't been able to find the other cause
-#	@$(MAKE) ADD_BONUS=1 all
 
+################################################################################################################################
+
+
+# bonus:
+#	Calling Make recursively can cause a race condition with testers, which'll cause them to mark files as missing
+#	One of the race condition causes is the --jobs <thread_count> flag in the testers, but I haven't been able to find the other cause
+#	$(MAKE) -j 1 ADD_BONUS=1 all
+
+
+bonus: $(OBJECT_PATHS) $(BONUS_OBJECT_PATHS)
+#	See the commented out bonus rule above on why calling ar here is necessary
 	ar rcs $(NAME) $(OBJECT_PATHS) $(BONUS_OBJECT_PATHS)
+
+#	"touch bonus" gets a 2nd "make bonus" to print "make: 'bonus' is up to date.", instead of running the ar command a second time
+#	Just adding "bonus" to .PHONY doesn't work, because the ar command would still get run
+	touch bonus
 
 
 ################################################################################################################################
 
 
-# libft-war-machine and libftTester don't work if bonuses end with _bonus.c
+# libft-war-machine doesn't work if bonuses end with _bonus.c
 remove_bonus_suffix:
 	mv ft_lstadd_back_bonus.c  ft_lstadd_back.c
 	mv ft_lstadd_front_bonus.c ft_lstadd_front.c
@@ -183,7 +200,7 @@ remove_bonus_suffix:
 	mv ft_lstsize_bonus.c      ft_lstsize.c
 
 
-# libft-unit-test needs bonuses to end with _bonus.c
+# Adds _bonus.c back after having called "make remove_bonus_suffix"
 add_bonus_suffix:
 	mv ft_lstadd_back.c  ft_lstadd_back_bonus.c
 	mv ft_lstadd_front.c ft_lstadd_front_bonus.c
@@ -199,4 +216,5 @@ add_bonus_suffix:
 ################################################################################################################################
 
 
-.PHONY: all clean fclean re bonus remove_bonus_suffix add_bonus_suffix
+# .PHONY: all clean fclean re bonus remove_bonus_suffix add_bonus_suffix
+.PHONY: all clean fclean re remove_bonus_suffix add_bonus_suffix
