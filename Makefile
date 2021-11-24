@@ -10,8 +10,7 @@
 
 ## LIBFT-UNIT-TEST
 
-# 2a. TODO: Open libft-unit-test/Makefile
-# 2b. TODO: change LIBFTDIR = ../libft to LIBFTDIR = ../
+# 2. TODO: Open libft-unit-test/Makefile and change LIBFTDIR = ../libft to LIBFTDIR = ../
 
 # 3. cd libft-unit-test && make && ./run_test
 
