@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   EXTRA_ft_strtrim_whitespace.c                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:25 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/14 16:00:04 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/03 17:31:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
-
-#endif
+/**
+ * @brief Trims whitespace.
+ *
+ * @param str
+ * @return The trimmed string.
+ */
+char	*ft_strtrim_whitespace(const char *str)
+{
+	return (ft_strtrim(str, " \t\n\v\f\r"));
+}

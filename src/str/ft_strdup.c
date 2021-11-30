@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   ft_strdup.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:25 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/11 12:40:20 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/25 18:18:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
+/**
+ * @brief Duplicates @p str.
+ *
+ * @param str
+ * @return The duplicated string.
+ */
+char	*ft_strdup(const char *str)
+{
+	char	*dup;
 
-#endif
+	dup = ft_stralloc(ft_strlen(str));
+	if (dup != NULL)
+		ft_memcpy(dup, str, ft_strlen(str));
+	return (dup);
+}

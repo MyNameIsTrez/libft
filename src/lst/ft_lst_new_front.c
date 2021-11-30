@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   EXTRA_ft_lst_new_front.c                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:25 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/09 16:33:32 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/09 16:44:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
-
-#endif
+void	ft_lst_new_front(t_list **lst, void *content)
+{
+	ft_lstadd_front(lst, ft_lstnew(content));
+}

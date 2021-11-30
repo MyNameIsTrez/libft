@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   EXTRA_ft_strnlen.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:25 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/12 13:54:15 by sbos          #+#    #+#                 */
+/*   Updated: 2021/10/12 15:53:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stddef.h>
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
+/**
+ * @brief Gets the length of a fixed-size string.
+ *
+ * @param str
+ * @param max_len
+ * @return ft_strlen() if it's less than @p maxlen;\n
+   @p maxlen if there is no null character in the first @p maxlen characters.
+ */
+size_t	ft_strnlen(const char *str, const size_t max_len)
+{
+	size_t	len;
 
-#endif
+	len = 0;
+	while (str[len] != '\0' && len < max_len)
+		len++;
+	return (len);
+}

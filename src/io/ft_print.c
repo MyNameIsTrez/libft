@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   ft_print.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:25 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/11 16:29:33 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/25 18:14:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
+#include <stdlib.h>
+#include <unistd.h>
 
-#endif
+// TODO: Make this work for any special characters, not just \n
+void	ft_print(char *str)
+{
+	char	*replaced;
+
+	replaced = ft_str_replace(str, "\n", "\\n");
+	write(1, replaced, ft_strlen(replaced) + 1);
+	free(replaced);
+}

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   libft_nbr.h                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:25 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/25 17:27:42 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/25 17:28:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef LIBFT_NBR_H
+# define LIBFT_NBR_H
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
+int		ft_atoi(const char *str);
+char	ft_digit_to_char(const int nbr);
+size_t	ft_get_number_of_digits(int nbr);
+char	*ft_itoa(int nbr);
+int		ft_max(const int a, const int b);
+int		ft_min(const int a, const int b);
 
 #endif

@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   libft_io.h                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:25 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/25 17:22:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef LIBFT_IO_H
+# define LIBFT_IO_H
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
+void	ft_print(char *str);
+void	ft_putchar_fd(char chr, int fd);
+void	ft_putendl_fd(char *str, int fd);
+void	ft_putnbr_fd(int nbr, int fd);
+void	ft_putstr_fd(char *str, int fd);
 
 #endif

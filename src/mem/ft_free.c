@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   EXTRA_ft_free.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:25 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/21 13:27:37 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/03 16:42:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdlib.h>
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
+/**
+ * @brief Frees a pointer and sets it to NULL.
+ *
+ * @param ptr transformed to a void **
+ * @return NULL
+ */
+void	*ft_free(void *ptr)
+{
+	void	**ptrptr;
 
-#endif
+	ptrptr = (void **)ptr;
+	free(*ptrptr);
+	*ptrptr = NULL;
+	return (NULL);
+}

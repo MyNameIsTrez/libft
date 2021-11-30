@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   EXTRA_ft_max.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:25 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/19 14:34:05 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/10 16:26:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
-
-#endif
+/**
+ * @brief Checks whether @p a is bigger than @p b.
+ *
+ * @param a
+ * @param b
+ * @return The biggest number.
+ */
+int	ft_max(const int a, const int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}

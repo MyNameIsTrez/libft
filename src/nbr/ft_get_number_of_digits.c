@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   EXTRA_ft_get_number_of_digits.c                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:25 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/20 12:00:48 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/03 16:44:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stddef.h>
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
+/**
+ * @brief Counts the number of digits in @p nbr.
+ *
+ * @param nbr
+ * @return
+ */
+size_t	ft_get_number_of_digits(int nbr)
+{
+	size_t	len;
 
-#endif
+	len = 0;
+	if (nbr <= 0)
+		len++;
+	while (nbr != 0)
+	{
+		nbr /= 10;
+		len++;
+	}
+	return (len);
+}

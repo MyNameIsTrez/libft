@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   EXTRA_ft_isspace.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:25 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/14 13:47:28 by sbos          #+#    #+#                 */
+/*   Updated: 2021/11/03 16:49:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
-
-#endif
+/**
+ * @brief Checks whether @p chr is whitespace.
+ *
+ * @param chr
+ * @return
+ */
+int	ft_isspace(const int chr)
+{
+	if (chr == '\t' || chr == '\n' || chr == '\v'
+		|| chr == '\f' || chr == '\r' || chr == ' ')
+		return (1);
+	return (0);
+}

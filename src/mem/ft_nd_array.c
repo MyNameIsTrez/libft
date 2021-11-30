@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   EXTRA_ft_nd_arr.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:25 by sbos          ########   odam.nl         */
+/*   Created: 2021/10/21 16:10:51 by sbos          #+#    #+#                 */
+/*   Updated: 2021/10/21 16:10:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+// char *arr[];
+// char *x;
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
+// arr[0][0] = "hello";
+// arr[0][1] = "world";
+// arr[0][2] = NULL;
+// arr[1][0] = "foo";
+// arr[1][1] = NULL;
+// arr[2] = NULL;
 
-#endif
+// x = arr[1] // "world"
+// delete arr;
+// x // "world"
+// free(x);
