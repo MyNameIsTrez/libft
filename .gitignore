@@ -1,0 +1,33 @@
+# Ignore everything
+*
+
+# Allow folders
+!*/
+
+# Allow .c and .h files
+!*.[ch]
+
+# But disallow test and extra files
+# *test*
+# crit_utils.h
+
+# Disallow testers
+testers
+
+# Allow Makefiles
+!Makefile
+
+# But don't allow Doxygen's latex Makefile
+latex/Makefile
+
+# Allow helper Makefiles
+!*.mk
+
+# Allow repos to contain their own .gitignore
+!.gitignore
+
+# Allow the Doxygen configuration file
+!Doxyfile
+
+# Allow doxygen-awesome-css
+!.gitmodules

@@ -6,12 +6,13 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 15:06:42 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/30 15:12:45 by sbos          ########   odam.nl         */
+/*   Updated: 2021/11/30 15:56:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_lst.h"
 
+// TODO: Write tests.
 t_list	*ft_lst_reverse(t_list **lst)
 {
 	t_list	*cur;
