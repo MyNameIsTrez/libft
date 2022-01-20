@@ -1,7 +1,7 @@
 # My tester:
 # make -f tester.mk tester && echo "\n" && ./tester --jobs 1
 
-
+export CRITERION_DIR=$(HOME)/.brew/Cellar/criterion/2.3.3-bleeding4
 export DEBUG=1
 
 include Makefile
@@ -16,7 +16,7 @@ TESTER_SOURCES := $(wildcard $(TEST_DIR)/*.c) tester.c
 TEST_INCLUDES := $(addprefix -I, $(sort $(dir $(TESTER_HEADERS))))
 
 $(TESTER): all $(TESTER_HEADERS) $(TESTER_SOURCES)
-	$(CC) $(CFLAGS) $(TEST_INCLUDES) -L$(HOME)/.brew/Cellar/criterion/2.3.3/lib -lcriterion -g3 libft.a $(TESTER_SOURCES) -o $(TESTER)
+	$(CC) $(CFLAGS) $(TEST_INCLUDES) -L$(CRITERION_DIR)/lib -lcriterion -g3 libft.a $(TESTER_SOURCES) -o $(TESTER)
 
 re_tester: fclean tester
 

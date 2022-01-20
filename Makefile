@@ -68,7 +68,7 @@ FCLEANED_FILES := $(NAME)
 
 # DEBUG is set to 1 when tester.mk includes this file
 ifdef DEBUG
-CFLAGS += -g3 -Wconversion -I$(HOME)/.brew/Cellar/criterion/2.3.3/include
+CFLAGS += -g3 -Wconversion -I$(CRITERION_DIR)/include
 FCLEANED_FILES += $(TEST_NAME)
 endif
 
