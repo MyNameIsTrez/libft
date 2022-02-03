@@ -11,8 +11,8 @@
 # *test*
 # crit_utils.h
 
-# Disallow testers
-testers
+# Allow testers
+!testers/*
 
 # Allow Makefiles
 !Makefile
