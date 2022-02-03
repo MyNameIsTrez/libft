@@ -54,5 +54,4 @@ free(str)
 	cr_expect_str_eq(new_str1, new_str2, __VA_ARGS__);							\
 }
 
-
 #endif
