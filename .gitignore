@@ -1,24 +1,24 @@
-# Ignore everything
-*
+# # Ignore everything
+# *
 
-# Allow folders
-!*/
+# # Allow folders
+# !*/
 
-# Allow .c and .h files
-!*.[ch]
+# # Allow .c and .h files
+# !*.[ch]
 
-# But disallow test and extra files
-# *test*
-# crit_utils.h
+# # But disallow test and extra files
+# # *test*
+# # crit_utils.h
 
-# Allow testers
-!testers/*
+# # Allow testers
+# !testers/**
 
-# Allow Makefiles
-!Makefile
+# # Allow Makefiles
+# !Makefile
 
-# Allow helper Makefiles
-!*.mk
+# # Allow helper Makefiles
+# !*.mk
 
-# Allow repos to contain their own .gitignore
-!.gitignore
+# # Allow repos to contain their own .gitignore
+# !.gitignore

@@ -1,0 +1,17 @@
+{
+	"version": "0.2.0",
+	"configurations": [{
+		"name": "libft",
+		"type": "cppdbg",
+		"request": "launch",
+		"program": "${workspaceFolder}/tester",
+		"args": ["--jobs", "1"],
+		"stopAtEntry": false,
+		"cwd": "${workspaceFolder}",
+		"environment": [],
+		"externalConsole": false,
+		"MIMode": "lldb",
+		"preLaunchTask": "Build Tester",
+		"internalConsoleOptions": "openOnSessionStart"
+	}]
+}

@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build Tester",
+			"type": "shell",
+			"command": "make",
+			"args": ["-f", "tester.mk", "tester"/*, "CUSTOM_MAIN=1"*/],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"presentation": {
+				"reveal": "silent"
+			},
+			"group": "build"
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+	"files.associations": {
+		"*.h": "c",
+		"stdio.h": "c",
+		"typeinfo": "c",
+		"algorithm": "c",
+		"sstream": "c",
+		"__locale": "c"
+	}
+}
