@@ -1,50 +1,6 @@
 ################################################################################################################################
 
 
-# RUN TESTERS
-
-# TODO: Add grep for KOs so they are much easier to spot
-
-# cd testers && cd libft-unit-test && make f && cd ../libftTester && make && cd ../..
-
-# cd .. && make remove_bonus_suffix && cd libft-war-machine && sh grademe.sh && sh grademe.sh
-
-
-################################################################################################################################
-
-
-# CLONE TESTERS FOR EVAL
-
-# 1. git clone https://github.com/alelievr/libft-unit-test && git clone https://github.com/ska42/libft-war-machine && git clone https://github.com/Tripouille/libftTester.git
-
-
-################################################################################################################################
-
-
-# RUN TESTERS FOR EVAL
-
-
-## LIBFT-UNIT-TEST
-
-# 2. TODO: Open libft-unit-test/Makefile and change LIBFTDIR = ../libft to LIBFTDIR = ../
-
-# 3. cd libft-unit-test && make && ./run_test
-
-
-## LIBFTTESTER
-
-# 4. cd ../libftTester && make
-
-
-## LIBFT-WAR-MACHINE
-
-# 5. TODO: Manually remove _bonus from the filenames under BONUS_SOURCES in this file
-# 6. cd .. && make remove_bonus_suffix && cd libft-war-machine && sh grademe.sh && sh grademe.sh
-
-
-################################################################################################################################
-
-
 include sources.mk
 
 NAME := libft.a
@@ -124,4 +80,20 @@ re: fclean all
 ################################################################################################################################
 
 
-.PHONY: all debug clean fclean re tester
+# TODO: Add grep for KOs so they are much easier to spot
+run_tests: run_test_1 run_test_2
+
+run_test_1:
+	make -C testers/libft-unit-test f
+
+run_test_2:
+	make -C testers/libftTester
+
+
+################################################################################################################################
+
+
+.PHONY: all debug clean fclean re run_tests run_test_1 run_test_2
+
+
+################################################################################################################################
