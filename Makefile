@@ -118,10 +118,6 @@ clean:
 fclean: clean
 	rm -f $(FCLEANED_FILES)
 
-tester:
-	make -f tester.mk tester
-	./tester
-
 re: fclean all
 
 
