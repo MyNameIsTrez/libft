@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:14:02 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/04 17:40:34 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/04 17:56:34 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ NBR_SOURCES := $(addprefix src/nbr/,	\
 	ft_digit_to_char.c					\
 	ft_get_digit_count_base.c			\
 	ft_get_digit_count.c				\
-	ft_int_to_str_base.c				\
+	ft_itoa_base.c				\
 	ft_itoa.c							\
 	ft_max.c							\
 	ft_min.c							\

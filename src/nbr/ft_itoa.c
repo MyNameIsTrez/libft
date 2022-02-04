@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:10 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/04 17:20:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/04 17:55:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@
  */
 char	*ft_itoa(int nbr)
 {
-	return (ft_int_to_str_base(nbr, 10));
+	return (ft_itoa_base(nbr, 10));
 }
