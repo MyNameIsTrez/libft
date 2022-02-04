@@ -1,3 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    sources.mk                                         :+:    :+:             #
+#                                                      +:+                     #
+#    By: sbos <sbos@student.codam.nl>                 +#+                      #
+#                                                    +#+                       #
+#    Created: 2022/02/04 14:14:02 by sbos          #+#    #+#                  #
+#    Updated: 2022/02/04 14:18:40 by sbos          ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
+################################################################################
+
 CHAR_SOURCES :=	$(addprefix src/char/,	\
 	ft_char_to_digit.c					\
 	ft_char_to_str.c					\
@@ -83,4 +97,11 @@ STR_SOURCES := $(addprefix src/str/,	\
 	ft_substr.c							\
 )
 
-SOURCES := $(CHAR_SOURCES) $(IO_SOURCES) $(LST_SOURCES) $(MEM_SOURCES) $(NBR_SOURCES) $(STR_SOURCES)
+################################################################################
+
+SOURCES :=							\
+	$(CHAR_SOURCES) $(IO_SOURCES)	\
+	$(LST_SOURCES) $(MEM_SOURCES)	\
+	$(NBR_SOURCES) $(STR_SOURCES)
+
+################################################################################

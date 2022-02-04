@@ -1,5 +1,16 @@
-################################################################################################################################
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: sbos <sbos@student.codam.nl>                 +#+                      #
+#                                                    +#+                       #
+#    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
+#    Updated: 2022/02/04 14:17:58 by sbos          ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
 
+################################################################################
 
 include sources.mk
 
@@ -11,16 +22,12 @@ SRC_DIR := src
 OBJ_DIR := obj
 
 CFLAGS := -Wall -Wextra -Werror
-#CFLAGS += -O1 # -O1 adds tail recursion detection, which I need, so we might as well turn the optimizing up to 11 with -O3
 
 HEADERS := libft.h
 
-
-################################################################################################################################
-
+################################################################################
 
 FCLEANED_FILES := $(NAME)
-
 
 # DEBUG is set to 1 when tester.mk includes this file
 ifdef DEBUG
@@ -32,8 +39,10 @@ ifdef SAN
 CFLAGS += -fsanitize=address
 endif
 
-# Causes tester.c to run its own main(), instead of letting the unit tester Criterion use its own main()
-# This is necessary as Criterion doesn't run the leaks program hooked to its POST_FINI event if an assert fails, while it should
+# Causes tester.c to run its own main(), instead of letting the unit tester
+# Criterion use its own main()
+# This is necessary as Criterion doesn't run the leaks program
+# hooked to its POST_FINI event if an assert fails, while it should
 ifdef CUSTOM_MAIN
 CFLAGS += -DCUSTOM_MAIN=1
 endif
@@ -51,9 +60,7 @@ ifneq ($(shell echo "$(MAKE_DATA)"), $(shell cat "$(DATA_FILE)" 2> /dev/null))
 PRE_RULES += clean
 endif
 
-
-################################################################################################################################
-
+################################################################################
 
 all: $(PRE_RULES) $(NAME)
 
@@ -76,24 +83,8 @@ fclean: clean
 
 re: fclean all
 
+################################################################################
 
-################################################################################################################################
+.PHONY: all debug clean fclean re
 
-
-# TODO: Add grep for KOs so they are much easier to spot
-run_tests: run_test_1 run_test_2
-
-run_test_1:
-	make -C testers/libft-unit-test f
-
-run_test_2:
-	make -C testers/libftTester
-
-
-################################################################################################################################
-
-
-.PHONY: all debug clean fclean re run_tests run_test_1 run_test_2
-
-
-################################################################################################################################
+################################################################################
