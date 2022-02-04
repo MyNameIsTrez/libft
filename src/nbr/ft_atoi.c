@@ -6,15 +6,15 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:16:01 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/04 16:23:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_positive_integer(const char *str)
+static long	get_number_without_minus(const char *str)
 {
-	int		integer;
+	long	integer;
 	size_t	i;
 	char	chr;
 
@@ -45,7 +45,8 @@ static int	get_positive_integer(const char *str)
  */
 int	ft_atoi(const char *str)
 {
-	int	sign;
+	long	sign;
+	int		result;
 
 	while (ft_isspace(str[0]))
 		str++;
@@ -57,5 +58,6 @@ int	ft_atoi(const char *str)
 	}
 	else if (str[0] == '+')
 		str++;
-	return (sign * get_positive_integer(str));
+	result = (int)(sign * get_number_without_minus(str));
+	return (result);
 }
