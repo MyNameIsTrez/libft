@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_EXTRA_ft_min(void)
+void	test_ft_min(void)
 {
 	assert(ft_min(1, 2) == 1);
 	assert(ft_min(2, 2) == 2);

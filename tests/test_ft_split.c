@@ -10,7 +10,7 @@
 // 	write(2, s, len);
 // }
 
-Test(EXTRA_ft_split, basic_test)
+Test(ft_split, basic_test)
 {
 	// char	**split = ft_split("  foo  ", ' ');
 	// printf("'%s'\n", split[0]);

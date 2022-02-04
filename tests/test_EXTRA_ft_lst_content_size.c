@@ -2,7 +2,7 @@
 
 typedef size_t (*t_size_fn)(const void *);
 
-void	test_EXTRA_ft_lst_content_size(void)
+void	test_ft_lst_content_size(void)
 {
 	t_list	*lst = NULL;
 

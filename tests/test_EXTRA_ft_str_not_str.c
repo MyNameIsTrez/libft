@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_EXTRA_ft_str_not_str(void)
+void	test_ft_str_not_str(void)
 {
 	printf("'%s'\n", ft_str_not_str("", ""));
 	assert(strcmp(ft_str_not_str("", ""), "") == 0);

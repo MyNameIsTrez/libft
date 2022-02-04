@@ -1,6 +1,6 @@
 #include "tests.h"
 
-Test(EXTRA_ft_split_str, basic_test)
+Test(ft_split_str, basic_test)
 {
 	char	*str = "foo1ABABfoo2ABfoo3";
 	char	*sep = "AB";

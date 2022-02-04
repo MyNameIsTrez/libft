@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_EXTRA_ft_max(void)
+void	test_ft_max(void)
 {
 	assert(ft_max(1, 2) == 2);
 	assert(ft_max(2, 2) == 2);

@@ -1,6 +1,6 @@
 #include "../tests.h"
 
-void	test_EXTRA_ft_char_to_str(void)
+void	test_ft_char_to_str(void)
 {
 	// char	*str = ft_char_to_str('c');
 	// printf("'%s'\n", str);

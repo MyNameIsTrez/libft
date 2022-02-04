@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_EXTRA_ft_strtrim_whitespace(void)
+void	test_ft_strtrim_whitespace(void)
 {
 	printf("'%s'\n", ft_strtrim_whitespace(" a"));
 	printf("'%s'\n", ft_strtrim_whitespace(" \n\t foo bar \n\t "));

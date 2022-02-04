@@ -17,6 +17,6 @@
 * Use an alias for "NULL if the allocation fails.", and substitute any variants with it.
 * Write basic tests for every function.
 * Remove any consts that aren't from vanilla libft.
-* Simplify EXTRA_str_not_chr.
+* Simplify str_not_chr.
 * ft_memcmp doesn't pass libftdestructor.
 * Maybe rename lstnew to lst_new and such, although this'd also require modifying the testers in testers/.

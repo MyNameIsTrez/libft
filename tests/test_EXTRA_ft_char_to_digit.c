@@ -1,6 +1,6 @@
 #include "../tests.h"
 
-void	test_EXTRA_ft_char_to_digit(void)
+void	test_ft_char_to_digit(void)
 {
 	int	i = 0;
 

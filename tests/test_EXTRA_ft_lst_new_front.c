@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_EXTRA_ft_lst_new_front(void)
+void	test_ft_lst_new_front(void)
 {
 	t_list	*lst;
 	lst = NULL;
