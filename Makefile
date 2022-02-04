@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/04 14:17:58 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/04 17:52:40 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,8 @@ $(NAME): $(OBJECT_PATHS)
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+bonus: # This is just here so libftTester doesn't throw an error.
 
 debug:
 	@$(MAKE) DEBUG=1 all
