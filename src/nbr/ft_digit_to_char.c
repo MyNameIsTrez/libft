@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/14 13:47:28 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/04 17:36:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/05 16:39:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * @param nbr
  * @return
  */
-char	ft_digit_to_char(const int nbr)
+char	ft_digit_to_char(int nbr)
 {
 	return (ft_digit_to_char_base(nbr, 10));
 }

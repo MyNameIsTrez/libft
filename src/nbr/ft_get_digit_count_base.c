@@ -6,11 +6,12 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/20 12:00:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 16:20:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/05 16:38:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft_nbr.h"
 
 /**
  * @brief Counts the number of digits in @p nbr with a specified @p base.
@@ -19,7 +20,7 @@
  * @param nbr
  * @return
  */
-size_t	ft_get_digit_count_base(int nbr, unsigned int base)
+size_t	ft_get_digit_count_base(intmax_t nbr, unsigned int base)
 {
 	size_t		len;
 	const int	base_ = (int)base;
