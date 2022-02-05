@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa_base.c                               :+:    :+:            */
+/*   ft_nbr_to_str.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
@@ -37,7 +37,7 @@ static void	add_digits_to_str(char *str, int nbr, size_t number_len,
  * @param base
  * @return
  */
-char	*ft_itoa_base(int number, unsigned int base)
+char	*ft_nbr_to_str(int number, unsigned int base)
 {
 	char			*str;
 	const size_t	number_len = ft_get_digit_count_base(number, base);

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/20 12:00:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/04 17:56:34 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/05 16:20:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /**
  * @brief Counts the number of digits in @p nbr with a specified @p base.
- * This function was made for ft_itoa_base().
+ * This function was made for ft_nbr_to_str().
  *
  * @param nbr
  * @return
