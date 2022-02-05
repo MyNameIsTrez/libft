@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_is_upper.c                                      :+:    :+:            */
+/*   ft_str_upper.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/04 18:48:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 14:47:03 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/04 18:34:49 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/05 14:51:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_char.h"
+#include "libft.h"
 
 /**
- * @brief Checks if @p chr is uppercase.
+ * @brief Uppercases all alphabetical characters in @p str.
  *
- * @param chr
- * @return true or false.
+ * @param str
+ * @return
  */
-bool	ft_is_upper(char chr)
+char	*ft_str_upper(char *str)
 {
-	return ('A' <= chr && chr <= 'Z');
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		str[i] = (char)ft_toupper(str[i]);
+		i++;
+	}
+	return (str);
 }

@@ -6,17 +6,19 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/04 18:48:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 14:29:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/05 14:47:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft_char.h"
 
 /**
  * @brief Checks if @p chr is lowercase.
  *
  * @param chr
- * @return 1 if true, 0 if false.
+ * @return true or false.
  */
-int	ft_is_lower(int chr)
+bool	ft_is_lower(char chr)
 {
 	return ('a' <= chr && chr <= 'z');
 }

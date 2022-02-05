@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:54 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 14:23:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/05 14:48:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  */
 int	ft_tolower(int chr)
 {
-	if (ft_is_upper(chr))
+	if (ft_is_upper((char)chr))
 		return (chr + LOWER_UPPER_DIFFERENCE);
 	return (chr);
 }

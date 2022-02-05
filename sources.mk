@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:14:02 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/04 17:56:34 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/05 14:39:50 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@
 CHAR_SOURCES :=	$(addprefix src/char/,	\
 	ft_char_to_digit.c					\
 	ft_char_to_str.c					\
+	ft_is_lower.c						\
+	ft_is_upper.c						\
 	ft_isalnum.c						\
 	ft_isalpha.c						\
 	ft_isascii.c						\
@@ -76,10 +78,12 @@ STR_SOURCES := $(addprefix src/str/,	\
 	ft_free_split.c						\
 	ft_rejoin_split.c					\
 	ft_split.c							\
+	ft_str_lower.c						\
 	ft_split_str.c						\
 	ft_str_not_chr.c					\
 	ft_str_not_str.c					\
 	ft_str_replace.c					\
+	ft_str_upper.c						\
 	ft_stralloc.c						\
 	ft_strchr.c							\
 	ft_strcmp.c							\
