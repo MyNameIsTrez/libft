@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 17:07:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 18:21:35 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/05 18:44:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	run_tests(void)
+void	lst_tests(void)
 {
+	TEST(test_ft_lst_content_size);
 	TEST(test_ft_lstadd_back);
 	TEST(test_ft_lstadd_front);
 	TEST(test_ft_lstsize);
@@ -39,10 +40,17 @@ void	run_tests(void)
 
 ////////////////////////////////////////////////////////////////////////////////
 
+void	test(void)
+{
+	lst_tests();
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
 int main(void)
 {
 	printf("Running tests...\n");
-	run_tests();
+	test();
 	printf("Tests ran successfully!\n");
 	return (EXIT_SUCCESS);
 }
