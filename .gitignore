@@ -7,10 +7,6 @@
 # Allow .c and .h files
 !*.[ch]
 
-# But disallow test and extra files
-# *test*
-# crit_utils.h
-
 # Allow testers
 !testers/**
 

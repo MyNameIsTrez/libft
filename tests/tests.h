@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   tests.h                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 17:07:35 by sbos          ########   odam.nl         */
+/*   Created: 2022/01/20 11:42:16 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/05 17:55:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef TESTS_H
+# define TESTS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
+# include "libft.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+# include "asserts.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+// TODO: Is this entire file unnecessary if tester.mk already includes these subheaders?:
+# include "test_char.h"
+# include "test_io.h"
+# include "test_lst.h"
+# include "test_mem.h"
+# include "test_nbr.h"
+# include "test_str.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

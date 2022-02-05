@@ -2,4 +2,3 @@ tests/test*.c
 extra.h
 tests.h
 tester.c
-crit_utils.h

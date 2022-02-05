@@ -5,7 +5,11 @@
 			"label": "Build Tester",
 			"type": "shell",
 			"command": "make",
-			"args": ["-f", "tester.mk", "tester"/*, "CUSTOM_MAIN=1"*/],
+			"args": [
+				"-f",
+				"tester.mk",
+				"tester"
+			],
 			"problemMatcher": [
 				"$gcc"
 			],

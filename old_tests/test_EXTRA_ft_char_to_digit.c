@@ -1,4 +1,4 @@
-#include "../tests.h"
+#include "tests.h"
 
 void	test_ft_char_to_digit(void)
 {

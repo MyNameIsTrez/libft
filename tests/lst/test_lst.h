@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   test_lst.h                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 17:07:35 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/05 17:53:07 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/05 18:17:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef TEST_LST_H
+# define TEST_LST_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
+void	test_ft_lstadd_back(void);
+void	test_ft_lstsize(void);
 
 ////////////////////////////////////////////////////////////////////////////////
 

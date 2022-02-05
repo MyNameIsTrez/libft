@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/04 17:52:40 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/05 17:06:31 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,20 +31,12 @@ FCLEANED_FILES := $(NAME)
 
 # DEBUG is set to 1 when tester.mk includes this file
 ifdef DEBUG
-CFLAGS += -g3 -Wconversion -I$(CRITERION_DIR)/include
+CFLAGS += -g3 -Wconversion
 FCLEANED_FILES += $(TEST_NAME)
 endif
 
 ifdef SAN
 CFLAGS += -fsanitize=address
-endif
-
-# Causes tester.c to run its own main(), instead of letting the unit tester
-# Criterion use its own main()
-# This is necessary as Criterion doesn't run the leaks program
-# hooked to its POST_FINI event if an assert fails, while it should
-ifdef CUSTOM_MAIN
-CFLAGS += -DCUSTOM_MAIN=1
 endif
 
 OBJECT_PATHS := $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:.c=.o))

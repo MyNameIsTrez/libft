@@ -1,6 +1,5 @@
 # TODO
 * Add parameter & return descriptions for the part 1 & extra ft functions.
-* Put tests alongside each src file so they are easier to find.
 * Make binary files get ignored by their gitignore rule by reset --HARDing them or smth.
 * Fix all existing tests by making them all use my own asserts, instead of Criterion functions.
 

@@ -6,13 +6,12 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:59 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/04 14:22:28 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/05 18:12:15 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 ################################################################################
 
-export CRITERION_DIR=$(HOME)/.brew/Cellar/criterion/2.3.3-bleeding4
 export DEBUG=1
 
 ################################################################################
@@ -22,21 +21,30 @@ include Makefile
 ################################################################################
 
 TESTER := tester
-TESTER_HEADERS := tests.h
+TESTER_HEADERS :=			\
+	tests/char/test_char.h	\
+	tests/io/test_io.h		\
+	tests/lst/test_lst.h	\
+	tests/mem/test_mem.h	\
+	tests/nbr/test_nbr.h	\
+	tests/str/test_str.h	\
 
-TEST_DIR := tests
+TESTS_DIR := tests
 
 ################################################################################
 
-TESTER_SOURCES := $(wildcard $(TEST_DIR)/*.c) tester.c
+TESTER_SOURCES := $(wildcard $(TESTS_DIR)/*/*.c) tester.c
 
-TEST_INCLUDES := $(addprefix -I, $(sort $(dir $(TESTER_HEADERS))))
+TESTER_HEADERS += $(TESTS_DIR)/tests.h
+
+TEST_INCLUDES := -I. $(addprefix -I, $(sort $(dir $(TESTER_HEADERS))))
 
 ################################################################################
 
 $(TESTER): all $(TESTER_HEADERS) $(TESTER_SOURCES)
-	$(CC) $(CFLAGS) $(TEST_INCLUDES) -L$(CRITERION_DIR)/lib -lcriterion -g3 \
-		libft.a $(TESTER_SOURCES) -o $(TESTER)
+	$(CC) $(CFLAGS) $(TEST_INCLUDES) -g3 libft.a $(TESTER_SOURCES) -o $(TESTER)
+
+################################################################################
 
 re_tester: fclean tester
 
