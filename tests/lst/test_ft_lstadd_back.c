@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft_io.h                                         :+:    :+:            */
+/*   test_ft_lstadd_back.c                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 18:25:08 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/05 18:16:35 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/05 18:19:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_IO_H
-# define LIBFT_IO_H
+#include "tests.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	ft_print(char *str);
-void	ft_putchar_fd(char chr, int fd);
-void	ft_putendl_fd(char *str, int fd);
-void	ft_putnbr_fd(int nbr, int fd);
-void	ft_putstr_fd(char *str, int fd);
+void	test_ft_lstadd_back(void)
+{
+	t_list	*lst;
 
-////////////////////////////////////////////////////////////////////////////////
+	lst = NULL;
 
-#endif
+	ft_lstadd_back(&lst, ft_lstnew("foo"));
+	ft_lstadd_back(&lst, ft_lstnew("foo"));
+
+	ASSERT_INT(ft_lstsize(lst), 2);
+
+	ft_lstclear(&lst, NULL);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

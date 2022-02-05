@@ -6,14 +6,20 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:22:44 by sbos          #+#    #+#                 */
-/*   Updated: 2021/12/13 16:40:35 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/05 18:25:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+////////////////////////////////////////////////////////////////////////////////
 
 #ifndef LIBFT_LST_H
 # define LIBFT_LST_H
 
+////////////////////////////////////////////////////////////////////////////////
+
 # include <stddef.h>
+
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief A singly linked list.
@@ -27,8 +33,9 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-size_t	ft_lst_content_size(t_list *lst,
-			size_t (*counter)(const void *));
+////////////////////////////////////////////////////////////////////////////////
+
+size_t	ft_lst_content_size(t_list *lst, size_t (*counter)(const void *));
 void	ft_lst_new_back(t_list **lst, void *content);
 void	ft_lst_new_front(t_list **lst, void *content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
@@ -41,4 +48,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*fun)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 
+////////////////////////////////////////////////////////////////////////////////
+
 #endif
+
+////////////////////////////////////////////////////////////////////////////////

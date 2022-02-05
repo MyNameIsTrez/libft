@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 17:07:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 18:17:33 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/05 18:21:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 void	run_tests(void)
 {
 	TEST(test_ft_lstadd_back);
+	TEST(test_ft_lstadd_front);
 	TEST(test_ft_lstsize);
 }
 

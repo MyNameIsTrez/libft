@@ -6,12 +6,16 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:29:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 14:39:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/05 18:27:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+////////////////////////////////////////////////////////////////////////////////
+
 #ifndef LIBFT_STR_H
 # define LIBFT_STR_H
+
+////////////////////////////////////////////////////////////////////////////////
 
 void	ft_free_split(char ***split);
 char	*ft_rejoin_split(char **split, char *sep);
@@ -41,4 +45,8 @@ char	*ft_strtrim_whitespace(const char *str);
 char	*ft_strtrim(const char *str, const char *trim_set);
 char	*ft_substr(const char *str, unsigned int start, size_t len);
 
+////////////////////////////////////////////////////////////////////////////////
+
 #endif
+
+////////////////////////////////////////////////////////////////////////////////
