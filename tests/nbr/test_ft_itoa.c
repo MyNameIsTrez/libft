@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/08 15:24:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/08 15:25:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/08 17:13:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 void	test_ft_itoa(void)
 {
-	ASSERT_STR(ft_itoa(42), "42");
-	ASSERT_STR(ft_itoa(-42), "-42");
-	ASSERT_STR(ft_itoa(0), "0");
-	ASSERT_STR(ft_itoa(-2147483648), "-2147483648");
+	ASSERT(ft_itoa(42), "42");
+	ASSERT(ft_itoa(-42), "-42");
+	ASSERT(ft_itoa(0), "0");
+	ASSERT(ft_itoa(-2147483648), "-2147483648");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

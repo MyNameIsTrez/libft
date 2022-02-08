@@ -25,7 +25,7 @@ void	test_ft_lstadd_back(void)
 	ft_lstadd_back(&lst, ft_lstnew("foo"));
 	ft_lstadd_back(&lst, ft_lstnew("foo"));
 
-	ASSERT_INT(ft_lstsize(lst), 2);
+	ASSERT(ft_lstsize(lst), 2);
 
 	ft_lstclear(&lst, NULL);
 }

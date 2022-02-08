@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 18:56:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 19:07:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/08 17:16:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	test_ft_lst_new_back(void)
 	lst = NULL;
 
 	ft_lst_new_back(&lst, strdup("foo"));
-	ASSERT_STR(lst->content, "foo");
+	ASSERT((char *)lst->content, "foo");
 
 	ft_lst_new_back(&lst, strdup("bar"));
-	ASSERT_STR(lst->next->content, "bar");
+	ASSERT((char *)lst->next->content, "bar");
 
 	ft_lst_new_back(&lst, strdup("baz"));
-	ASSERT_STR(lst->next->next->content, "baz");
+	ASSERT((char *)lst->next->next->content, "baz");
 
 	ft_lstclear(&lst, &free);
 }

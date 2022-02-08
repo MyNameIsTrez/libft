@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 18:15:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/08 15:28:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/08 16:03:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// void	test_ft_get_digit_count_base_unsigned(void);
 void	test_ft_itoa(void);
 void	test_ft_nbr_to_str(void);
+void	test_ft_unsigned_nbr_to_str(void);
 
 ////////////////////////////////////////////////////////////////////////////////
 

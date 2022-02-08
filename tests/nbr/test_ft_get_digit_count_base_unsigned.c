@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_lstnew.c                                   :+:    :+:            */
+/*   test_ft_get_digit_count_base_unsigned.c            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/05 19:04:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/08 17:17:51 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/08 15:58:45 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/08 17:15:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	test_ft_lstnew(void)
+void	test_ft_get_digit_count_base_unsigned(void)
 {
-	char	foo[] = "bar";
-
-	t_list	*lst = ft_lstnew(foo);
-
-	ASSERT((char *)lst->content, "bar");
-	ASSERT((void *)lst->next, NULL);
-
-	ft_free(lst);
+	ASSERT((int)ft_get_digit_count_base_unsigned(42, 10), 2);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

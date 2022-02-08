@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 18:56:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/08 15:29:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/08 17:13:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 void	test_ft_nbr_to_str(void)
 {
-	ASSERT_STR(ft_nbr_to_str(42, 10), "42");
-	ASSERT_STR(ft_nbr_to_str(-42, 10), "-42");
-	ASSERT_STR(ft_nbr_to_str(0, 10), "0");
-	ASSERT_STR(ft_nbr_to_str(-2147483648, 10), "-2147483648");
+	ASSERT(ft_nbr_to_str(42, 10), "42");
+	ASSERT(ft_nbr_to_str(-42, 10), "-42");
+	ASSERT(ft_nbr_to_str(0, 10), "0");
+	ASSERT(ft_nbr_to_str(-2147483648, 10), "-2147483648");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

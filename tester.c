@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 17:07:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/08 15:29:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/08 16:08:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,31 +26,33 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#define TEST(test_function) {printf("Calling function '" #test_function "'\n");test_function();}
+#define TEST(test_function) {void test_##test_function(void);printf("Calling function '" #test_function "'\n");test_##test_function();}
 
 ////////////////////////////////////////////////////////////////////////////////
 
 void	lst_tests(void)
 {
-	TEST(test_ft_lst_new_back);
-	TEST(test_ft_lst_new_front);
-	TEST(test_ft_lstclear);
-	TEST(test_ft_lstdelone);
-	TEST(test_ft_lstiter);
-	TEST(test_ft_lstlast);
-	TEST(test_ft_lstmap);
-	TEST(test_ft_lstnew);
+	TEST(ft_lst_new_back);
+	TEST(ft_lst_new_front);
+	TEST(ft_lstclear);
+	TEST(ft_lstdelone);
+	TEST(ft_lstiter);
+	TEST(ft_lstlast);
+	TEST(ft_lstmap);
+	TEST(ft_lstnew);
 
-	TEST(test_ft_lst_content_size);
-	TEST(test_ft_lstadd_back);
-	TEST(test_ft_lstadd_front);
-	TEST(test_ft_lstsize);
+	TEST(ft_lst_content_size);
+	TEST(ft_lstadd_back);
+	TEST(ft_lstadd_front);
+	TEST(ft_lstsize);
 }
 
 void	nbr_tests(void)
 {
-	TEST(test_ft_itoa);
-	TEST(test_ft_nbr_to_str);
+	TEST(ft_get_digit_count_base_unsigned);
+	TEST(ft_itoa);
+	TEST(ft_nbr_to_str);
+	TEST(ft_unsigned_nbr_to_str);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
