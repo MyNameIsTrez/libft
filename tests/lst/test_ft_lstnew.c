@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_lst_content_size.c                         :+:    :+:            */
+/*   test_ft_lstnew.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/05 18:37:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 18:57:39 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/05 19:04:23 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/05 19:05:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef size_t	(*t_size_fn)(const void *);
-
-////////////////////////////////////////////////////////////////////////////////
-
-void	test_ft_lst_content_size(void)
+void	test_ft_lstnew(void)
 {
-	t_list	*lst;
+	char	foo[] = "bar";
 
-	lst = NULL;
+	t_list	*lst = ft_lstnew(foo);
 
-	ASSERT_INT((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 0);
+	ASSERT_STR(lst->content, "bar");
+	// ASSERT_NULL(lst->next);
 
-	ft_lst_new_back(&lst, strdup("foo"));
-	ASSERT_INT((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 3);
-
-	ft_lst_new_back(&lst, strdup("bar"));
-	ASSERT_INT((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 6);
-
-	ft_lst_new_back(&lst, strdup("baz"));
-	ASSERT_INT((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 9);
-
-	ft_lstclear(&lst, free);
+	ft_free(lst);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

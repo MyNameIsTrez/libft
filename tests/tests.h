@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/20 11:42:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 17:55:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/05 18:57:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// TODO: Is this entire file unnecessary if tester.mk already includes these subheaders?:
+#include <stdlib.h>
+
+////////////////////////////////////////////////////////////////////////////////
+
 # include "test_char.h"
 # include "test_io.h"
 # include "test_lst.h"

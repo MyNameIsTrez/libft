@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 17:07:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 18:44:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/08 15:29:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,25 @@
 
 void	lst_tests(void)
 {
+	TEST(test_ft_lst_new_back);
+	TEST(test_ft_lst_new_front);
+	TEST(test_ft_lstclear);
+	TEST(test_ft_lstdelone);
+	TEST(test_ft_lstiter);
+	TEST(test_ft_lstlast);
+	TEST(test_ft_lstmap);
+	TEST(test_ft_lstnew);
+
 	TEST(test_ft_lst_content_size);
 	TEST(test_ft_lstadd_back);
 	TEST(test_ft_lstadd_front);
 	TEST(test_ft_lstsize);
+}
+
+void	nbr_tests(void)
+{
+	TEST(test_ft_itoa);
+	TEST(test_ft_nbr_to_str);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -43,6 +58,7 @@ void	lst_tests(void)
 void	test(void)
 {
 	lst_tests();
+	nbr_tests();
 }
 
 ////////////////////////////////////////////////////////////////////////////////

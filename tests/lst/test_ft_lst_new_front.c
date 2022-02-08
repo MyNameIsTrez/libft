@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_lst_content_size.c                         :+:    :+:            */
+/*   test_ft_lst_new_front.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/05 18:37:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 18:57:39 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/05 18:58:39 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/05 18:59:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,22 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef size_t	(*t_size_fn)(const void *);
-
-////////////////////////////////////////////////////////////////////////////////
-
-void	test_ft_lst_content_size(void)
+void	test_ft_lst_new_front(void)
 {
 	t_list	*lst;
 
 	lst = NULL;
 
-	ASSERT_INT((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 0);
+	ft_lst_new_front(&lst, strdup("foo"));
+	ASSERT_STR(lst->content, "foo");
 
-	ft_lst_new_back(&lst, strdup("foo"));
-	ASSERT_INT((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 3);
+	ft_lst_new_front(&lst, strdup("bar"));
+	ASSERT_STR(lst->content, "bar");
 
-	ft_lst_new_back(&lst, strdup("bar"));
-	ASSERT_INT((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 6);
+	ft_lst_new_front(&lst, strdup("baz"));
+	ASSERT_STR(lst->content, "baz");
 
-	ft_lst_new_back(&lst, strdup("baz"));
-	ASSERT_INT((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 9);
-
-	ft_lstclear(&lst, free);
+	ft_lstclear(&lst, &free);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

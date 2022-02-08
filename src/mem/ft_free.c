@@ -22,7 +22,7 @@ void	*ft_free(void *ptr)
 {
 	void	**ptrptr;
 
-	ptrptr = (void **)ptr;
+	ptrptr = &ptr;
 	free(*ptrptr);
 	*ptrptr = NULL;
 	return (NULL);
