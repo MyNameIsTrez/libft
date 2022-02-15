@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:14:02 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/08 15:58:05 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/15 18:05:50 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,7 @@ NBR_SOURCES := $(addprefix src/nbr/,	\
 STR_SOURCES := $(addprefix src/str/,	\
 	ft_free_split.c						\
 	ft_rejoin_split.c					\
+	ft_split_str.c						\
 	ft_split.c							\
 	ft_str_lower.c						\
 	ft_str_eq.c							\
