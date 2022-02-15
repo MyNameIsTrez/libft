@@ -6,11 +6,17 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/04 18:34:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 14:51:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/15 16:40:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	striteri_toupper(unsigned int i, char *chr)
+{
+	(void)i;
+	(*chr) = (char)ft_toupper(*chr);
+}
 
 /**
  * @brief Uppercases all alphabetical characters in @p str.
@@ -23,10 +29,6 @@ char	*ft_str_upper(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
-		str[i] = (char)ft_toupper(str[i]);
-		i++;
-	}
+	ft_striteri(str, striteri_toupper);
 	return (str);
 }
