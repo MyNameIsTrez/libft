@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_streq.c                                         :+:    :+:            */
+/*   ft_str_eq.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
@@ -20,7 +20,7 @@
  * @return true if @p str1 and @p str2 are equal;\n
    false otherwise.
  */
-bool	ft_streq(const char *str1, const char *str2)
+bool	ft_str_eq(const char *str1, const char *str2)
 {
 	return (ft_strcmp(str1, str2) == 0);
 }

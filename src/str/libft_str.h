@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:29:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/15 16:50:32 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/15 18:05:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_free_split(char ***split);
 char	*ft_rejoin_split(char **split, char *sep);
 char	**ft_split_str(const char *str, const char *sep);
 char	**ft_split(const char *str, char sep);
+bool	ft_str_eq(const char *str1, const char *str2);
 char	*ft_str_lower(char *str);
 char	*ft_str_not_chr(const char *str, const int chr);
 char	*ft_str_not_str(const char *haystack, const char *needle);
@@ -30,7 +31,6 @@ char	*ft_stralloc(const size_t len);
 char	*ft_strchr(const char *str, int chr);
 int		ft_strcmp(const char *str1, const char *str2);
 char	*ft_strdup(const char *str);
-int		ft_streq(const char *str1, const char *str2);
 void	ft_striteri(char *str, void (*fun)(unsigned int, char*));
 char	*ft_strjoin(const char *str1, const char *str2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dst_size);

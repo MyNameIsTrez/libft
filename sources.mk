@@ -81,7 +81,7 @@ STR_SOURCES := $(addprefix src/str/,	\
 	ft_rejoin_split.c					\
 	ft_split.c							\
 	ft_str_lower.c						\
-	ft_split_str.c						\
+	ft_str_eq.c							\
 	ft_str_not_chr.c					\
 	ft_str_not_str.c					\
 	ft_str_replace.c					\
