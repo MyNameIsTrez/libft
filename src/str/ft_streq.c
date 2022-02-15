@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strcmp.c                             :+:    :+:            */
+/*   ft_streq.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/11 12:40:04 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/14 10:20:47 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/15 16:46:41 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/15 16:52:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Compares two strings.
+ * @brief Checks if two strings are equal.
  *
  * @param str1
  * @param str2
- * @return 0 if @p str1 and @p str2 are equal;\n
-   a negative value if @p str1 is less than @p str2;\n
-   a positive value if @p str1 is greater than @p str2.
+ * @return true if @p str1 and @p str2 are equal;\n
+   false otherwise.
  */
-int	ft_strcmp(const char *str1, const char *str2)
+bool	ft_streq(const char *str1, const char *str2)
 {
-	return (ft_strncmp(str1, str2,
-			(size_t)ft_max((int)ft_strlen(str1), (int)ft_strlen(str2))));
+	return (ft_strcmp(str1, str2) == 0);
 }

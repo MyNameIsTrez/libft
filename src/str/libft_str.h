@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:29:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 18:27:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/15 16:50:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*ft_stralloc(const size_t len);
 char	*ft_strchr(const char *str, int chr);
 int		ft_strcmp(const char *str1, const char *str2);
 char	*ft_strdup(const char *str);
+int		ft_streq(const char *str1, const char *str2);
 void	ft_striteri(char *str, void (*fun)(unsigned int, char*));
 char	*ft_strjoin(const char *str1, const char *str2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dst_size);

@@ -10,6 +10,6 @@ void	test_ft_stralloc(void)
 	str[2] = 'l';
 	str[3] = 'l';
 	str[4] = 'o';
-	assert(ft_strcmp(str, "hello") == 0);
+	assert(ft_streq(str, "hello"));
 	assert(str[5] == '\0');
 }
