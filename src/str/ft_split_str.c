@@ -14,8 +14,6 @@
 
 #include <stdlib.h>
 
-#include <stdio.h> // TODO: REMOVE, FORBIDDEN!
-
 static size_t	get_word_count(char str[], const char sep[])
 {
 	const size_t	sep_len = ft_strlen(sep);
@@ -73,8 +71,8 @@ static void	add_words_to_split(char *str, const char *sep, char ***split)
 
 /**
  * @brief Splits the string @p str by removing all occurrences of @p sep.\n
-   It is reversible because it replaces any occurrence of @p sep
-   with an empty string.
+   It is designed to be reversible,
+   which works by replacing any occurrence of @p sep with an empty string.
  *
  * @param str 💥 The string to be split.
  * @param sep The delimiter string.

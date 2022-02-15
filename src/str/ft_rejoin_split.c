@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/10 17:14:08 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:16:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/15 18:14:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ static void	fill_rejoin(char *rejoined, char **split, char *sep
 	}
 }
 
+/**
+ * @brief ft_rejoin_split(ft_split_str("A A", "A"), "B") -> "B B"
+ *
+ * @param split gotten from calling ft_split_str()
+ * @param sep
+ * @return
+ */
 char	*ft_rejoin_split(char **split, char *sep)
 {
 	const size_t	sep_len = ft_strlen(sep);

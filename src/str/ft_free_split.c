@@ -12,6 +12,11 @@
 
 #include <stdlib.h>
 
+/**
+ * @brief Used to free @p split which is returned by ft_split_str().
+ *
+ * @param split
+ */
 void	ft_free_split(char ***split)
 {
 	size_t	i;
