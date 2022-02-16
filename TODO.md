@@ -2,6 +2,8 @@
 * Add parameter & return descriptions for the part 1 & extra ft functions.
 * Make binary files get ignored by their gitignore rule by reset --HARDing them or smth.
 * Fix all existing tests by making them all use my own asserts, instead of Criterion functions.
+* Rename all functions so they use proper snake_case, like isspace -> is_space
+* Change all `int i` indices to `size_t i`
 
 
 # TODO just before evalling

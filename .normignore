@@ -1,4 +1,4 @@
-tests/test*.c
+tests/
 extra.h
 tests.h
 tester.c
