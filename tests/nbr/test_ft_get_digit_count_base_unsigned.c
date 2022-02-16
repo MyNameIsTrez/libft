@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/08 15:58:45 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/08 17:15:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/16 14:23:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	test_ft_get_digit_count_base_unsigned(void)
+Test(ft_get_digit_count_base_unsigned)
 {
 	ASSERT((int)ft_get_digit_count_base_unsigned(42, 10), 2);
 }

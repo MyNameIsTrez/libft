@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 18:56:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/15 16:32:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/16 14:23:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	test_ft_str_upper(void)
+Test(ft_str_upper)
 {
 	ASSERT(ft_str_upper(strdup("")), "");
 	ASSERT(ft_str_upper(strdup("foo")), "FOO");

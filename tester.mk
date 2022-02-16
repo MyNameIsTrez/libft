@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:59 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/05 18:12:15 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/16 14:28:17 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,13 +21,7 @@ include Makefile
 ################################################################################
 
 TESTER := tester
-TESTER_HEADERS :=			\
-	tests/char/test_char.h	\
-	tests/io/test_io.h		\
-	tests/lst/test_lst.h	\
-	tests/mem/test_mem.h	\
-	tests/nbr/test_nbr.h	\
-	tests/str/test_str.h	\
+TESTER_HEADERS :=
 
 TESTS_DIR := tests
 

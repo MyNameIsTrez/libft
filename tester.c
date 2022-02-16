@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 17:07:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 12:47:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/16 14:23:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,52 +26,48 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#define TEST(test_function) {void test_##test_function(void);printf("Calling function '" #test_function "'\n");test_##test_function();}
+t_list *g_tests_lst = NULL;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	lst_tests(void)
+static bool	str_in_arr(char *str, char *arr[], size_t sizeof_arr)
 {
-	TEST(ft_lst_new_back);
-	TEST(ft_lst_new_front);
-	TEST(ft_lstclear);
-	TEST(ft_lstdelone);
-	TEST(ft_lstiter);
-	TEST(ft_lstlast);
-	TEST(ft_lstmap);
-	TEST(ft_lstnew);
-
-	TEST(ft_lst_content_size);
-	TEST(ft_lstadd_back);
-	TEST(ft_lstadd_front);
-	TEST(ft_lstsize);
+	size_t i = 0;
+	while (i < sizeof_arr / sizeof(char *))
+	{
+		if (ft_strcmp(arr[i], str) == 0)
+			return (true);
+		i++;
+	}
+	return (false);
 }
 
-void	nbr_tests(void)
+static void	run_tests(char *exclude_tests[], size_t sizeof_exclude_tests)
 {
-	TEST(ft_get_digit_count_base_unsigned);
-	TEST(ft_itoa);
-	TEST(ft_nbr_to_str);
-	TEST(ft_unsigned_nbr_to_str);
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-void	test(void)
-{
-	lst_tests();
-	nbr_tests();
-	TEST(ft_str_upper);
-	TEST(ft_str_repeat);
+	t_list	*lst = g_tests_lst;
+	while (lst != NULL)
+	{
+		t_fn_info *fn = lst->content;
+		if (!str_in_arr(fn->fn_name, exclude_tests, sizeof_exclude_tests))
+		{
+			printf("Testing function '%s'\n", fn->fn_name);
+			fn->fn_ptr();
+		}
+		lst = lst->next;
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-int main(void)
+int	main(void)
 {
 	printf("Running tests...\n");
-	test();
+	char *exclude_tests[] = {
+		// "ft_str_repeat",
+	};
+	run_tests(exclude_tests, sizeof(exclude_tests));
 	printf("Tests ran successfully!\n");
+	// system("leaks tester");
 	return (EXIT_SUCCESS);
 }
 

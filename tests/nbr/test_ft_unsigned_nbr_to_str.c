@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/08 15:58:45 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/08 17:13:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/16 14:24:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	test_ft_unsigned_nbr_to_str(void)
+Test(ft_unsigned_nbr_to_str)
 {
 	ASSERT(ft_unsigned_nbr_to_str(42, 10), "42");
 }

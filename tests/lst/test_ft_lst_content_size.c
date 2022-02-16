@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 18:37:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/08 17:12:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/16 14:24:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef size_t	(*t_size_fn)(const void *);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	test_ft_lst_content_size(void)
+Test(ft_lst_content_size)
 {
 	t_list	*lst;
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 19:00:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/08 17:16:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/16 14:25:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	free_content(void *content)
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	test_ft_lstdelone(void)
+Test(ft_lstdelone)
 {
 	char	*foo;
 	t_list	*lst;
