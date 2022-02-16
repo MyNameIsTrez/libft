@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_ft_strcmp(void)
+Test(ft_strcmp)
 {
 	printf("%d %d\n", ft_strcmp("atoms\0", "atomsa"), strcmp("atoms\0", "atomsa"));
 	printf("%d %d\n", ft_strcmp("atomsa", "atoms\0"), strcmp("atomsa", "atoms\0"));

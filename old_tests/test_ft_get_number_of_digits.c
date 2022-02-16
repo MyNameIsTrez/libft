@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_ft_get_digit_count(void)
+Test(ft_get_digit_count)
 {
 	// printf("number_len: %lu\n", ft_get_digit_count(123));
 	assert(ft_get_digit_count(2) == 1);

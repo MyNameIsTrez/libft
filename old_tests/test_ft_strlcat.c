@@ -10,7 +10,7 @@ static void	ft_print_result(size_t n)
 	write(2, &c, 1);
 }
 
-void	test_ft_strlcat(void)
+Test(ft_strlcat)
 {
 	char	dst[15];
 	memset(dst, 0, 15);

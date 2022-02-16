@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_ft_str_not_chr(void)
+Test(ft_str_not_chr)
 {
 	printf("'%s'\n", ft_str_not_chr("bonjour", '\0'));
 	printf("'%s'\n", ft_str_not_chr("bonjour", 'j'));

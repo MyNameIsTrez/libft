@@ -8,7 +8,7 @@ static char	example_function_1(unsigned int i, char c)
 	return (c);
 }
 
-void	test_ft_strmapi(void)
+Test(ft_strmapi)
 {
 	printf("'%s'\n", ft_strmapi("foo", example_function_1));
 }

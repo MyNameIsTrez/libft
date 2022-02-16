@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_ft_stralloc(void)
+Test(ft_stralloc)
 {
 	char	*str;
 

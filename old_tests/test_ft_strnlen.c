@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_ft_strnlen(void)
+Test(ft_strnlen)
 {
 	printf("%lu\n", ft_strnlen("foo", 2));
 	printf("%lu\n", ft_strnlen("foo", 3));

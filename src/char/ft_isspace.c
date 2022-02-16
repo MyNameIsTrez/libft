@@ -18,10 +18,9 @@
  * @param chr
  * @return
  */
-int	ft_isspace(const int chr)
+bool	ft_isspace(const int chr)
 {
-	if (chr == '\t' || chr == '\n' || chr == '\v'
-		|| chr == '\f' || chr == '\r' || chr == ' ')
-		return (1);
-	return (0);
+	if (ft_strchr(WHITESPACE, chr))
+		return (true);
+	return (false);
 }

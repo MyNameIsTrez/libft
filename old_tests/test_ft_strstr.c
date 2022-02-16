@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_ft_strstr(void)
+Test(ft_strstr)
 {
 	printf("'%s'\n", ft_strstr("foobar", ""));
 	printf("'%s'\n", ft_strstr("foobar", "b"));

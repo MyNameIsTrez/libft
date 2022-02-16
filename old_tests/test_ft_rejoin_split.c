@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_ft_rejoin_split(void)
+Test(ft_rejoin_split)
 {
 	char	*str = "AB1ABAB2AB3AB";
 	char	*sep = "AB";

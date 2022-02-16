@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_ft_strjoin(void)
+Test(ft_strjoin)
 {
 	printf("'%s'\n", ft_strjoin("lorem ipsum", "dolor sit amet"));
 }

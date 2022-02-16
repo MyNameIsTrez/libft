@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_ft_strdup(void)
+Test(ft_strdup)
 {
 
 }

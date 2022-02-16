@@ -7,7 +7,7 @@ static void	example_function_1(unsigned int i, char *c)
 	printf("char after change: %c\n\n", *c);
 }
 
-void	test_ft_striteri(void)
+Test(ft_striteri)
 {
 	char	s[] = "foo";
 

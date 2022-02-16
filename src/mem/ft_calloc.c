@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:10:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/16 15:31:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <stdlib.h>
 
+// TODO: Add check for if count * size overflows, like the real calloc.
 /**
  * @brief Allocates @p count * @p size cleared bytes.
  *
@@ -21,7 +22,6 @@
  * @param size
  * @return Allocated bytes.
  */
-// TODO: Add check for if count * size overflows, like the real calloc.
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;

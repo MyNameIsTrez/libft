@@ -20,5 +20,5 @@
  */
 char	*ft_strtrim_whitespace(const char *str)
 {
-	return (ft_strtrim(str, " \t\n\v\f\r"));
+	return (ft_strtrim(str, WHITESPACE));
 }

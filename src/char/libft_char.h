@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:17:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 14:47:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/16 14:51:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_isalpha(int chr);
 int		ft_isascii(int chr);
 int		ft_isdigit(int chr);
 int		ft_isprint(int chr);
-int		ft_isspace(const int chr);
+bool	ft_isspace(const int chr);
 int		ft_tolower(int chr);
 int		ft_toupper(int chr);
 

@@ -1,6 +1,6 @@
 #include "tests.h"
 
-void	test_ft_str_replace(void)
+Test(ft_str_replace)
 {
 	char	str[] = "foo\nbar";
 	printf("'%s'\n", ft_str_replace(str, "\n", "\\n"));

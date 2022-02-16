@@ -12,7 +12,7 @@
 // 	write(2, ">\n", 2);
 // }
 
-void	test_ft_strtrim(void)
+Test(ft_strtrim)
 {
 	// ft_print_result(ft_strtrim("lorem \n ipsum \t dolor \n sit \t amet", " "));
 	printf("'%s'\n", ft_strtrim(" a", " \t\n\v\f\r"));
