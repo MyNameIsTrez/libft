@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:16 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/03 12:38:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/16 14:10:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
  * @param size
  * @return Allocated bytes.
  */
+// TODO: Add check for if count * size overflows, like the real calloc.
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;

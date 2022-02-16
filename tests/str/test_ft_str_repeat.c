@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_str.h                                         :+:    :+:            */
+/*   test_ft_str_repeat.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/05 18:15:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 12:44:34 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/16 12:44:58 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/16 14:02:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef TEST_STR_H
-# define TEST_STR_H
+#include "tests.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	test_ft_str_repeat(void);
-void	test_ft_str_upper(void);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+void	test_ft_str_repeat(void)
+{
+	{
+		ASSERT(ft_str_repeat(strdup(""), 0), "");
+		ASSERT(ft_str_repeat(strdup("foo"), 0), "");
+	}
+	{
+		ASSERT(ft_str_repeat(strdup(""), 1), "");
+		ASSERT(ft_str_repeat(strdup("foo"), 1), "foo");
+	}
+	{
+		ASSERT(ft_str_repeat(strdup(""), 2), "");
+		ASSERT(ft_str_repeat(strdup("foo"), 2), "foofoo");
+	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:14:02 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/15 18:05:50 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/16 12:43:34 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,7 @@ STR_SOURCES := $(addprefix src/str/,	\
 	ft_str_eq.c							\
 	ft_str_not_chr.c					\
 	ft_str_not_str.c					\
+	ft_str_repeat.c						\
 	ft_str_replace.c					\
 	ft_str_upper.c						\
 	ft_stralloc.c						\
