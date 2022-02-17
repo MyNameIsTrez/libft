@@ -6,6 +6,7 @@ SOURCES += $(addprefix $(current_dir),	\
 	ft_lst_content_size.c				\
 	ft_lst_new_back.c					\
 	ft_lst_new_front.c					\
+	ft_lst_reverse.c					\
 	ft_lstadd_back.c					\
 	ft_lstadd_front.c					\
 	ft_lstclear.c						\
