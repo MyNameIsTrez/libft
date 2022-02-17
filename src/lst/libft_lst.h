@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:22:44 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 18:31:33 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/17 18:57:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ typedef struct s_list
 ////////////////////////////////////////////////////////////////////////////////
 
 size_t	ft_lst_content_size(t_list *lst, size_t (*counter)(const void *));
-void	ft_lst_new_back(t_list **lst, void *content);
-void	ft_lst_new_front(t_list **lst, void *content);
+t_list	*ft_lst_new_back(t_list **lst, void *content);
+t_list	*ft_lst_new_front(t_list **lst, void *content);
 t_list	*ft_lst_reverse(t_list **lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
