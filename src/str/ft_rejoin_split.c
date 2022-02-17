@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/10 17:14:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/15 18:14:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/17 15:47:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,10 @@ static size_t	get_rejoined_len(char **split, size_t sep_len)
 	len = 0;
 	while (split[i] != NULL)
 	{
-		if (split[i][0] == '\0')
-			len += sep_len;
-		else
-			len += ft_strlen(split[i]);
+		len += ft_strlen(split[i]) + sep_len;
 		i++;
 	}
-	return (len);
+	return (len - sep_len);
 }
 
 static void	fill_rejoin(char *rejoined, char **split, char *sep
@@ -38,10 +35,9 @@ static void	fill_rejoin(char *rejoined, char **split, char *sep
 	i = 0;
 	while (split[i] != NULL)
 	{
-		if (split[i][0] == '\0')
+		if (i != 0)
 			ft_strlcat(rejoined, sep, rejoined_len + 1);
-		else
-			ft_strlcat(rejoined, split[i], rejoined_len + 1);
+		ft_strlcat(rejoined, split[i], rejoined_len + 1);
 		i++;
 	}
 }

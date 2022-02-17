@@ -20,12 +20,12 @@ static size_t	get_word_count(char str[], const char sep[])
 	size_t			word_count;
 	char			*sep_pos;
 
-	word_count = 0;
+	word_count = 1;
 	while (str != NULL && str[0] != '\0')
 	{
 		sep_pos = ft_strstr(str, sep);
 		if (sep_pos == NULL)
-			return (word_count + 1);
+			return (word_count);
 		if (&sep_pos[0] - &str[0] > (long)sep_len)
 			word_count++;
 		str = &sep_pos[sep_len];
@@ -60,6 +60,7 @@ static void	add_words_to_split(char *str, const char *sep, char ***split)
 		i++;
 		str = sep_pos + sep_len;
 	}
+	(*split)[i] = ft_strdup("");
 }
 
 /**
