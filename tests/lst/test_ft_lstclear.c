@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 18:59:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:25:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/17 18:51:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// static void	free_content(void *content)
-// {
-// 	ft_free(content);
-// }
-
-////////////////////////////////////////////////////////////////////////////////
-
 Test(ft_lstclear)
 {
+	t_list	*lst;
 
+	lst = NULL;
+
+	ft_lst_new_back(&lst, strdup("foo"));
+	ft_lst_new_back(&lst, strdup("bar"));
+	ft_lst_new_back(&lst, strdup("baz"));
+
+	ft_lstclear(&lst, &free);
+	ASSERT((void *)lst, NULL);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
