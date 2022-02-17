@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/20 11:42:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:27:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/17 18:04:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdlib.h>
+#include <fcntl.h>	// open
+#include <unistd.h>	// lseek, read, close
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -49,6 +51,23 @@ extern t_list	*g_tests_lst;
 		ft_lst_new_front(&g_tests_lst, &fn_info);								\
 	}																			\
 	void test_##name(void)
+
+////////////////////////////////////////////////////////////////////////////////
+
+# define test_io(fn, val, ret)													\
+{																				\
+	int const	fd = open("/tmp/" #fn "_test", O_RDWR | O_CREAT | O_TRUNC, 0640);	\
+	fn(val, fd);																\
+	FILE *f = fdopen(fd, "rw");													\
+	fseek(f, 0, SEEK_END);														\
+	long file_size = ftell(f);													\
+	char buf[file_size + 1];													\
+	ft_memset(buf, '\0', (size_t)file_size + 1);								\
+	lseek(fd, 0, SEEK_SET);														\
+	read(fd, buf, (size_t)file_size);											\
+	close(fd);																	\
+	ASSERT(buf, ret);															\
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 15:00:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 15:03:13 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/17 18:04:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <fcntl.h>	// open
-#include <unistd.h>	// lseek, read, close
-
-////////////////////////////////////////////////////////////////////////////////
-
 Test(ft_putnbr_fd)
 {
-	int const	fd = open("/tmp/ft_putnbr_fd_test", O_RDWR | O_CREAT, 0640);
-
-	ft_putnbr_fd(-123, fd);
-	char buf[20];
-	ft_memset(buf, '\0', 20);
-	lseek(fd, 0, SEEK_SET);
-	read(fd, buf, 20);
-	close(fd);
-	ASSERT(buf, "-123");
+	test_io(ft_putnbr_fd, -123, "-123");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

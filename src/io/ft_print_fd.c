@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/11 16:29:33 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:14:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/17 18:08:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 #include <unistd.h>
 
 // TODO: Make this work for any special characters, not just \n
-void	ft_print(char *str)
+void	ft_print_fd(char *str, int fd)
 {
 	char	*replaced;
 
 	replaced = ft_str_replace(str, "\n", "\\n");
-	write(1, replaced, ft_strlen(replaced) + 1);
+	write(fd, replaced, ft_strlen(replaced) + 1);
 	free(replaced);
 }
