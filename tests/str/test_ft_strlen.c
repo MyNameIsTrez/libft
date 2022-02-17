@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_char_to_str.c                              :+:    :+:            */
+/*   test_ft_strlen.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/16 14:34:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 16:49:12 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/17 17:29:14 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/17 17:29:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-Test(ft_char_to_str)
+Test(ft_strlen)
 {
-	ASSERT(ft_char_to_str('c'), "c");
-	ASSERT(ft_char_to_str('\0'), "");
-	ASSERT(ft_char_to_digit(10 + '0'), -1);
+	ASSERT(ft_strlen(""), strlen(""));
+	ASSERT(ft_strlen("f"), strlen("f"));
+	ASSERT(ft_strlen("fo"), strlen("fo"));
+	ASSERT(ft_strlen("foo"), strlen("foo"));
 }
 
 ////////////////////////////////////////////////////////////////////////////////

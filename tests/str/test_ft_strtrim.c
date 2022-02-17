@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_char_to_str.c                              :+:    :+:            */
+/*   test_ft_strtrim.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/16 14:34:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 16:49:12 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/17 17:43:19 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/17 17:44:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-Test(ft_char_to_str)
+Test(ft_strtrim)
 {
-	ASSERT(ft_char_to_str('c'), "c");
-	ASSERT(ft_char_to_str('\0'), "");
-	ASSERT(ft_char_to_digit(10 + '0'), -1);
+	ASSERT(ft_strtrim("lorem \n ipsum \t dolor \n sit \t amet", " "), "lorem \n ipsum \t dolor \n sit \t amet");
+	ASSERT(ft_strtrim(" a", " \t\n\v\f\r"), "a");
+	ASSERT(ft_strtrim("  \t \t \n   \n\n\n\t", " \n\t"), "");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_char_to_str.c                              :+:    :+:            */
+/*   test_ft_str_not_chr.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/16 14:34:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 16:49:12 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/17 16:35:32 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/17 16:38:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-Test(ft_char_to_str)
+Test(ft_str_not_chr)
 {
-	ASSERT(ft_char_to_str('c'), "c");
-	ASSERT(ft_char_to_str('\0'), "");
-	ASSERT(ft_char_to_digit(10 + '0'), -1);
+	ASSERT(ft_str_not_chr("bonjour", '\0'), "bonjour");
+	ASSERT(ft_str_not_chr("bonjour", 'b'), "onjour");
+	ASSERT(ft_str_not_chr("bonjour", 'o'), "bonjour");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

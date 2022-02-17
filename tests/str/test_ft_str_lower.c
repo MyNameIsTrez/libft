@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_char_to_str.c                              :+:    :+:            */
+/*   test_ft_str_lower.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/16 14:34:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 16:49:12 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/05 14:33:37 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/17 16:33:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,25 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-Test(ft_char_to_str)
+Test(ft_str_lower)
 {
-	ASSERT(ft_char_to_str('c'), "c");
-	ASSERT(ft_char_to_str('\0'), "");
-	ASSERT(ft_char_to_digit(10 + '0'), -1);
+	{
+		char	*tested = ft_str_lower(strdup("FOO"));
+		ASSERT(tested, "foo");
+		free(tested);
+	}
+
+	{
+		char	*tested = ft_str_lower(strdup("foo"));
+		ASSERT(tested, "foo");
+		free(tested);
+	}
+
+	{
+		char	*tested = ft_str_lower(strdup("$"));
+		ASSERT(tested, "$");
+		free(tested);
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////

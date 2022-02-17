@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_str_lower.c                                :+:    :+:            */
+/*   test_ft_strjoin.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/05 14:33:37 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 14:56:03 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/17 17:11:34 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/17 17:11:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+////////////////////////////////////////////////////////////////////////////////
+
 #include "tests.h"
 
-Test(ft_str_lower, full_upper)
+////////////////////////////////////////////////////////////////////////////////
+
+Test(ft_strjoin)
 {
-	char	*tested = ft_str_lower(strdup("FOO"));
-	cr_assert_str_eq(tested, "foo");
-	free(tested);
+	ASSERT(ft_strjoin("lorem ipsum", "dolor sit amet"), "lorem ipsumdolor sit amet");
 }
 
-Test(ft_str_lower, full_lower)
-{
-	char	*tested = ft_str_lower(strdup("foo"));
-	cr_assert_str_eq(tested, "foo");
-	free(tested);
-}
-
-Test(ft_str_lower, not_alpha)
-{
-	char	*tested = ft_str_lower(strdup("$"));
-	cr_assert_str_eq(tested, "$");
-	free(tested);
-}
+////////////////////////////////////////////////////////////////////////////////

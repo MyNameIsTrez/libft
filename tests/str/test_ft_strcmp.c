@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_char_to_str.c                              :+:    :+:            */
+/*   test_ft_strcmp.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/16 14:34:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 16:49:12 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/17 16:55:56 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/17 17:08:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-Test(ft_char_to_str)
+Test(ft_strcmp)
 {
-	ASSERT(ft_char_to_str('c'), "c");
-	ASSERT(ft_char_to_str('\0'), "");
-	ASSERT(ft_char_to_digit(10 + '0'), -1);
+	ASSERT(ft_strcmp("atoms\0", "atomsa"), '\0' - 'a');
+	ASSERT(ft_strcmp("atomsf", "atomsa"), 'f' - 'a');
+	ASSERT(ft_strcmp("atomsa", "atoms\0"), 'a' - '\0');
+	ASSERT(ft_strcmp("", "AAAAAA"), '\0' - 'A');
+	ASSERT(ft_strcmp("atoms\0\0\0\0", "atoms\0abc"), 0);
+	ASSERT(ft_strcmp("", "469"), '\0' - '4');
 }
 
 ////////////////////////////////////////////////////////////////////////////////

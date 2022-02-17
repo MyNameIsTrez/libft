@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_str_upper.c                                :+:    :+:            */
+/*   test_ft_strnlen.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/05 14:33:37 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 14:57:18 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/17 17:33:38 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/17 17:34:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+////////////////////////////////////////////////////////////////////////////////
+
 #include "tests.h"
 
-Test(ft_str_upper, full_upper)
+////////////////////////////////////////////////////////////////////////////////
+
+Test(ft_strnlen)
 {
-	char	*tested = ft_str_upper(strdup("FOO"));
-	cr_assert_str_eq(tested, "FOO");
-	free(tested);
+	ASSERT(ft_strnlen("foo", 2), (size_t)2);
+	ASSERT(ft_strnlen("foo", 3), (size_t)3);
+	ASSERT(ft_strnlen("foo", 4), (size_t)3);
 }
 
-Test(ft_str_upper, full_lower)
-{
-	char	*tested = ft_str_upper(strdup("foo"));
-	cr_assert_str_eq(tested, "FOO");
-	free(tested);
-}
-
-Test(ft_str_upper, not_alpha)
-{
-	char	*tested = ft_str_upper(strdup("$"));
-	cr_assert_str_eq(tested, "$");
-	free(tested);
-}
+////////////////////////////////////////////////////////////////////////////////

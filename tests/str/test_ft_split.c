@@ -1,16 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   test_ft_split.c                                    :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: sbos <sbos@student.codam.nl>                 +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/02/17 15:49:24 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/17 15:50:28 by sbos          ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+////////////////////////////////////////////////////////////////////////////////
+
 #include "tests.h"
 
-// static void	ft_print_result(char const *s)
-// {
-// 	size_t	len;
+////////////////////////////////////////////////////////////////////////////////
 
-// 	len = 0;
-// 	while (s[len])
-// 		len++;
-// 	write(2, s, len);
-// }
-
-Test(ft_split, basic_test)
+Test(ft_split)
 {
 	// char	**split = ft_split("  foo  ", ' ');
 	// printf("'%s'\n", split[0]);
@@ -57,18 +63,18 @@ Test(ft_split, basic_test)
 
 	char	**split = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
 
-	cr_expect_str_eq(split[0], "lorem");
-	cr_expect_str_eq(split[1], "ipsum");
-	cr_expect_str_eq(split[2], "dolor");
-	cr_expect_str_eq(split[3], "sit");
-	cr_expect_str_eq(split[4], "amet,");
-	cr_expect_str_eq(split[5], "consectetur");
-	cr_expect_str_eq(split[6], "adipiscing");
-	cr_expect_str_eq(split[7], "elit.");
-	cr_expect_str_eq(split[8], "Sed");
-	cr_expect_str_eq(split[9], "non");
-	cr_expect_str_eq(split[10], "risus.");
-	cr_expect_str_eq(split[11], "Suspendisse");
+	ASSERT(split[0], "lorem");
+	ASSERT(split[1], "ipsum");
+	ASSERT(split[2], "dolor");
+	ASSERT(split[3], "sit");
+	ASSERT(split[4], "amet,");
+	ASSERT(split[5], "consectetur");
+	ASSERT(split[6], "adipiscing");
+	ASSERT(split[7], "elit.");
+	ASSERT(split[8], "Sed");
+	ASSERT(split[9], "non");
+	ASSERT(split[10], "risus.");
+	ASSERT(split[11], "Suspendisse");
 
 	// TODO: Try to make this work:
 	// const char	*expected[] = {
@@ -97,7 +103,9 @@ Test(ft_split, basic_test)
 
 	char	**split2 = ft_split("", ' ');
 
-	cr_expect_eq(split2[0], NULL);
+	ASSERT((void *)split2[0], NULL);
 
 	ft_free_split(&split2);
 }
+
+////////////////////////////////////////////////////////////////////////////////
