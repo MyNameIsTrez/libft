@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft_io.h                                         :+:    :+:            */
+/*   test_ft_print.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 18:26:45 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/16 14:55:55 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/17 18:20:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_IO_H
-# define LIBFT_IO_H
+#include "tests.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	ft_print_fd(char *str, int fd);
-void	ft_print(char *str);
-void	ft_putchar_fd(char chr, int fd);
-void	ft_putendl_fd(char *str, int fd);
-void	ft_putnbr_fd(int nbr, int fd);
-void	ft_putstr_fd(char *str, int fd);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+Test(ft_print)
+{
+	test_io(ft_print, "foo\nbar", "foo\\nbar");
+}
 
 ////////////////////////////////////////////////////////////////////////////////

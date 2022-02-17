@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 15:03:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 18:06:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/17 18:16:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 Test(ft_putstr_fd)
 {
-	test_io(ft_putstr_fd, "foo", "foo");
-	test_io(ft_putstr_fd, NULL, "");
+	test_io_fd(ft_putstr_fd, "foo", "foo");
+	test_io_fd(ft_putstr_fd, NULL, "");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

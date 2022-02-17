@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/20 11:42:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 18:04:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/17 18:29:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <stdlib.h>
-#include <fcntl.h>	// open
-#include <unistd.h>	// lseek, read, close
+#include <stdlib.h>		// malloc, free, exit
+#include <fcntl.h>		// open
+#include <unistd.h>		// lseek, read, close
+#include <sys/wait.h>	// wait
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -54,19 +55,40 @@ extern t_list	*g_tests_lst;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define test_io(fn, val, ret)													\
-{																				\
+# define test_io_fd(fn, val, ret)													\
+{																					\
 	int const	fd = open("/tmp/" #fn "_test", O_RDWR | O_CREAT | O_TRUNC, 0640);	\
-	fn(val, fd);																\
-	FILE *f = fdopen(fd, "rw");													\
-	fseek(f, 0, SEEK_END);														\
-	long file_size = ftell(f);													\
-	char buf[file_size + 1];													\
-	ft_memset(buf, '\0', (size_t)file_size + 1);								\
-	lseek(fd, 0, SEEK_SET);														\
-	read(fd, buf, (size_t)file_size);											\
-	close(fd);																	\
-	ASSERT(buf, ret);															\
+	fn(val, fd);																	\
+	FILE *f = fdopen(fd, "rw");														\
+	fseek(f, 0, SEEK_END);															\
+	long file_size = ftell(f);														\
+	char buf[file_size + 1];														\
+	ft_memset(buf, '\0', (size_t)file_size + 1);									\
+	lseek(fd, 0, SEEK_SET);															\
+	read(fd, buf, (size_t)file_size);												\
+	close(fd);																		\
+	ASSERT(buf, ret);																\
+}
+
+# define test_io(fn, val, ret)															\
+{																						\
+	if (fork() == 0)																	\
+	{																					\
+		int const	fd = open("/tmp/" #fn "_test", O_RDWR | O_CREAT | O_TRUNC, 0640);	\
+		dup2(fd, STDOUT_FILENO);														\
+		fn(val);																		\
+		FILE *f = fdopen(fd, "rw");														\
+		fseek(f, 0, SEEK_END);															\
+		long file_size = ftell(f);														\
+		char buf[file_size + 1];														\
+		ft_memset(buf, '\0', (size_t)file_size + 1);									\
+		lseek(fd, 0, SEEK_SET);															\
+		read(fd, buf, (size_t)file_size);												\
+		close(fd);																		\
+		ASSERT(buf, ret);																\
+		exit(EXIT_SUCCESS);																\
+	}																					\
+	wait(NULL);																			\
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft_io.h                                         :+:    :+:            */
+/*   ft_print.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 18:26:45 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/11 16:29:33 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/17 18:25:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_IO_H
-# define LIBFT_IO_H
+#include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	ft_print_fd(char *str, int fd);
-void	ft_print(char *str);
-void	ft_putchar_fd(char chr, int fd);
-void	ft_putendl_fd(char *str, int fd);
-void	ft_putnbr_fd(int nbr, int fd);
-void	ft_putstr_fd(char *str, int fd);
+#include <unistd.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+void	ft_print(char *str)
+{
+	ft_print_fd(str, STDOUT_FILENO);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
