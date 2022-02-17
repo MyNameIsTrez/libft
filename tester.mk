@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:59 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/16 14:28:17 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/17 18:46:27 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,19 +24,25 @@ TESTER := tester
 TESTER_HEADERS :=
 
 TESTS_DIR := tests
+TESTS_OBJ_DIR := obj_tests
 
 ################################################################################
 
-TESTER_SOURCES := $(wildcard $(TESTS_DIR)/*/*.c) tester.c
+TESTER_SOURCES := $(wildcard $(TESTS_DIR)/*/*.c) $(TESTS_DIR)/tester.c
+TESTER_OBJECTS := $(patsubst $(TESTS_DIR)/%,$(TESTS_OBJ_DIR)/%,$(TESTER_SOURCES:.c=.o))
 
-TESTER_HEADERS += $(TESTS_DIR)/tests.h
+TESTER_HEADERS += $(TESTS_DIR)/tests.h $(TESTS_DIR)/asserts.h libft.h
 
-TEST_INCLUDES := -I. $(addprefix -I, $(sort $(dir $(TESTER_HEADERS))))
+TEST_INCLUDES := $(sort -I./ $(addprefix -I, $(dir $(TESTER_HEADERS))))
 
 ################################################################################
 
-$(TESTER): all $(TESTER_HEADERS) $(TESTER_SOURCES)
-	$(CC) $(CFLAGS) $(TEST_INCLUDES) -g3 libft.a $(TESTER_SOURCES) -o $(TESTER)
+$(TESTER): all $(TESTER_OBJECTS)
+	$(CC) $(CFLAGS) $(TEST_INCLUDES) -g3 libft.a $(TESTER_OBJECTS) -o $(TESTER)
+
+$(TESTS_OBJ_DIR)/%.o: $(TESTS_DIR)/%.c $(TESTER_HEADERS)
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(TEST_INCLUDES) -c $< -o $@
 
 ################################################################################
 
