@@ -54,14 +54,7 @@ static void	add_words_to_split(char *str, const char *sep, char ***split)
 		sep_pos = ft_strstr(str, sep);
 		if (sep_pos == NULL)
 			return (add_last_word(str, split, i));
-		if (sep_pos - str > 0)
-		{
-			(*split)[i] = ft_substr(str, 0, (size_t)(sep_pos - str));
-			if ((*split)[i] == NULL)
-				return (ft_free_split(split));
-			i++;
-		}
-		(*split)[i] = ft_strdup("");
+		(*split)[i] = ft_substr(str, 0, (size_t)(sep_pos - str));
 		if ((*split)[i] == NULL)
 			return (ft_free_split(split));
 		i++;
