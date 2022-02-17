@@ -25,8 +25,6 @@ char	*ft_str_not_str(const char *haystack, const char *needle)
 {
 	size_t			offset;
 
-	if (needle[0] == '\0')
-		return ((char *)haystack);
 	offset = 0;
 	while (haystack[offset] != '\0')
 	{

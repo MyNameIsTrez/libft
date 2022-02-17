@@ -26,8 +26,6 @@ static size_t	get_word_count(char str[], const char sep[])
 		sep_pos = ft_strstr(str, sep);
 		if (sep_pos == NULL)
 			return (word_count);
-		if (&sep_pos[0] - &str[0] > (long)sep_len)
-			word_count++;
 		str = &sep_pos[sep_len];
 		word_count++;
 	}
