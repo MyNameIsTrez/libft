@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/04 17:14:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 12:58:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ static void	write_digits(int nbr, size_t nbr_len, int fd)
  */
 void	ft_putnbr_fd(int nbr, int fd)
 {
-	if (nbr >= 0)
-		nbr = -nbr;
-	else
+	if (nbr < 0)
 		ft_putchar_fd('-', fd);
-	write_digits(nbr, ft_get_digit_count(nbr) - 1, fd);
+	write_digits(nbr, ft_get_digit_count(nbr), fd);
 }

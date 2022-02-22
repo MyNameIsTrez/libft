@@ -39,9 +39,12 @@ static void	add_digits_to_str(char *str, intmax_t nbr, size_t number_len,
  */
 char	*ft_nbr_to_str(intmax_t number, unsigned int base)
 {
-	char			*str;
-	const size_t	number_len = ft_get_digit_count_base(number, base);
+	char	*str;
+	size_t	number_len;
 
+	number_len = ft_get_digit_count_base(number, base);
+	if (number < 0)
+		++number_len;
 	str = ft_stralloc(number_len);
 	if (str == NULL)
 		return (NULL);
