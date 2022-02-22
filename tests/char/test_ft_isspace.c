@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 14:48:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:52:21 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 Test(ft_isspace)
 {
-	ASSERT(ft_isspace(' '), (bool)true);
-	ASSERT(ft_isspace('\t'), (bool)true);
-	ASSERT(ft_isspace('\n'), (bool)true);
-	ASSERT(ft_isspace('\v'), (bool)true);
-	ASSERT(ft_isspace('\f'), (bool)true);
-	ASSERT(ft_isspace('\r'), (bool)true);
-	ASSERT(ft_isspace('c'), (bool)false);
+	massert(ft_isspace(' '), (bool)true);
+	massert(ft_isspace('\t'), (bool)true);
+	massert(ft_isspace('\n'), (bool)true);
+	massert(ft_isspace('\v'), (bool)true);
+	massert(ft_isspace('\f'), (bool)true);
+	massert(ft_isspace('\r'), (bool)true);
+	massert(ft_isspace('c'), (bool)false);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

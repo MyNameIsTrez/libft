@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 15:08:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 18:44:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ Test(ft_lst_reverse)
 	ft_lst_new_back(&lst, strdup("baz"));
 
 	ft_lst_reverse(&lst);
-	ASSERT((char *)lst->content, "baz");
-	ASSERT((char *)lst->next->content, "bar");
-	ASSERT((char *)lst->next->next->content, "foo");
-	ASSERT((void *)lst->next->next->next, NULL);
+	massert((char *)lst->content, "baz");
+	massert((char *)lst->next->content, "bar");
+	massert((char *)lst->next->next->content, "foo");
+	massert((void *)lst->next->next->next, NULL);
 
 	ft_lstclear(&lst, &free);
 }

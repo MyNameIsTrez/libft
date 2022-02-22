@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 14:45:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:47:13 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Test(ft_isdigit)
 	chr = 0;
 	while (chr <= 255)
 	{
-		ASSERT(ft_isdigit(chr), isdigit(chr));
+		massert(ft_isdigit(chr), isdigit(chr));
 		chr++;
 	}
 }

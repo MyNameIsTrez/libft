@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 14:32:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:33:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ Test(ft_char_to_digit)
 	i = 0;
 	while (i <= 9)
 	{
-		ASSERT(ft_char_to_digit((char)(i + '0')), i);
+		massert(ft_char_to_digit((char)(i + '0')), i);
 		i++;
 	}
-	ASSERT(ft_char_to_digit(-1 + '0'), -1);
-	ASSERT(ft_char_to_digit(10 + '0'), -1);
+	massert(ft_char_to_digit(-1 + '0'), -1);
+	massert(ft_char_to_digit(10 + '0'), -1);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

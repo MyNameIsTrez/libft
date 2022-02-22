@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 16:39:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 16:42:12 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 Test(ft_str_not_str)
 {
-	ASSERT((void *)ft_str_not_str("", ""), NULL);
-	ASSERT(ft_str_not_str("aba", "a"), "ba");
-	ASSERT(ft_str_not_str("aba", "ab"), "a");
-	ASSERT((void *)ft_str_not_str("aba", "aba"), NULL);
+	massert((void *)ft_str_not_str("", ""), NULL);
+	massert(ft_str_not_str("aba", "a"), "ba");
+	massert(ft_str_not_str("aba", "ab"), "a");
+	massert((void *)ft_str_not_str("aba", "aba"), NULL);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

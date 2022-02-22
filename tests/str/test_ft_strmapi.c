@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 17:30:44 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 17:32:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static char	increase_by_index(unsigned int i, char c)
 
 Test(ft_strmapi)
 {
-	ASSERT(ft_strmapi("foo", increase_by_index), "fpq");
+	massert(ft_strmapi("foo", increase_by_index), "fpq");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

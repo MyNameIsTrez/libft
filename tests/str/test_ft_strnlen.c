@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 17:33:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 17:34:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 Test(ft_strnlen)
 {
-	ASSERT(ft_strnlen("foo", 2), (size_t)2);
-	ASSERT(ft_strnlen("foo", 3), (size_t)3);
-	ASSERT(ft_strnlen("foo", 4), (size_t)3);
+	massert(ft_strnlen("foo", 2), (size_t)2);
+	massert(ft_strnlen("foo", 3), (size_t)3);
+	massert(ft_strnlen("foo", 4), (size_t)3);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

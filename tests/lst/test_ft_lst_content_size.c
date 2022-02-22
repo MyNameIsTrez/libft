@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 18:37:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:24:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ Test(ft_lst_content_size)
 
 	lst = NULL;
 
-	ASSERT((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 0);
+	massert((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 0);
 
 	ft_lst_new_back(&lst, strdup("foo"));
-	ASSERT((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 3);
+	massert((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 3);
 
 	ft_lst_new_back(&lst, strdup("bar"));
-	ASSERT((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 6);
+	massert((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 6);
 
 	ft_lst_new_back(&lst, strdup("baz"));
-	ASSERT((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 9);
+	massert((int)ft_lst_content_size(lst, (t_size_fn) &(ft_strlen)), 9);
 
 	ft_lstclear(&lst, free);
 }

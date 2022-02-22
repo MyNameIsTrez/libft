@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 16:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 16:12:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 Test(ft_memcmp)
 {
-	ASSERT(ft_memcmp("foo", "foo", 4), 0);
-	ASSERT(ft_memcmp("doo", "foo", 4), 'd' - 'f');
-	ASSERT(ft_memcmp("foo", "doo", 4), 'f' - 'd');
-	ASSERT(ft_memcmp("fx", "foo", 4), 'x' - 'o');
-	ASSERT(ft_memcmp("f", "foo", 4), '\0' - 'o');
+	massert(ft_memcmp("foo", "foo", 4), 0);
+	massert(ft_memcmp("doo", "foo", 4), 'd' - 'f');
+	massert(ft_memcmp("foo", "doo", 4), 'f' - 'd');
+	massert(ft_memcmp("fx", "foo", 4), 'x' - 'o');
+	massert(ft_memcmp("f", "foo", 4), '\0' - 'o');
 }
 
 ////////////////////////////////////////////////////////////////////////////////

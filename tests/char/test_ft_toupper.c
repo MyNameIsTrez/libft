@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 14:54:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:54:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 Test(ft_toupper)
 {
-	ASSERT(ft_toupper('a'), 'A');
-	ASSERT(ft_toupper('z'), 'Z');
-	ASSERT(ft_toupper('A'), 'A');
-	ASSERT(ft_toupper('Z'), 'Z');
-	ASSERT(ft_toupper('@'), '@');
+	massert(ft_toupper('a'), 'A');
+	massert(ft_toupper('z'), 'Z');
+	massert(ft_toupper('A'), 'A');
+	massert(ft_toupper('Z'), 'Z');
+	massert(ft_toupper('@'), '@');
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -25,7 +25,7 @@ Test(ft_lstsize)
 	ft_lst_new_front(&lst, "foo");
 	ft_lst_new_front(&lst, "foo");
 
-	ASSERT(ft_lstsize(lst), 2);
+	massert(ft_lstsize(lst), 2);
 
 	ft_lstclear(&lst, NULL);
 }

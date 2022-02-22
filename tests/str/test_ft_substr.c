@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 17:44:28 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 17:45:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 Test(ft_substr)
 {
-	ASSERT(ft_substr("lorem ipsum dolor sit amet", 400, 20), "");
-	ASSERT(ft_substr("lorem ipsum dolor sit amet", 5, 0), "");
-	ASSERT(ft_substr("lorem ipsum dolor sit amet", 0, 0), "");
-	ASSERT((void *)ft_substr(NULL, 0, 0), NULL);
-	ASSERT(ft_substr(" a", 1, 1), "a");
+	massert(ft_substr("lorem ipsum dolor sit amet", 400, 20), "");
+	massert(ft_substr("lorem ipsum dolor sit amet", 5, 0), "");
+	massert(ft_substr("lorem ipsum dolor sit amet", 0, 0), "");
+	massert((void *)ft_substr(NULL, 0, 0), NULL);
+	massert(ft_substr(" a", 1, 1), "a");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

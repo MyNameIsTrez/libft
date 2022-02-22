@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 17:43:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 17:44:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 Test(ft_strtrim)
 {
-	ASSERT(ft_strtrim("lorem \n ipsum \t dolor \n sit \t amet", " "), "lorem \n ipsum \t dolor \n sit \t amet");
-	ASSERT(ft_strtrim(" a", " \t\n\v\f\r"), "a");
-	ASSERT(ft_strtrim("  \t \t \n   \n\n\n\t", " \n\t"), "");
+	massert(ft_strtrim("lorem \n ipsum \t dolor \n sit \t amet", " "), "lorem \n ipsum \t dolor \n sit \t amet");
+	massert(ft_strtrim(" a", " \t\n\v\f\r"), "a");
+	massert(ft_strtrim("  \t \t \n   \n\n\n\t", " \n\t"), "");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

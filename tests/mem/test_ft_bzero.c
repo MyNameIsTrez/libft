@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 15:20:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 15:22:47 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ Test(ft_bzero)
 	str[3] = '\0';
 	ft_bzero(str, 2);
 
-	ASSERT(str, "");
-	ASSERT(str[0], (char)0);
-	ASSERT(str[1], (char)0);
-	ASSERT(str[2], (char)'o');
-	ASSERT(str[3], (char)'\0');
+	massert(str, "");
+	massert(str[0], (char)0);
+	massert(str[1], (char)0);
+	massert(str[2], (char)'o');
+	massert(str[3], (char)'\0');
 }
 
 ////////////////////////////////////////////////////////////////////////////////

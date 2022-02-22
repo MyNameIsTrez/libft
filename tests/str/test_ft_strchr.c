@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 16:55:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 16:55:35 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 Test(ft_strchr)
 {
-	ASSERT(ft_strchr("bonjour", '\0'), "");
-	ASSERT(ft_strchr("bonjour", 'n'), "njour");
+	massert(ft_strchr("bonjour", '\0'), "");
+	massert(ft_strchr("bonjour", 'n'), "njour");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

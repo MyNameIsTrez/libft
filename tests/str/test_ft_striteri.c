@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 17:10:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 17:11:13 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Test(ft_striteri)
 	char	s[] = "foo";
 
 	ft_striteri(s, increase_by_index);
-	ASSERT(s, "fpq");
+	massert(s, "fpq");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 17:35:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 17:36:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@
 
 Test(ft_strnstr)
 {
-	ASSERT(ft_strnstr("bar", "ba", 3), strnstr("bar", "ba", 3));
-	ASSERT(ft_strnstr("bar", "a", 3), strnstr("bar", "a", 3));
+	massert(ft_strnstr("bar", "ba", 3), strnstr("bar", "ba", 3));
+	massert(ft_strnstr("bar", "a", 3), strnstr("bar", "a", 3));
 	// printf("%s\n", ft_strnstr("bar", "ba", 3));
 	// printf("%s\n", ft_strnstr("bar", "ba", 1));
-	ASSERT(ft_strnstr("bar", "ba", 4), strnstr("bar", "ba", 4));
-	ASSERT(ft_strnstr("bar", "a", 4), strnstr("bar", "a", 4));
-	ASSERT(ft_strnstr("bar", "ba", 2), strnstr("bar", "ba", 2));
-	ASSERT(ft_strnstr("bar", "a", 2), strnstr("bar", "a", 2));
-	ASSERT((void *)ft_strnstr("bar", "ba", 1), NULL);
+	massert(ft_strnstr("bar", "ba", 4), strnstr("bar", "ba", 4));
+	massert(ft_strnstr("bar", "a", 4), strnstr("bar", "a", 4));
+	massert(ft_strnstr("bar", "ba", 2), strnstr("bar", "ba", 2));
+	massert(ft_strnstr("bar", "a", 2), strnstr("bar", "a", 2));
+	massert((void *)ft_strnstr("bar", "ba", 1), NULL);
 	// printf("'%s'\n", ft_strnstr("foobar", "bar", 6));
 	// printf("'%s'\n", strnstr("foobar", "bar", 6));
 	// printf("'%s'\n", ft_strnstr("foobar", "", 6));

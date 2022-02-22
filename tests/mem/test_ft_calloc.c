@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 15:23:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 15:59:58 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ Test(ft_calloc)
 	while (i < 1e3)
 	{
 		str = ft_calloc(2, 2);
-		ASSERT(str[0], (char)'\0');
-		ASSERT(str[1], (char)'\0');
-		ASSERT(str[2], (char)'\0');
-		ASSERT(str[3], (char)'\0');
+		massert(str[0], (char)'\0');
+		massert(str[1], (char)'\0');
+		massert(str[2], (char)'\0');
+		massert(str[3], (char)'\0');
 		i++;
 	}
 }

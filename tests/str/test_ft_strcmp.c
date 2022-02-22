@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 16:55:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 17:08:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 Test(ft_strcmp)
 {
-	ASSERT(ft_strcmp("atoms\0", "atomsa"), '\0' - 'a');
-	ASSERT(ft_strcmp("atomsf", "atomsa"), 'f' - 'a');
-	ASSERT(ft_strcmp("atomsa", "atoms\0"), 'a' - '\0');
-	ASSERT(ft_strcmp("", "AAAAAA"), '\0' - 'A');
-	ASSERT(ft_strcmp("atoms\0\0\0\0", "atoms\0abc"), 0);
-	ASSERT(ft_strcmp("", "469"), '\0' - '4');
+	massert(ft_strcmp("atoms\0", "atomsa"), '\0' - 'a');
+	massert(ft_strcmp("atomsf", "atomsa"), 'f' - 'a');
+	massert(ft_strcmp("atomsa", "atoms\0"), 'a' - '\0');
+	massert(ft_strcmp("", "AAAAAA"), '\0' - 'A');
+	massert(ft_strcmp("atoms\0\0\0\0", "atoms\0abc"), 0);
+	massert(ft_strcmp("", "469"), '\0' - '4');
 }
 
 ////////////////////////////////////////////////////////////////////////////////

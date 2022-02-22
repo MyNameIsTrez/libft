@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/20 11:42:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 18:29:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:39:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 # include "libft.h"
 
-# include "asserts.h"
+# include "massert.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -67,7 +67,7 @@ extern t_list	*g_tests_lst;
 	lseek(fd, 0, SEEK_SET);															\
 	read(fd, buf, (size_t)file_size);												\
 	close(fd);																		\
-	ASSERT(buf, ret);																\
+	massert(buf, ret);																\
 }
 
 # define test_io(fn, val, ret)															\
@@ -85,7 +85,7 @@ extern t_list	*g_tests_lst;
 		lseek(fd, 0, SEEK_SET);															\
 		read(fd, buf, (size_t)file_size);												\
 		close(fd);																		\
-		ASSERT(buf, ret);																\
+		massert(buf, ret);																\
 		exit(EXIT_SUCCESS);																\
 	}																					\
 	wait(NULL);																			\

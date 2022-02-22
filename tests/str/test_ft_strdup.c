@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 17:10:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 13:04:12 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:34:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 Test(ft_strdup)
 {
 	char *a = "hello";
-	ASSERT(ft_strdup(a), a);
-	ASSERT((ft_strdup(a) == a), false);
+	massert(ft_strdup(a), a);
+	massert((bool)(ft_strdup(a) == a), false);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

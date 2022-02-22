@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 19:02:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 18:53:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ Test(ft_lstiter)
 
 	ft_lstiter(lst, foo);
 
-	ASSERT((char *)lst->content, "xoo");
-	ASSERT((char *)lst->next->content, "xar");
-	ASSERT((char *)lst->next->next->content, "xaz");
-	ASSERT((void *)lst->next->next->next, NULL);
+	massert((char *)lst->content, "xoo");
+	massert((char *)lst->next->content, "xar");
+	massert((char *)lst->next->next->content, "xaz");
+	massert((void *)lst->next->next->next, NULL);
 
 	ft_lstclear(&lst, &free);
 }

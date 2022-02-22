@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 16:35:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 16:38:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 Test(ft_str_not_chr)
 {
-	ASSERT(ft_str_not_chr("bonjour", '\0'), "bonjour");
-	ASSERT(ft_str_not_chr("bonjour", 'b'), "onjour");
-	ASSERT(ft_str_not_chr("bonjour", 'o'), "bonjour");
+	massert(ft_str_not_chr("bonjour", '\0'), "bonjour");
+	massert(ft_str_not_chr("bonjour", 'b'), "onjour");
+	massert(ft_str_not_chr("bonjour", 'o'), "bonjour");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

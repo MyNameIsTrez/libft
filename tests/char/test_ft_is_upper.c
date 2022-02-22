@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 14:12:24 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:39:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 Test(ft_is_upper)
 {
-	ASSERT(ft_is_upper('A'), (bool)true);
-	ASSERT(ft_is_upper('A'), (bool)true);
+	massert(ft_is_upper('A'), (bool)true);
+	massert(ft_is_upper('A'), (bool)true);
 
-	ASSERT(ft_is_upper('a'), (bool)false);
-	ASSERT(ft_is_upper('z'), (bool)false);
-	ASSERT(ft_is_upper('#'), (bool)false);
+	massert(ft_is_upper('a'), (bool)false);
+	massert(ft_is_upper('z'), (bool)false);
+	massert(ft_is_upper('#'), (bool)false);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

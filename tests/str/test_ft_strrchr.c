@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 17:37:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 17:38:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 Test(ft_strrchr)
 {
-	ASSERT((void *)ft_strrchr("bonjour", 's'), (void *)strrchr("bonjour", 's'));
-	ASSERT((void *)ft_strrchr("bonjour", 'j'), (void *)strrchr("bonjour", 'j'));
+	massert((void *)ft_strrchr("bonjour", 's'), (void *)strrchr("bonjour", 's'));
+	massert((void *)ft_strrchr("bonjour", 'j'), (void *)strrchr("bonjour", 'j'));
 }
 
 ////////////////////////////////////////////////////////////////////////////////

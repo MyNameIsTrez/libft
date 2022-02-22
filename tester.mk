@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:59 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/17 18:46:27 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/22 14:35:25 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,33 +20,40 @@ include Makefile
 
 ################################################################################
 
-TESTER := tester
-TESTER_HEADERS :=
-
 TESTS_DIR := tests
 TESTS_OBJ_DIR := obj_tests
+
+TESTER := tester
+TESTER_HEADERS := $(TESTS_DIR)/tests.h libft.h massert/massert.h
+TESTER_LIBS := -Lmassert -lmassert -L. -lft
 
 ################################################################################
 
 TESTER_SOURCES := $(wildcard $(TESTS_DIR)/*/*.c) $(TESTS_DIR)/tester.c
 TESTER_OBJECTS := $(patsubst $(TESTS_DIR)/%,$(TESTS_OBJ_DIR)/%,$(TESTER_SOURCES:.c=.o))
 
-TESTER_HEADERS += $(TESTS_DIR)/tests.h $(TESTS_DIR)/asserts.h libft.h
-
-TEST_INCLUDES := $(sort -I./ $(addprefix -I, $(dir $(TESTER_HEADERS))))
+TESTER_INCLUDES := $(sort -I./ $(addprefix -I, $(dir $(TESTER_HEADERS))))
 
 ################################################################################
 
-$(TESTER): all $(TESTER_OBJECTS)
-	$(CC) $(CFLAGS) $(TEST_INCLUDES) -g3 libft.a $(TESTER_OBJECTS) -o $(TESTER)
+$(TESTER): all massert/libmassert.a $(TESTER_OBJECTS)
+	$(CC) $(CFLAGS) $(TESTER_INCLUDES) -g3 $(TESTER_OBJECTS) $(TESTER_LIBS) -o $(TESTER)
 
 $(TESTS_OBJ_DIR)/%.o: $(TESTS_DIR)/%.c $(TESTER_HEADERS)
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(TEST_INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) $(TESTER_INCLUDES) -c $< -o $@
+
+.PHONY: massert/libmassert.a
+massert/libmassert.a:
+	$(MAKE) -C massert
 
 ################################################################################
 
-re_tester: fclean tester
+fclean_tester: fclean
+	rm -rf $(TESTS_OBJ_DIR)
+	rm -rf tester
+
+re_tester: fclean_tester tester
 
 ################################################################################
 

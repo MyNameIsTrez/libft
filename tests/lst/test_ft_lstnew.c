@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 19:04:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:26:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ Test(ft_lstnew)
 
 	t_list	*lst = ft_lstnew(foo);
 
-	ASSERT((char *)lst->content, "bar");
-	ASSERT((void *)lst->next, NULL);
+	massert((char *)lst->content, "bar");
+	massert((void *)lst->next, NULL);
 
 	ft_free(lst);
 }

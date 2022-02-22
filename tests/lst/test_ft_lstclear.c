@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 18:59:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 18:51:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Test(ft_lstclear)
 	ft_lst_new_back(&lst, strdup("baz"));
 
 	ft_lstclear(&lst, &free);
-	ASSERT((void *)lst, NULL);
+	massert((void *)lst, NULL);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

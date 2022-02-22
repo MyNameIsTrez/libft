@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 17:21:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 17:21:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 
 Test(ft_max)
 {
-	ASSERT(ft_max(1, 2), 2);
-	ASSERT(ft_max(2, 2), 2);
-	ASSERT(ft_max(3, 2), 3);
-	ASSERT(ft_max(-1, -2), -1);
-	ASSERT(ft_max(-2, -2), -2);
-	ASSERT(ft_max(-3, -2), -2);
-	ASSERT(ft_max(0, -1), 0);
-	ASSERT(ft_max(0, 0), 0);
+	massert(ft_max(1, 2), 2);
+	massert(ft_max(2, 2), 2);
+	massert(ft_max(3, 2), 3);
+	massert(ft_max(-1, -2), -1);
+	massert(ft_max(-2, -2), -2);
+	massert(ft_max(-3, -2), -2);
+	massert(ft_max(0, -1), 0);
+	massert(ft_max(0, 0), 0);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

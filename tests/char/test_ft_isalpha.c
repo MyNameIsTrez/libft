@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 14:40:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:47:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Test(ft_isalpha)
 	chr = 0;
 	while (chr <= 255)
 	{
-		ASSERT(ft_isalpha(chr), isalpha(chr));
+		massert(ft_isalpha(chr), isalpha(chr));
 		chr++;
 	}
 }

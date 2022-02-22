@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 17:41:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 17:43:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 Test(ft_strtrim_whitespace)
 {
-	ASSERT(ft_strtrim_whitespace(" a"), "a");
-	ASSERT(ft_strtrim_whitespace(" \n\t foo bar \n\t "), "foo bar");
-	ASSERT(ft_strtrim_whitespace("\t\n\r\v\f  469 \n"), "469");
+	massert(ft_strtrim_whitespace(" a"), "a");
+	massert(ft_strtrim_whitespace(" \n\t foo bar \n\t "), "foo bar");
+	massert(ft_strtrim_whitespace("\t\n\r\v\f  469 \n"), "469");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

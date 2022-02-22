@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 12:59:45 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 15:39:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ Test(ft_split_str)
 		char	*sep = "AB";
 		char	**split_str = ft_split_str(str, sep);
 
-		ASSERT(split_str[0], "");
-		ASSERT(split_str[1], "1");
-		ASSERT(split_str[2], "");
-		ASSERT(split_str[3], "2");
-		ASSERT(split_str[4], "3");
-		ASSERT((void *)split_str[5], NULL);
+		massert(split_str[0], "");
+		massert(split_str[1], "1");
+		massert(split_str[2], "");
+		massert(split_str[3], "2");
+		massert(split_str[4], "3");
+		massert((void *)split_str[5], NULL);
 
 		ft_free_split(&split_str);
 	}
@@ -38,14 +38,14 @@ Test(ft_split_str)
 		char	*sep = "AB";
 		char	**split_str = ft_split_str(str, sep);
 
-		ASSERT(split_str[0], "");
-		ASSERT(split_str[1], "1");
-		ASSERT(split_str[2], "");
-		ASSERT(split_str[3], "2");
-		ASSERT(split_str[4], "3");
-		// ASSERT((void *)split_str[5], NULL);
-		ASSERT(split_str[5], "");
-		ASSERT((void *)split_str[6], NULL);
+		massert(split_str[0], "");
+		massert(split_str[1], "1");
+		massert(split_str[2], "");
+		massert(split_str[3], "2");
+		massert(split_str[4], "3");
+		// massert((void *)split_str[5], NULL);
+		massert(split_str[5], "");
+		massert((void *)split_str[6], NULL);
 
 		ft_free_split(&split_str);
 	}

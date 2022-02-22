@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 18:56:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 18:59:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ Test(ft_lst_new_back)
 	lst = NULL;
 
 	new_lst = ft_lst_new_back(&lst, strdup("foo"));
-	ASSERT((char *)new_lst->content, "foo");
-	ASSERT((void *)lst, (void *)new_lst);
+	massert((char *)new_lst->content, "foo");
+	massert((void *)lst, (void *)new_lst);
 
 	new_lst = ft_lst_new_back(&lst, strdup("bar"));
-	ASSERT((char *)new_lst->content, "bar");
-	ASSERT((void *)lst->next, (void *)new_lst);
+	massert((char *)new_lst->content, "bar");
+	massert((void *)lst->next, (void *)new_lst);
 
 	new_lst = ft_lst_new_back(&lst, strdup("baz"));
-	ASSERT((char *)new_lst->content, "baz");
-	ASSERT((void *)lst->next->next, (void *)new_lst);
+	massert((char *)new_lst->content, "baz");
+	massert((void *)lst->next->next, (void *)new_lst);
 
 	ft_lstclear(&lst, &free);
 }

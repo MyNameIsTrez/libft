@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 14:33:37 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 16:33:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ Test(ft_str_lower)
 {
 	{
 		char	*tested = ft_str_lower(strdup("FOO"));
-		ASSERT(tested, "foo");
+		massert(tested, "foo");
 		free(tested);
 	}
 
 	{
 		char	*tested = ft_str_lower(strdup("foo"));
-		ASSERT(tested, "foo");
+		massert(tested, "foo");
 		free(tested);
 	}
 
 	{
 		char	*tested = ft_str_lower(strdup("$"));
-		ASSERT(tested, "$");
+		massert(tested, "$");
 		free(tested);
 	}
 }

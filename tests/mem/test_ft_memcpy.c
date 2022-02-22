@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 16:13:24 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 16:20:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ Test(ft_memcpy)
 	size_t	n;
 
 	n = 2;
-	ASSERT((char *)ft_memcpy(dst_ft, src, n), "bao");
-	ASSERT((char *)memcpy(dst_original, src, n), "bao");
-	ASSERT((char *)ft_memcpy(dst_ft, src, n), (char *)memcpy(dst_original, src, n));
+	massert((char *)ft_memcpy(dst_ft, src, n), "bao");
+	massert((char *)memcpy(dst_original, src, n), "bao");
+	massert((char *)ft_memcpy(dst_ft, src, n), (char *)memcpy(dst_original, src, n));
 }
 
 ////////////////////////////////////////////////////////////////////////////////

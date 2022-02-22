@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 17:26:37 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 17:35:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ Test(ft_strlcpy)
 
 		size_t ft_cpy = ft_strlcpy(ft_dst, "lorem ipsum dolor sit amet", 15);
 		size_t cpy = strlcpy(dst, "lorem ipsum dolor sit amet", 15);
-		ASSERT(ft_cpy, cpy);
-		ASSERT(ft_dst, dst);
+		massert(ft_cpy, cpy);
+		massert(ft_dst, dst);
 	}
 	{
 		char	ft_dst[] = "rrrrrr\0\0\0\0\0\0\0\0";
@@ -33,8 +33,8 @@ Test(ft_strlcpy)
 
 		size_t ft_cpy = ft_strlcpy(ft_dst, "lorem ipsum dolor sit amet", 0);
 		size_t cpy = strlcpy(dst, "lorem ipsum dolor sit amet", 0);
-		ASSERT(ft_cpy, cpy);
-		ASSERT(ft_dst, dst);
+		massert(ft_cpy, cpy);
+		massert(ft_dst, dst);
 	}
 }
 
