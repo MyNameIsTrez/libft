@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/20 11:42:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 14:39:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 14:41:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # include "libft.h"
 
 # include "massert.h"
+
+// # define custom_assert_types	\
+// 	add_assert_type(t_list *, lst_eq, lst_as_str)
 
 ////////////////////////////////////////////////////////////////////////////////
 

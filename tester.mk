@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:59 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/22 14:35:25 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/22 14:46:12 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,29 +23,31 @@ include Makefile
 TESTS_DIR := tests
 TESTS_OBJ_DIR := obj_tests
 
+MASSERT_DIR := libmassert
+
 TESTER := tester
-TESTER_HEADERS := $(TESTS_DIR)/tests.h libft.h massert/massert.h
-TESTER_LIBS := -Lmassert -lmassert -L. -lft
+TESTER_HEADERS := $(TESTS_DIR)/tests.h ./libft.h $(MASSERT_DIR)/massert.h
+TESTER_LIBS := -L$(MASSERT_DIR) -lmassert -L. -lft
 
 ################################################################################
 
 TESTER_SOURCES := $(wildcard $(TESTS_DIR)/*/*.c) $(TESTS_DIR)/tester.c
 TESTER_OBJECTS := $(patsubst $(TESTS_DIR)/%,$(TESTS_OBJ_DIR)/%,$(TESTER_SOURCES:.c=.o))
 
-TESTER_INCLUDES := $(sort -I./ $(addprefix -I, $(dir $(TESTER_HEADERS))))
+TESTER_INCLUDES := $(sort $(addprefix -I, $(dir $(TESTER_HEADERS))))
 
 ################################################################################
 
-$(TESTER): all massert/libmassert.a $(TESTER_OBJECTS)
+$(TESTER): all $(MASSERT_DIR)/libmassert.a $(TESTER_OBJECTS)
 	$(CC) $(CFLAGS) $(TESTER_INCLUDES) -g3 $(TESTER_OBJECTS) $(TESTER_LIBS) -o $(TESTER)
 
 $(TESTS_OBJ_DIR)/%.o: $(TESTS_DIR)/%.c $(TESTER_HEADERS)
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(TESTER_INCLUDES) -c $< -o $@
 
-.PHONY: massert/libmassert.a
-massert/libmassert.a:
-	$(MAKE) -C massert
+.PHONY: $(MASSERT_DIR)/libmassert.a
+$(MASSERT_DIR)/libmassert.a:
+	$(MAKE) -C $(MASSERT_DIR)
 
 ################################################################################
 
