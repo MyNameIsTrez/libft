@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:59 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/22 14:46:12 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/22 15:21:56 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,9 +45,12 @@ $(TESTS_OBJ_DIR)/%.o: $(TESTS_DIR)/%.c $(TESTER_HEADERS)
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(TESTER_INCLUDES) -c $< -o $@
 
-.PHONY: $(MASSERT_DIR)/libmassert.a
+################################################################################
+
 $(MASSERT_DIR)/libmassert.a:
 	$(MAKE) -C $(MASSERT_DIR)
+
+.PHONY: $(MASSERT_DIR)/libmassert.a
 
 ################################################################################
 
@@ -56,6 +59,8 @@ fclean_tester: fclean
 	rm -rf tester
 
 re_tester: fclean_tester tester
+
+.PHONY: tester re_tester
 
 ################################################################################
 
@@ -68,8 +73,6 @@ run_test_1:
 run_test_2:
 	make -C testers/libftTester
 
-################################################################################
-
-.PHONY: tester re_tester run_tests run_test_1 run_test_2
+.PHONY: run_tests run_test_1 run_test_2
 
 ################################################################################
