@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 16:29:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 16:30:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 13:00:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 
 Test(ft_str_eq)
 {
-
+	ASSERT(ft_str_eq("hello", "hello"), (bool)true);
+	ASSERT(ft_str_eq("hello", "world"), (bool)false);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

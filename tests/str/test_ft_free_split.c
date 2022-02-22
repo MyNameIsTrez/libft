@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 12:44:57 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 12:45:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 13:06:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,12 @@
 
 Test(ft_free_split)
 {
+	char	*str = "AB1ABAB2AB3";
+	char	*sep = "AB";
+	char	**split_str = ft_split_str(str, sep);
 
+	ft_free_split(&split_str);
+	ASSERT((void *)split_str, NULL);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
