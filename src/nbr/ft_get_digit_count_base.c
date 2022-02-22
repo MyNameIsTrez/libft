@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/20 12:00:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 12:56:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/22 15:06:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ size_t	ft_get_digit_count_base(intmax_t nbr, unsigned int base)
 	size_t		len;
 	const int	base_ = (int)base;
 
+	if (nbr == 0)
+		return (1);
 	len = 0;
 	while (nbr != 0)
 	{
