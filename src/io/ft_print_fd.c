@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/11 16:29:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/17 18:25:30 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/24 14:22:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,15 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 // TODO: Make this work for any special characters, not just \n
-void	ft_print_fd(char *str, int fd)
+ssize_t	ft_print_fd(char *str, int fd)
 {
 	char	*replaced;
+	ssize_t	len;
 
 	replaced = ft_str_replace(str, "\n", "\\n");
-	write(fd, replaced, ft_strlen(replaced) + 1);
+	len = write(fd, replaced, ft_strlen(replaced));
 	free(replaced);
+	return (len);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

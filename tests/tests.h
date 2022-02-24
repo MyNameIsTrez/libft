@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/20 11:42:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 14:41:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/24 14:19:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ extern t_list	*g_tests_lst;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define test_io_fd(fn, val, ret)													\
+# define test_io_fd(fn, val, ret, ...)												\
 {																					\
 	int const	fd = open("/tmp/" #fn "_test", O_RDWR | O_CREAT | O_TRUNC, 0640);	\
-	fn(val, fd);																	\
+	massert(fn(val, fd), (ssize_t)(__VA_ARGS__+strlen(ret)));						\
 	FILE *f = fdopen(fd, "rw");														\
 	fseek(f, 0, SEEK_END);															\
 	long file_size = ftell(f);														\
@@ -73,13 +73,13 @@ extern t_list	*g_tests_lst;
 	massert(buf, ret);																\
 }
 
-# define test_io(fn, val, ret)															\
+# define test_io(fn, val, ret, ...)														\
 {																						\
 	if (fork() == 0)																	\
 	{																					\
 		int const	fd = open("/tmp/" #fn "_test", O_RDWR | O_CREAT | O_TRUNC, 0640);	\
 		dup2(fd, STDOUT_FILENO);														\
-		fn(val);																		\
+		massert(fn(val), (ssize_t)(__VA_ARGS__+strlen(ret)));							\
 		FILE *f = fdopen(fd, "rw");														\
 		fseek(f, 0, SEEK_END);															\
 		long file_size = ftell(f);														\

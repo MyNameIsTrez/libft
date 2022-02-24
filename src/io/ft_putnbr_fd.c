@@ -6,13 +6,15 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 12:58:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/24 14:13:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	write_digits(int nbr, size_t nbr_len, int fd)
+#include <unistd.h>
+
+static ssize_t	write_digits(int nbr, size_t nbr_len, int fd)
 {
 	int		nbr_copy;
 	int		digit;
@@ -20,7 +22,7 @@ static void	write_digits(int nbr, size_t nbr_len, int fd)
 	size_t	j;
 
 	if (nbr == 0)
-		ft_putchar_fd('0', fd);
+		return (ft_putchar_fd('0', fd));
 	nbr_copy = nbr;
 	i = nbr_len;
 	while (i > 0)
@@ -36,6 +38,7 @@ static void	write_digits(int nbr, size_t nbr_len, int fd)
 		ft_putchar_fd(ft_digit_to_char(digit), fd);
 		i--;
 	}
+	return ((ssize_t)nbr_len);
 }
 
 /**
@@ -44,9 +47,13 @@ static void	write_digits(int nbr, size_t nbr_len, int fd)
  * @param nbr The integer to output.
  * @param fd The file descriptor on which to write.
  */
-void	ft_putnbr_fd(int nbr, int fd)
+ssize_t	ft_putnbr_fd(int nbr, int fd)
 {
+	ssize_t	len;
+
+	len = 0;
 	if (nbr < 0)
-		ft_putchar_fd('-', fd);
-	write_digits(nbr, ft_get_digit_count(nbr), fd);
+		len += ft_putchar_fd('-', fd);
+	len += write_digits(nbr, ft_get_digit_count(nbr), fd);
+	return (len);
 }
