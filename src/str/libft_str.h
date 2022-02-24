@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:29:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 12:43:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/24 16:02:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ void	ft_free_split(char ***split);
 char	*ft_rejoin_split(char **split, char *sep);
 char	**ft_split_str(const char *str, const char *sep);
 char	**ft_split(const char *str, char sep);
+size_t	ft_str_count_chr(char *str, const char chr);
+size_t	ft_str_count_str_overlap(char *str1, const char *str2);
+size_t	ft_str_count_str(char *str1, const char *str2);
 bool	ft_str_eq(const char *str1, const char *str2);
 char	*ft_str_lower(char *str);
 char	*ft_str_not_chr(const char *str, const int chr);
