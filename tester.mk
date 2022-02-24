@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:59 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/22 15:26:23 by sbos          ########   odam.nl          #
+#    Updated: 2022/02/22 15:39:41 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,11 +56,11 @@ $(MASSERT_DIR)/libmassert.a:
 
 fclean_tester: fclean
 	rm -rf $(TESTS_OBJ_DIR)
-	rm tester
+	rm -f $(TESTER)
 
-re_tester: fclean_tester tester
+re_tester: fclean_tester $(TESTER)
 
-.PHONY: tester re_tester
+.PHONY: fclean_tester re_tester
 
 ################################################################################
 
