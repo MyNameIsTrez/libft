@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/24 14:11:10 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/24 16:12:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ ssize_t	ft_putchar_fd(char chr, int fd);
 ssize_t	ft_putendl_fd(char *str, int fd);
 ssize_t	ft_putnbr_fd(int nbr, int fd);
 ssize_t	ft_putstr_fd(char *str, int fd);
+ssize_t	ft_putstr(char *str);
 
 ////////////////////////////////////////////////////////////////////////////////
 

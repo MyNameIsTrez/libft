@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft_char.h                                       :+:    :+:            */
+/*   ft_chr_repeat.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:17:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/25 19:32:35 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/25 19:11:05 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/25 19:13:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_CHAR_H
-# define LIBFT_CHAR_H
+#include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define LOWER_UPPER_DIFFERENCE ('a' - 'A')
+/**
+ * @brief Returns @p chr repeated @p repeat times.
+ *
+ * @param str
+ * @param repeat
+ * @return
+ */
+char	*ft_chr_repeat(const char chr, size_t repeat)
+{
+	char	*str;
 
-////////////////////////////////////////////////////////////////////////////////
-
-# include <stdbool.h>	// bool
-
-////////////////////////////////////////////////////////////////////////////////
-
-int		ft_char_to_digit(const char chr);
-char	*ft_char_to_str(const char chr);
-bool	ft_is_lower(char chr);
-bool	ft_is_upper(char chr);
-int		ft_isalnum(int chr);
-int		ft_isalpha(int chr);
-int		ft_isascii(int chr);
-int		ft_isdigit(int chr);
-int		ft_isprint(int chr);
-bool	ft_isspace(const int chr);
-int		ft_tolower(int chr);
-int		ft_toupper(int chr);
-
-#endif
+	str = ft_stralloc(repeat);
+	ft_memset(str, chr, repeat);
+	return (str);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

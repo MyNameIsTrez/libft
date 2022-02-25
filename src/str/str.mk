@@ -3,6 +3,7 @@ original_mkfile := $(abspath $(firstword $(MAKEFILE_LIST)))
 current_dir := $(dir $(patsubst $(dir $(original_mkfile))%,%,$(this_mkfile)))
 
 SOURCES += $(addprefix $(current_dir),	\
+	ft_chr_repeat.c						\
 	ft_free_split.c						\
 	ft_rejoin_split.c					\
 	ft_split_str.c						\

@@ -1,10 +1,12 @@
 {
 	"files.associations": {
 		"*.h": "c",
+		".normignore": "ignore",
 		"stdio.h": "c",
 		"typeinfo": "c",
 		"algorithm": "c",
 		"sstream": "c",
-		"__locale": "c"
+		"__locale": "c",
+		"complex": "c"
 	}
 }

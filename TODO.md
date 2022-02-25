@@ -4,6 +4,7 @@
 * Fix all existing tests by making them all use my own asserts, instead of Criterion functions.
 * Rename all functions so they use proper snake_case, like isspace -> is_space
 * Change all `int i` indices to `size_t i`
+* Add my "line" VS Code snippet slashes to every file.
 
 
 # TODO just before evalling

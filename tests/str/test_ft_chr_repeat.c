@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft_char.h                                       :+:    :+:            */
+/*   test_ft_chr_repeat.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:17:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/25 19:32:35 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/25 19:14:09 by sbos          #+#    #+#                 */
+/*   Updated: 2022/02/25 19:20:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_CHAR_H
-# define LIBFT_CHAR_H
+#include "tests.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define LOWER_UPPER_DIFFERENCE ('a' - 'A')
+Test(ft_chr_repeat)
+{
+	massert(ft_chr_repeat('\0', 0), "");
+	massert(ft_chr_repeat('a', 0), "");
 
-////////////////////////////////////////////////////////////////////////////////
+	massert(ft_chr_repeat('\0', 1), "");
+	massert(ft_chr_repeat('a', 1), "a");
 
-# include <stdbool.h>	// bool
-
-////////////////////////////////////////////////////////////////////////////////
-
-int		ft_char_to_digit(const char chr);
-char	*ft_char_to_str(const char chr);
-bool	ft_is_lower(char chr);
-bool	ft_is_upper(char chr);
-int		ft_isalnum(int chr);
-int		ft_isalpha(int chr);
-int		ft_isascii(int chr);
-int		ft_isdigit(int chr);
-int		ft_isprint(int chr);
-bool	ft_isspace(const int chr);
-int		ft_tolower(int chr);
-int		ft_toupper(int chr);
-
-#endif
+	massert(ft_chr_repeat('\0', 2), "");
+	massert(ft_chr_repeat('a', 2), "aa");
+}
 
 ////////////////////////////////////////////////////////////////////////////////
