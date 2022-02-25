@@ -58,7 +58,7 @@ static void	add_words_to_split(char *str, const char *sep, char ***split)
 		i++;
 		str = sep_pos + sep_len;
 	}
-	(*split)[i] = ft_strdup("");
+	(*split)[i] = ft_empty_str();
 }
 
 /**

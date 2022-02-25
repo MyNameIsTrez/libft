@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/04 18:11:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/25 20:16:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 	if (str == NULL)
 		return (NULL);
 	if (ft_strlen(str) <= start)
-		return (ft_strdup(""));
+		return (ft_empty_str());
 	new_len = ft_strnlen(&str[start], len);
 	substr = malloc((new_len + 1) * sizeof(char));
 	if (substr != NULL)

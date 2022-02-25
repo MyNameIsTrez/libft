@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:29:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/25 19:26:40 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/25 20:15:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 char	*ft_chr_repeat(const char chr, size_t repeat);
+char	*ft_empty_str(void);
 void	ft_free_split(char ***split);
 char	*ft_rejoin_split(char **split, char *sep);
 char	**ft_split_str(const char *str, const char *sep);

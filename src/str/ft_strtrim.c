@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:58 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 16:22:33 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/25 20:16:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*ft_strtrim(const char *str, const char *trim_set)
 		return (NULL);
 	start = get_start_index(str, trim_set);
 	if (str[start] == '\0')
-		return (ft_strdup(""));
+		return (ft_empty_str());
 	end = get_end_index(str, trim_set);
 	len = end - start;
 	return (ft_substr(str, start, len + 1));
