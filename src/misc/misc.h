@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   misc.h                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/04 17:23:55 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/25 17:27:42 by sbos          #+#    #+#                 */
+/*   Updated: 2022/03/04 17:30:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef MISC_H
+# define MISC_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define WHITESPACE " \t\n\v\f\r"
-
-# define ERROR (-1)
+# include <stdbool.h>	// bool
+# include <stdint.h>	// intmax_t
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
+bool	ft_error(intmax_t status);
 
 ////////////////////////////////////////////////////////////////////////////////
 

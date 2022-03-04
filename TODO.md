@@ -5,6 +5,7 @@
 * Rename all functions so they use proper snake_case, like isspace -> is_space
 * Change all `int i` indices to `size_t i`
 * Add my "line" VS Code snippet slashes to every file.
+* Replace every variable named "number" with "nbr", "string" with "str" (and more?)
 
 
 # TODO just before evalling
