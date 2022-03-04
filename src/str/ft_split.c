@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:26 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:18:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/01 16:21:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ static void	add_words_to_split(char *str, char sep, char ***split)
 		if (start_of_word == NULL)
 			break ;
 		end_of_word = ft_strchr(start_of_word, sep);
-		start_index = (unsigned int)(&start_of_word[0] - &str[0]);
-		len = (size_t)(&end_of_word[0] - &start_of_word[0]);
+		start_index = (unsigned int)(start_of_word - str);
+		len = (size_t)(end_of_word - start_of_word);
 		(*split)[i] = ft_substr(str, start_index, len);
 		if ((*split)[i] == NULL)
 			return (ft_free_split(split));

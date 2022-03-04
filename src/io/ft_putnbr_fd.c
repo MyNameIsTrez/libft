@@ -6,13 +6,15 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/24 14:13:30 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/01 15:52:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+////////////////////////////////////////////////////////////////////////////////
+
 #include "libft.h"
 
-#include <unistd.h>
+////////////////////////////////////////////////////////////////////////////////
 
 static ssize_t	write_digits(int nbr, size_t nbr_len, int fd)
 {
@@ -45,7 +47,7 @@ static ssize_t	write_digits(int nbr, size_t nbr_len, int fd)
  * @brief Writes an int.
  *
  * @param nbr The integer to output.
- * @param fd The file descriptor on which to write.
+ * @param fd The file descriptor to write to.
  */
 ssize_t	ft_putnbr_fd(int nbr, int fd)
 {
@@ -57,3 +59,5 @@ ssize_t	ft_putnbr_fd(int nbr, int fd)
 	len += write_digits(nbr, ft_get_digit_count(nbr), fd);
 	return (len);
 }
+
+////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:15 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:18:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/01 16:21:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strjoin(const char *str1, const char *str2)
 	joined = ft_stralloc(str1_len + str2_len);
 	if (joined != NULL)
 	{
-		ft_memcpy(&joined[0], str1, str1_len);
+		ft_memcpy(joined, str1, str1_len);
 		ft_memcpy(&joined[str1_len], str2, str2_len);
 	}
 	return (joined);

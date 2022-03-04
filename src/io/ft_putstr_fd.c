@@ -6,19 +6,21 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/24 14:06:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/01 15:52:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+////////////////////////////////////////////////////////////////////////////////
+
 #include "libft.h"
 
-#include <unistd.h>
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Writes a string.
  *
  * @param str 💥 The string to output.
- * @param fd The file descriptor on which to write.
+ * @param fd The file descriptor to write to.
  */
 ssize_t	ft_putstr_fd(char *str, int fd)
 {
@@ -26,3 +28,5 @@ ssize_t	ft_putstr_fd(char *str, int fd)
 		return (write(fd, str, ft_strlen(str)));
 	return (0);
 }
+
+////////////////////////////////////////////////////////////////////////////////

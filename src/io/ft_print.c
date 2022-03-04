@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/11 16:29:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/24 14:11:03 by sbos          ########   odam.nl         */
+/*   Updated: 2022/02/28 13:42:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <unistd.h>
-
-////////////////////////////////////////////////////////////////////////////////
-
+/**
+ * @brief Prints a string with escaped special characters
+ * to the standard output.
+ *
+ * @param str
+ */
 ssize_t	ft_print(char *str)
 {
 	return (ft_print_fd(str, STDOUT_FILENO));

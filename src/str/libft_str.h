@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:29:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/25 20:15:10 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/04 15:00:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,24 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <stddef.h>		// size_t
+#include <stdbool.h>	// bool
+
+////////////////////////////////////////////////////////////////////////////////
+
 char	*ft_chr_repeat(const char chr, size_t repeat);
+bool	ft_empty_str_assign_fail(char **dst);
 char	*ft_empty_str(void);
 void	ft_free_split(char ***split);
 char	*ft_rejoin_split(char **split, char *sep);
 char	**ft_split_str(const char *str, const char *sep);
 char	**ft_split(const char *str, char sep);
+bool	ft_str_assign_fail(char **dst, char *src);
 size_t	ft_str_count_chr(char *str, const char chr);
 size_t	ft_str_count_str_overlap(char *str1, const char *str2);
 size_t	ft_str_count_str(char *str1, const char *str2);
 bool	ft_str_eq(const char *str1, const char *str2);
+bool	ft_str_is_empty(const char *str);
 char	*ft_str_lower(char *str);
 char	*ft_str_not_chr(const char *str, const int chr);
 char	*ft_str_not_str(const char *haystack, const char *needle);

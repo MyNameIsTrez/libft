@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 15:23:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/04 14:32:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Test(ft_calloc)
 	size_t	i;
 	char	*str;
 
+	str = NULL;
 	// TODO: Replace this with a less janky test.
 	// This test isn't guaranteed to work, cause memory is often initialized to 0.
 	i = 0;
@@ -31,6 +32,7 @@ Test(ft_calloc)
 		massert(str[1], (char)'\0');
 		massert(str[2], (char)'\0');
 		massert(str[3], (char)'\0');
+		free(str);
 		i++;
 	}
 }

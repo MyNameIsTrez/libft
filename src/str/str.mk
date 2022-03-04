@@ -4,16 +4,19 @@ current_dir := $(dir $(patsubst $(dir $(original_mkfile))%,%,$(this_mkfile)))
 
 SOURCES += $(addprefix $(current_dir),	\
 	ft_chr_repeat.c						\
+	ft_empty_str_assign_fail.c			\
 	ft_empty_str.c						\
 	ft_free_split.c						\
 	ft_rejoin_split.c					\
 	ft_split_str.c						\
 	ft_split.c							\
+	ft_str_assign_fail.c				\
 	ft_str_count_chr.c					\
 	ft_str_count_str_overlap.c			\
 	ft_str_count_str.c					\
 	ft_str_lower.c						\
 	ft_str_eq.c							\
+	ft_str_is_empty.c					\
 	ft_str_not_chr.c					\
 	ft_str_not_str.c					\
 	ft_str_repeat.c						\
