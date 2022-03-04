@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft_io.h                                         :+:    :+:            */
+/*   test_ft_put_substr_fd.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/01 16:29:58 by sbos          ########   odam.nl         */
+/*   Created: 2022/02/16 14:58:15 by sbos          #+#    #+#                 */
+/*   Updated: 2022/03/01 16:32:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_IO_H
-# define LIBFT_IO_H
+#include "tests.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include <unistd.h>
-# include <stdlib.h>
+void	ft_put_substr_fd_test(char *start, char *end, char *ret)
+{
+	int const	fd = open("/tmp/ft_put_substr_fd_test", O_RDWR | O_CREAT | O_TRUNC, 0640);
+	massert((ssize_t)ft_put_substr_fd(start, end, fd), (ssize_t)strlen(ret));
+	FILE *f = fdopen(fd, "rw");
+	fseek(f, 0, SEEK_END);
+	long file_size = ftell(f);
+	char buf[file_size + 1];
+	ft_memset(buf, '\0', (size_t)file_size + 1);
+	lseek(fd, 0, SEEK_SET);
+	read(fd, buf, (size_t)file_size);
+	close(fd);
+	massert(buf, ret);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-ssize_t	ft_print_fd(char *str, int fd);
-ssize_t	ft_print(char *str);
-ssize_t	ft_put_substr_fd(char *start_substr, char *end_substr, int fd);
-ssize_t	ft_put_substr(char *start_substr, char *end_substr);
-ssize_t	ft_putchar_fd(char chr, int fd);
-ssize_t	ft_putchar(char chr);
-ssize_t	ft_putendl_fd(char *str, int fd);
-ssize_t	ft_putendl(char *str);
-ssize_t	ft_putnbr_fd(int nbr, int fd);
-ssize_t	ft_putnbr(int nbr);
-ssize_t	ft_putstr_fd(char *str, int fd);
-ssize_t	ft_putstr(char *str);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+Test(ft_put_substr_fd)
+{
+	char *str = "abcdef";
+	ft_put_substr_fd_test(str, str + 3, "abc");
+	ft_put_substr_fd_test(str, strchr(str, 'e'), "abcd");
+}
 
 ////////////////////////////////////////////////////////////////////////////////
