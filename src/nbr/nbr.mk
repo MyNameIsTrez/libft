@@ -3,6 +3,7 @@ original_mkfile := $(abspath $(firstword $(MAKEFILE_LIST)))
 current_dir := $(dir $(patsubst $(dir $(original_mkfile))%,%,$(this_mkfile)))
 
 SOURCES += $(addprefix $(current_dir),	\
+	ft_atoi_safe.c						\
 	ft_atoi.c							\
 	ft_digit_to_char_base.c				\
 	ft_digit_to_char.c					\
