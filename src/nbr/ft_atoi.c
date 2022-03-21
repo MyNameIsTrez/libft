@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/04 17:18:01 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/21 15:00:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ static long	get_number_without_minus(const char *str)
  * @brief Converts @p str to a signed int.
  *
  * @param str May start with whitespace, and the first encountered number will
- * be converted.
- * @return The converted value or 0 on error.
+ * be converted to a signed int.
+ * @return The converted value or 0 if no number was found in @p str.
  */
 int	ft_atoi(const char *str)
 {
