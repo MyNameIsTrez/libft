@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   whitespace.h                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/22 15:54:19 by sbos          ########   odam.nl         */
+/*   Created: 2022/03/22 16:15:39 by sbos          #+#    #+#                 */
+/*   Updated: 2022/03/22 16:16:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef WHITESPACE_H
+# define WHITESPACE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "src/char/libft_char.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/misc/libft_misc.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
+# define WHITESPACE " \t\n\v\f\r"
 
 ////////////////////////////////////////////////////////////////////////////////
 

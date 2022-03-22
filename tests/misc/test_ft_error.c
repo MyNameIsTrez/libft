@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/04 17:22:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/04 17:31:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/22 16:10:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 Test(ft_error)
 {
-	massert((bool)ft_error((intmax_t)2), false);
+	massert((bool)ft_error((intmax_t)2), true);
 	massert((bool)ft_error((intmax_t)1), false);
-	massert((bool)ft_error((intmax_t)0), false);
+	massert((bool)ft_error((intmax_t)0), true);
 	massert((bool)ft_error((intmax_t)-1), true);
 	massert((bool)ft_error((intmax_t)-2), true);
 }
