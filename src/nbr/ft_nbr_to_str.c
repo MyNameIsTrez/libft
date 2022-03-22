@@ -23,7 +23,7 @@ static void	add_digits_to_str(char *str, intmax_t nbr, size_t number_len,
 		str[0] = '0';
 	while (nbr != 0)
 	{
-		digit = -(nbr % base_);
+		digit = (int)-(nbr % base_);
 		str[number_len - 1] = ft_digit_to_char_base(digit, base);
 		number_len--;
 		nbr /= base_;
