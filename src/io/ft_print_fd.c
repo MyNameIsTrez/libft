@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/11 16:29:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/01 15:55:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/23 17:20:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ ssize_t	ft_print_fd(char *str, int fd)
 	ssize_t	len;
 
 	replaced = ft_str_replace(str, "\n", "\\n");
+	if (replaced == NULL)
+		return (-1);
 	len = write(fd, replaced, ft_strlen(replaced));
 	free(replaced);
 	if (len < 0)

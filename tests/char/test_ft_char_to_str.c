@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 14:34:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/23 14:40:32 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/23 14:51:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Test(ft_char_to_str)
 	massert(ft_char_to_str('c'), "c");
 	// massert((bool)(ft_char_to_str('\0') != NULL), true);
 	massert(ft_char_to_str('\0'), "");
-	massert(ft_char_to_digit(10 + '0'), -1);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

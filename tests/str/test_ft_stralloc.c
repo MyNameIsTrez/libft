@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 16:48:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/23 16:52:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ Test(ft_stralloc)
 {
 	char	*str;
 
-	str = ft_stralloc(5);
+	str = malloc(5);
+	str[5] = '\0';
 	str[0] = 'h';
 	str[1] = 'e';
 	str[2] = 'l';

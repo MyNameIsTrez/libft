@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 17:07:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:23:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/23 16:43:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,35 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 t_list *g_tests_lst = NULL;
+
+////////////////////////////////////////////////////////////////////////////////
+
+// This function has to be redefined here cause it normally calls ft_unstable_malloc
+// and that could prevent tests from being run.
+t_list	*test_lstnew(void *content)
+{
+	t_list	*lst;
+
+	lst = malloc(sizeof(t_list));
+	if (lst == NULL)
+		return (NULL);
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
+}
+
+// This function has to be redefined here cause it normally calls ft_unstable_malloc
+// and that could prevent tests from being run.
+t_list	*test_lst_new_front(t_list **lst, void *content)
+{
+	t_list	*new_lst;
+
+	new_lst = test_lstnew(content);
+	if (new_lst == NULL)
+		return (NULL);
+	ft_lstadd_front(lst, new_lst);
+	return (new_lst);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -111,7 +111,7 @@ char	*ptr_str(intmax_t p);
 # endif
 
 // Assert
-# if 1
+# if 0
 #  define do_massert(type, a, b, a_input, b_input)						\
 {																		\
 	char	*a_str;														\
@@ -178,10 +178,15 @@ char	*ptr_str(intmax_t p);
  * Trigger abort when the two values are different
  * You can add your own types by defining `custom_assert_types`
  */
+
 #  define massert(value1, value2)												\
 {																				\
 	massert_compare(value1, value2);											\
 }
+# else
+
+#  define massert(value1, value2) { (void)(value1); (void)(value2); }
+
 # endif
 
 #endif

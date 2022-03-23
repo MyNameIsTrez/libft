@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/22 16:57:10 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/23 13:51:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/23 17:10:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	*ft_unstable_malloc(size_t size)
 
 	// i++;
 	// if (i == 10)
+	// (void)malloc(size);
 	return (NULL);
 	// return (malloc(size));
 }

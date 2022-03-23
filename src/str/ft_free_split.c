@@ -21,6 +21,8 @@ void	ft_free_split(char ***split)
 {
 	size_t	i;
 
+	if (split == NULL || *split == NULL)
+		return ;
 	i = 0;
 	while ((*split)[i] != NULL)
 	{
