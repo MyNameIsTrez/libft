@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/03/22 16:17:54 by sbos          ########   odam.nl          #
+#    Updated: 2022/03/23 14:43:07 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,8 +67,10 @@ SOURCES +=					\
 	src/mem/ft_memmove.c	\
 	src/mem/ft_memset.c
 
-SOURCES +=				\
+SOURCES +=							\
 	src/misc/ft_error.c
+# src/misc/ft_unstable_malloc.c
+# src/misc/ft_unstable_write.c
 
 SOURCES +=										\
 	src/nbr/ft_atoi_safe.c						\
@@ -138,6 +140,7 @@ HEADERS :=						\
 	libft.h						\
 	helper-headers/success.h	\
 	helper-headers/whitespace.h
+# ./stdlib.h
 
 ################################################################################
 
@@ -146,6 +149,7 @@ FCLEANED_FILES := $(NAME)
 # DEBUG is set to 1 when tester.mk includes this file
 ifdef DEBUG
 CFLAGS += -g3 -Wconversion
+# CFLAGS += -Wno-nullability-completeness # Needed for intercepting stdlib.h
 FCLEANED_FILES += $(TEST_NAME)
 endif
 

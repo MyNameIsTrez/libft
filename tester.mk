@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:59 by sbos          #+#    #+#                  #
-#    Updated: 2022/02/22 15:39:41 by sbos          ########   odam.nl          #
+#    Updated: 2022/03/23 14:30:08 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,8 @@ TESTER_INCLUDES := $(sort $(addprefix -I, $(dir $(TESTER_HEADERS))))
 
 ################################################################################
 
+all: $(TESTER)
+
 $(TESTER): $(NAME) $(MASSERT_DIR)/libmassert.a $(TESTER_OBJECTS)
 	$(CC) $(CFLAGS) $(TESTER_INCLUDES) -g3 $(TESTER_OBJECTS) $(TESTER_LIBS) -o $(TESTER)
 
@@ -48,7 +50,7 @@ $(TESTS_OBJ_DIR)/%.o: $(TESTS_DIR)/%.c $(TESTER_HEADERS)
 ################################################################################
 
 $(MASSERT_DIR)/libmassert.a:
-	$(MAKE) -C $(MASSERT_DIR)
+	@$(MAKE) -C $(MASSERT_DIR)
 
 .PHONY: $(MASSERT_DIR)/libmassert.a
 
@@ -57,6 +59,7 @@ $(MASSERT_DIR)/libmassert.a:
 fclean_tester: fclean
 	rm -rf $(TESTS_OBJ_DIR)
 	rm -f $(TESTER)
+	@$(MAKE) -C $(MASSERT_DIR) fclean
 
 re_tester: fclean_tester $(TESTER)
 

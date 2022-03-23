@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 17:35:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/22 17:41:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef linux
 Test(ft_strnstr)
 {
 	massert(ft_strnstr("bar", "ba", 3), strnstr("bar", "ba", 3));
@@ -43,5 +44,6 @@ Test(ft_strnstr)
 	// printf("'%s'\n", ft_strnstr(haystack, "ipsumm", 30));
 	// printf("'%s'\n", strnstr(haystack, "ipsumm", 30));
 }
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

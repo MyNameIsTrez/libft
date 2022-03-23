@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_strlcpy.c                                  :+:    :+:            */
+/*   ft_unstable_malloc.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/17 17:26:37 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/22 17:39:22 by sbos          ########   odam.nl         */
+/*   Created: 2022/03/22 16:57:10 by sbos          #+#    #+#                 */
+/*   Updated: 2022/03/23 13:51:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "tests.h"
+#include <stdlib.h>	// malloc
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef linux
-Test(ft_strlcpy)
+/**
+ * @brief Search-and-replace all malloc() calls with this function so my tester
+ * can check whether programs still work when malloc() fails and returns NULL.
+ *
+ * @param size
+ * @return
+ */
+void	*ft_unstable_malloc(size_t size)
 {
-	{
-		char	ft_dst[] = "rrrrrr\0\0\0\0\0\0\0\0";
-		char	dst[] = "rrrrrr\0\0\0\0\0\0\0\0";
+	// static size_t	i = 0;
+	(void)size;
 
-		size_t ft_cpy = ft_strlcpy(ft_dst, "lorem ipsum dolor sit amet", 15);
-		size_t cpy = strlcpy(dst, "lorem ipsum dolor sit amet", 15);
-		massert(ft_cpy, cpy);
-		massert(ft_dst, dst);
-	}
-	{
-		char	ft_dst[] = "rrrrrr\0\0\0\0\0\0\0\0";
-		char	dst[] = "rrrrrr\0\0\0\0\0\0\0\0";
-
-		size_t ft_cpy = ft_strlcpy(ft_dst, "lorem ipsum dolor sit amet", 0);
-		size_t cpy = strlcpy(dst, "lorem ipsum dolor sit amet", 0);
-		massert(ft_cpy, cpy);
-		massert(ft_dst, dst);
-	}
+	// i++;
+	// if (i == 10)
+	return (NULL);
+	// return (malloc(size));
 }
-#endif
 
 ////////////////////////////////////////////////////////////////////////////////

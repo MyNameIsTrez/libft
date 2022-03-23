@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_striteri.c                                 :+:    :+:            */
+/*   ft_unstable_write.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/17 17:10:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/22 17:28:41 by sbos          ########   odam.nl         */
+/*   Created: 2022/03/23 13:43:02 by sbos          #+#    #+#                 */
+/*   Updated: 2022/03/23 14:11:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "tests.h"
+// #include <unistd.h>	// write
+#include <sys/types.h>	// ssize_t
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static void	increase_by_index(unsigned int i, char *c)
+/**
+ * @brief Search-and-replace all write() calls with this function so my tester
+ * can check whether programs still work when write() fails and returns -1.
+ *
+ * @param fildes
+ * @param buf
+ * @param nbyte
+ * @return
+ */
+ssize_t	ft_unstable_write(int fildes, const void *buf, size_t nbyte)
 {
-	(*(unsigned int *)c) += i;
+	// static size_t	i = 0;
+	(void)fildes;
+	(void)buf;
+	(void)nbyte;
+
+	// i++;
+	// if (i == 10)
+	return (-1);
+	// return (write(fildes, buf, nbyte));
 }
-
-Test(ft_striteri)
-{
-	char	s[] = "foo";
-
-	ft_striteri(s, increase_by_index);
-	massert(s, "fpq");
-}
-
-////////////////////////////////////////////////////////////////////////////////

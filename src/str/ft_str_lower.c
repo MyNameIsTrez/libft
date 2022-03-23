@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/04 18:34:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/04 17:36:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/22 17:24:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,6 @@ static void	striteri_tolower(unsigned int i, char *chr)
  */
 char	*ft_str_lower(char *str)
 {
-	int	i;
-
-	i = 0;
 	ft_striteri(str, striteri_tolower);
 	return (str);
 }

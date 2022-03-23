@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/20 11:42:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/01 16:38:13 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/23 14:42:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # include "massert.h"
 
-// # define custom_assert_types	\
+// # define custom_assert_types
 // 	add_assert_type(t_list *, lst_eq, lst_as_str)
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -30,6 +30,10 @@
 #include <fcntl.h>		// open
 #include <unistd.h>		// lseek, read, close
 #include <sys/wait.h>	// wait
+
+// For Unix
+#include <ctype.h>		// isalpha, ...
+#include <string.h>	// strlcat, strlcpy
 
 ////////////////////////////////////////////////////////////////////////////////
 

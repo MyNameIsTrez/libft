@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/08 15:58:45 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/22 17:41:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 
 Test(ft_unsigned_nbr_to_str)
 {
+	#ifndef linux
 	massert(ft_unsigned_nbr_to_str(-42, 10), "18446744073709551574");
+	#endif
 	massert(ft_unsigned_nbr_to_str(42, 10), "42");
 }
 
