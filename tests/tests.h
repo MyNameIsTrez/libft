@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/20 11:42:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/25 16:37:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 18:41:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,47 +67,66 @@ t_list	*test_lst_new_front(t_list **lst, void *content);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define test_io_fd(fn, val, ret, ...)												\
+# define test_io_fd(fn, val, ret, on_error, ...)									\
 {																					\
+	was_malloc_unstable = 0;														\
+	was_write_unstable = 0;															\
 	int const	fd = open("/tmp/" #fn "_test", O_RDWR | O_CREAT | O_TRUNC, 0640);	\
-	massert(fn(val, fd), (ssize_t)(__VA_ARGS__ + strlen(ret)));						\
-	FILE *f = fdopen(fd, "rw");														\
-	fseek(f, 0, SEEK_END);															\
-	long file_size = ftell(f);														\
-	char buf[file_size + 1];														\
-	ft_memset(buf, '\0', (size_t)file_size + 1);									\
-	lseek(fd, 0, SEEK_SET);															\
-	read(fd, buf, (size_t)file_size);												\
+	ssize_t	ret_value = fn(val, fd);												\
+	if (was_malloc_unstable || was_write_unstable)									\
+	{																				\
+		massert(ret_value, (ssize_t)(on_error));									\
+	}																				\
+	else																			\
+	{																				\
+		massert(ret_value, (ssize_t)(__VA_ARGS__ + strlen(ret)));					\
+		FILE *f = fdopen(fd, "rw");													\
+		fseek(f, 0, SEEK_END);														\
+		long file_size = ftell(f);													\
+		char buf[file_size + 1];													\
+		memset(buf, '\0', (size_t)file_size + 1);									\
+		lseek(fd, 0, SEEK_SET);														\
+		read(fd, buf, (size_t)file_size);											\
+		massert(buf, ret);															\
+	}																				\
 	close(fd);																		\
-	massert(buf, ret);																\
 }
 
-# define test_io(fn, val, ret, ...)													\
+# define test_io(fn, val, ret, on_error, ...)										\
 {																					\
+	was_malloc_unstable = 0;														\
+	was_write_unstable = 0;															\
 	int stdout_fd = dup(STDOUT_FILENO);												\
 	int const	fd = open("/tmp/" #fn "_test", O_RDWR | O_CREAT | O_TRUNC, 0640);	\
 	dup2(fd, STDOUT_FILENO);														\
-	massert(fn(val), (ssize_t)(__VA_ARGS__ + strlen(ret)));							\
+	ssize_t	ret_value = fn(val);													\
 	dup2(stdout_fd, STDOUT_FILENO);													\
-	FILE *f = fdopen(fd, "rw");														\
-	fseek(f, 0, SEEK_END);															\
-	long file_size = ftell(f);														\
-	char buf[file_size + 1];														\
-	ft_memset(buf, '\0', (size_t)file_size + 1);									\
-	lseek(fd, 0, SEEK_SET);															\
-	read(fd, buf, (size_t)file_size);												\
+	if (was_malloc_unstable || was_write_unstable)									\
+	{																				\
+		massert(ret_value, (ssize_t)(on_error));									\
+	}																				\
+	else																			\
+	{																				\
+		massert(ret_value, (ssize_t)(__VA_ARGS__ + strlen(ret)));					\
+		FILE *f = fdopen(fd, "rw");													\
+		fseek(f, 0, SEEK_END);														\
+		long file_size = ftell(f);													\
+		char buf[file_size + 1];													\
+		memset(buf, '\0', (size_t)file_size + 1);									\
+		lseek(fd, 0, SEEK_SET);														\
+		read(fd, buf, (size_t)file_size);											\
+		massert(buf, ret);															\
+	}																				\
 	close(fd);																		\
-	massert(buf, ret);																\
 }
-
-extern int was_unstable;
 
 #define m_safe_assert(type, input, expected, on_error)	\
 {														\
-	was_unstable = 0;									\
+	was_malloc_unstable = 0;							\
+	was_write_unstable = 0;								\
 	type input_value = input;							\
 	(void)input_value;									\
-	if (was_unstable)									\
+	if (was_malloc_unstable || was_write_unstable)		\
 	{													\
 		massert(input_value, (type)on_error);			\
 	}													\

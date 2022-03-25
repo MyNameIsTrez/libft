@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/08 15:24:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 17:18:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 Test(ft_itoa)
 {
-	massert(ft_itoa(42), "42");
-	massert(ft_itoa(-42), "-42");
-	massert(ft_itoa(0), "0");
-	massert(ft_itoa(-2147483648), "-2147483648");
+	m_safe_assert(char *, ft_itoa(42), "42", NULL);
+	m_safe_assert(char *, ft_itoa(-42), "-42", NULL);
+	m_safe_assert(char *, ft_itoa(0), "0", NULL);
+	m_safe_assert(char *, ft_itoa(-2147483648), "-2147483648", NULL);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

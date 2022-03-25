@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 18:56:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 17:18:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@
 
 Test(ft_nbr_to_str)
 {
-	massert(ft_nbr_to_str(42, 10), "42");
-	massert(ft_nbr_to_str(-42, 10), "-42");
-	massert(ft_nbr_to_str(0, 10), "0");
-	massert(ft_nbr_to_str(-2147483648, 10), "-2147483648");
+	m_safe_assert(char *, ft_nbr_to_str(42, 10), "42", NULL);
+	m_safe_assert(char *, ft_nbr_to_str(-42, 10), "-42", NULL);
+	m_safe_assert(char *, ft_nbr_to_str(0, 10), "0", NULL);
+	m_safe_assert(char *, ft_nbr_to_str(-2147483648, 10), "-2147483648", NULL);
 
-	massert(ft_nbr_to_str(9, 10), "9");
-	massert(ft_nbr_to_str(10, 10), "10");
-	massert(ft_nbr_to_str(-9, 10), "-9");
-	massert(ft_nbr_to_str(-10, 10), "-10");
+	m_safe_assert(char *, ft_nbr_to_str(9, 10), "9", NULL);
+	m_safe_assert(char *, ft_nbr_to_str(10, 10), "10", NULL);
+	m_safe_assert(char *, ft_nbr_to_str(-9, 10), "-9", NULL);
+	m_safe_assert(char *, ft_nbr_to_str(-10, 10), "-10", NULL);
 
-	massert(ft_nbr_to_str(15, 16), "f");
-	massert(ft_nbr_to_str(-15, 16), "-f");
-	massert(ft_nbr_to_str(16, 16), "10");
-	massert(ft_nbr_to_str(-16, 16), "-10");
+	m_safe_assert(char *, ft_nbr_to_str(15, 16), "f", NULL);
+	m_safe_assert(char *, ft_nbr_to_str(-15, 16), "-f", NULL);
+	m_safe_assert(char *, ft_nbr_to_str(16, 16), "10", NULL);
+	m_safe_assert(char *, ft_nbr_to_str(-16, 16), "-10", NULL);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

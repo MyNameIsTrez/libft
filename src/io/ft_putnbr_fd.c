@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/01 15:52:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 18:14:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ static ssize_t	write_digits(int nbr, size_t nbr_len, int fd)
 			nbr_copy /= 10;
 			j--;
 		}
-		ft_putchar_fd(ft_digit_to_char(digit), fd);
+		if (ft_putchar_fd(ft_digit_to_char(digit), fd) < 0)
+			return (-1);
 		i--;
 	}
 	return ((ssize_t)nbr_len);
@@ -52,11 +53,20 @@ static ssize_t	write_digits(int nbr, size_t nbr_len, int fd)
 ssize_t	ft_putnbr_fd(int nbr, int fd)
 {
 	ssize_t	len;
+	ssize_t	tmp;
 
 	len = 0;
 	if (nbr < 0)
-		len += ft_putchar_fd('-', fd);
-	len += write_digits(nbr, ft_get_digit_count(nbr), fd);
+	{
+		tmp = ft_putchar_fd('-', fd);
+		if (tmp < 0)
+			return (tmp);
+		len += tmp;
+	}
+	tmp = write_digits(nbr, ft_get_digit_count(nbr), fd);
+	if (tmp < 0)
+		return (tmp);
+	len += tmp;
 	return (len);
 }
 

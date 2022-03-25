@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/03/25 16:31:32 by sbos          ########   odam.nl          #
+#    Updated: 2022/03/25 16:52:19 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,8 +132,8 @@ SOURCES +=								\
 
 # unstable
 SOURCES +=								\
-	src/unstable/ft_unstable_malloc.c
-#	src/unstable/ft_unstable_write.c	\
+	src/unstable/ft_unstable_malloc.c	\
+	src/unstable/ft_unstable_write.c
 
 ################################################################################
 

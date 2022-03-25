@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/25 20:13:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/25 15:05:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 18:31:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// Test(ft_str_assign_fail)
-// {
-// 	char	*i_str;
-// 	char	*str;
+Test(ft_str_assign_fail)
+{
+	char	*str;
 
-// 	str = NULL;
-// 	i_str = "foo";
-// 	massert(ft_str_assign_fail(&str, i_str), (bool)false);
-// 	if (i_str != NULL)
-// 		massert(ft_atoi(i_str), (int)i);
-// 	free(i_str);
-// 	i_str = NULL;
-// 	str = NULL;
-// }
+	str = NULL;
+	massert(ft_str_assign_fail(&str, "foo"), (bool)false);
+	massert(ft_str_assign_fail(&str, NULL), (bool)true);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

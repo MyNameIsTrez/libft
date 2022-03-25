@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/25 19:14:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/25 19:20:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 17:16:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 
 Test(ft_chr_repeat)
 {
-	massert(ft_chr_repeat('\0', 0), "");
-	massert(ft_chr_repeat('a', 0), "");
+	m_safe_assert(char *, ft_chr_repeat('\0', 0), "", NULL);
+	m_safe_assert(char *, ft_chr_repeat('a', 0), "", NULL);
 
-	massert(ft_chr_repeat('\0', 1), "");
-	massert(ft_chr_repeat('a', 1), "a");
+	m_safe_assert(char *, ft_chr_repeat('\0', 1), "", NULL);
+	m_safe_assert(char *, ft_chr_repeat('a', 1), "a", NULL);
 
-	massert(ft_chr_repeat('\0', 2), "");
-	massert(ft_chr_repeat('a', 2), "aa");
+	m_safe_assert(char *, ft_chr_repeat('\0', 2), "", NULL);
+	m_safe_assert(char *, ft_chr_repeat('a', 2), "aa", NULL);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

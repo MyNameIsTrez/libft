@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/22 16:57:10 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/25 16:39:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 18:40:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-int	was_unstable = 0;
+// TODO: Try to include the header containing these as extern?
+int malloc_call_count = 0;
+int malloc_call_count_fail_point = 0;
+int	was_malloc_unstable = 0;
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -29,18 +32,14 @@ int	was_unstable = 0;
  */
 void	*ft_unstable_malloc(size_t size)
 {
-	// static size_t	i = 0;
-	(void)size;
-	int stable = 1;
+	int	stable = 1;
 
-	// i++;
-	// if (i == 10)
-	// stable = 0;
-	// (void)malloc(size);
-	// return (malloc(size));
+	malloc_call_count++;
+	if (malloc_call_count == malloc_call_count_fail_point)
+		stable = 0;
 	if (stable)
 		return (malloc(size));
-	was_unstable = 1;
+	was_malloc_unstable = 1;
 	return (NULL);
 }
 

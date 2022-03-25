@@ -6,14 +6,21 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/23 13:43:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/23 14:11:03 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 18:40:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// #include <unistd.h>	// write
+#include <unistd.h>	// write
 #include <sys/types.h>	// ssize_t
+
+////////////////////////////////////////////////////////////////////////////////
+
+// TODO: Try to include the header containing these as extern?
+int write_call_count = 0;
+int write_call_count_fail_point = 0;
+int	was_write_unstable = 0;
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -28,13 +35,15 @@
  */
 ssize_t	ft_unstable_write(int fildes, const void *buf, size_t nbyte)
 {
-	// static size_t	i = 0;
-	(void)fildes;
-	(void)buf;
-	(void)nbyte;
+	int stable = 1;
 
-	// i++;
-	// if (i == 10)
+	write_call_count++;
+	if (write_call_count == write_call_count_fail_point)
+		stable = 0;
+	if (stable)
+		return (write(fildes, buf, nbyte));
+	was_write_unstable = 1;
 	return (-1);
-	// return (write(fildes, buf, nbyte));
 }
+
+////////////////////////////////////////////////////////////////////////////////

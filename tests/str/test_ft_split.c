@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 15:49:24 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/23 18:13:34 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 17:12:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,20 +61,25 @@ Test(ft_split)
 	// }
 
 	{
-		char	**split = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
+		char	**split;
+		m_safe_assert(void *, split = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' '), split, NULL);
 
-		massert(split[0], "lorem");
-		massert(split[1], "ipsum");
-		massert(split[2], "dolor");
-		massert(split[3], "sit");
-		massert(split[4], "amet,");
-		massert(split[5], "consectetur");
-		massert(split[6], "adipiscing");
-		massert(split[7], "elit.");
-		massert(split[8], "Sed");
-		massert(split[9], "non");
-		massert(split[10], "risus.");
-		massert(split[11], "Suspendisse");
+		if (split != NULL)
+		{
+			massert(split[0], "lorem");
+			massert(split[1], "ipsum");
+			massert(split[2], "dolor");
+			massert(split[3], "sit");
+			massert(split[4], "amet,");
+			massert(split[5], "consectetur");
+			massert(split[6], "adipiscing");
+			massert(split[7], "elit.");
+			massert(split[8], "Sed");
+			massert(split[9], "non");
+			massert(split[10], "risus.");
+			massert(split[11], "Suspendisse");
+			ft_free_split(&split);
+		}
 
 		// TODO: Try to make this work:
 		// const char	*expected[] = {
@@ -97,27 +102,28 @@ Test(ft_split)
 		// 	expected,
 		// 	69
 		// );
-
-		if (split != NULL)
-			ft_free_split(&split);
 	}
 
 	{
-		char	**split = ft_split("", ' ');
-
-		massert((void *)split[0], NULL);
+		char	**split;
+		m_safe_assert(void *, split = ft_split("", ' '), split, NULL);
 
 		if (split != NULL)
+		{
+			massert((void *)split[0], NULL);
 			ft_free_split(&split);
+		}
 	}
 
 	{
-		char	**split = ft_split("", '\0');
-
-		massert((void *)split[0], NULL);
+		char	**split;
+		m_safe_assert(void *, split = ft_split("", '\0'), split, NULL);
 
 		if (split != NULL)
+		{
+			massert((void *)split[0], NULL);
 			ft_free_split(&split);
+		}
 	}
 }
 

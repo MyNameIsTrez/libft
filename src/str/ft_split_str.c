@@ -65,6 +65,11 @@ static bool	add_words_to_split(char *str, const char *sep, char ***split)
 		str = sep_pos + sep_len;
 	}
 	(*split)[i] = ft_empty_str();
+	if ((*split)[i] == NULL)
+	{
+		ft_free_split(split);
+		return (false);
+	}
 	return (true);
 }
 

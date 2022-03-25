@@ -19,13 +19,20 @@
 Test(ft_lstadd_back)
 {
 	t_list	*lst;
+	t_list	*new;
+	int		has_been_unstable = 0;
 
 	lst = NULL;
 
-	ft_lstadd_back(&lst, ft_lstnew("foo"));
-	ft_lstadd_back(&lst, ft_lstnew("foo"));
+	m_safe_assert(void *, new = ft_lstnew("foo"), new, NULL);
+	has_been_unstable = has_been_unstable || was_malloc_unstable;
+	ft_lstadd_back(&lst, new);
+	m_safe_assert(void *, new = ft_lstnew("foo"), new, NULL);
+	has_been_unstable = has_been_unstable || was_malloc_unstable;
+	ft_lstadd_back(&lst, new);
 
-	massert(ft_lstsize(lst), 2);
+	if (!has_been_unstable)
+		massert(ft_lstsize(lst), 2);
 
 	ft_lstclear(&lst, NULL);
 }
