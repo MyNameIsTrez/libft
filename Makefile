@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/03/23 16:05:13 by sbos          ########   odam.nl          #
+#    Updated: 2022/03/25 16:29:31 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@
 
 SOURCES :=
 
+# char
 SOURCES +=						\
 	src/char/ft_char_to_digit.c	\
 	src/char/ft_char_to_str.c	\
@@ -28,6 +29,7 @@ SOURCES +=						\
 	src/char/ft_tolower.c		\
 	src/char/ft_toupper.c
 
+# io
 SOURCES +=						\
 	src/io/ft_print_fd.c		\
 	src/io/ft_print.c			\
@@ -42,6 +44,7 @@ SOURCES +=						\
 	src/io/ft_putstr_fd.c		\
 	src/io/ft_putstr.c
 
+# lst
 SOURCES +=							\
 	src/lst/ft_lst_content_size.c	\
 	src/lst/ft_lst_new_back.c		\
@@ -57,6 +60,7 @@ SOURCES +=							\
 	src/lst/ft_lstnew.c				\
 	src/lst/ft_lstsize.c
 
+# mem
 SOURCES +=					\
 	src/mem/ft_bzero.c		\
 	src/mem/ft_calloc.c		\
@@ -67,11 +71,11 @@ SOURCES +=					\
 	src/mem/ft_memmove.c	\
 	src/mem/ft_memset.c
 
+# misc
 SOURCES +=							\
-	src/misc/ft_error.c				\
-	src/misc/ft_unstable_malloc.c
-# src/misc/ft_unstable_write.c
+	src/misc/ft_error.c
 
+# nbr
 SOURCES +=										\
 	src/nbr/ft_atoi_safe.c						\
 	src/nbr/ft_atoi.c							\
@@ -86,6 +90,7 @@ SOURCES +=										\
 	src/nbr/ft_nbr_to_str.c						\
 	src/nbr/ft_unsigned_nbr_to_str.c
 
+# str
 SOURCES +=								\
 	src/str/ft_chr_repeat.c				\
 	src/str/ft_empty_str_assign_fail.c	\
@@ -125,6 +130,11 @@ SOURCES +=								\
 	src/str/ft_strtrim_whitespace.c		\
 	src/str/ft_substr.c
 
+# unstable
+SOURCES +=								\
+	src/unstable/ft_unstable_malloc.c
+#	src/unstable/ft_unstable_write.c	\
+
 ################################################################################
 
 NAME := libft.a
@@ -136,10 +146,11 @@ OBJ_DIR := obj
 
 CFLAGS := -Wall -Wextra -Werror
 
-HEADERS :=						\
-	libft.h						\
-	helper-headers/success.h	\
+HEADERS :=							\
+	libft.h							\
+	helper-headers/success.h		\
 	helper-headers/whitespace.h
+#	overwritten-headers/stdlib.h
 
 ################################################################################
 

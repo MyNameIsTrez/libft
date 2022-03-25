@@ -13,9 +13,6 @@
 			"problemMatcher": [
 				"$gcc"
 			],
-			"presentation": {
-				"reveal": "silent"
-			},
 			"group": "build"
 		}
 	]
