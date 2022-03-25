@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 12:44:58 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 16:09:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 Test(ft_str_repeat)
 {
 	{
-		massert(ft_str_repeat(strdup(""), 0), "");
-		massert(ft_str_repeat(strdup("foo"), 0), "");
+		m_safe_assert(char *, ft_str_repeat(strdup(""), 0), "", NULL);
+		m_safe_assert(char *, ft_str_repeat(strdup("foo"), 0), "", NULL);
 	}
 	{
-		massert(ft_str_repeat(strdup(""), 1), "");
-		massert(ft_str_repeat(strdup("foo"), 1), "foo");
+		m_safe_assert(char *, ft_str_repeat(strdup(""), 1), "", NULL);
+		m_safe_assert(char *, ft_str_repeat(strdup("foo"), 1), "foo", NULL);
 	}
 	{
-		massert(ft_str_repeat(strdup(""), 2), "");
-		massert(ft_str_repeat(strdup("foo"), 2), "foofoo");
+		m_safe_assert(char *, ft_str_repeat(strdup(""), 2), "", NULL);
+		m_safe_assert(char *, ft_str_repeat(strdup("foo"), 2), "foofoo", NULL);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 19:00:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/04 15:36:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/23 17:48:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,13 @@ Test(ft_lstdelone)
 	foo[1] = 'a';
 	foo[2] = 'r';
 	foo[3] = '\0';
+
 	lst = ft_lstnew(foo);
-	massert((char *)lst->content, "bar");
-	ft_lstdelone(lst, free_content);
+	if (lst != NULL)
+	{
+		massert((char *)lst->content, "bar");
+		ft_lstdelone(lst, free_content);
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////

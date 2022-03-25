@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:27:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/23 14:50:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 15:31:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 
 bool	ft_error(intmax_t status);
 void	*ft_unstable_malloc(size_t size);
+int		*was_unstable(void);
 // ssize_t	ft_unstable_write(int fildes, const void *buf, size_t nbyte);
 
 ////////////////////////////////////////////////////////////////////////////////

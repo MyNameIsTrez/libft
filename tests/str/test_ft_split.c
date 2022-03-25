@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 15:49:24 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/23 18:13:34 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,52 +60,65 @@ Test(ft_split)
 	// 	i++;
 	// }
 
+	{
+		char	**split = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
 
-	char	**split = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
+		massert(split[0], "lorem");
+		massert(split[1], "ipsum");
+		massert(split[2], "dolor");
+		massert(split[3], "sit");
+		massert(split[4], "amet,");
+		massert(split[5], "consectetur");
+		massert(split[6], "adipiscing");
+		massert(split[7], "elit.");
+		massert(split[8], "Sed");
+		massert(split[9], "non");
+		massert(split[10], "risus.");
+		massert(split[11], "Suspendisse");
 
-	massert(split[0], "lorem");
-	massert(split[1], "ipsum");
-	massert(split[2], "dolor");
-	massert(split[3], "sit");
-	massert(split[4], "amet,");
-	massert(split[5], "consectetur");
-	massert(split[6], "adipiscing");
-	massert(split[7], "elit.");
-	massert(split[8], "Sed");
-	massert(split[9], "non");
-	massert(split[10], "risus.");
-	massert(split[11], "Suspendisse");
+		// TODO: Try to make this work:
+		// const char	*expected[] = {
+		// 	"lorem",
+		// 	"ipsum",
+		// 	"dolor",
+		// 	"sit",
+		// 	"amet",
+		// 	"consectetur",
+		// 	"adipiscing",
+		// 	"elit.",
+		// 	"Sed",
+		// 	"non",
+		// 	"risus.",
+		// 	"Suspendisse"
+		// };
 
-	// TODO: Try to make this work:
-	// const char	*expected[] = {
-	// 	"lorem",
-	// 	"ipsum",
-	// 	"dolor",
-	// 	"sit",
-	// 	"amet",
-	// 	"consectetur",
-	// 	"adipiscing",
-	// 	"elit.",
-	// 	"Sed",
-	// 	"non",
-	// 	"risus.",
-	// 	"Suspendisse"
-	// };
+		// cr_assert_arr_eq(
+		// 	ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' '),
+		// 	expected,
+		// 	69
+		// );
 
-	// cr_assert_arr_eq(
-	// 	ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' '),
-	// 	expected,
-	// 	69
-	// );
+		if (split != NULL)
+			ft_free_split(&split);
+	}
 
-	ft_free_split(&split);
+	{
+		char	**split = ft_split("", ' ');
 
+		massert((void *)split[0], NULL);
 
-	char	**split2 = ft_split("", ' ');
+		if (split != NULL)
+			ft_free_split(&split);
+	}
 
-	massert((void *)split2[0], NULL);
+	{
+		char	**split = ft_split("", '\0');
 
-	ft_free_split(&split2);
+		massert((void *)split[0], NULL);
+
+		if (split != NULL)
+			ft_free_split(&split);
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/17 12:45:44 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/22 14:33:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/23 17:45:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ Test(ft_rejoin_split)
 		char	*sep = "AB";
 
 		char	**split = ft_split_str(str, sep);
-		massert(ft_rejoin_split(split, "C"), "C1CC2C3");
+		if (split != NULL)
+			massert(ft_rejoin_split(split, "C"), "C1CC2C3");
 	}
 
 	{
@@ -31,7 +32,8 @@ Test(ft_rejoin_split)
 		char	*sep = "AB";
 
 		char	**split = ft_split_str(str, sep);
-		massert(ft_rejoin_split(split, "C"), "C1CC2C3C");
+		if (split != NULL)
+			massert(ft_rejoin_split(split, "C"), "C1CC2C3C");
 	}
 }
 
