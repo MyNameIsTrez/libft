@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:42 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/04 14:27:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/23 17:31:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t len)
 	char	*dst_copy;
 	char	*src_copy;
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
 	dst_copy = (char *)dst;
 	src_copy = (char *)src;
 	i = 0;

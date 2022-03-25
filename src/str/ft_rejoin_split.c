@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/10 17:14:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/23 17:13:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 14:17:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,10 @@ char	*ft_rejoin_split(char **split, char *sep)
 	char			*rejoined;
 	size_t			rejoined_len;
 
-	if (split == NULL)
-		return (NULL);
 	rejoined_len = get_rejoined_len(split, sep_len);
 	rejoined = ft_stralloc(rejoined_len);
-	if (rejoined != NULL)
-		fill_rejoin(rejoined, split, sep, rejoined_len);
+	if (rejoined == NULL)
+		return (NULL);
+	fill_rejoin(rejoined, split, sep, rejoined_len);
 	return (rejoined);
 }

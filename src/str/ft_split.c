@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:26 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/23 14:49:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/23 17:56:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static size_t	get_word_count(char *str, char sep)
 	return (word_count);
 }
 
-static void	add_words_to_split(char *str, char sep, char ***split)
+static bool	add_words_to_split(char *str, char sep, char ***split)
 {
 	size_t			i;
 	char			*start_of_word;
@@ -52,16 +52,20 @@ static void	add_words_to_split(char *str, char sep, char ***split)
 		len = (size_t)(end_of_word - start_of_word);
 		(*split)[i] = ft_substr(str, start_index, len);
 		if ((*split)[i] == NULL)
-			return (ft_free_split(split));
+		{
+			ft_free_split(split);
+			return (false);
+		}
 		str = end_of_word;
 		i++;
 	}
+	return (true);
 }
 
 /**
  * @brief Splits the string @p str by removing all occurrences of @p sep.
  *
- * @param str 💥 The string to be split.
+ * @param str The string to be split.
  * @param sep The delimiter character.
  * @return The array of new strings resulting from the split;\n
    NULL if the allocation fails.
@@ -71,13 +75,12 @@ char	**ft_split(const char *str, char sep)
 	size_t	word_count;
 	char	**split;
 
-	if (str == NULL)
-		return (NULL);
 	word_count = get_word_count((char *)str, sep);
 	split = ft_unstable_malloc((word_count + 1) * sizeof(char *));
 	if (split == NULL)
 		return (NULL);
 	split[word_count] = NULL;
-	add_words_to_split((char *)str, sep, &split);
+	if (add_words_to_split((char *)str, sep, &split) == false)
+		return (NULL);
 	return (split);
 }

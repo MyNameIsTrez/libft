@@ -32,15 +32,18 @@ static size_t	get_word_count(char str[], const char sep[])
 	return (word_count);
 }
 
-static void	add_last_word(char *str, char ***split, size_t i)
+static bool	add_last_word(char *str, char ***split, size_t i)
 {
 	(*split)[i] = ft_strdup(str);
 	if ((*split)[i] == NULL)
+	{
 		ft_free_split(split);
-	return ;
+		return (false);
+	}
+	return (true);
 }
 
-static void	add_words_to_split(char *str, const char *sep, char ***split)
+static bool	add_words_to_split(char *str, const char *sep, char ***split)
 {
 	const size_t	sep_len = ft_strlen(sep);
 	char			*sep_pos;
@@ -54,11 +57,15 @@ static void	add_words_to_split(char *str, const char *sep, char ***split)
 			return (add_last_word(str, split, i));
 		(*split)[i] = ft_substr(str, 0, (size_t)(sep_pos - str));
 		if ((*split)[i] == NULL)
-			return (ft_free_split(split));
+		{
+			ft_free_split(split);
+			return (false);
+		}
 		i++;
 		str = sep_pos + sep_len;
 	}
 	(*split)[i] = ft_empty_str();
+	return (true);
 }
 
 /**
@@ -66,7 +73,7 @@ static void	add_words_to_split(char *str, const char *sep, char ***split)
    It is designed to be reversible,
    which works by replacing any occurrence of @p sep with an empty string.
  *
- * @param str 💥 The string to be split.
+ * @param str The string to be split.
  * @param sep The delimiter string.
  * @return The array of new strings resulting from the split;\n
    NULL if the allocation fails.
@@ -76,14 +83,12 @@ char	**ft_split_str(const char *str, const char *sep)
 	size_t	word_count;
 	char	**split;
 
-	if (str == NULL)
-		return (NULL);
 	word_count = get_word_count((char *)str, sep);
 	split = ft_unstable_malloc((word_count + 1) * sizeof(char *));
 	if (split == NULL)
 		return (NULL);
 	split[word_count] = NULL;
-	if (word_count > 0)
-		add_words_to_split((char *)str, sep, &split);
+	if (add_words_to_split((char *)str, sep, &split) == false)
+		return (NULL);
 	return (split);
 }

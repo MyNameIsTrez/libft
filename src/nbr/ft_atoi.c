@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/23 16:57:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/23 17:32:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ int	ft_atoi(const char *str)
 	long	sign;
 	int		result;
 
-	if (str == NULL)
-		return (0);
 	while (ft_isspace(str[0]))
 		str++;
 	sign = 1;
