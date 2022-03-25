@@ -18,7 +18,7 @@
  */
 int	ft_char_to_digit(const char chr)
 {
-	if ('0' <= chr && chr <= '9')
+	if ('0' <= chr and chr <= '9')
 		return (chr - '0');
 	return (-1);
 }

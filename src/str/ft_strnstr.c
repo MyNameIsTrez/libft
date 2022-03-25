@@ -33,7 +33,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return ((char *)haystack);
 	first_index = 0;
 	offset = 0;
-	while (first_index + offset < len && haystack[first_index + offset] != '\0')
+	while (first_index + offset < len and haystack[first_index + offset] != '\0')
 	{
 		if (haystack[first_index + offset] == needle[offset])
 		{

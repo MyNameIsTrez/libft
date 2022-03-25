@@ -20,5 +20,5 @@
  */
 int	ft_isalnum(int chr)
 {
-	return (ft_isalpha(chr) || ft_isdigit(chr));
+	return (ft_isalpha(chr) or ft_isdigit(chr));
 }

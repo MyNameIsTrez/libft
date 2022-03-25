@@ -34,7 +34,7 @@ Test(ft_lstmap)
 	// l->next = ft_lstnew(ft_strdup("ss"));
 	// l->next->next = ft_lstnew(ft_strdup("-_-"));
 	// ret = ft_lstmap(l, lstmap_f, NULL);
-	// if (!strcmp(ret->content, "OK !") && !strcmp(ret->next->content, "OK !") && !strcmp(ret->next->next->content, "OK !") && !strcmp(l->content, " 1 2 3 ") && !strcmp(l->next->content, "ss") && !strcmp(l->next->next->content, "-_-"))
+	// if (not strcmp(ret->content, "OK !") and not strcmp(ret->next->content, "OK !") and not strcmp(ret->next->next->content, "OK !") and not strcmp(l->content, " 1 2 3 ") and not strcmp(l->next->content, "ss") and not strcmp(l->next->next->content, "-_-"))
 	// {
 	// 	printf("yay\n");
 	// 	return ;

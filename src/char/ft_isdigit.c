@@ -18,5 +18,5 @@
  */
 int	ft_isdigit(int chr)
 {
-	return ('0' <= chr && chr <= '9');
+	return ('0' <= chr and chr <= '9');
 }

@@ -24,14 +24,14 @@ Test(ft_lst_reverse)
 	lst = NULL;
 
 	m_safe_assert(void *, ft_lst_new_back(&lst, strdup("foo")), ft_lstlast(lst), NULL);
-	has_been_unstable = has_been_unstable || was_malloc_unstable;
+	has_been_unstable = has_been_unstable or was_malloc_unstable;
 	m_safe_assert(void *, ft_lst_new_back(&lst, strdup("bar")), ft_lstlast(lst), NULL);
-	has_been_unstable = has_been_unstable || was_malloc_unstable;
+	has_been_unstable = has_been_unstable or was_malloc_unstable;
 	m_safe_assert(void *, ft_lst_new_back(&lst, strdup("baz")), ft_lstlast(lst), NULL);
-	has_been_unstable = has_been_unstable || was_malloc_unstable;
+	has_been_unstable = has_been_unstable or was_malloc_unstable;
 
 	ft_lst_reverse(&lst);
-	if (!has_been_unstable)
+	if (not has_been_unstable)
 	{
 		massert((char *)lst->content, "baz");
 		massert((char *)lst->next->content, "bar");

@@ -17,7 +17,7 @@ static unsigned int	get_start_index(const char *str, const char *trim_set)
 	unsigned int	start;
 
 	start = 0;
-	while (str[start] != '\0' && ft_strchr(trim_set, str[start]) != NULL)
+	while (str[start] != '\0' and ft_strchr(trim_set, str[start]) != NULL)
 		start++;
 	return (start);
 }
@@ -27,7 +27,7 @@ static size_t	get_end_index(const char *str, const char *trim_set)
 	size_t	end;
 
 	end = ft_strlen(str) - 1;
-	while (end > 0 && ft_strchr(trim_set, str[end]) != NULL)
+	while (end > 0 and ft_strchr(trim_set, str[end]) != NULL)
 		end--;
 	return (end);
 }

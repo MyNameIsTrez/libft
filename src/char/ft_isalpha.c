@@ -18,5 +18,5 @@
  */
 int	ft_isalpha(int chr)
 {
-	return (('A' <= chr && chr <= 'Z') || ('a' <= chr && chr <= 'z'));
+	return (('A' <= chr and chr <= 'Z') or ('a' <= chr and chr <= 'z'));
 }

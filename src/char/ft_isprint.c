@@ -18,5 +18,5 @@
  */
 int	ft_isprint(int chr)
 {
-	return (32 <= chr && chr <= 126);
+	return (32 <= chr and chr <= 126);
 }

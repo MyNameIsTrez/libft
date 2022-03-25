@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_lstlast.c                                  :+:    :+:            */
+/*   boolean-operators.h                                :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: sbos <sbos@student.codam.nl>                 +#+                     */
+/*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/02/05 19:02:57 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/23 17:47:55 by sbos          ########   odam.nl         */
+/*   Created: 2022/03/25 23:48:38 by anonymous     #+#    #+#                 */
+/*   Updated: 2022/03/25 23:48:38 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "tests.h"
+#ifndef BOOLEAN_OPERATORS_H
+# define BOOLEAN_OPERATORS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-Test(ft_lstlast)
-{
-	t_list	*lst;
+#define not !
+#define and &&
+#define or ||
 
-	lst = NULL;
+////////////////////////////////////////////////////////////////////////////////
 
-	ft_lst_new_back(&lst, strdup("foo"));
-	ft_lst_new_back(&lst, strdup("bar"));
-
-	t_list *last = ft_lstnew(strdup("baz"));
-	ft_lstadd_back(&lst, last);
-
-	if (lst != NULL and last != NULL)
-		massert((void *)ft_lstlast(lst), (void *)last);
-	ft_lstclear(&lst, &free);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

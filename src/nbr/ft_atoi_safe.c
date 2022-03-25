@@ -59,7 +59,7 @@ bool	ft_atoi_safe(const char *str, int *nbr)
 	}
 	else if (str[0] == '+')
 		str++;
-	if (!ft_isdigit(str[0]))
+	if (not ft_isdigit(str[0]))
 		return (false);
 	*nbr = (int)(sign * get_number_without_minus(str));
 	return (true);

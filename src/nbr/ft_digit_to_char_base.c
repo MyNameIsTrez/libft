@@ -20,7 +20,7 @@
  */
 char	ft_digit_to_char_base(int nbr, unsigned int base)
 {
-	if (0 <= nbr && nbr < (int)base)
+	if (0 <= nbr and nbr < (int)base)
 		return (BASE_CHARACTERS[nbr]);
 	else
 		return ('\0');

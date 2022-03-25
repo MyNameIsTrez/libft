@@ -26,7 +26,7 @@ Test(ft_lst_new_front)
 
 	old_lst = lst;
 	m_safe_assert(void *, new_lst = ft_lst_new_front(&lst, strdup("foo")), new_lst, NULL);
-	if (!was_malloc_unstable)
+	if (not was_malloc_unstable)
 	{
 		massert((char *)new_lst->content, "foo");
 		massert((void *)lst, (void *)new_lst);
@@ -35,7 +35,7 @@ Test(ft_lst_new_front)
 
 	old_lst = lst;
 	m_safe_assert(void *, new_lst = ft_lst_new_front(&lst, strdup("bar")), new_lst, NULL);
-	if (!was_malloc_unstable)
+	if (not was_malloc_unstable)
 	{
 		massert((char *)new_lst->content, "bar");
 		massert((void *)lst, (void *)new_lst);
@@ -44,7 +44,7 @@ Test(ft_lst_new_front)
 
 	old_lst = lst;
 	m_safe_assert(void *, new_lst = ft_lst_new_front(&lst, strdup("baz")), new_lst, NULL);
-	if (!was_malloc_unstable)
+	if (not was_malloc_unstable)
 	{
 		massert((char *)new_lst->content, "baz");
 		massert((void *)lst, (void *)new_lst);

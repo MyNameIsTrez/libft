@@ -33,7 +33,7 @@ int	ft_strncmp(const char *str1, const char *str2, size_t len)
 	str1_ = (unsigned char *)str1;
 	str2_ = (unsigned char *)str2;
 	i = 0;
-	while (i < len - 1 && str1_[i] - str2_[i] == 0 && str1_[i] != '\0')
+	while (i < len - 1 and str1_[i] - str2_[i] == 0 and str1_[i] != '\0')
 		i++;
 	return (str1_[i] - str2_[i]);
 }

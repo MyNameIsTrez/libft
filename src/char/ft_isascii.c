@@ -18,5 +18,5 @@
  */
 int	ft_isascii(int chr)
 {
-	return (0 <= chr && chr <= 127);
+	return (0 <= chr and chr <= 127);
 }

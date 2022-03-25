@@ -77,7 +77,7 @@ static void	run_tests(char *exclude_tests[], size_t sizeof_exclude_tests)
 	while (lst != NULL)
 	{
 		t_fn_info *fn = lst->content;
-		if (!str_in_arr(fn->fn_name, exclude_tests, sizeof_exclude_tests))
+		if (not str_in_arr(fn->fn_name, exclude_tests, sizeof_exclude_tests))
 		{
 			printf("Testing function '%s'\n", fn->fn_name);
 			fn->fn_ptr();

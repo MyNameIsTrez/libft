@@ -25,24 +25,24 @@ Test(ft_lst_new_back)
 	lst = NULL;
 
 	m_safe_assert(void *, new_lst = ft_lst_new_back(&lst, strdup("foo")), new_lst, NULL);
-	has_been_unstable = has_been_unstable || was_malloc_unstable;
-	if (!has_been_unstable)
+	has_been_unstable = has_been_unstable or was_malloc_unstable;
+	if (not has_been_unstable)
 	{
 		massert((char *)new_lst->content, "foo");
 		massert((void *)lst, (void *)new_lst);
 	}
 
 	m_safe_assert(void *, new_lst = ft_lst_new_back(&lst, strdup("bar")), new_lst, NULL);
-	has_been_unstable = has_been_unstable || was_malloc_unstable;
-	if (!has_been_unstable)
+	has_been_unstable = has_been_unstable or was_malloc_unstable;
+	if (not has_been_unstable)
 	{
 		massert((char *)new_lst->content, "bar");
 		massert((void *)lst->next, (void *)new_lst);
 	}
 
 	m_safe_assert(void *, new_lst = ft_lst_new_back(&lst, strdup("baz")), new_lst, NULL);
-	has_been_unstable = has_been_unstable || was_malloc_unstable;
-	if (!has_been_unstable)
+	has_been_unstable = has_been_unstable or was_malloc_unstable;
+	if (not has_been_unstable)
 	{
 		massert((char *)new_lst->content, "baz");
 		massert((void *)lst->next->next, (void *)new_lst);

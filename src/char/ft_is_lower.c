@@ -20,5 +20,5 @@
  */
 bool	ft_is_lower(char chr)
 {
-	return ('a' <= chr && chr <= 'z');
+	return ('a' <= chr and chr <= 'z');
 }

@@ -20,5 +20,5 @@
  */
 bool	ft_is_upper(char chr)
 {
-	return ('A' <= chr && chr <= 'Z');
+	return ('A' <= chr and chr <= 'Z');
 }

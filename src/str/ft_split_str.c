@@ -21,7 +21,7 @@ static size_t	get_word_count(char str[], const char sep[])
 	char			*sep_pos;
 
 	word_count = 1;
-	while (str != NULL && str[0] != '\0')
+	while (str != NULL and str[0] != '\0')
 	{
 		sep_pos = ft_strstr(str, sep);
 		if (sep_pos == NULL)
@@ -50,7 +50,7 @@ static bool	add_words_to_split(char *str, const char *sep, char ***split)
 	size_t			i;
 
 	i = 0;
-	while (str != NULL && str[0] != '\0')
+	while (str != NULL and str[0] != '\0')
 	{
 		sep_pos = ft_strstr(str, sep);
 		if (sep_pos == NULL)

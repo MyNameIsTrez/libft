@@ -25,7 +25,7 @@ void	ft_put_substr_test(char *start, char *end, char *ret, ssize_t on_error)
 	dup2(fd, STDOUT_FILENO);
 	ssize_t ret_value = ft_put_substr(start, end);
 	dup2(stdout_fd, STDOUT_FILENO);
-	if (was_malloc_unstable || was_write_unstable)
+	if (was_malloc_unstable or was_write_unstable)
 	{
 		massert(ret_value, on_error);
 	}

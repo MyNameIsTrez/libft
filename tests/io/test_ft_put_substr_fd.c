@@ -22,7 +22,7 @@ void	ft_put_substr_fd_test(char *start, char *end, char *ret, ssize_t on_error)
 	was_write_unstable = false;
 	int const	fd = open("/tmp/ft_put_substr_fd_test", O_RDWR | O_CREAT | O_TRUNC, 0640);
 	ssize_t	ret_value = ft_put_substr_fd(start, end, fd);
-	if (was_malloc_unstable || was_write_unstable)
+	if (was_malloc_unstable or was_write_unstable)
 	{
 		massert(ret_value, on_error);
 	}
