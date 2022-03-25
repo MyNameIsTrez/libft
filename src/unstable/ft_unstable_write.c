@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <unistd.h>	// write
+#include <unistd.h>		// write
 #include <sys/types.h>	// ssize_t
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -35,7 +35,7 @@ ssize_t	ft_unstable_write(int fildes, const void *buf, size_t nbyte)
 	write_call_count++;
 	if (write_call_count != write_call_count_to_fail)
 		return (write(fildes, buf, nbyte));
-	was_write_unstable = 1;
+	was_write_unstable = true;
 	return (-1);
 }
 

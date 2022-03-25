@@ -32,7 +32,7 @@ void	*ft_unstable_malloc(size_t size)
 	malloc_call_count++;
 	if (malloc_call_count != malloc_call_count_to_fail)
 		return (malloc(size));
-	was_malloc_unstable = 1;
+	was_malloc_unstable = true;
 	return (NULL);
 }
 

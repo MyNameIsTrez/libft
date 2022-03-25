@@ -18,8 +18,8 @@
 
 void	ft_put_substr_test(char *start, char *end, char *ret, ssize_t on_error)
 {
-	was_malloc_unstable = 0;
-	was_write_unstable = 0;
+	was_malloc_unstable = false;
+	was_write_unstable = false;
 	int stdout_fd = dup(STDOUT_FILENO);
 	int const	fd = open("/tmp/ft_put_substr_fd_test", O_RDWR | O_CREAT | O_TRUNC, 0640);
 	dup2(fd, STDOUT_FILENO);

@@ -69,8 +69,8 @@ t_list	*test_lst_new_front(t_list **lst, void *content);
 
 # define test_io_fd(fn, val, ret, on_error, ...)									\
 {																					\
-	was_malloc_unstable = 0;														\
-	was_write_unstable = 0;															\
+	was_malloc_unstable = false;													\
+	was_write_unstable = false;														\
 	int const	fd = open("/tmp/" #fn "_test", O_RDWR | O_CREAT | O_TRUNC, 0640);	\
 	ssize_t	ret_value = fn(val, fd);												\
 	if (was_malloc_unstable || was_write_unstable)									\
@@ -94,8 +94,8 @@ t_list	*test_lst_new_front(t_list **lst, void *content);
 
 # define test_io(fn, val, ret, on_error, ...)										\
 {																					\
-	was_malloc_unstable = 0;														\
-	was_write_unstable = 0;															\
+	was_malloc_unstable = false;													\
+	was_write_unstable = false;														\
 	int stdout_fd = dup(STDOUT_FILENO);												\
 	int const	fd = open("/tmp/" #fn "_test", O_RDWR | O_CREAT | O_TRUNC, 0640);	\
 	dup2(fd, STDOUT_FILENO);														\
@@ -122,8 +122,8 @@ t_list	*test_lst_new_front(t_list **lst, void *content);
 
 #define m_safe_assert(type, input, expected, on_error)	\
 {														\
-	was_malloc_unstable = 0;							\
-	was_write_unstable = 0;								\
+	was_malloc_unstable = false;						\
+	was_write_unstable = false;							\
 	type input_value = input;							\
 	(void)input_value;									\
 	if (was_malloc_unstable || was_write_unstable)		\
