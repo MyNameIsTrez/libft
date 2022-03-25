@@ -97,8 +97,8 @@ int	main(void)
 
 	malloc_call_count = 0;
 	write_call_count = 0;
-	malloc_call_count_fail_point = 0;
-	write_call_count_fail_point = 0;
+	malloc_call_count_to_fail = 0;
+	write_call_count_to_fail = 0;
 	run_tests(exclude_tests, sizeof(exclude_tests));
 
 	int max_i = ft_max(malloc_call_count, write_call_count);
@@ -109,8 +109,8 @@ int	main(void)
 		printf("\niteration %i\n", i);
 		malloc_call_count = 0;
 		write_call_count = 0;
-		malloc_call_count_fail_point = i;
-		write_call_count_fail_point = ((i + write_fail_offset) % max_i) + 1;
+		malloc_call_count_to_fail = i;
+		write_call_count_to_fail = ((i + write_fail_offset) % max_i) + 1;
 		run_tests(exclude_tests, sizeof(exclude_tests));
 		i++;
 	}

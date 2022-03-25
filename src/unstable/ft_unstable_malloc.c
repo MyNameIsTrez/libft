@@ -12,14 +12,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <stdlib.h>	// malloc
+#include "libft_unstable_malloc.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// TODO: Try to include the header containing these as extern?
-int malloc_call_count = 0;
-int malloc_call_count_fail_point = 0;
-int	was_malloc_unstable = 0;
+#include <stdlib.h>	// malloc
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -32,12 +29,8 @@ int	was_malloc_unstable = 0;
  */
 void	*ft_unstable_malloc(size_t size)
 {
-	int	stable = 1;
-
 	malloc_call_count++;
-	if (malloc_call_count == malloc_call_count_fail_point)
-		stable = 0;
-	if (stable)
+	if (malloc_call_count != malloc_call_count_to_fail)
 		return (malloc(size));
 	was_malloc_unstable = 1;
 	return (NULL);

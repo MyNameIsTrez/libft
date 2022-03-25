@@ -22,13 +22,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-extern int malloc_call_count;
-extern int malloc_call_count_fail_point;
-extern int was_malloc_unstable;
-
-extern int write_call_count;
-extern int write_call_count_fail_point;
-extern int was_write_unstable;
+# include "ft_unstable_malloc.h"
+# include "ft_unstable_write.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
