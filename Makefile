@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/03/25 16:29:31 by sbos          ########   odam.nl          #
+#    Updated: 2022/03/25 16:31:32 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -150,7 +150,6 @@ HEADERS :=							\
 	libft.h							\
 	helper-headers/success.h		\
 	helper-headers/whitespace.h
-#	overwritten-headers/stdlib.h
 
 ################################################################################
 
@@ -161,7 +160,7 @@ ifdef DEBUG
 CFLAGS += -g3 -Wconversion
 CFLAGS += -Wno-nullability-completeness # Needed for intercepting stdlib.h
 FCLEANED_FILES += $(TEST_NAME)
-HEADERS += ./stdlib.h
+HEADERS += ./overwritten-headers/stdlib.h
 endif
 
 ifdef SAN

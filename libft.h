@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/22 15:54:19 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 16:33:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include "src/misc/libft_misc.h"
 # include "src/nbr/libft_nbr.h"
 # include "src/str/libft_str.h"
+# include "src/unstable/libft_unstable.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
