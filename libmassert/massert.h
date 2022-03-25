@@ -111,7 +111,7 @@ char	*ptr_str(intmax_t p);
 # endif
 
 // Assert
-# if 0
+# if 1
 #  define do_massert(type, a, b, a_input, b_input)						\
 {																		\
 	char	*a_str;														\
@@ -181,7 +181,7 @@ char	*ptr_str(intmax_t p);
 
 #  define massert(value1, value2)												\
 {																				\
-	massert_compare(value1, value2);											\
+	massert_compare((value1), (value2));											\
 }
 # else
 
