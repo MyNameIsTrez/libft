@@ -21,9 +21,6 @@
 
 # include "massert.h"
 
-// # define custom_assert_types
-// 	add_assert_type(t_list *, lst_eq, lst_as_str)
-
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdlib.h>		// malloc, free, exit
@@ -33,7 +30,7 @@
 
 // For Unix
 #include <ctype.h>		// isalpha, ...
-#include <string.h>	// strlcat, strlcpy
+#include <string.h>		// strlcat, strlcpy
 
 ////////////////////////////////////////////////////////////////////////////////
 
