@@ -19,16 +19,16 @@
 Test(ft_str_repeat)
 {
 	{
-		m_safe_assert(char *, ft_str_repeat(strdup(""), 0), "", NULL);
-		m_safe_assert(char *, ft_str_repeat(strdup("foo"), 0), "", NULL);
+		m_safe_string_assert(ft_str_repeat(strdup(""), 0), "");
+		m_safe_string_assert(ft_str_repeat(strdup("foo"), 0), "");
 	}
 	{
-		m_safe_assert(char *, ft_str_repeat(strdup(""), 1), "", NULL);
-		m_safe_assert(char *, ft_str_repeat(strdup("foo"), 1), "foo", NULL);
+		m_safe_string_assert(ft_str_repeat(strdup(""), 1), "");
+		m_safe_string_assert(ft_str_repeat(strdup("foo"), 1), "foo");
 	}
 	{
-		m_safe_assert(char *, ft_str_repeat(strdup(""), 2), "", NULL);
-		m_safe_assert(char *, ft_str_repeat(strdup("foo"), 2), "foofoo", NULL);
+		m_safe_string_assert(ft_str_repeat(strdup(""), 2), "");
+		m_safe_string_assert(ft_str_repeat(strdup("foo"), 2), "foofoo");
 	}
 }
 

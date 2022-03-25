@@ -19,9 +19,9 @@
 Test(ft_unsigned_nbr_to_str)
 {
 	#ifndef linux
-	m_safe_assert(char *, ft_unsigned_nbr_to_str((uintmax_t)-42, 10), "18446744073709551574", NULL);
+	m_safe_string_assert(ft_unsigned_nbr_to_str((uintmax_t)-42, 10), "18446744073709551574");
 	#endif
-	m_safe_assert(char *, ft_unsigned_nbr_to_str(42, 10), "42", NULL);
+	m_safe_string_assert(ft_unsigned_nbr_to_str(42, 10), "42");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

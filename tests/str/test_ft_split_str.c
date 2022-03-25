@@ -26,11 +26,11 @@ Test(ft_split_str)
 		m_safe_assert(void *, split_str = ft_split_str(str, sep), split_str, NULL);
 		if (split_str != NULL)
 		{
-			m_safe_assert(char *, split_str[0], "", NULL);
-			m_safe_assert(char *, split_str[1], "1", NULL);
-			m_safe_assert(char *, split_str[2], "", NULL);
-			m_safe_assert(char *, split_str[3], "2", NULL);
-			m_safe_assert(char *, split_str[4], "3", NULL);
+			m_safe_string_assert(split_str[0], "");
+			m_safe_string_assert(split_str[1], "1");
+			m_safe_string_assert(split_str[2], "");
+			m_safe_string_assert(split_str[3], "2");
+			m_safe_string_assert(split_str[4], "3");
 			massert((void *)split_str[5], NULL);
 			ft_free_split(&split_str);
 		}
@@ -44,13 +44,13 @@ Test(ft_split_str)
 		m_safe_assert(void *, split_str = ft_split_str(str, sep), split_str, NULL);
 		if (split_str != NULL)
 		{
-			m_safe_assert(char *, split_str[0], "", NULL);
-			m_safe_assert(char *, split_str[1], "1", NULL);
-			m_safe_assert(char *, split_str[2], "", NULL);
-			m_safe_assert(char *, split_str[3], "2", NULL);
-			m_safe_assert(char *, split_str[4], "3", NULL);
+			m_safe_string_assert(split_str[0], "");
+			m_safe_string_assert(split_str[1], "1");
+			m_safe_string_assert(split_str[2], "");
+			m_safe_string_assert(split_str[3], "2");
+			m_safe_string_assert(split_str[4], "3");
 			// massert((void *)split_str[5], NULL);
-			m_safe_assert(char *, split_str[5], "", NULL);
+			m_safe_string_assert(split_str[5], "");
 			massert((void *)split_str[6], NULL);
 			ft_free_split(&split_str);
 		}
@@ -64,7 +64,7 @@ Test(ft_split_str)
 		m_safe_assert(void *, split_str = ft_split_str(str, sep), split_str, NULL);
 		if (split_str != NULL)
 		{
-			m_safe_assert(char *, split_str[0], "", NULL);
+			m_safe_string_assert(split_str[0], "");
 			massert((void *)split_str[1], NULL);
 			ft_free_split(&split_str);
 		}

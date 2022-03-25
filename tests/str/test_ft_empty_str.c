@@ -18,7 +18,7 @@
 
 Test(ft_empty_str)
 {
-	m_safe_assert(char *, ft_empty_str(), "", NULL);
+	m_safe_string_assert(ft_empty_str(), "");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

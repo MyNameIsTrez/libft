@@ -18,9 +18,9 @@
 
 Test(ft_char_to_str)
 {
-	m_safe_assert(char *, ft_char_to_str('c'), "c", NULL);
+	m_safe_string_assert(ft_char_to_str('c'), "c");
 	// massert((bool)(ft_char_to_str('\0') != NULL), true);
-	m_safe_assert(char *, ft_char_to_str('\0'), "", NULL);
+	m_safe_string_assert(ft_char_to_str('\0'), "");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

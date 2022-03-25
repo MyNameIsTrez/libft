@@ -18,14 +18,14 @@
 
 Test(ft_chr_repeat)
 {
-	m_safe_assert(char *, ft_chr_repeat('\0', 0), "", NULL);
-	m_safe_assert(char *, ft_chr_repeat('a', 0), "", NULL);
+	m_safe_string_assert(ft_chr_repeat('\0', 0), "");
+	m_safe_string_assert(ft_chr_repeat('a', 0), "");
 
-	m_safe_assert(char *, ft_chr_repeat('\0', 1), "", NULL);
-	m_safe_assert(char *, ft_chr_repeat('a', 1), "a", NULL);
+	m_safe_string_assert(ft_chr_repeat('\0', 1), "");
+	m_safe_string_assert(ft_chr_repeat('a', 1), "a");
 
-	m_safe_assert(char *, ft_chr_repeat('\0', 2), "", NULL);
-	m_safe_assert(char *, ft_chr_repeat('a', 2), "aa", NULL);
+	m_safe_string_assert(ft_chr_repeat('\0', 2), "");
+	m_safe_string_assert(ft_chr_repeat('a', 2), "aa");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

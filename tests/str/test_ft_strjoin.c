@@ -18,7 +18,7 @@
 
 Test(ft_strjoin)
 {
-	m_safe_assert(char *, ft_strjoin("lorem ipsum", "dolor sit amet"), "lorem ipsumdolor sit amet", NULL);
+	m_safe_string_assert(ft_strjoin("lorem ipsum", "dolor sit amet"), "lorem ipsumdolor sit amet");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

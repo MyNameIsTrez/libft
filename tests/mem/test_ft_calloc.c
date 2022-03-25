@@ -21,7 +21,7 @@ Test(ft_calloc)
 	char	*str;
 
 	str = NULL;
-	m_safe_assert(char *, str = ft_calloc(2, 2), str, NULL);
+	m_safe_string_assert(str = ft_calloc(2, 2), str);
 	if (str != NULL)
 	{
 		massert(str[0], (char)'\0');

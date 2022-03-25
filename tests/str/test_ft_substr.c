@@ -18,10 +18,10 @@
 
 Test(ft_substr)
 {
-	m_safe_assert(char *, ft_substr("lorem ipsum dolor sit amet", 400, 20), "", NULL);
-	m_safe_assert(char *, ft_substr("lorem ipsum dolor sit amet", 5, 0), "", NULL);
-	m_safe_assert(char *, ft_substr("lorem ipsum dolor sit amet", 0, 0), "", NULL);
-	m_safe_assert(char *, ft_substr(" a", 1, 1), "a", NULL);
+	m_safe_string_assert(ft_substr("lorem ipsum dolor sit amet", 400, 20), "");
+	m_safe_string_assert(ft_substr("lorem ipsum dolor sit amet", 5, 0), "");
+	m_safe_string_assert(ft_substr("lorem ipsum dolor sit amet", 0, 0), "");
+	m_safe_string_assert(ft_substr(" a", 1, 1), "a");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

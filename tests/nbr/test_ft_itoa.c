@@ -18,10 +18,10 @@
 
 Test(ft_itoa)
 {
-	m_safe_assert(char *, ft_itoa(42), "42", NULL);
-	m_safe_assert(char *, ft_itoa(-42), "-42", NULL);
-	m_safe_assert(char *, ft_itoa(0), "0", NULL);
-	m_safe_assert(char *, ft_itoa(-2147483648), "-2147483648", NULL);
+	m_safe_string_assert(ft_itoa(42), "42");
+	m_safe_string_assert(ft_itoa(-42), "-42");
+	m_safe_string_assert(ft_itoa(0), "0");
+	m_safe_string_assert(ft_itoa(-2147483648), "-2147483648");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

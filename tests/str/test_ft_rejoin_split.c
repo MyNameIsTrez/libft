@@ -25,7 +25,7 @@ Test(ft_rejoin_split)
 		char	**split;
 		m_safe_assert(void *, split = ft_split_str(str, sep), split, NULL);
 		if (split != NULL)
-			m_safe_assert(char *, ft_rejoin_split(split, "C"), "C1CC2C3", NULL);
+			m_safe_string_assert(ft_rejoin_split(split, "C"), "C1CC2C3");
 	}
 
 	{
@@ -35,7 +35,7 @@ Test(ft_rejoin_split)
 		char	**split;
 		m_safe_assert(void *, split = ft_split_str(str, sep), split, NULL);
 		if (split != NULL)
-			m_safe_assert(char *, ft_rejoin_split(split, "C"), "C1CC2C3C", NULL);
+			m_safe_string_assert(ft_rejoin_split(split, "C"), "C1CC2C3C");
 	}
 }
 

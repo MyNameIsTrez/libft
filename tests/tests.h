@@ -120,6 +120,8 @@ t_list	*test_lst_new_front(t_list **lst, void *content);
 	close(fd);																		\
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 #define m_safe_assert(type, input, expected, on_error)	\
 {														\
 	was_malloc_unstable = false;						\
@@ -134,6 +136,11 @@ t_list	*test_lst_new_front(t_list **lst, void *content);
 	{													\
 		massert(input_value, (type)expected);			\
 	}													\
+}
+
+#define m_safe_string_assert(input, expected)			\
+{														\
+	m_safe_string_assert(input, expected);				\
 }
 
 ////////////////////////////////////////////////////////////////////////////////

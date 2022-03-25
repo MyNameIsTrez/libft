@@ -20,7 +20,7 @@ Test(ft_stralloc)
 {
 	char	*str;
 
-	m_safe_assert(char *, str = ft_stralloc(5), str, NULL);
+	m_safe_string_assert(str = ft_stralloc(5), str);
 	if (not was_malloc_unstable)
 	{
 		str[0] = 'h';

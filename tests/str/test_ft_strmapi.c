@@ -23,7 +23,7 @@ static char	increase_by_index(unsigned int i, char c)
 
 Test(ft_strmapi)
 {
-	m_safe_assert(char *, ft_strmapi("foo", increase_by_index), "fpq", NULL);
+	m_safe_string_assert(ft_strmapi("foo", increase_by_index), "fpq");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

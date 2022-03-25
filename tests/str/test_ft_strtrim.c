@@ -18,9 +18,9 @@
 
 Test(ft_strtrim)
 {
-	m_safe_assert(char *, ft_strtrim("lorem \n ipsum \t dolor \n sit \t amet", " "), "lorem \n ipsum \t dolor \n sit \t amet", NULL);
-	m_safe_assert(char *, ft_strtrim(" a", " \t\n\v\f\r"), "a", NULL);
-	m_safe_assert(char *, ft_strtrim("  \t \t \n   \n\n\n\t", " \n\t"), "", NULL);
+	m_safe_string_assert(ft_strtrim("lorem \n ipsum \t dolor \n sit \t amet", " "), "lorem \n ipsum \t dolor \n sit \t amet");
+	m_safe_string_assert(ft_strtrim(" a", " \t\n\v\f\r"), "a");
+	m_safe_string_assert(ft_strtrim("  \t \t \n   \n\n\n\t", " \n\t"), "");
 }
 
 ////////////////////////////////////////////////////////////////////////////////

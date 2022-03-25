@@ -19,7 +19,7 @@
 Test(ft_strdup)
 {
 	char *a = "hello";
-	m_safe_assert(char *, ft_strdup(a), a, NULL);
+	m_safe_string_assert(ft_strdup(a), a);
 	massert((bool)(ft_strdup(a) == a), false);
 }
 

@@ -18,7 +18,7 @@
 
 Test(ft_str_replace)
 {
-	m_safe_assert(char *, ft_str_replace("foo\nbar", "\n", "\\n"), "foo\\nbar", NULL);
+	m_safe_string_assert(ft_str_replace("foo\nbar", "\n", "\\n"), "foo\\nbar");
 }
 
 ////////////////////////////////////////////////////////////////////////////////
