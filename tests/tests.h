@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/20 11:42:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/25 16:09:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/25 16:37:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,19 +100,21 @@ t_list	*test_lst_new_front(t_list **lst, void *content);
 	massert(buf, ret);																\
 }
 
+extern int was_unstable;
+
 #define m_safe_assert(type, input, expected, on_error)	\
-{													\
-	*(was_unstable()) = 0;							\
-	type input_value = input;						\
-	(void)input_value;								\
-	if (*(was_unstable()))							\
-	{												\
-		massert(input_value, (type)on_error);		\
-	}												\
-	else											\
-	{												\
-		massert(input_value, (type)expected);		\
-	}												\
+{														\
+	was_unstable = 0;									\
+	type input_value = input;							\
+	(void)input_value;									\
+	if (was_unstable)									\
+	{													\
+		massert(input_value, (type)on_error);			\
+	}													\
+	else												\
+	{													\
+		massert(input_value, (type)expected);			\
+	}													\
 }
 
 ////////////////////////////////////////////////////////////////////////////////
