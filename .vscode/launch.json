@@ -12,6 +12,7 @@
 		"externalConsole": false,
 		"MIMode": "lldb",
 		"preLaunchTask": "Build Tester",
-		// "internalConsoleOptions": "openOnSessionStart"
+		// "reverseDebugging": false,
+		"internalConsoleOptions": "neverOpen"
 	}]
 }
