@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/07 14:24:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:33:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 16:03:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
  */
 int	ft_isalnum(int chr)
 {
-	return (ft_isalpha(chr) or ft_isdigit(chr));
+	return (ft_isalpha(chr) OR ft_isdigit(chr));
 }
 
 ////////////////////////////////////////////////////////////////////////////////

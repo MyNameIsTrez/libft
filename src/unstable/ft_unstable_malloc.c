@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/22 16:57:10 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 15:42:35 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 16:18:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool malloc_call_count = 0;
-bool malloc_call_count_to_fail = 0;
+int malloc_call_count = 0;
+int malloc_call_count_to_fail = 0;
 bool was_malloc_unstable = 0;
 
 ////////////////////////////////////////////////////////////////////////////////

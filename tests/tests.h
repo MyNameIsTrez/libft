@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/20 11:42:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:58:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 16:03:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_list	*test_lst_new_front(t_list **lst, void *content);
 	was_write_unstable = false;														\
 	int const	fd = open("/tmp/" #fn "_test", O_RDWR | O_CREAT | O_TRUNC, 0640);	\
 	ssize_t	ret_value = fn(val, fd);												\
-	if (was_malloc_unstable or was_write_unstable)									\
+	if (was_malloc_unstable OR was_write_unstable)									\
 	{																				\
 		massert(ret_value, (ssize_t)(on_error));									\
 	}																				\
@@ -98,7 +98,7 @@ t_list	*test_lst_new_front(t_list **lst, void *content);
 	dup2(fd, STDOUT_FILENO);														\
 	ssize_t	ret_value = fn(val);													\
 	dup2(stdout_fd, STDOUT_FILENO);													\
-	if (was_malloc_unstable or was_write_unstable)									\
+	if (was_malloc_unstable OR was_write_unstable)									\
 	{																				\
 		massert(ret_value, (ssize_t)(on_error));									\
 	}																				\
@@ -125,7 +125,7 @@ t_list	*test_lst_new_front(t_list **lst, void *content);
 	was_write_unstable = false;							\
 	type input_value = input;							\
 	(void)input_value;									\
-	if (was_malloc_unstable or was_write_unstable)		\
+	if (was_malloc_unstable OR was_write_unstable)		\
 	{													\
 		massert(input_value, (type)on_error);			\
 	}													\

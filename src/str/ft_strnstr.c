@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:53:47 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 16:02:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return ((char *)haystack);
 	first_index = 0;
 	offset = 0;
-	while (first_index + offset < len and haystack[first_index + offset] != '\0')
+	while (first_index + offset < len AND haystack[first_index + offset] != '\0')
 	{
 		if (haystack[first_index + offset] == needle[offset])
 		{

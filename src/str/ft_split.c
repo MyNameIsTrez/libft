@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:26 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:46:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 16:02:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static size_t	get_word_count(char *str, char sep)
 	char	*end_of_word;
 
 	word_count = 0;
-	while (str != NULL and str[0] != '\0')
+	while (str != NULL AND str[0] != '\0')
 	{
 		start_of_word = ft_str_not_chr(str, sep);
 		if (start_of_word == NULL)
@@ -44,7 +44,7 @@ static bool	add_words_to_split(char *str, char sep, char ***split)
 	size_t			len;
 
 	i = 0;
-	while (str != NULL and str[0] != '\0')
+	while (str != NULL AND str[0] != '\0')
 	{
 		start_of_word = ft_str_not_chr(str, sep);
 		if (start_of_word == NULL)

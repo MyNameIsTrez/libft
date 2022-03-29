@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/04 17:27:53 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:49:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 16:02:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
  */
 char	ft_digit_to_char_base(int nbr, unsigned int base)
 {
-	if (0 <= nbr and nbr < (int)base)
+	if (0 <= nbr AND nbr < (int)base)
 		return (BASE_CHARACTERS[nbr]);
 	else
 		return ('\0');

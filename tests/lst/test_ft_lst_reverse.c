@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/16 15:08:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/25 17:36:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 16:03:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ Test(ft_lst_reverse)
 	lst = NULL;
 
 	m_safe_assert(void *, ft_lst_new_back(&lst, strdup("foo")), ft_lstlast(lst), NULL);
-	has_been_unstable = has_been_unstable or was_malloc_unstable;
+	has_been_unstable = has_been_unstable OR was_malloc_unstable;
 	m_safe_assert(void *, ft_lst_new_back(&lst, strdup("bar")), ft_lstlast(lst), NULL);
-	has_been_unstable = has_been_unstable or was_malloc_unstable;
+	has_been_unstable = has_been_unstable OR was_malloc_unstable;
 	m_safe_assert(void *, ft_lst_new_back(&lst, strdup("baz")), ft_lstlast(lst), NULL);
-	has_been_unstable = has_been_unstable or was_malloc_unstable;
+	has_been_unstable = has_been_unstable OR was_malloc_unstable;
 
 	ft_lst_reverse(&lst);
-	if (not has_been_unstable)
+	if (NOT has_been_unstable)
 	{
 		massert((char *)lst->content, "baz");
 		massert((char *)lst->next->content, "bar");

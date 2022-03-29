@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 17:07:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 15:42:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 15:58:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static void	run_tests(char *exclude_tests[], size_t sizeof_exclude_tests)
 	while (lst != NULL)
 	{
 		t_fn_info *fn = lst->content;
-		if (not str_in_arr(fn->fn_name, exclude_tests, sizeof_exclude_tests))
+		if (NOT str_in_arr(fn->fn_name, exclude_tests, sizeof_exclude_tests))
 		{
 			printf("Testing function '%s'\n", fn->fn_name);
 			fn->fn_ptr();

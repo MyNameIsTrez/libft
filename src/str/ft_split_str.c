@@ -23,7 +23,7 @@ static size_t	get_word_count(char str[], const char sep[])
 	char			*sep_pos;
 
 	word_count = 1;
-	while (str != NULL and str[0] != '\0')
+	while (str != NULL AND str[0] != '\0')
 	{
 		sep_pos = ft_strstr(str, sep);
 		if (sep_pos == NULL)
@@ -52,7 +52,7 @@ static bool	add_words_to_split(char *str, const char *sep, char ***split)
 	size_t			i;
 
 	i = 0;
-	while (str != NULL and str[0] != '\0')
+	while (str != NULL)
 	{
 		sep_pos = ft_strstr(str, sep);
 		if (sep_pos == NULL)
@@ -63,14 +63,10 @@ static bool	add_words_to_split(char *str, const char *sep, char ***split)
 			ft_free_split(split);
 			return (false);
 		}
+		if (str[0] == '\0')
+			break ;
 		i++;
 		str = sep_pos + sep_len;
-	}
-	(*split)[i] = ft_empty_str();
-	if ((*split)[i] == NULL)
-	{
-		ft_free_split(split);
-		return (false);
 	}
 	return (true);
 }

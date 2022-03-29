@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/01 16:33:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/25 18:22:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 16:03:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_put_substr_test(char *start, char *end, char *ret, ssize_t on_error)
 	dup2(fd, STDOUT_FILENO);
 	ssize_t ret_value = ft_put_substr(start, end);
 	dup2(stdout_fd, STDOUT_FILENO);
-	if (was_malloc_unstable or was_write_unstable)
+	if (was_malloc_unstable OR was_write_unstable)
 	{
 		massert(ret_value, on_error);
 	}

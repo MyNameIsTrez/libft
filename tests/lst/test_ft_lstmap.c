@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 19:03:07 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/16 14:26:10 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 16:02:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Test(ft_lstmap)
 	// l->next = ft_lstnew(ft_strdup("ss"));
 	// l->next->next = ft_lstnew(ft_strdup("-_-"));
 	// ret = ft_lstmap(l, lstmap_f, NULL);
-	// if (not strcmp(ret->content, "OK !") and not strcmp(ret->next->content, "OK !") and not strcmp(ret->next->next->content, "OK !") and not strcmp(l->content, " 1 2 3 ") and not strcmp(l->next->content, "ss") and not strcmp(l->next->next->content, "-_-"))
+	// if (NOT strcmp(ret->content, "OK !") AND NOT strcmp(ret->next->content, "OK !") AND NOT strcmp(ret->next->next->content, "OK !") AND NOT strcmp(l->content, " 1 2 3 ") AND NOT strcmp(l->next->content, "ss") AND NOT strcmp(l->next->next->content, "-_-"))
 	// {
 	// 	printf("yay\n");
 	// 	return ;

@@ -29,7 +29,7 @@ size_t	ft_strnlen(const char *str, const size_t max_len)
 	size_t	len;
 
 	len = 0;
-	while (str[len] != '\0' and len < max_len)
+	while (str[len] != '\0' AND len < max_len)
 		len++;
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/25 22:50:36 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/03/25 22:50:36 by anonymous     ########   odam.nl         */
+/*   Updated: 2022/03/29 16:18:34 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-extern bool write_call_count;
-extern bool write_call_count_to_fail;
+extern int write_call_count;
+extern int write_call_count_to_fail;
 extern bool was_write_unstable;
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -24,11 +24,11 @@ Test(ft_lstsize)
 	lst = NULL;
 
 	m_safe_assert(void *, ft_lst_new_front(&lst, "foo"), lst, NULL);
-	has_been_unstable = has_been_unstable or was_malloc_unstable;
+	has_been_unstable = has_been_unstable OR was_malloc_unstable;
 	m_safe_assert(void *, ft_lst_new_front(&lst, "foo"), lst, NULL);
-	has_been_unstable = has_been_unstable or was_malloc_unstable;
+	has_been_unstable = has_been_unstable OR was_malloc_unstable;
 
-	if (not has_been_unstable)
+	if (NOT has_been_unstable)
 		massert(ft_lstsize(lst), 2);
 
 	ft_lstclear(&lst, NULL);

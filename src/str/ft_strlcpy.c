@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:10 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:46:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 16:02:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size)
 	size_t	i;
 
 	i = 0;
-	while (i + 1 < dst_size and src[i] != '\0')
+	while (i + 1 < dst_size AND src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;
