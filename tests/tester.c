@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 17:07:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 15:08:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 15:42:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,16 +85,6 @@ static void	run_tests(char *exclude_tests[], size_t sizeof_exclude_tests)
 		lst = lst->next;
 	}
 }
-
-////////////////////////////////////////////////////////////////////////////////
-
-bool malloc_call_count = 0;
-bool malloc_call_count_to_fail = 0;
-bool was_malloc_unstable = 0;
-
-bool write_call_count = 0;
-bool write_call_count_to_fail = 0;
-bool was_write_unstable = 0;
 
 ////////////////////////////////////////////////////////////////////////////////
 
