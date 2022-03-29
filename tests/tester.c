@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 17:07:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 15:58:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 16:30:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ int	main(void)
 	int i = 1;
 	while (i <= max_i)
 	{
-		printf("\niteration %i\n", i);
+		printf("\nIteration %i:\n", i);
 		malloc_call_count = 0;
 		write_call_count = 0;
 		malloc_call_count_to_fail = i;
@@ -114,7 +114,7 @@ int	main(void)
 		run_tests(exclude_tests, sizeof(exclude_tests));
 		i++;
 	}
-	printf("Tests ran successfully!\n");
+	printf("\nTests ran successfully!\n");
 	// system("leaks tester");
 	return (EXIT_SUCCESS);
 }
