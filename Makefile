@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/03/29 15:56:07 by sbos          ########   odam.nl          #
+#    Updated: 2022/03/29 16:42:51 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -130,11 +130,6 @@ SOURCES +=								\
 	src/str/ft_strtrim_whitespace.c		\
 	src/str/ft_substr.c
 
-# unstable
-SOURCES +=								\
-	src/unstable/ft_unstable_malloc.c	\
-	src/unstable/ft_unstable_write.c
-
 ################################################################################
 
 NAME := libft.a
@@ -147,10 +142,7 @@ OBJ_DIR := obj
 CFLAGS := -Wall -Wextra -Werror
 
 HEADERS :=								\
-	libft.h								\
-	helper-headers/boolean_operators.h	\
-	helper-headers/success.h			\
-	helper-headers/whitespace.h
+	libft.h
 
 ################################################################################
 
@@ -161,7 +153,7 @@ ifdef DEBUG
 CFLAGS += -g3 -Wconversion
 CFLAGS += -Wno-nullability-completeness # Needed for intercepting stdlib.h
 FCLEANED_FILES += $(TEST_NAME)
-HEADERS += ./overwritten-headers/stdlib.h
+HEADERS += tests/unstable/overwritten_headers/stdlib.h
 endif
 
 ifdef SAN

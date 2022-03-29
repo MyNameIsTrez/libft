@@ -1,5 +1,3 @@
 tests
 libmassert
 testers
-overwritten-headers/stdlib.h
-src/unstable

@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:59 by sbos          #+#    #+#                  #
-#    Updated: 2022/03/29 14:57:09 by sbos          ########   odam.nl          #
+#    Updated: 2022/03/29 16:41:21 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +27,11 @@ MASSERT_DIR := libmassert
 
 TESTER := tester
 
-TESTER_HEADERS :=					\
-	./libft.h						\
-	overwritten-headers/stdlib.h	\
-	$(TESTS_DIR)/tests.h			\
-	$(MASSERT_DIR)/massert.h
+TESTER_HEADERS :=								\
+	./libft.h									\
+	$(TESTS_DIR)/tests.h						\
+	$(MASSERT_DIR)/massert.h					\
+	tests/unstable/overwritten_headers/stdlib.h
 
 TESTER_LIBS := -L$(MASSERT_DIR) -lmassert -L. -lft
 
