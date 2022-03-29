@@ -6,13 +6,15 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/25 14:21:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 14:46:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+////////////////////////////////////////////////////////////////////////////////
+
 #include "libft.h"
 
-#include <stdlib.h>
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Allocates and returns a substring from the string @p str.\n
@@ -38,3 +40,5 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 	ft_strlcpy(substr, &str[start], new_len + 1);
 	return (substr);
 }
+
+////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/20 11:42:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/25 18:41:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 14:58:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,9 +135,9 @@ t_list	*test_lst_new_front(t_list **lst, void *content);
 	}													\
 }
 
-#define m_safe_string_assert(input, expected)			\
-{														\
-	m_safe_string_assert(input, expected);				\
+#define m_safe_string_assert(input, expected)		\
+{													\
+	m_safe_assert(char *, input, expected, NULL);	\
 }
 
 ////////////////////////////////////////////////////////////////////////////////

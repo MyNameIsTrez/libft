@@ -6,11 +6,15 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/05 14:48:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 14:47:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_char.h"
+////////////////////////////////////////////////////////////////////////////////
+
+#include "libft.h"
+
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Converts a lower-case letter to its corresponding upper-case letter.
@@ -26,3 +30,5 @@ int	ft_toupper(int chr)
 		return (chr - LOWER_UPPER_DIFFERENCE);
 	return (chr);
 }
+
+////////////////////////////////////////////////////////////////////////////////

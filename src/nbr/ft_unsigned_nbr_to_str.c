@@ -10,8 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+////////////////////////////////////////////////////////////////////////////////
+
 #include "libft.h"
-#include "libft_nbr.h"
+
+////////////////////////////////////////////////////////////////////////////////
 
 static void	add_digits_to_str(char *str, uintmax_t nbr, size_t number_len,
 								unsigned int base)
@@ -48,3 +51,5 @@ char	*ft_unsigned_nbr_to_str(uintmax_t number, unsigned int base)
 	add_digits_to_str(str, number, number_len, base);
 	return (str);
 }
+
+////////////////////////////////////////////////////////////////////////////////

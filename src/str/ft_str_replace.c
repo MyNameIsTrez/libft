@@ -6,11 +6,15 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:22 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:17:10 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 14:46:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+////////////////////////////////////////////////////////////////////////////////
+
 #include "libft.h"
+
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Searches for any occurrence of @p str_search in @p str and replaces
@@ -32,3 +36,5 @@ char	*ft_str_replace(char *str, char *str_search, char *str_replace)
 	ft_free_split(&split);
 	return (rejoined);
 }
+
+////////////////////////////////////////////////////////////////////////////////

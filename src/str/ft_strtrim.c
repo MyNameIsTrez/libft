@@ -6,11 +6,15 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:58 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/23 17:24:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 14:46:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+////////////////////////////////////////////////////////////////////////////////
+
 #include "libft.h"
+
+////////////////////////////////////////////////////////////////////////////////
 
 static unsigned int	get_start_index(const char *str, const char *trim_set)
 {
@@ -55,3 +59,5 @@ char	*ft_strtrim(const char *str, const char *trim_set)
 	len = end - start;
 	return (ft_substr(str, start, len + 1));
 }
+
+////////////////////////////////////////////////////////////////////////////////
