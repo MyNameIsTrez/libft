@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/25 18:10:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 17:23:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
  */
 ssize_t	ft_putstr_fd(char *str, int fd)
 {
-	return (ft_unstable_write(fd, str, ft_strlen(str)));
+	return (write(fd, str, ft_strlen(str)));
 }
 
 ////////////////////////////////////////////////////////////////////////////////

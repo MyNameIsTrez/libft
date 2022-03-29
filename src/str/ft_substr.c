@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:46:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 17:23:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 	if (ft_strlen(str) <= start)
 		return (ft_empty_str());
 	new_len = ft_strnlen(&str[start], len);
-	substr = ft_unstable_malloc((new_len + 1) * sizeof(char));
+	substr = malloc((new_len + 1) * sizeof(char));
 	if (substr == NULL)
 		return (NULL);
 	ft_strlcpy(substr, &str[start], new_len + 1);
