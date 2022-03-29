@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/05 17:07:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 16:30:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 17:03:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,8 @@ static void	run_tests(char *exclude_tests[], size_t sizeof_exclude_tests)
 
 int	main(void)
 {
-	printf("Running tests...\n");
+	printf("\nRunning tests...\n");
+
 	char *exclude_tests[] = {
 		// "ft_str_repeat",
 	};
@@ -99,6 +100,7 @@ int	main(void)
 	write_call_count = 0;
 	malloc_call_count_to_fail = 0;
 	write_call_count_to_fail = 0;
+
 	run_tests(exclude_tests, sizeof(exclude_tests));
 
 	int max_i = ft_max(malloc_call_count, write_call_count);
@@ -107,15 +109,21 @@ int	main(void)
 	while (i <= max_i)
 	{
 		printf("\nIteration %i:\n", i);
+
 		malloc_call_count = 0;
 		write_call_count = 0;
 		malloc_call_count_to_fail = i;
 		write_call_count_to_fail = ((i + write_fail_offset) % max_i) + 1;
+
 		run_tests(exclude_tests, sizeof(exclude_tests));
+
 		i++;
 	}
+
 	printf("\nTests ran successfully!\n");
+
 	// system("leaks tester");
+
 	return (EXIT_SUCCESS);
 }
 
