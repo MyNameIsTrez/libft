@@ -27,24 +27,24 @@
  */
 char	*ft_strstr(const char *haystack, const char *needle)
 {
-	size_t			haystack_offset;
+	size_t			hay_index;
 	size_t			offset;
 
 	if (needle[0] == '\0')
 		return ((char *)haystack);
-	haystack_offset = 0;
+	hay_index = 0;
 	offset = 0;
-	while (haystack[haystack_offset + offset] != '\0')
+	while (haystack[hay_index + offset] != '\0')
 	{
-		if (haystack[haystack_offset + offset] == needle[offset])
+		if (haystack[hay_index + offset] == needle[offset])
 		{
 			offset++;
 			if (needle[offset] == '\0')
-				return (&((char *)haystack)[haystack_offset]);
+				return (&((char *)haystack)[hay_index]);
 		}
 		else
 		{
-			haystack_offset++;
+			hay_index++;
 			offset = 0;
 		}
 	}
