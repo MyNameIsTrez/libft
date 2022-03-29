@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/04 18:01:53 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:33:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/29 17:21:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,10 @@ char	*ft_char_to_str(const char chr)
 	char	*str;
 
 	if (chr == '\0')
-	{
-		str = ft_unstable_malloc(sizeof(char));
-		if (str == NULL)
-			return (str);
-	}
-	else
-	{
-		str = ft_unstable_malloc(2 * sizeof(char));
-		if (str == NULL)
-			return (str);
-		str[1] = '\0';
-	}
+		return (ft_empty_str());
+	str = ft_stralloc(2 * sizeof(char));
+	if (str == NULL)
+		return (str);
 	str[0] = chr;
 	return (str);
 }
