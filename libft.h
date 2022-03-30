@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 17:45:33 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/30 12:19:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "helper_headers/shared_system_headers.h"
+# include "shared_system_headers.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "helper_headers/boolean_operators.h"
-# include "helper_headers/success.h"
-# include "helper_headers/whitespace.h"
+# include "boolean_operators.h"
+# include "success.h"
+# include "whitespace.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

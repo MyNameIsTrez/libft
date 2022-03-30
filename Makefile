@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/03/29 16:42:51 by sbos          ########   odam.nl          #
+#    Updated: 2022/03/30 12:27:51 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -141,8 +141,12 @@ OBJ_DIR := obj
 
 CFLAGS := -Wall -Wextra -Werror
 
-HEADERS :=								\
-	libft.h
+HEADERS :=									\
+	libft.h									\
+	helper_headers/boolean_operators.h		\
+	helper_headers/shared_system_headers.h	\
+	helper_headers/success.h				\
+	helper_headers/whitespace.h
 
 ################################################################################
 

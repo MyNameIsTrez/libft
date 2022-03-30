@@ -13,8 +13,5 @@
 # Allow Makefiles
 !Makefile
 
-# Allow helper Makefiles
-!*.mk
-
 # Allow repos to contain their own .gitignore
 !.gitignore
