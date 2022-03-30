@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   shared_headers.h                                   :+:    :+:            */
+/*   shared_system_headers.h                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/29 17:34:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 17:43:40 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/30 13:14:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include <stdlib.h>	// ssize_t, intmax_t, NULL, free, bool
+# include <stdlib.h>	// ssize_t, intmax_t, NULL, free
 # include <unistd.h>	// write
+# include <stdbool.h>	// bool
+# include <stdarg.h>	// va_list
 
 ////////////////////////////////////////////////////////////////////////////////
 
