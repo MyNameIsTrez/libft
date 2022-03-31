@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static size_t	get_word_count(char str[], const char sep[])
+STATIC size_t	get_word_count_str(char str[], const char sep[])
 {
 	const size_t	sep_len = ft_strlen(sep);
 	size_t			word_count;
@@ -34,7 +34,7 @@ static size_t	get_word_count(char str[], const char sep[])
 	return (word_count);
 }
 
-static bool	add_last_word(char *str, char ***split, size_t i)
+STATIC bool	add_last_word(char *str, char ***split, size_t i)
 {
 	(*split)[i] = ft_strdup(str);
 	if ((*split)[i] == NULL)
@@ -45,7 +45,7 @@ static bool	add_last_word(char *str, char ***split, size_t i)
 	return (true);
 }
 
-static bool	add_words_to_split(char *str, const char *sep, char ***split)
+STATIC bool	add_words_to_split_str(char *str, const char *sep, char ***split)
 {
 	const size_t	sep_len = ft_strlen(sep);
 	char			*sep_pos;
@@ -86,12 +86,12 @@ char	**ft_split_str(const char *str, const char *sep)
 	size_t	word_count;
 	char	**split;
 
-	word_count = get_word_count((char *)str, sep);
+	word_count = get_word_count_str((char *)str, sep);
 	split = malloc((word_count + 1) * sizeof(char *));
 	if (split == NULL)
 		return (NULL);
 	split[word_count] = NULL;
-	if (add_words_to_split((char *)str, sep, &split) == false)
+	if (add_words_to_split_str((char *)str, sep, &split) == false)
 		return (NULL);
 	return (split);
 }

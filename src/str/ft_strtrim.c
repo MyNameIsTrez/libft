@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:58 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 16:02:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/31 16:50:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static unsigned int	get_start_index(const char *str, const char *trim_set)
+STATIC unsigned int	get_start_index(const char *str, const char *trim_set)
 {
 	unsigned int	start;
 
@@ -26,7 +26,7 @@ static unsigned int	get_start_index(const char *str, const char *trim_set)
 	return (start);
 }
 
-static size_t	get_end_index(const char *str, const char *trim_set)
+STATIC size_t	get_end_index(const char *str, const char *trim_set)
 {
 	size_t	end;
 

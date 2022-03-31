@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static void	add_digits_to_str(char *str, intmax_t nbr, size_t number_len,
+STATIC void	add_digits_to_str(char *str, intmax_t nbr, size_t number_len,
 								unsigned int base)
 {
 	int			digit;

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:26 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 17:23:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/31 16:50:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static size_t	get_word_count(char *str, char sep)
+STATIC size_t	get_word_count(char *str, char sep)
 {
 	size_t	word_count;
 	char	*start_of_word;
@@ -35,7 +35,7 @@ static size_t	get_word_count(char *str, char sep)
 	return (word_count);
 }
 
-static bool	add_words_to_split(char *str, char sep, char ***split)
+STATIC bool	add_words_to_split(char *str, char sep, char ***split)
 {
 	size_t			i;
 	char			*start_of_word;

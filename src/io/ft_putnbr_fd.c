@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/25 18:14:47 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/31 16:50:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static ssize_t	write_digits(int nbr, size_t nbr_len, int fd)
+STATIC ssize_t	write_digits(int nbr, size_t nbr_len, int fd)
 {
 	int		nbr_copy;
 	int		digit;

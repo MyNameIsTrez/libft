@@ -16,8 +16,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static void	add_digits_to_str(char *str, uintmax_t nbr, size_t number_len,
-								unsigned int base)
+STATIC void	add_unsigned_digits_to_str(char *str, uintmax_t nbr,
+										size_t number_len, unsigned int base)
 {
 	int	digit;
 
@@ -48,7 +48,7 @@ char	*ft_unsigned_nbr_to_str(uintmax_t number, unsigned int base)
 	str = ft_stralloc(number_len);
 	if (str == NULL)
 		return (NULL);
-	add_digits_to_str(str, number, number_len, base);
+	add_unsigned_digits_to_str(str, number, number_len, base);
 	return (str);
 }
 

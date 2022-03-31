@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/03/30 12:27:51 by sbos          ########   odam.nl          #
+#    Updated: 2022/03/31 18:07:20 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -154,10 +154,13 @@ FCLEANED_FILES := $(NAME)
 
 # DEBUG is set to 1 when tester.mk includes this file
 ifdef DEBUG
+ifdef NO_STATIC
+CFLAGS += -DSTATIC=
+endif
 CFLAGS += -g3 -Wconversion
 CFLAGS += -Wno-nullability-completeness # Needed for intercepting stdlib.h
 FCLEANED_FILES += $(TEST_NAME)
-HEADERS += tests/unstable/overwritten_headers/stdlib.h
+HEADERS +=
 endif
 
 ifdef SAN
@@ -195,7 +198,7 @@ debug:
 	@$(MAKE) DEBUG=1 all
 
 clean:
-	rm -rf $(OBJ_DIR)/
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(FCLEANED_FILES)

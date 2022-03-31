@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:46:45 by sbos          ########   odam.nl         */
+/*   Updated: 2022/03/31 16:50:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static void	*ft_memcpy_reverse(void *dst, const void *src, size_t len)
+STATIC void	*ft_memcpy_reverse(void *dst, const void *src, size_t len)
 {
 	char	*dst_copy;
 	char	*src_copy;
