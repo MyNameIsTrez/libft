@@ -5,11 +5,7 @@
 			"label": "Build Tester",
 			"type": "shell",
 			"command": "make",
-			"args": [
-				"-f",
-				"tester.mk",
-				"tester"
-			],
+			"args": ["-C", "../../Project-Testers/libft_tester"],
 			"problemMatcher": [
 				"$gcc"
 			],

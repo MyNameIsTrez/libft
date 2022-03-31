@@ -77,6 +77,7 @@ SOURCES +=							\
 
 # nbr
 SOURCES +=										\
+	src/nbr/ft_atoi_range.c						\
 	src/nbr/ft_atoi_safe.c						\
 	src/nbr/ft_atoi.c							\
 	src/nbr/ft_digit_to_char_base.c				\

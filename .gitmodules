@@ -1,3 +1,0 @@
-[submodule "libmassert"]
-	path = libmassert
-	url = https://github.com/Mariusmivw/massert.git
