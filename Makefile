@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/03/31 18:07:20 by sbos          ########   odam.nl          #
+#    Updated: 2022/04/05 14:53:35 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,8 +72,7 @@ SOURCES +=					\
 	src/mem/ft_memset.c
 
 # misc
-SOURCES +=							\
-	src/misc/ft_error.c
+SOURCES +=
 
 # nbr
 SOURCES +=										\
