@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_empty_str_assign_fail.c                         :+:    :+:            */
+/*   ft_str_assign.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/03/04 14:09:25 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:50:49 by sbos          ########   odam.nl         */
+/*   Created: 2022/03/04 14:00:46 by sbos          #+#    #+#                 */
+/*   Updated: 2022/04/05 15:51:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	ft_empty_str_assign_fail(char **dst)
+t_success	ft_str_assign(char **dst, char *src)
 {
-	return (ft_str_assign_fail(dst, ft_empty_str()));
+	if (src == NULL)
+		return (ERROR);
+	*dst = src;
+	return (SUCCESS);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/04/05 14:53:35 by sbos          ########   odam.nl          #
+#    Updated: 2022/04/05 15:52:42 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,13 +93,13 @@ SOURCES +=										\
 # str
 SOURCES +=								\
 	src/str/ft_chr_repeat.c				\
-	src/str/ft_empty_str_assign_fail.c	\
+	src/str/ft_empty_str_assign.c		\
 	src/str/ft_empty_str.c				\
 	src/str/ft_free_split.c				\
 	src/str/ft_rejoin_split.c			\
 	src/str/ft_split_str.c				\
 	src/str/ft_split.c					\
-	src/str/ft_str_assign_fail.c		\
+	src/str/ft_str_assign.c				\
 	src/str/ft_str_count_chr.c			\
 	src/str/ft_str_count_str_overlap.c	\
 	src/str/ft_str_count_str.c			\
