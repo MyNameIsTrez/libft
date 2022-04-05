@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/31 17:01:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/31 17:34:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/04/05 14:29:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,37 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC int	get_number_with_minus(const char *str, bool *out_of_range)
+/**
+ * @brief Takes a @p str like "123" and returns -123. It returns a negative
+ * number to circumvent overflow.
+ *
+ * @param str
+ * @param out_of_range Set to true when multiplying by ten
+ * or subtracting a digit results in underflow.
+ * @return
+ */
+STATIC int	get_negative_value(const char *str, bool *out_of_range)
 {
-	const static int	range_bound = INT_MIN / 10;
+	const static int	range_mult_ten = INT_MIN / 10;
 	const static int	range_last_digit = -(INT_MIN % 10);
-	int					integer;
+	int					value;
 	size_t				i;
 	int					digit;
 
-	integer = 0;
+	value = 0;
 	i = 0;
 	while (ft_isdigit(str[i]))
 	{
 		digit = ft_char_to_digit(str[i]);
-		if (integer < range_bound)
+		if (value < range_mult_ten)
 			*out_of_range = true;
-		else if (integer == range_bound && digit > range_last_digit)
+		else if (value == range_mult_ten && digit > range_last_digit)
 			*out_of_range = true;
-		integer *= 10;
-		integer -= digit;
+		value *= 10;
+		value -= digit;
 		i++;
 	}
-	return (integer);
+	return (value);
 }
 
 /**
@@ -53,11 +62,11 @@ STATIC int	get_number_with_minus(const char *str, bool *out_of_range)
 int	ft_atoi_range(const char *str, bool *out_of_range)
 {
 	int		sign;
-	int		result;
-	bool	temp;
+	int		value;
+	bool	dummy_out_of_range;
 
 	if (out_of_range == NULL)
-		out_of_range = &temp;
+		out_of_range = &dummy_out_of_range;
 	*out_of_range = false;
 	while (ft_isspace(str[0]))
 		str++;
@@ -69,10 +78,10 @@ int	ft_atoi_range(const char *str, bool *out_of_range)
 	}
 	else if (str[0] == '+')
 		str++;
-	result = get_number_with_minus(str, out_of_range);
-	if (sign == 1 && result == INT_MIN)
+	value = get_negative_value(str, out_of_range);
+	if (sign == 1 && value == INT_MIN)
 		*out_of_range = true;
-	return (-sign * result);
+	return (-sign * value);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
