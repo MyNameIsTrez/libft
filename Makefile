@@ -6,12 +6,13 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/04/05 15:52:42 by sbos          ########   odam.nl          #
+#    Updated: 2022/04/07 16:32:57 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 ################################################################################
 
+# TODO: Is this line necessary?
 SOURCES :=
 
 # char
@@ -159,8 +160,6 @@ CFLAGS += -DSTATIC=
 endif
 CFLAGS += -g3 -Wconversion
 CFLAGS += -Wno-nullability-completeness # Needed for intercepting stdlib.h
-FCLEANED_FILES += $(TEST_NAME)
-HEADERS +=
 endif
 
 ifdef SAN
@@ -192,7 +191,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-bonus: # This is just here so libftTester doesn't throw an error.
+bonus: all
 
 debug:
 	@$(MAKE) DEBUG=1 all

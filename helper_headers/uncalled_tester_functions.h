@@ -6,14 +6,14 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/05 15:33:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/04/05 15:41:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/04/07 16:00:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef NOT_CALLED_TESTER_FUNCTIONS_H
-# define NOT_CALLED_TESTER_FUNCTIONS_H
+#ifndef UNCALLED_TESTER_FUNCTIONS_H
+# define UNCALLED_TESTER_FUNCTIONS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
