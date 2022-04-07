@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/29 17:34:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/04/05 15:27:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/04/07 17:48:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include <stdlib.h>	// ssize_t, intmax_t, NULL, malloc, free
+# include <stdlib.h>	// size_t, ssize_t, intmax_t, NULL, malloc, free
 # include <unistd.h>	// write
 # include <stdbool.h>	// bool
 # include <stdarg.h>	// va_list
