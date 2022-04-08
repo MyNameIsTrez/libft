@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/04/07 16:32:57 by sbos          ########   odam.nl          #
+#    Updated: 2022/04/08 15:39:19 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -155,9 +155,7 @@ FCLEANED_FILES := $(NAME)
 
 # DEBUG is set to 1 when tester.mk includes this file
 ifdef DEBUG
-ifdef NO_STATIC
 CFLAGS += -DSTATIC=
-endif
 CFLAGS += -g3 -Wconversion
 CFLAGS += -Wno-nullability-completeness # Needed for intercepting stdlib.h
 endif
