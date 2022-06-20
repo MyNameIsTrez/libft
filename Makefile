@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/06/17 18:10:05 by sbos          ########   odam.nl          #
+#    Updated: 2022/06/20 16:58:09 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -171,6 +171,7 @@ endif
 
 ################################################################################
 
+.PHONY: all
 all: $(PRE_RULES) $(GET_NEXT_LINE_LIB_PATH) $(NAME)
 
 ################################################################################
@@ -190,22 +191,21 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 
 ################################################################################
 
-bonus: all
-
+.PHONY: debug
 debug:
 	@$(MAKE) DEBUG=1 all
 
+.PHONY: clean
 clean:
 	rm -rf $(OBJ_DIR)
+	$(MAKE) -C $(GET_NEXT_LINE_PATH) clean
 
+.PHONY: fclean
 fclean: clean
 	rm -f $(FCLEANED_FILES)
 	$(MAKE) -C $(GET_NEXT_LINE_PATH) fclean
 
+.PHONY: re
 re: fclean all
-
-################################################################################
-
-.PHONY: all debug clean fclean re
 
 ################################################################################

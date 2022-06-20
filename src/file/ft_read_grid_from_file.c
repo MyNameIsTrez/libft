@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_get_grid_from_file.c                            :+:    :+:            */
+/*   ft_read_grid_from_file.c                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 17:49:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/20 16:58:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ STATIC t_success	read_width_and_height(t_grid *grid, int fd)
 	grid->width = 0;
 	grid->height = 0;
 
+	(void)fd;
 	return (SUCCESS);
 }
 
