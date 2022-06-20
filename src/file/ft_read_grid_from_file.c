@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft_char.h                                       :+:    :+:            */
+/*   ft_get_grid_from_file.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:17:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 17:08:20 by sbos          ########   odam.nl         */
+/*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
+/*   Updated: 2022/06/17 17:49:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_CHAR_H
-# define LIBFT_CHAR_H
+#include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "libft.h"
+STATIC t_success	read_width_and_height(t_grid *grid, int fd)
+{
+	grid->width = 0;
+	grid->height = 0;
+
+	return (SUCCESS);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define LOWER_UPPER_DIFFERENCE ('a' - 'A')
+t_success	ft_read_grid_from_file(t_grid *grid, char *filename)
+{
+	const int	fd = open(filename, O_RDONLY);
 
-////////////////////////////////////////////////////////////////////////////////
-
-int		ft_char_to_digit(const char chr);
-char	*ft_char_to_str(const char chr);
-bool	ft_is_lower(char chr);
-bool	ft_is_upper(char chr);
-int		ft_isalnum(int chr);
-int		ft_isalpha(int chr);
-int		ft_isascii(int chr);
-int		ft_isdigit(int chr);
-int		ft_isprint(int chr);
-bool	ft_isspace(const int chr);
-int		ft_tolower(int chr);
-int		ft_toupper(int chr);
-
-#endif
+	if (fd < 0 || read_width_and_height(grid, fd) != SUCCESS)
+		return (ERROR);
+	return (SUCCESS);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

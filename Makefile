@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/06/17 16:48:28 by sbos          ########   odam.nl          #
+#    Updated: 2022/06/17 18:10:05 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SOURCES +=\
 	src/char/ft_tolower.c\
 	src/char/ft_toupper.c
 
-SOURCES +=
+SOURCES +=\
+	src/file/ft_read_grid_from_file.c
 
 SOURCES +=\
 	src/lst/ft_lst_content_size.c\
@@ -136,6 +137,12 @@ HEADERS := libft.h
 
 ################################################################################
 
+GET_NEXT_LINE_PATH := ./get_next_line
+GET_NEXT_LINE_LIB_PATH := $(GET_NEXT_LINE_PATH)/get_next_line.a
+GET_NEXT_LINE := -L$(GET_NEXT_LINE_PATH) -lft
+
+################################################################################
+
 FCLEANED_FILES := $(NAME)
 
 # DEBUG is set to 1 when tester.mk includes this file
@@ -152,7 +159,7 @@ endif
 OBJECT_PATHS := $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:.c=.o))
 
 # sort removes duplicates
-INCLUDES := $(addprefix -I, $(sort $(dir $(HEADERS))))
+INCLUDES := $(addprefix -I, $(sort $(dir $(HEADERS))) $(GET_NEXT_LINE_PATH))
 
 # Only cleans when MAKE_DATA changes.
 DATA_FILE := .make_data
@@ -164,7 +171,14 @@ endif
 
 ################################################################################
 
-all: $(PRE_RULES) $(NAME)
+all: $(PRE_RULES) $(GET_NEXT_LINE_LIB_PATH) $(NAME)
+
+################################################################################
+
+$(GET_NEXT_LINE_LIB_PATH):
+	$(MAKE) -C $(GET_NEXT_LINE_PATH)
+
+################################################################################
 
 $(NAME): $(OBJECT_PATHS)
 	ar rcs $(NAME) $(OBJECT_PATHS)
@@ -173,6 +187,8 @@ $(NAME): $(OBJECT_PATHS)
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+################################################################################
 
 bonus: all
 
@@ -184,6 +200,7 @@ clean:
 
 fclean: clean
 	rm -f $(FCLEANED_FILES)
+	$(MAKE) -C $(GET_NEXT_LINE_PATH) fclean
 
 re: fclean all
 

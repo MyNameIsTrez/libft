@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 16:48:44 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/17 16:54:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 # include "src/char/libft_char.h"
+# include "src/file/libft_file.h"
 # include "src/lst/libft_lst.h"
 # include "src/mem/libft_mem.h"
 # include "src/misc/libft_misc.h"
