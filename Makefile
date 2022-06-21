@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/06/21 12:22:58 by sbos          ########   odam.nl          #
+#    Updated: 2022/06/21 13:13:11 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,8 +139,10 @@ HEADERS := libft.h
 ################################################################################
 
 GET_NEXT_LINE_PATH := ./get_next_line
-GET_NEXT_LINE_LIB_PATH := $(GET_NEXT_LINE_PATH)/get_next_line.a
-GET_NEXT_LINE := -L$(GET_NEXT_LINE_PATH) -lft
+GET_NEXT_LINE_LIB_PATH := $(GET_NEXT_LINE_PATH)/libget_next_line.a
+GET_NEXT_LINE := -L$(GET_NEXT_LINE_PATH) -lget_next_line
+
+LIBS := $(GET_NEXT_LINE)
 
 ################################################################################
 
@@ -183,6 +185,7 @@ $(GET_NEXT_LINE_LIB_PATH):
 ################################################################################
 
 $(NAME): $(OBJECT_PATHS)
+	cp $(GET_NEXT_LINE_LIB_PATH) $(NAME)
 	ar rcs $(NAME) $(OBJECT_PATHS)
 	@echo "$(MAKE_DATA)" > $(DATA_FILE)
 
