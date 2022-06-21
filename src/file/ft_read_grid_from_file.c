@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/21 13:02:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/21 13:07:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ STATIC t_success	helper_read_width_and_height(t_grid *grid, int fd,
 			return (ERROR);
 		}
 	}
+	return (SUCCESS);
 }
 
 STATIC t_success	read_width_and_height(t_grid *grid, int fd)
@@ -47,7 +48,7 @@ STATIC t_success	read_width_and_height(t_grid *grid, int fd)
 	grid->height = 0;
 	if (helper_read_width_and_height(grid, fd, line, &lst) != SUCCESS)
 		return (ERROR);
-	grid->cells = ft_lst_to_array(lst);
+	grid->cells = (char **)ft_lst_to_array(lst);
 	if (grid->cells == NULL)
 	{
 		ft_lstclear(&lst, &free);
