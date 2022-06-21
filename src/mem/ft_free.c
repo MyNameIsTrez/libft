@@ -20,8 +20,7 @@
  * @brief Frees a variable pointing to a string, and sets the variable to NULL.
  *
  * @param ptr This should be the address of a variable pointing to
- * - for example - a string, so this function can set the variable to NULL
- * after having freed the pointer.
+ * something that has been allocated, like a string.
  */
 void	ft_free(void *ptr)
 {
