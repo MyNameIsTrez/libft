@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/21 13:15:12 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/21 14:33:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,14 @@ t_success	ft_read_grid_from_file(t_grid *grid, char *filename)
 {
 	const int	fd = open(filename, O_RDONLY);
 
-	if (fd < 0 || read_width_and_height(grid, fd) != SUCCESS)
+	if (fd < 0)
 		return (ERROR);
+	if (read_width_and_height(grid, fd) != SUCCESS)
+	{
+		close(fd);
+		return (ERROR);
+	}
+	close(fd);
 	return (SUCCESS);
 }
 
