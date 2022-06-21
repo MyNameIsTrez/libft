@@ -22,9 +22,9 @@
  * @param lst The beginning of the list.
  * @return Length of the list.
  */
-int	ft_lstsize(t_list *lst)
+size_t	ft_lstsize(t_list *lst)
 {
-	int	size;
+	size_t	size;
 
 	size = 0;
 	while (lst != NULL)
