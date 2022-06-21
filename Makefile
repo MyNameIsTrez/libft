@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/06/20 16:58:09 by sbos          ########   odam.nl          #
+#    Updated: 2022/06/21 12:22:58 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SOURCES +=\
 	src/lst/ft_lst_new_back.c\
 	src/lst/ft_lst_new_front.c\
 	src/lst/ft_lst_reverse.c\
+	src/lst/ft_lst_to_array.c\
 	src/lst/ft_lstadd_back.c\
 	src/lst/ft_lstadd_front.c\
 	src/lst/ft_lstclear.c\
