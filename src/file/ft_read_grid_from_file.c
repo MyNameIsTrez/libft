@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/21 14:33:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/21 15:07:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,20 @@
 #include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
+
+STATIC char	*get_next_line_without_newline(int fd)
+{
+	char	*original_line;
+	char	*line;
+
+	original_line = get_next_line(fd);
+	if (original_line == NULL)
+		return (NULL);
+	line = ft_strtrim(original_line, "\n");
+	free(original_line);
+	return (line);
+}
+
 STATIC t_success	helper_read_width_and_height(t_grid *grid, int fd,
 												char *line, t_list **lst_ptr)
 {
@@ -25,7 +39,9 @@ STATIC t_success	helper_read_width_and_height(t_grid *grid, int fd,
 	while (line != NULL)
 	{
 		grid->height++;
-		line = get_next_line(fd);
+		line = get_next_line_without_newline(fd);
+		if (line == NULL)
+			break ;
 		if (ft_strlen(line) != grid->width
 			|| ft_lst_new_front(lst_ptr, line) == NULL)
 		{
@@ -42,7 +58,7 @@ STATIC t_success	read_width_and_height(t_grid *grid, int fd)
 	char	*line;
 
 	lst = NULL;
-	line = get_next_line(fd);
+	line = get_next_line_without_newline(fd);
 	if (ft_lst_new_front(&lst, line) == NULL)
 	{
 		free(line);
