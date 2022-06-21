@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/20 17:31:54 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/21 12:25:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 typedef struct s_grid
 {
 	char	**cells;
-	int		width;
-	int		height;
+	size_t	width;
+	size_t	height;
 }	t_grid;
 
 ////////////////////////////////////////////////////////////////////////////////
