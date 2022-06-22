@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strchr.c                                        :+:    :+:            */
+/*   ft_chr_in_str.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/11 12:40:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/22 12:57:25 by sbos          ########   odam.nl         */
+/*   Created: 2022/06/22 12:52:46 by sbos          #+#    #+#                 */
+/*   Updated: 2022/06/22 13:36:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,15 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Locates the first @p chr in @p str, including the '\0'.
+ * @brief Returns whether @p chr is in @p str.
  *
  * @param str
  * @param chr
- * @return A pointer to the first @p chr in @p str;\n
-   NULL if @p chr isn't in @p str.
+ * @return
  */
-char	*ft_strchr(const char *str, int chr)
+bool	ft_chr_in_str(const char *str, const int chr)
 {
-	return (ft_memchr(str, chr, ft_strlen(str) + 1));
+	return (ft_strchr(str, chr) != NULL);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

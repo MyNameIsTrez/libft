@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/06/21 13:13:11 by sbos          ########   odam.nl          #
+#    Updated: 2022/06/22 13:34:13 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,7 @@ SOURCES +=\
 	src/print/ft_putstr.c
 
 SOURCES +=\
+	src/str/chr_in_str.c\
 	src/str/ft_chr_repeat.c\
 	src/str/ft_empty_str_assign.c\
 	src/str/ft_empty_str.c\

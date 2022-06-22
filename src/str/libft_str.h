@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:29:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 17:08:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 13:37:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+bool		*ft_chr_in_str(const char *str, const int chr);
 char		*ft_chr_repeat(const char chr, size_t repeat);
 t_success	ft_empty_str_assign(char **dst);
 char		*ft_empty_str(void);
