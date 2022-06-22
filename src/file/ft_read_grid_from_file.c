@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/22 12:03:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 14:02:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,22 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	gnl_clear_leftover_lines(int fd)
+STATIC void	clear_leftover_gnl_lines(int fd)
 {
 	while (get_next_line(fd))
 	{
 	}
+}
+
+STATIC t_success	put_lst_into_array(t_list *lst, char **cells)
+{
+	cells = (char **)ft_lst_to_array(lst);
+	if (cells == NULL)
+	{
+		ft_lstclear(&lst, &free);
+		return (ERROR);
+	}
+	ft_lstclear(&lst, NULL);
 }
 
 STATIC char	*get_next_line_without_newline(int fd)
@@ -36,7 +47,7 @@ STATIC char	*get_next_line_without_newline(int fd)
 	return (line);
 }
 
-STATIC t_success	helper_read_width_and_height(t_grid *grid, int fd,
+STATIC t_success	helper_read_into_lst(t_grid *grid, int fd,
 												char *line, t_list **lst_ptr)
 {
 	grid->width = 0;
@@ -60,30 +71,21 @@ STATIC t_success	helper_read_width_and_height(t_grid *grid, int fd,
 	return (SUCCESS);
 }
 
-STATIC t_success	read_width_and_height(t_grid *grid, int fd)
+STATIC t_success	read_into_lst(t_grid *grid, int fd, t_list **lst_ptr)
 {
-	t_list	*lst;
 	char	*line;
 
-	lst = NULL;
 	line = get_next_line_without_newline(fd);
-	if (ft_lst_new_front(&lst, line) == NULL)
+	if (ft_lst_new_front(lst_ptr, line) == NULL)
 	{
 		free(line);
 		return (ERROR);
 	}
-	if (helper_read_width_and_height(grid, fd, line, &lst) != SUCCESS)
+	if (helper_read_into_lst(grid, fd, line, lst_ptr) != SUCCESS)
 	{
-		ft_lstclear(&lst, &free);
+		// ft_lstclear(lst_ptr, &free); // TODO: Redundant?
 		return (ERROR);
 	}
-	grid->cells = (char **)ft_lst_to_array(lst);
-	if (grid->cells == NULL)
-	{
-		ft_lstclear(&lst, &free);
-		return (ERROR);
-	}
-	ft_lstclear(&lst, NULL);
 	return (SUCCESS);
 }
 
@@ -92,15 +94,19 @@ STATIC t_success	read_width_and_height(t_grid *grid, int fd)
 t_success	ft_read_grid_from_file(t_grid *grid, char *filename)
 {
 	const int	fd = open(filename, O_RDONLY);
+	t_list		*lst;
 
 	if (fd < 0)
 		return (ERROR);
-	if (read_width_and_height(grid, fd) != SUCCESS)
+	lst = NULL;
+	if (read_into_lst(grid, fd, &lst) != SUCCESS)
 	{
-		gnl_clear_leftover_lines(fd);
+		clear_leftover_gnl_lines(fd);
 		close(fd);
 		return (ERROR);
 	}
+	if (put_lst_into_array(lst, grid->cells) != SUCCESS)
+		return (ERROR);
 	close(fd);
 	return (SUCCESS);
 }
