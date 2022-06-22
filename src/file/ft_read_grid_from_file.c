@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/22 14:04:40 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 14:07:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ STATIC t_success	read_into_lst(t_grid *grid, int fd, t_list **lst_ptr)
 		// ft_lstclear(lst_ptr, &free); // TODO: Redundant?
 		return (ERROR);
 	}
+	free(line);
 	return (SUCCESS);
 }
 
