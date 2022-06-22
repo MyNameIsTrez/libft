@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/22 15:14:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 15:21:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,7 @@ STATIC t_success	transfer_lst_to_array(t_list *lst, char **cells)
 	system("leaks -q tester");
 	cells = (char **)ft_lst_to_array(lst);
 	if (cells == NULL)
-	{
-		ft_lstclear(&lst, &free);
 		return (ERROR);
-	}
-	ft_lstclear(&lst, NULL);
 	printf("transfer_lst_to_array() end");
 	system("leaks -q tester");
 	return (SUCCESS);
@@ -132,9 +128,13 @@ t_success	ft_read_grid_from_file(t_grid *grid, char *filename)
 		close(fd);
 		return (ERROR);
 	}
-	if (transfer_lst_to_array(lst, grid->cells) != SUCCESS)
-		return (ERROR);
 	close(fd);
+	if (transfer_lst_to_array(lst, grid->cells) != SUCCESS)
+	{
+		ft_lstclear(&lst, &free);
+		return (ERROR);
+	}
+	ft_lstclear(&lst, NULL);
 	printf("ft_read_grid_from_file() end");
 	system("leaks -q tester");
 	return (SUCCESS);
