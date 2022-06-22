@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/22 15:12:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 15:14:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 #include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
+
+// TODO: REMOVE THIS YOU MORON
+#include <stdio.h>
 
 STATIC void	clear_leftover_gnl_lines(int fd)
 {
