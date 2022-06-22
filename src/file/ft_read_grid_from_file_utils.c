@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 15:46:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/22 15:49:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 15:59:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,7 @@ STATIC t_success	helper_read_into_lst(t_grid *grid, int fd, char *line,
 	return (SUCCESS);
 }
 
-/**
- * @brief
- *
- * @param grid
- * @param fd
- * @param lst_ptr
- * @return
- */
-t_success	ft_read_into_lst(t_grid *grid, int fd, t_list **lst_ptr)
+t_success	read_into_lst(t_grid *grid, int fd, t_list **lst_ptr)
 {
 	char	*line;
 

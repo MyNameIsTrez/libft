@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/06/22 15:50:24 by sbos          ########   odam.nl          #
+#    Updated: 2022/06/22 15:59:46 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SOURCES +=\
 	src/char/ft_toupper.c
 
 SOURCES +=\
+	src/file/ft_read_grid_from_file_utils.c\
 	src/file/ft_read_grid_from_file.c\
 	src/file/ft_read_into_lst.c
 

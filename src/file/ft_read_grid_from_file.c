@@ -6,13 +6,17 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/22 15:49:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 15:59:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "libft.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+t_success	read_into_lst(t_grid *grid, int fd, t_list **lst_ptr);
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -48,7 +52,7 @@ t_success	ft_read_grid_from_file(t_grid *grid, char *filename)
 	if (fd < 0)
 		return (ERROR);
 	lst = NULL;
-	if (ft_read_into_lst(grid, fd, &lst) != SUCCESS)
+	if (read_into_lst(grid, fd, &lst) != SUCCESS)
 	{
 		close(fd);
 		ft_lstclear(&lst, &free);
