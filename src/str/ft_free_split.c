@@ -28,10 +28,10 @@ void	ft_free_split(char ***split)
 	i = 0;
 	while ((*split)[i] != NULL)
 	{
-		ft_free((*split)[i]);
+		ft_free(&(*split)[i]);
 		i++;
 	}
-	ft_free(*split);
+	ft_free(split);
 	*split = NULL;
 }
 
