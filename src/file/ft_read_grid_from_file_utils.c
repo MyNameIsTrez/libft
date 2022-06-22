@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 15:46:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/22 17:27:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 18:23:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,15 @@ t_success	read_into_lst(t_grid *grid, int fd, t_list **lst_ptr)
 	line = get_next_line_without_newline(fd);
 	if (ft_lst_new_front(lst_ptr, line) == NULL)
 	{
+		ft_lstclear(lst_ptr, &free);
 		ft_free(&line);
 		return (ERROR);
 	}
 	if (helper_read_into_lst(grid, fd, line, lst_ptr) != SUCCESS)
+	{
+		ft_lstclear(lst_ptr, &free);
 		return (ERROR);
-	ft_free(&line);
+	}
 	return (SUCCESS);
 }
 

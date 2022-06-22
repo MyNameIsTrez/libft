@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/22 16:29:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 18:11:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ t_success	ft_read_grid_from_file(t_grid *grid, char *filename)
 	if (read_into_lst(grid, fd, &lst) != SUCCESS)
 	{
 		close(fd);
-		ft_lstclear(&lst, &free);
 		clear_leftover_gnl_lines(fd);
 		return (ERROR);
 	}
