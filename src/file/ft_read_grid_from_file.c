@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/21 15:07:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 12:03:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 #include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
+
+STATIC void	gnl_clear_leftover_lines(int fd)
+{
+	while (get_next_line(fd))
+	{
+	}
+}
 
 STATIC char	*get_next_line_without_newline(int fd)
 {
@@ -45,6 +52,7 @@ STATIC t_success	helper_read_width_and_height(t_grid *grid, int fd,
 		if (ft_strlen(line) != grid->width
 			|| ft_lst_new_front(lst_ptr, line) == NULL)
 		{
+			free(line);
 			ft_lstclear(lst_ptr, &free);
 			return (ERROR);
 		}
@@ -65,7 +73,10 @@ STATIC t_success	read_width_and_height(t_grid *grid, int fd)
 		return (ERROR);
 	}
 	if (helper_read_width_and_height(grid, fd, line, &lst) != SUCCESS)
+	{
+		ft_lstclear(&lst, &free);
 		return (ERROR);
+	}
 	grid->cells = (char **)ft_lst_to_array(lst);
 	if (grid->cells == NULL)
 	{
@@ -86,6 +97,7 @@ t_success	ft_read_grid_from_file(t_grid *grid, char *filename)
 		return (ERROR);
 	if (read_width_and_height(grid, fd) != SUCCESS)
 	{
+		gnl_clear_leftover_lines(fd);
 		close(fd);
 		return (ERROR);
 	}
