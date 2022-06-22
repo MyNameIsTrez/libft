@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/21 12:25:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 15:50:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_grid
 ////////////////////////////////////////////////////////////////////////////////
 
 t_success	ft_read_grid_from_file(t_grid *grid, char *filename);
+t_success	ft_read_into_lst(t_grid *grid, int fd, t_list **lst_ptr);
 
 ////////////////////////////////////////////////////////////////////////////////
 
