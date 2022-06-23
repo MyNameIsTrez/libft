@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/22 16:15:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/23 14:04:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/23 15:21:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,18 @@ typedef enum e_success
 {
 	SUCCESS,
 	ERROR,
+
+	// TODO: How to have norm correct comments here?
+	// libft
+	ERROR_INVALID_FD,
+	ERROR_MALLOC,
+	ERROR_NONRECTANGULAR_GRID,
+
+	// so_long
 	ERROR_WRONG_ARG_COUNT,
 	ERROR_TOO_FEW_ARGS,
 	ERROR_TOO_MANY_ARGS,
+	ERROR_FILE_HAS_INVALID_CHAR,
 }	t_success;
 
 ////////////////////////////////////////////////////////////////////////////////
