@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/23 12:47:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:43:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
  * The dereferenced value won't be touched if no number was found in the string.
  * @return true if a number was found in @p str, false otherwise.
  */
-t_success	ft_atoi_safe(const char *str, int *nbr)
+t_status	ft_atoi_safe(const char *str, int *nbr)
 {
 	long	sign;
 	bool	out_of_range;

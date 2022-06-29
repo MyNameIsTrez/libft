@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_success	ft_empty_str_assign(char **dst)
+t_status	ft_empty_str_assign(char **dst)
 {
 	return (ft_str_assign(dst, ft_empty_str()));
 }
