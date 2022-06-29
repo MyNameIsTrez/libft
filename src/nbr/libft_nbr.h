@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:27:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/23 12:46:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:29:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 int			ft_atoi_range(const char *str, bool *out_of_range);
-t_success	ft_atoi_safe(const char *str, int *nbr);
+t_status	ft_atoi_safe(const char *str, int *nbr);
 int			ft_atoi(const char *str);
 char		ft_digit_to_char_base(int nbr, unsigned int base);
 char		ft_digit_to_char(int nbr);

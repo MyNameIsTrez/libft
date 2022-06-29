@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft_success.h                                    :+:    :+:            */
+/*   libft_status.h                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/22 16:15:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/28 17:25:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:31:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_SUCCESS_H
-# define LIBFT_SUCCESS_H
+#ifndef LIBFT_STATUS_H
+# define LIBFT_STATUS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef enum e_success
+typedef enum e_status
 {
-	SUCCESS,
+	OK,
 	ERROR,
 
 	// TODO: How to have norm correct comments here?
@@ -35,13 +35,13 @@ typedef enum e_success
 	ERROR_INVALID_SCALE,
 	ERROR_MLX42,
 	ERROR_TOO_MANY_PLAYERS,
-}	t_success;
+}	t_status;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_success	*ft_get_error_ptr(void);
-t_success	ft_get_error(void);
-t_success	ft_set_error(t_success error_arg);
+t_status	*ft_get_error_ptr(void);
+t_status	ft_get_error(void);
+t_status	ft_set_error(t_status error_arg);
 
 ////////////////////////////////////////////////////////////////////////////////
 

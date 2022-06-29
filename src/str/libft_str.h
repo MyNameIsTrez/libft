@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:29:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/22 13:49:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:29:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@
 
 bool		ft_chr_in_str(const int chr, const char *str);
 char		*ft_chr_repeat(const char chr, size_t repeat);
-t_success	ft_empty_str_assign(char **dst);
+t_status	ft_empty_str_assign(char **dst);
 char		*ft_empty_str(void);
 void		ft_free_split(char ***split);
 char		*ft_rejoin_split(char **split, char *sep);
 char		**ft_split_str(const char *str, const char *sep);
 char		**ft_split(const char *str, char sep);
-t_success	ft_str_assign(char **dst, char *src);
+t_status	ft_str_assign(char **dst, char *src);
 size_t		ft_str_count_chr(char *str, const char chr);
 size_t		ft_str_count_str_overlap(char *str1, const char *str2);
 size_t		ft_str_count_str(char *str1, const char *str2);

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/23 15:17:09 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:31:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ STATIC t_success	transfer_lst_to_array(t_list *lst, char ***cells)
 	*cells = (char **)ft_lst_to_array(lst);
 	if (*cells == NULL)
 		return (ft_set_error(ERROR_MALLOC));
-	return (SUCCESS);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -52,7 +52,7 @@ t_success	ft_read_grid_from_file(t_grid *grid, char *filename)
 	if (fd < 0)
 		return (ft_set_error(ERROR_INVALID_FD));
 	lst = NULL;
-	if (read_into_lst(grid, fd, &lst) != SUCCESS)
+	if (read_into_lst(grid, fd, &lst) != OK)
 	{
 		close(fd);
 		clear_leftover_gnl_lines(fd);
@@ -60,13 +60,13 @@ t_success	ft_read_grid_from_file(t_grid *grid, char *filename)
 	}
 	close(fd);
 	ft_lst_reverse(&lst);
-	if (transfer_lst_to_array(lst, &grid->cells) != SUCCESS)
+	if (transfer_lst_to_array(lst, &grid->cells) != OK)
 	{
 		ft_lstclear(&lst, &free);
 		return (ft_get_error());
 	}
 	ft_lstclear(&lst, NULL);
-	return (SUCCESS);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
