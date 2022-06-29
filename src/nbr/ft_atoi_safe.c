@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/29 12:43:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:44:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_status	ft_atoi_safe(const char *str, int *nbr)
 	*nbr = ft_atoi_range(str, &out_of_range);
 	if (out_of_range)
 		return (ERROR);
-	return (SUCCESS);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
