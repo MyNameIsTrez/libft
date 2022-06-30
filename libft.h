@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/29 12:31:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/30 13:14:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 # include "helper_headers/boolean_operators.h"
+# include "helper_headers/iterators.h"
 # include "helper_headers/uncalled_tester_functions.h"
 # include "helper_headers/whitespace.h"
 
