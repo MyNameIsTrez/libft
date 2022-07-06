@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/06 13:45:48 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/06 14:04:00 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,11 +126,11 @@ SOURCES +=\
 	src/str/ft_substr.c
 
 SOURCES +=\
-	src/status/ft_any_error.c\
-	src/status/ft_get_error_ptr.c\
-	src/status/ft_get_error.c\
-	src/status/ft_print_error.c\
-	src/status/ft_set_error.c
+	src/error/ft_any_error.c\
+	src/error/ft_get_error_ptr.c\
+	src/error/ft_get_error.c\
+	src/error/ft_print_error.c\
+	src/error/ft_set_error.c
 
 ################################################################################
 
