@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:20:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/06 14:13:44 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/06 15:06:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// TODO: Add tests.
 void	ft_print_error(void)
 {
 	char*const	ft_error_messages[] = {
@@ -28,7 +29,7 @@ void	ft_print_error(void)
 	};
 
 	ft_print("Error: ");
-	ft_print(ft_error_messages[ft_get_error()]);
+	ft_putendl(ft_error_messages[ft_get_error()]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
