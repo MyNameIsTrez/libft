@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/29 12:43:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/06 13:52:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ STATIC t_status	transfer_lst_to_array(t_list *lst, char ***cells)
 {
 	*cells = (char **)ft_lst_to_array(lst);
 	if (*cells == NULL)
-		return (ft_set_error(ERROR_MALLOC));
+		return (ft_set_error(FT_ERROR_MALLOC));
 	return (OK);
 }
 
@@ -50,20 +50,20 @@ t_status	ft_read_grid_from_file(t_grid *grid, char *filename)
 	t_list		*lst;
 
 	if (fd < 0)
-		return (ft_set_error(ERROR_INVALID_FD));
+		return (ft_set_error(FT_ERROR_INVALID_FD));
 	lst = NULL;
 	if (read_into_lst(grid, fd, &lst) != OK)
 	{
 		close(fd);
 		clear_leftover_gnl_lines(fd);
-		return (ft_get_error());
+		return (ft_any_error());
 	}
 	close(fd);
 	ft_lst_reverse(&lst);
 	if (transfer_lst_to_array(lst, &grid->cells) != OK)
 	{
 		ft_lstclear(&lst, &free);
-		return (ft_get_error());
+		return (ft_any_error());
 	}
 	ft_lstclear(&lst, NULL);
 	return (OK);

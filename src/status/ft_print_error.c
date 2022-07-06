@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_get_error.c                                     :+:    :+:            */
+/*   ft_print_error.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/23 13:54:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/06 13:21:28 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/06 13:20:27 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/06 13:56:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,19 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_ft_error	ft_get_error(void)
+void	ft_print_error(void)
 {
-	return (*ft_get_error_ptr());
+	char*const	error_messages[] = {
+		"",
+		"Invalid file descriptor.",
+		"Malloc failure.",
+		"The input map is not rectangular.",
+		"Too few program arguments were provided.",
+		"Too many program arguments were provided.",
+	};
+
+	ft_print("Error: ");
+	ft_print(error_messages[ft_get_error()]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/23 14:00:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/29 12:44:40 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/06 13:39:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	*ft_get_error_ptr(void)
+t_ft_error	*ft_get_error_ptr(void)
 {
-	static t_status	error = OK;
+	static t_ft_error	ft_error = FT_OK;
 
-	return (&error);
+	return (&ft_error);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
