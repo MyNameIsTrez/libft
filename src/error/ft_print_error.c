@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:20:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/06 13:56:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/06 14:13:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	ft_print_error(void)
 {
-	char*const	error_messages[] = {
+	char*const	ft_error_messages[] = {
 		"",
 		"Invalid file descriptor.",
 		"Malloc failure.",
@@ -28,7 +28,7 @@ void	ft_print_error(void)
 	};
 
 	ft_print("Error: ");
-	ft_print(error_messages[ft_get_error()]);
+	ft_print(ft_error_messages[ft_get_error()]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
