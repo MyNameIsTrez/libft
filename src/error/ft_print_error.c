@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:20:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/06 15:06:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/06 15:09:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 void	ft_print_error(void)
 {
 	char*const	ft_error_messages[] = {
-		"",
 		"Invalid file descriptor.",
 		"Malloc failure.",
 		"The input map is not rectangular.",
@@ -29,7 +28,7 @@ void	ft_print_error(void)
 	};
 
 	ft_print("Error: ");
-	ft_putendl(ft_error_messages[ft_get_error()]);
+	ft_putendl(ft_error_messages[ft_get_error() + 1]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
