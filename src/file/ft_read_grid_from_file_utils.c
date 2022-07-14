@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 15:46:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 17:00:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ STATIC t_status	helper_read_into_lst(t_grid *grid, t_i32 fd, char *line,
 	grid->width = 0;
 	grid->height = 0;
 	if (line != NULL)
-		grid->width = ft_strlen(line);
+		grid->width = (t_i32)ft_strlen(line);
 	while (line != NULL)
 	{
 		grid->height++;
 		line = get_next_line_without_newline(fd);
 		if (line == NULL)
 			break ;
-		if (ft_strlen(line) != grid->width)
+		if ((t_i32)ft_strlen(line) != grid->width)
 		{
 			ft_free(&line);
 			return (ft_set_error(FT_ERROR_NON_RECTANGULAR_GRID));
