@@ -42,9 +42,10 @@ STATIC void	add_unsigned_digits_to_str(char *str, uintmax_t nbr,
  */
 char	*ft_unsigned_nbr_to_str(uintmax_t number, t_u32 base)
 {
-	char			*str;
-	const size_t	number_len = ft_get_digit_count_base_unsigned(number, base);
+	char	*str;
+	size_t	number_len;
 
+	number_len = ft_get_digit_count_base_unsigned(number, base);
 	str = ft_stralloc(number_len);
 	if (str == NULL)
 		return (NULL);

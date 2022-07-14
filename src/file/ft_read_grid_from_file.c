@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 16:32:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,10 @@ STATIC t_status	transfer_lst_to_array(t_list *lst, char ***cells)
  */
 t_status	ft_read_grid_from_file(t_grid *grid, char *filename)
 {
-	const t_i32	fd = open(filename, O_RDONLY);
-	t_list		*lst;
+	t_i32	fd;
+	t_list	*lst;
 
+	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 		return (ft_set_error(FT_ERROR_INVALID_FD));
 	lst = NULL;

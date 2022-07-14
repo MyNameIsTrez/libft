@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/10 17:14:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/31 16:50:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 16:36:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,11 @@ STATIC void	fill_rejoin(char *rejoined, char **split, char *sep
  */
 char	*ft_rejoin_split(char **split, char *sep)
 {
-	const size_t	sep_len = ft_strlen(sep);
-	char			*rejoined;
-	size_t			rejoined_len;
+	size_t	sep_len;
+	char	*rejoined;
+	size_t	rejoined_len;
 
+	sep_len = ft_strlen(sep);
 	rejoined_len = get_rejoined_len(split, sep_len);
 	rejoined = ft_stralloc(rejoined_len);
 	if (rejoined == NULL)

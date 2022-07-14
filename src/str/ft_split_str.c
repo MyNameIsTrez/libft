@@ -18,10 +18,11 @@
 
 STATIC size_t	get_word_count_str(char str[], const char sep[])
 {
-	const size_t	sep_len = ft_strlen(sep);
-	size_t			word_count;
-	char			*sep_pos;
+	size_t	sep_len;
+	size_t	word_count;
+	char	*sep_pos;
 
+	sep_len = ft_strlen(sep);
 	word_count = 1;
 	while (str != NULL AND str[0] != '\0')
 	{
@@ -47,10 +48,11 @@ STATIC bool	add_last_word(char *str, char ***split, size_t i)
 
 STATIC bool	add_words_to_split_str(char *str, const char *sep, char ***split)
 {
-	const size_t	sep_len = ft_strlen(sep);
-	char			*sep_pos;
-	size_t			i;
+	size_t	sep_len;
+	char	*sep_pos;
+	size_t	i;
 
+	sep_len = ft_strlen(sep);
 	i = 0;
 	while (str != NULL)
 	{

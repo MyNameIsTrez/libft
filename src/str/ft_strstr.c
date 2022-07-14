@@ -27,8 +27,8 @@
  */
 char	*ft_strstr(const char *haystack, const char *needle)
 {
-	size_t			hay_index;
-	size_t			offset;
+	size_t	hay_index;
+	size_t	offset;
 
 	if (needle[0] == '\0')
 		return ((char *)haystack);

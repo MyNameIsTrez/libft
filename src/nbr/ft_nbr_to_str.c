@@ -19,9 +19,10 @@
 STATIC void	add_digits_to_str(char *str, intmax_t nbr, size_t number_len,
 								t_u32 base)
 {
-	t_i32		digit;
-	const t_i32	base_ = (t_i32)base;
+	t_i32	digit;
+	t_i32	base_;
 
+	base_ = (t_i32)base;
 	if (nbr == 0)
 		str[0] = '0';
 	while (nbr != 0)

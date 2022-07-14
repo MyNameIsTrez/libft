@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/15 18:25:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/23 16:57:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 16:38:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@
  */
 char	*ft_str_repeat(char *str, size_t repeat)
 {
-	size_t const	str_len = ft_strlen(str);
-	size_t const	new_bytes = str_len * repeat;
-	char			*new_str;
-	size_t			i;
+	size_t	str_len;
+	size_t	new_bytes;
+	char	*new_str;
+	size_t	i;
 
+	str_len = ft_strlen(str);
+	new_bytes = str_len * repeat;
 	new_str = ft_stralloc(new_bytes);
 	if (new_str == NULL)
 		return (NULL);

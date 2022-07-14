@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/24 15:17:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/02/24 16:02:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 16:37:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@
  */
 size_t	ft_str_count_str(char *str1, const char *str2)
 {
-	size_t const	str2_len = ft_strlen(str2);
-	size_t			count;
+	size_t	str2_len;
+	size_t	count;
 
+	str2_len = ft_strlen(str2);
 	if (*str2 == '\0')
 		return (0);
 	count = 0;
