@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/31 18:08:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:45:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Converts @p str to a signed int.
+ * @brief Converts @p str to a t_i32.
  *
  * @param str May start with whitespace, and the first encountered number will
- * be converted to a signed int.
+ * be converted to a t_i32.
  * @return The converted value or 0 if no number was found in @p str.
  */
 int	ft_atoi(const char *str)

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/31 17:01:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/04/05 14:29:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:45:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ STATIC int	get_negative_value(const char *str, bool *out_of_range)
 }
 
 /**
- * @brief Converts @p str to a signed int. This function is only supposed to be
+ * @brief Converts @p str to a t_i32. This function is only supposed to be
  * used by ft_atoi() and ft_atoi_safe().
  *
  * @param str May start with whitespace, and the first encountered number will
- * be converted to a signed int.
+ * be converted to a t_i32.
  * @param out_of_range
  * @return The converted value or 0 if no number was found in @p str.
  */

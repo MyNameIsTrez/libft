@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:10 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:46:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:45:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Converts signed int @p nbr to a string.
+ * @brief Converts t_i32 @p nbr to a string.
  *
  * @param nbr The integer to convert.
  * @return The string representing the integer;\n
