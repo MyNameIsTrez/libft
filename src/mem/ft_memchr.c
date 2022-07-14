@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:48:34 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:43:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@
  */
 void	*ft_memchr(const void *ptr, int chr, size_t len)
 {
-	unsigned char	*ptr_;
-	unsigned char	chr_;
+	t_u8	*ptr_;
+	t_u8	chr_;
 	size_t			i;
 
-	ptr_ = (unsigned char *)ptr;
-	chr_ = (unsigned char)chr;
+	ptr_ = (t_u8 *)ptr;
+	chr_ = (t_u8)chr;
 	i = 0;
 	while (i < len)
 	{

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:44 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:48:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:43:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,20 @@
  * @param len
  * @return 0 if the two strings are identical;\n
    Otherwise, the difference between the first two differing bytes
-   (treated as unsigned char values,
+   (treated as t_u8 values,
    so that `\200' is greater than `\0', for example).\n
    This behavior is not required by C and portable code should only depend
    on the sign of the returned value.
  */
 int	ft_memcmp(const void *src1, const void *src2, size_t len)
 {
-	unsigned char	*src1_;
-	unsigned char	*src2_;
+	t_u8	*src1_;
+	t_u8	*src2_;
 	size_t			i;
 	int				diff;
 
-	src1_ = (unsigned char *)src1;
-	src2_ = (unsigned char *)src2;
+	src1_ = (t_u8 *)src1;
+	src2_ = (t_u8 *)src2;
 	i = 0;
 	while (i < len)
 	{
