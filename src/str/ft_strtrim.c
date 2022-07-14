@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:58 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/31 16:50:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:41:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC unsigned int	get_start_index(const char *str, const char *trim_set)
+STATIC t_u32	get_start_index(const char *str, const char *trim_set)
 {
-	unsigned int	start;
+	t_u32	start;
 
 	start = 0;
 	while (str[start] != '\0' AND ft_strchr(trim_set, str[start]) != NULL)
@@ -48,7 +48,7 @@ STATIC size_t	get_end_index(const char *str, const char *trim_set)
  */
 char	*ft_strtrim(const char *str, const char *trim_set)
 {
-	unsigned int	start;
+	t_u32	start;
 	size_t			end;
 	size_t			len;
 

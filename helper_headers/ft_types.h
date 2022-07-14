@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_striteri.c                                      :+:    :+:            */
+/*   ft_types.h                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/11 12:40:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:41:16 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/14 14:08:56 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/14 14:14:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#ifndef FT_TYPES_H
+# define FT_TYPES_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-/**
- * @brief Applies the function @p fun to each character of the string @p str,
-   passing the character's index and address to @p fun.\n
-   @p fun is able to modify the characters in @p str using the address.
- *
- * @param str The string on which to iterate.
- * @param fun The function to apply to each character.
- */
-void	ft_striteri(char *str, void (*fun)(t_u32, char*))
-{
-	t_u32	i;
+typedef int8_t		t_i8;
+typedef uint8_t		t_u8;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		fun(i, &str[i]);
-		i++;
-	}
-}
+typedef int16_t		t_i16;
+typedef uint16_t	t_u16;
+
+typedef int32_t		t_i32;
+typedef uint32_t	t_u32;
+
+typedef int64_t		t_i64;
+typedef uint64_t	t_u64;
+
+////////////////////////////////////////////////////////////////////////////////
+
+typedef float		t_f32;
+typedef double		t_f64;
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

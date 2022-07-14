@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 STATIC void	add_digits_to_str(char *str, intmax_t nbr, size_t number_len,
-								unsigned int base)
+								t_u32 base)
 {
 	int			digit;
 	const int	base_ = (int)base;
@@ -40,7 +40,7 @@ STATIC void	add_digits_to_str(char *str, intmax_t nbr, size_t number_len,
  * @param base
  * @return
  */
-char	*ft_nbr_to_str(intmax_t number, unsigned int base)
+char	*ft_nbr_to_str(intmax_t number, t_u32 base)
 {
 	char	*str;
 	size_t	number_len;

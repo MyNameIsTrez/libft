@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/20 12:00:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:49:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:41:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  * @param nbr
  * @return
  */
-size_t	ft_get_digit_count_base_unsigned(uintmax_t nbr, unsigned int base)
+size_t	ft_get_digit_count_base_unsigned(uintmax_t nbr, t_u32 base)
 {
 	size_t		len;
 

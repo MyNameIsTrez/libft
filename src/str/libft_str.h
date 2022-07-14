@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:29:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/29 12:29:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:41:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ char		*ft_stralloc(const size_t len);
 char		*ft_strchr(const char *str, int chr);
 int			ft_strcmp(const char *str1, const char *str2);
 char		*ft_strdup(const char *str);
-void		ft_striteri(char *str, void (*fun)(unsigned int, char*));
+void		ft_striteri(char *str, void (*fun)(t_u32, char*));
 char		*ft_strjoin(const char *str1, const char *str2);
 size_t		ft_strlcat(char *dst, const char *src, size_t dst_size);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dst_size);
 size_t		ft_strlen(const char *str);
-char		*ft_strmapi(const char *input_str, char (*fun)(unsigned int, char));
+char		*ft_strmapi(const char *input_str, char (*fun)(t_u32, char));
 int			ft_strncmp(const char *str1, const char *str2, size_t len);
 size_t		ft_strnlen(const char *str, const size_t max_len);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
@@ -58,7 +58,7 @@ char		*ft_strrchr(const char *str, int chr);
 char		*ft_strstr(const char *haystack, const char *needle);
 char		*ft_strtrim_whitespace(const char *str);
 char		*ft_strtrim(const char *str, const char *trim_set);
-char		*ft_substr(const char *str, unsigned int start, size_t len);
+char		*ft_substr(const char *str, t_u32 start, size_t len);
 
 ////////////////////////////////////////////////////////////////////////////////
 

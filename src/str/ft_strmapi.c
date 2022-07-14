@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:46:09 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:41:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@
    NULL if the allocation fails, or if either @p input_str or
    @p fun are NULL.
  */
-char	*ft_strmapi(const char *input_str, char (*fun)(unsigned int, char))
+char	*ft_strmapi(const char *input_str, char (*fun)(t_u32, char))
 {
 	char			*output_str;
-	unsigned int	i;
+	t_u32	i;
 
 	output_str = ft_stralloc(ft_strlen(input_str));
 	if (output_str == NULL)

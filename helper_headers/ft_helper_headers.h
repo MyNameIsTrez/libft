@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_striteri.c                                      :+:    :+:            */
+/*   ft_helper_headers.h                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/11 12:40:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:41:16 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/14 14:09:20 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/14 14:17:34 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#ifndef FT_HELPER_HEADERS_H
+# define FT_HELPER_HEADERS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-/**
- * @brief Applies the function @p fun to each character of the string @p str,
-   passing the character's index and address to @p fun.\n
-   @p fun is able to modify the characters in @p str using the address.
- *
- * @param str The string on which to iterate.
- * @param fun The function to apply to each character.
- */
-void	ft_striteri(char *str, void (*fun)(t_u32, char*))
-{
-	t_u32	i;
+# include "helper_headers/boolean_operators.h"
+# include "helper_headers/shared_system_headers.h"
+# include "helper_headers/ft_types.h"
+# include "helper_headers/libft_iterators.h"
+# include "helper_headers/uncalled_tester_functions.h"
+# include "helper_headers/whitespace.h"
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		fun(i, &str[i]);
-		i++;
-	}
-}
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 STATIC void	add_unsigned_digits_to_str(char *str, uintmax_t nbr,
-										size_t number_len, unsigned int base)
+										size_t number_len, t_u32 base)
 {
 	int	digit;
 
@@ -40,7 +40,7 @@ STATIC void	add_unsigned_digits_to_str(char *str, uintmax_t nbr,
  * @param base
  * @return
  */
-char	*ft_unsigned_nbr_to_str(uintmax_t number, unsigned int base)
+char	*ft_unsigned_nbr_to_str(uintmax_t number, t_u32 base)
 {
 	char			*str;
 	const size_t	number_len = ft_get_digit_count_base_unsigned(number, base);

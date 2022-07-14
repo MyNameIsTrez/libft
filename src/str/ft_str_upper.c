@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/04 18:34:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/31 16:50:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:41:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	striteri_toupper(unsigned int i, char *chr)
+STATIC void	striteri_toupper(t_u32 i, char *chr)
 {
 	(void)i;
 	(*chr) = (char)ft_toupper(*chr);

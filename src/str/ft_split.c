@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:26 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/31 16:50:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:41:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ STATIC bool	add_words_to_split(char *str, char sep, char ***split)
 	size_t			i;
 	char			*start_of_word;
 	char			*end_of_word;
-	unsigned int	start_index;
+	t_u32	start_index;
 	size_t			len;
 
 	i = 0;
@@ -50,7 +50,7 @@ STATIC bool	add_words_to_split(char *str, char sep, char ***split)
 		if (start_of_word == NULL)
 			break ;
 		end_of_word = ft_strchr(start_of_word, sep);
-		start_index = (unsigned int)(start_of_word - str);
+		start_index = (t_u32)(start_of_word - str);
 		len = (size_t)(end_of_word - start_of_word);
 		(*split)[i] = ft_substr(str, start_index, len);
 		if ((*split)[i] == NULL)
