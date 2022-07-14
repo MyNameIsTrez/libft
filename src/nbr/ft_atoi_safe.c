@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:02:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_status	ft_atoi_safe(const char *str, t_i32 *nbr)
 {
 	long	sign;
 	bool	out_of_range;
-	t_i32		i;
+	t_i32	i;
 
 	i = 0;
 	while (ft_isspace(str[i]))

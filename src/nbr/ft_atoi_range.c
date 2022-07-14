@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/31 17:01:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:02:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ STATIC t_i32	get_negative_value(const char *str, bool *out_of_range)
 {
 	const static t_i32	range_mult_ten = INT_MIN / 10;
 	const static t_i32	range_last_digit = -(INT_MIN % 10);
-	t_i32					value;
+	t_i32				value;
 	size_t				i;
-	t_i32					digit;
+	t_i32				digit;
 
 	value = 0;
 	i = 0;
@@ -61,8 +61,8 @@ STATIC t_i32	get_negative_value(const char *str, bool *out_of_range)
  */
 t_i32	ft_atoi_range(const char *str, bool *out_of_range)
 {
-	t_i32		sign;
-	t_i32		value;
+	t_i32	sign;
+	t_i32	value;
 	bool	dummy_out_of_range;
 
 	if (out_of_range == NULL)

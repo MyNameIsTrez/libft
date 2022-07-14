@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:03:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 STATIC ssize_t	write_digits(t_i32 nbr, size_t nbr_len, t_i32 fd)
 {
-	t_i32		nbr_copy;
-	t_i32		digit;
+	t_i32	nbr_copy;
+	t_i32	digit;
 	size_t	i;
 	size_t	j;
 

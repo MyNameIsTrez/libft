@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:04:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_i32	ft_strncmp(const char *str1, const char *str2, size_t len)
 {
 	t_u8	*str1_;
 	t_u8	*str2_;
-	size_t			i;
+	size_t	i;
 
 	if (len == 0)
 		return (0);

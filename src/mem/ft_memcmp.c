@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:44 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:01:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ t_i32	ft_memcmp(const void *src1, const void *src2, size_t len)
 {
 	t_u8	*src1_;
 	t_u8	*src2_;
-	size_t			i;
-	t_i32				diff;
+	size_t	i;
+	t_i32	diff;
 
 	src1_ = (t_u8 *)src1;
 	src2_ = (t_u8 *)src2;

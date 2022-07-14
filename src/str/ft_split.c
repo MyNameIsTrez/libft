@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:26 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:41:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:03:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ STATIC size_t	get_word_count(char *str, char sep)
 
 STATIC bool	add_words_to_split(char *str, char sep, char ***split)
 {
-	size_t			i;
-	char			*start_of_word;
-	char			*end_of_word;
+	size_t	i;
+	char	*start_of_word;
+	char	*end_of_word;
 	t_u32	start_index;
-	size_t			len;
+	size_t	len;
 
 	i = 0;
 	while (str != NULL AND str[0] != '\0')

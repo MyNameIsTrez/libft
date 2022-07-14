@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:29:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:04:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char		*ft_str_replace(char *str, char *str_search, char *str_replace);
 char		*ft_str_upper(char *str);
 char		*ft_stralloc(const size_t len);
 char		*ft_strchr(const char *str, t_i32 chr);
-t_i32			ft_strcmp(const char *str1, const char *str2);
+t_i32		ft_strcmp(const char *str1, const char *str2);
 char		*ft_strdup(const char *str);
 void		ft_striteri(char *str, void (*fun)(t_u32, char*));
 char		*ft_strjoin(const char *str1, const char *str2);
@@ -51,7 +51,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dst_size);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dst_size);
 size_t		ft_strlen(const char *str);
 char		*ft_strmapi(const char *input_str, char (*fun)(t_u32, char));
-t_i32			ft_strncmp(const char *str1, const char *str2, size_t len);
+t_i32		ft_strncmp(const char *str1, const char *str2, size_t len);
 size_t		ft_strnlen(const char *str, const size_t max_len);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		*ft_strrchr(const char *str, t_i32 chr);
