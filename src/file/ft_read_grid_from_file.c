@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/06 13:52:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	read_into_lst(t_grid *grid, int fd, t_list **lst_ptr);
+t_status	read_into_lst(t_grid *grid, t_i32 fd, t_list **lst_ptr);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	clear_leftover_gnl_lines(int fd)
+STATIC void	clear_leftover_gnl_lines(t_i32 fd)
 {
 	while (get_next_line(fd))
 	{
@@ -46,7 +46,7 @@ STATIC t_status	transfer_lst_to_array(t_list *lst, char ***cells)
  */
 t_status	ft_read_grid_from_file(t_grid *grid, char *filename)
 {
-	const int	fd = open(filename, O_RDONLY);
+	const t_i32	fd = open(filename, O_RDONLY);
 	t_list		*lst;
 
 	if (fd < 0)

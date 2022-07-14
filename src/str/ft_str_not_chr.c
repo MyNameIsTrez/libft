@@ -24,9 +24,9 @@
  * @return A pointer to the first character which isn't @p chr;\n
    NULL if there's no other character in @p str.
  */
-char	*ft_str_not_chr(const char *str, const int chr)
+char	*ft_str_not_chr(const char *str, const t_i32 chr)
 {
-	int	i;
+	t_i32	i;
 
 	i = 0;
 	while (str[i] != '\0')

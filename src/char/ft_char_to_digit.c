@@ -22,7 +22,7 @@
  * @param chr
  * @return
  */
-int	ft_char_to_digit(const char chr)
+t_i32	ft_char_to_digit(const char chr)
 {
 	if ('0' <= chr AND chr <= '9')
 		return (chr - '0');

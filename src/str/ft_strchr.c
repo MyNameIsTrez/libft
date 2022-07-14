@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/22 12:57:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
  * @return A pointer to the first @p chr in @p str;\n
    NULL if @p chr isn't in @p str.
  */
-char	*ft_strchr(const char *str, int chr)
+char	*ft_strchr(const char *str, t_i32 chr)
 {
 	return (ft_memchr(str, chr, ft_strlen(str) + 1));
 }

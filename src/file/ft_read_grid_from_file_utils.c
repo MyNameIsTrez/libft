@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 15:46:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/06 13:52:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC char	*get_next_line_without_newline(int fd)
+STATIC char	*get_next_line_without_newline(t_i32 fd)
 {
 	char	*line;
 	char	*nl_ptr;
@@ -30,7 +30,7 @@ STATIC char	*get_next_line_without_newline(int fd)
 	return (line);
 }
 
-STATIC t_status	helper_read_into_lst(t_grid *grid, int fd, char *line,
+STATIC t_status	helper_read_into_lst(t_grid *grid, t_i32 fd, char *line,
 											t_list **lst_ptr)
 {
 	grid->width = 0;
@@ -57,7 +57,7 @@ STATIC t_status	helper_read_into_lst(t_grid *grid, int fd, char *line,
 	return (OK);
 }
 
-t_status	read_into_lst(t_grid *grid, int fd, t_list **lst_ptr)
+t_status	read_into_lst(t_grid *grid, t_i32 fd, t_list **lst_ptr)
 {
 	char	*line;
 

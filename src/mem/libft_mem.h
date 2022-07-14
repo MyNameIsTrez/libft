@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:26:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 17:08:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@
 void	ft_bzero(void *ptr, size_t size);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_free(void *ptr);
-void	*ft_memchr(const void *ptr, int chr, size_t len);
-int		ft_memcmp(const void *src1, const void *src2, size_t len);
+void	*ft_memchr(const void *ptr, t_i32 chr, size_t len);
+t_i32		ft_memcmp(const void *src1, const void *src2, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
-void	*ft_memset(void *dst, int chr, size_t len);
+void	*ft_memset(void *dst, t_i32 chr, size_t len);
 
 ////////////////////////////////////////////////////////////////////////////////
 

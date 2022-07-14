@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:52:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/22 13:48:58 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  * @param str
  * @return
  */
-bool	ft_chr_in_str(const int chr, const char *str)
+bool	ft_chr_in_str(const t_i32 chr, const char *str)
 {
 	return (ft_strchr(str, chr) != NULL);
 }

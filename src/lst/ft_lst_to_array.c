@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/21 12:04:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/21 12:10:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 void	**ft_lst_to_array(t_list *lst)
 {
 	void	**array;
-	int		i;
+	t_i32		i;
 
 	array = malloc(sizeof(void *) * ft_lstsize(lst));
 	if (array == NULL)

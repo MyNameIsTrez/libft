@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:10 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:45:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  * @return The string representing the integer;\n
    NULL if the allocation fails.
  */
-char	*ft_itoa(int nbr)
+char	*ft_itoa(t_i32 nbr)
 {
 	return (ft_nbr_to_str(nbr, 10));
 }

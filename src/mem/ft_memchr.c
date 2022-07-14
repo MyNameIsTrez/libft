@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:43:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
  * @return A pointer to the located @p chr;\n
  * NULL if @p chr isn't in @p len bytes of @p ptr.
  */
-void	*ft_memchr(const void *ptr, int chr, size_t len)
+void	*ft_memchr(const void *ptr, t_i32 chr, size_t len)
 {
 	t_u8	*ptr_;
 	t_u8	chr_;

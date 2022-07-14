@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/05 15:16:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 16:03:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  * @param chr
  * @return 1 if true, 0 if false.
  */
-int	ft_isalpha(int chr)
+t_i32	ft_isalpha(t_i32 chr)
 {
 	return (('A' <= chr AND chr <= 'Z') OR ('a' <= chr AND chr <= 'z'));
 }

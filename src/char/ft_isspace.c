@@ -22,7 +22,7 @@
  * @param chr
  * @return
  */
-bool	ft_isspace(const int chr)
+bool	ft_isspace(const t_i32 chr)
 {
 	if (ft_strchr(WHITESPACE, chr))
 		return (true);

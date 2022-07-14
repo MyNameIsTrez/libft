@@ -19,13 +19,13 @@
 STATIC void	add_unsigned_digits_to_str(char *str, uintmax_t nbr,
 										size_t number_len, t_u32 base)
 {
-	int	digit;
+	t_i32	digit;
 
 	if (nbr == 0)
 		str[0] = '0';
 	while (nbr != 0)
 	{
-		digit = (int)(nbr % base);
+		digit = (t_i32)(nbr % base);
 		str[number_len - 1] = ft_digit_to_char_base(digit, base);
 		number_len--;
 		nbr /= base;

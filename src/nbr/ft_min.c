@@ -23,7 +23,7 @@
  * @param b
  * @return The smallest number.
  */
-int	ft_min(const int a, const int b)
+t_i32	ft_min(const t_i32 a, const t_i32 b)
 {
 	if (a < b)
 		return (a);

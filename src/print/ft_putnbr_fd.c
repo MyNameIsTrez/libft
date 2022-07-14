@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/31 16:50:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC ssize_t	write_digits(int nbr, size_t nbr_len, int fd)
+STATIC ssize_t	write_digits(t_i32 nbr, size_t nbr_len, t_i32 fd)
 {
-	int		nbr_copy;
-	int		digit;
+	t_i32		nbr_copy;
+	t_i32		digit;
 	size_t	i;
 	size_t	j;
 
@@ -45,12 +45,12 @@ STATIC ssize_t	write_digits(int nbr, size_t nbr_len, int fd)
 }
 
 /**
- * @brief Writes an int.
+ * @brief Writes an t_i32.
  *
  * @param nbr The integer to output.
  * @param fd The file descriptor to write to.
  */
-ssize_t	ft_putnbr_fd(int nbr, int fd)
+ssize_t	ft_putnbr_fd(t_i32 nbr, t_i32 fd)
 {
 	ssize_t	len;
 	ssize_t	tmp;

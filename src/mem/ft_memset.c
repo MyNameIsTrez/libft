@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/07 14:24:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:48:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
  * @param len
  * @return The passed dst.
  */
-void	*ft_memset(void *dst, int chr, size_t len)
+void	*ft_memset(void *dst, t_i32 chr, size_t len)
 {
 	size_t	i;
 

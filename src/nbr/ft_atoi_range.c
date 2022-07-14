@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/31 17:01:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:45:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@
  * or subtracting a digit results in underflow.
  * @return
  */
-STATIC int	get_negative_value(const char *str, bool *out_of_range)
+STATIC t_i32	get_negative_value(const char *str, bool *out_of_range)
 {
-	const static int	range_mult_ten = INT_MIN / 10;
-	const static int	range_last_digit = -(INT_MIN % 10);
-	int					value;
+	const static t_i32	range_mult_ten = INT_MIN / 10;
+	const static t_i32	range_last_digit = -(INT_MIN % 10);
+	t_i32					value;
 	size_t				i;
-	int					digit;
+	t_i32					digit;
 
 	value = 0;
 	i = 0;
@@ -59,10 +59,10 @@ STATIC int	get_negative_value(const char *str, bool *out_of_range)
  * @param out_of_range
  * @return The converted value or 0 if no number was found in @p str.
  */
-int	ft_atoi_range(const char *str, bool *out_of_range)
+t_i32	ft_atoi_range(const char *str, bool *out_of_range)
 {
-	int		sign;
-	int		value;
+	t_i32		sign;
+	t_i32		value;
 	bool	dummy_out_of_range;
 
 	if (out_of_range == NULL)

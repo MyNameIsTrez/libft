@@ -25,10 +25,10 @@
    a negative value if @p str1 is less than @p str2;\n
    a positive value if @p str1 is greater than @p str2.
  */
-int	ft_strcmp(const char *str1, const char *str2)
+t_i32	ft_strcmp(const char *str1, const char *str2)
 {
 	return (ft_strncmp(str1, str2,
-			(size_t)ft_max((int)ft_strlen(str1), (int)ft_strlen(str2))));
+			(size_t)ft_max((t_i32)ft_strlen(str1), (t_i32)ft_strlen(str2))));
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/25 18:16:45 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  * @param str The string to output.
  * @param fd The file descriptor to write to.
  */
-ssize_t	ft_putendl_fd(char *str, int fd)
+ssize_t	ft_putendl_fd(char *str, t_i32 fd)
 {
 	ssize_t	len1;
 	ssize_t	len2;

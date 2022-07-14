@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:17:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 17:08:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,18 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-int		ft_char_to_digit(const char chr);
+t_i32		ft_char_to_digit(const char chr);
 char	*ft_char_to_str(const char chr);
 bool	ft_is_lower(char chr);
 bool	ft_is_upper(char chr);
-int		ft_isalnum(int chr);
-int		ft_isalpha(int chr);
-int		ft_isascii(int chr);
-int		ft_isdigit(int chr);
-int		ft_isprint(int chr);
-bool	ft_isspace(const int chr);
-int		ft_tolower(int chr);
-int		ft_toupper(int chr);
+t_i32		ft_isalnum(t_i32 chr);
+t_i32		ft_isalpha(t_i32 chr);
+t_i32		ft_isascii(t_i32 chr);
+t_i32		ft_isdigit(t_i32 chr);
+t_i32		ft_isprint(t_i32 chr);
+bool	ft_isspace(const t_i32 chr);
+t_i32		ft_tolower(t_i32 chr);
+t_i32		ft_toupper(t_i32 chr);
 
 #endif
 

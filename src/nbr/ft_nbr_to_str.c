@@ -19,14 +19,14 @@
 STATIC void	add_digits_to_str(char *str, intmax_t nbr, size_t number_len,
 								t_u32 base)
 {
-	int			digit;
-	const int	base_ = (int)base;
+	t_i32			digit;
+	const t_i32	base_ = (t_i32)base;
 
 	if (nbr == 0)
 		str[0] = '0';
 	while (nbr != 0)
 	{
-		digit = (int)-(nbr % base_);
+		digit = (t_i32)-(nbr % base_);
 		str[number_len - 1] = ft_digit_to_char_base(digit, base);
 		number_len--;
 		nbr /= base_;

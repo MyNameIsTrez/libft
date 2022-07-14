@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:44 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:43:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@
    This behavior is not required by C and portable code should only depend
    on the sign of the returned value.
  */
-int	ft_memcmp(const void *src1, const void *src2, size_t len)
+t_i32	ft_memcmp(const void *src1, const void *src2, size_t len)
 {
 	t_u8	*src1_;
 	t_u8	*src2_;
 	size_t			i;
-	int				diff;
+	t_i32				diff;
 
 	src1_ = (t_u8 *)src1;
 	src2_ = (t_u8 *)src2;

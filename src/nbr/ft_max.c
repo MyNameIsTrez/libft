@@ -23,7 +23,7 @@
  * @param b
  * @return The biggest number.
  */
-int	ft_max(const int a, const int b)
+t_i32	ft_max(const t_i32 a, const t_i32 b)
 {
 	if (a > b)
 		return (a);

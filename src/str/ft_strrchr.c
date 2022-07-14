@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:46:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
  * @return A pointer to the last @p chr in @p str;\n
    NULL if @p chr isn't in @p str.
  */
-char	*ft_strrchr(const char *str, int chr)
+char	*ft_strrchr(const char *str, t_i32 chr)
 {
 	size_t	i;
 	char	c;

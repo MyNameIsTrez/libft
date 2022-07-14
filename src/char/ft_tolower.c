@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:39:54 by sbos          #+#    #+#                 */
-/*   Updated: 2022/03/29 14:47:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
    letter is returned if there is one;\n
    Otherwise, the argument is returned unchanged.
  */
-int	ft_tolower(int chr)
+t_i32	ft_tolower(t_i32 chr)
 {
 	if (ft_is_upper((char)chr))
 		return (chr + LOWER_UPPER_DIFFERENCE);
