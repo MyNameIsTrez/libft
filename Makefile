@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/06 14:04:00 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/19 16:30:43 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -124,6 +124,9 @@ SOURCES +=\
 	src/str/ft_strtrim.c\
 	src/str/ft_strtrim_whitespace.c\
 	src/str/ft_substr.c
+
+SOURCES +=\
+	src/vector/ft_vector.c
 
 SOURCES +=\
 	src/error/ft_any_error.c\

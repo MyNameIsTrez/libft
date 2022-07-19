@@ -1,47 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   libft_vector.h                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/19 16:30:16 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/19 09:57:23 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/19 16:29:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef LIBFT_VEC_H
+# define LIBFT_VEC_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# ifndef STATIC
-#  define STATIC static
-# endif
+# include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "get_next_line/get_next_line.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-# include "helper_headers/ft_helper_headers.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-# include "src/error/libft_error.h"
-
-# include "src/char/libft_char.h"
-# include "src/file/libft_file.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/misc/libft_misc.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/print/libft_print.h"
-# include "src/str/libft_str.h"
-# include "src/vector/libft_vector.h"
+void	*vector_new(size_t element_size);
+void	vector_reserve(void *vector, size_t additional_elements);
+void	vector_push(void *vector, void *value_ptr);
 
 ////////////////////////////////////////////////////////////////////////////////
 
