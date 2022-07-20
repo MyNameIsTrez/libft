@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 12:54:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 14:17:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,19 @@ static void	vector_register(void *vector, size_t element_size, size_t capacity)
 	metadata.element_size = element_size;
 	metadata.address = vector;
 	vector_push(vectors_metadata, &metadata);
+}
+
+static size_t	get_bytes_after_metadata(t_vector_metadata *metadata,
+			t_vector_metadata **vectors_metadata, size_t element_size)
+{
+	size_t	metadata_index;
+	size_t	total_elements;
+	size_t	shifted_elements;
+
+	metadata_index = (size_t)(metadata - (*vectors_metadata));
+	total_elements = (*vectors_metadata)[0].size;
+	shifted_elements = metadata_index + 1;
+	return ((total_elements - shifted_elements) * element_size);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -144,21 +157,14 @@ void	vector_free(void *vector)
 	t_vector_metadata	**vectors_metadata;
 	t_vector_metadata	*metadata;
 	size_t				element_size;
-	size_t				total_len;
-	size_t				metadata_index;
-	size_t				bytes_after_metadata;
 
 	free(vector);
+	// TODO: Make vectors_metadata single ptr
 	vectors_metadata = get_vectors_metadata_ptr();
 	metadata = vector_get_metadata(vector);
-
 	element_size = (*vectors_metadata)[0].element_size;
-	total_len = (*vectors_metadata)[0].size * element_size;
-	metadata_index = (size_t)(metadata - (*vectors_metadata));
-
-	bytes_after_metadata = total_len - (metadata_index + 1) * element_size;
-
-	ft_memmove(metadata, metadata + element_size, bytes_after_metadata);
+	ft_memmove(metadata, metadata + element_size, \
+		get_bytes_after_metadata(metadata, vectors_metadata, element_size));
 	(*vectors_metadata)[0].size--;
 }
 
