@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 11:00:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 11:07:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,21 @@ void	*vector_new(size_t element_size)
 {
 	void	*vector;
 
-	vector = malloc(sizeof(element_size) * DEFAULT_VECTOR_CAPACITY);
+	vector = malloc(VECTOR_DEFAULT_ELEMENT_CAPACITY * sizeof(element_size));
 	if (vector == NULL)
 		return (NULL);
-	vector_register(vector, element_size, 0);
+	vector_register(vector, element_size, VECTOR_DEFAULT_ELEMENT_CAPACITY);
+	return (vector);
+}
+
+void	*vector_new_reserved(size_t element_size, size_t initial_capacity)
+{
+	void	*vector;
+
+	vector = malloc(initial_capacity * sizeof(element_size));
+	if (vector == NULL)
+		return (NULL);
+	vector_register(vector, element_size, initial_capacity);
 	return (vector);
 }
 
