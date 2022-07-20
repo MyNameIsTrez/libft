@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 14:49:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 15:03:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static t_vector_metadata	**get_vectors_metadata_ptr(void)
 	return (&vectors_metadata);
 }
 
-static t_vector_metadata	*vector_get_metadata(void *vector)
+static t_vector_metadata	*get_vector_metadata(void *vector)
 {
 	t_vector_metadata	**vectors_metadata;
 	size_t				index;
@@ -117,7 +117,7 @@ void	vector_reserve(void *vector_ptr, size_t additional_elements)
 	size_t				new_capacity;
 
 	_vector_ptr = vector_ptr;
-	metadata = vector_get_metadata(*_vector_ptr);
+	metadata = get_vector_metadata(*_vector_ptr);
 	metadata->capacity += additional_elements;
 	new_capacity = metadata->capacity * metadata->element_size;
 	// TODO: replace realloc with ft_realloc
@@ -142,7 +142,7 @@ void	vector_push(void *vector_ptr, void *value_ptr)
 	bool				_is_lookup_vector;
 
 	_vector_ptr = vector_ptr;
-	metadata = vector_get_metadata(*_vector_ptr);
+	metadata = get_vector_metadata(*_vector_ptr);
 	if (metadata->size >= metadata->capacity)
 	{
 		_is_lookup_vector = false;
@@ -153,7 +153,7 @@ void	vector_push(void *vector_ptr, void *value_ptr)
 		else
 			vector_reserve(vector_ptr, metadata->capacity); // maybe *0.5 (because additional)
 		if (_is_lookup_vector)
-			metadata = vector_get_metadata(*_vector_ptr);
+			metadata = get_vector_metadata(*_vector_ptr);
 	}
 	element_size = metadata->element_size;
 	pushed_value_offset = metadata->size * element_size;
@@ -171,7 +171,7 @@ void	vector_free(void *vector)
 	free(vector);
 	// TODO: Make vectors_metadata single ptr
 	vectors_metadata = get_vectors_metadata_ptr();
-	metadata = vector_get_metadata(vector);
+	metadata = get_vector_metadata(vector);
 	element_size = (*vectors_metadata)[0].element_size;
 	ft_memmove(metadata, metadata + element_size, \
 		get_bytes_after_metadata(metadata, vectors_metadata, element_size));
