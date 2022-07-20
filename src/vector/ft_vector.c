@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 14:26:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 14:29:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,11 @@ static size_t	get_bytes_after_metadata(t_vector_metadata *metadata,
 	return ((total_elements - shifted_elements) * element_size);
 }
 
+static bool	is_lookup_vector(t_vector_metadata *metadata)
+{
+	return (metadata == metadata->address);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 void	*vector_new(size_t element_size)
@@ -116,7 +121,7 @@ void	vector_reserve(void *vector_ptr, size_t additional_elements)
 	metadata->capacity += additional_elements;
 	new_capacity = metadata->capacity * metadata->element_size;
 	// TODO: replace realloc with ft_realloc
-	if (metadata == metadata->address)
+	if (is_lookup_vector(metadata))
 	{
 		metadata = realloc(metadata->address, new_capacity);
 		metadata->address = metadata;
@@ -134,17 +139,22 @@ void	vector_push(void *vector_ptr, void *value_ptr)
 	t_vector_metadata	*metadata;
 	size_t				element_size;
 	size_t				pushed_value_offset;
+	bool				_is_lookup_vector;
 
 	_vector_ptr = vector_ptr;
 	metadata = vector_get_metadata(*_vector_ptr);
 	if (metadata->size >= metadata->capacity)
 	{
+		_is_lookup_vector = false;
+		if (is_lookup_vector(metadata))
+			_is_lookup_vector = true;
 		if (metadata->capacity == 0)
 			vector_reserve(vector_ptr, 1);
 		else
 			vector_reserve(vector_ptr, metadata->capacity); // maybe *0.5 (because additional)
+		if (_is_lookup_vector)
+			metadata = vector_get_metadata(*_vector_ptr);
 	}
-	metadata = vector_get_metadata(*_vector_ptr);
 	element_size = metadata->element_size;
 	pushed_value_offset = metadata->size * element_size;
 	// TODO: replace memcpy with ft_memcpy
