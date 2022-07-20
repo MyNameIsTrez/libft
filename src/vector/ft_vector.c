@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/19 16:29:47 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 11:00:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	*vector_new(size_t element_size)
 {
 	void	*vector;
 
-	vector = malloc(1);
+	vector = malloc(sizeof(element_size) * DEFAULT_VECTOR_CAPACITY);
 	if (vector == NULL)
 		return (NULL);
 	vector_register(vector, element_size, 0);
