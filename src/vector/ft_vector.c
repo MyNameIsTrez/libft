@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 11:07:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 11:11:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ static t_vectors_metadata	*get_vectors_metadata_ptr(void)
 		did_init = true;
 		vectors_metadata.metadata = malloc(sizeof(t_vector_metadata));
 		vectors_metadata.count = 1;
-		vectors_metadata.metadata[0].address = vectors_metadata.metadata;
 		vectors_metadata.metadata[0].count = 1;
 		vectors_metadata.metadata[0].size = 1;
 		vectors_metadata.metadata[0].element_size = sizeof(t_vector_metadata);
+		vectors_metadata.metadata[0].address = vectors_metadata.metadata;
 	}
 	return (&vectors_metadata);
 }
@@ -73,10 +73,10 @@ static void	vector_register(void *vector, size_t element_size, size_t size)
 
 	vectors_metadata = get_vectors_metadata_ptr();
 	vectors_metadata->count++;
-	metadata.address = vector;
 	metadata.count = 0;
 	metadata.size = size;
 	metadata.element_size = element_size;
+	metadata.address = vector;
 	vector_push(&vectors_metadata->metadata, &metadata);
 }
 
