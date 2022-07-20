@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 12:09:13 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 12:54:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,10 @@ typedef struct s_vector_metadata
 
 static t_vector_metadata	**get_vectors_metadata_ptr(void)
 {
-	static bool					did_init = false;
-	static t_vector_metadata	*vectors_metadata;
+	static t_vector_metadata	*vectors_metadata = NULL;
 
-	if (!did_init)
+	if (vectors_metadata == NULL)
 	{
-		did_init = true;
 		vectors_metadata = malloc(sizeof(t_vector_metadata));
 		vectors_metadata[0].size = 1;
 		vectors_metadata[0].capacity = 1;
@@ -139,6 +137,45 @@ void	vector_push(void *vector, void *value_ptr)
 	// TODO: replace memcpy with ft_memcpy
 	memcpy((*vector_) + pushed_value_offset, value_ptr, element_size);
 	metadata->size++;
+}
+
+void	vector_free(void *vector)
+{
+	t_vector_metadata	**vectors_metadata;
+	t_vector_metadata	*metadata;
+	size_t				element_size;
+	size_t				total_len;
+	size_t				metadata_index;
+	size_t				bytes_after_metadata;
+
+	free(vector);
+	vectors_metadata = get_vectors_metadata_ptr();
+	metadata = vector_get_metadata(vector);
+
+	element_size = (*vectors_metadata)[0].element_size;
+	total_len = (*vectors_metadata)[0].size * element_size;
+	metadata_index = (size_t)(metadata - (*vectors_metadata));
+
+	bytes_after_metadata = total_len - (metadata_index + 1) * element_size;
+
+	ft_memmove(metadata, metadata + element_size, bytes_after_metadata);
+	(*vectors_metadata)[0].size--;
+}
+
+void	vector_clean_up(void)
+{
+	t_vector_metadata	**vectors_metadata;
+	size_t				index;
+
+	vectors_metadata = get_vectors_metadata_ptr();
+	index = 1;
+	while (index < (*vectors_metadata)[0].size)
+	{
+		free((*vectors_metadata)[index].address);
+		index++;
+	}
+	free(*vectors_metadata);
+	*vectors_metadata = NULL;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
