@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 14:29:09 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 14:49:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,6 +192,14 @@ void	vector_clean_up(void)
 	}
 	free(*vectors_metadata);
 	*vectors_metadata = NULL;
+}
+
+void	vector_push_new_vector(void *vector_ptr, size_t inner_element_size)
+{
+	void	*new_vector;
+
+	new_vector = vector_new(inner_element_size);
+	vector_push(vector_ptr, &new_vector);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
