@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 15:47:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 16:37:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static t_vector_metadata	**get_meta_metadata_ptr(void)
 	if (meta_metadata == NULL)
 	{
 		meta_metadata = malloc(sizeof(t_vector_metadata));
+		if (meta_metadata == NULL)
+			return (NULL);
 		meta_metadata[0].size = 1;
 		meta_metadata[0].capacity = 1;
 		meta_metadata[0].element_size = sizeof(t_vector_metadata);
@@ -45,6 +47,8 @@ static t_vector_metadata	*get_metadata(void *vector)
 	size_t				index;
 
 	meta_metadata = get_meta_metadata_ptr();
+	if (meta_metadata == NULL)
+		return (NULL);
 	index = 0;
 	while (index < (*meta_metadata)[0].size)
 	{
@@ -55,17 +59,21 @@ static t_vector_metadata	*get_metadata(void *vector)
 	return (NULL);
 }
 
-static void	vector_register(void *vector, size_t element_size, size_t capacity)
+static t_status	vector_register(void *vector, size_t element_size,
+			size_t capacity)
 {
 	t_vector_metadata	**meta_metadata;
 	t_vector_metadata	metadata;
 
 	meta_metadata = get_meta_metadata_ptr();
+	if (meta_metadata == NULL)
+		return (ft_set_error(FT_ERROR_MALLOC));
 	metadata.size = 0;
 	metadata.capacity = capacity;
 	metadata.element_size = element_size;
 	metadata.address = vector;
 	vector_push(meta_metadata, &metadata);
+	return (OK);
 }
 
 static size_t	get_bytes_after_metadata(t_vector_metadata *metadata,
@@ -95,7 +103,9 @@ void	*vector_new(size_t element_size)
 	vector = malloc(VECTOR_DEFAULT_ELEMENT_CAPACITY * element_size);
 	if (vector == NULL)
 		return (NULL);
-	vector_register(vector, element_size, VECTOR_DEFAULT_ELEMENT_CAPACITY);
+	if (vector_register(vector, element_size,
+			VECTOR_DEFAULT_ELEMENT_CAPACITY) != OK)
+		return (NULL);
 	return (vector);
 }
 
@@ -106,34 +116,53 @@ void	*vector_new_reserved(size_t element_size, size_t initial_capacity)
 	vector = malloc(initial_capacity * element_size);
 	if (vector == NULL)
 		return (NULL);
-	vector_register(vector, element_size, initial_capacity);
+	if (vector_register(vector, element_size, initial_capacity) != OK)
+		return (NULL);
 	return (vector);
 }
 
-void	vector_reserve(void *vector_ptr, size_t additional_elements)
+t_status	vector_reserve(void *vector_ptr, size_t additional_elements)
 {
 	void				**_vector_ptr;
 	t_vector_metadata	*metadata;
+	t_vector_metadata	*temp_metadata;
 	size_t				old_capacity;
 	size_t				new_capacity;
 
 	_vector_ptr = vector_ptr;
 	metadata = get_metadata(*_vector_ptr);
+	if (metadata == NULL)
+		return (ft_set_error(FT_ERROR_MALLOC));
 	old_capacity = metadata->capacity * metadata->element_size;
 	new_capacity = old_capacity + additional_elements * metadata->element_size;
 	if (is_lookup_vector(metadata))
 	{
-		metadata = ft_realloc(metadata->address, old_capacity, new_capacity);
-		metadata->address = metadata;
+		temp_metadata = ft_realloc(metadata->address, old_capacity, \
+									new_capacity);
+		metadata = temp_metadata;
 	}
 	else
-		metadata->address = ft_realloc(metadata->address, old_capacity, \
+		temp_metadata = ft_realloc(metadata->address, old_capacity, \
 			new_capacity);
+	if (temp_metadata == NULL)
+		return (ft_set_error(FT_ERROR_MALLOC));
+	metadata->address = temp_metadata;
 	*_vector_ptr = metadata->address;
 	metadata->capacity += additional_elements;
+	return (OK);
 }
 
-void	vector_push(void *vector_ptr, void *value_ptr)
+/**
+ * @brief When you have nested vectors,
+ * vector_push(&inner_vector, &v) doesn't work
+ * since whenever inner_vector is realloced,
+ * outer_vector wouldn't be aware inner_vector its address moved.
+ *
+ * @param vector_ptr
+ * @param value_ptr
+ * @return
+ */
+t_status	vector_push(void *vector_ptr, void *value_ptr)
 {
 	void				**_vector_ptr;
 	t_vector_metadata	*metadata;
@@ -143,6 +172,8 @@ void	vector_push(void *vector_ptr, void *value_ptr)
 
 	_vector_ptr = vector_ptr;
 	metadata = get_metadata(*_vector_ptr);
+	if (metadata == NULL)
+		return (ft_set_error(FT_ERROR_MALLOC));
 	if (metadata->size >= metadata->capacity)
 	{
 		_is_lookup_vector = false;
@@ -152,16 +183,31 @@ void	vector_push(void *vector_ptr, void *value_ptr)
 			vector_reserve(vector_ptr, 1);
 		else
 			vector_reserve(vector_ptr, metadata->capacity);
+		if (ft_any_error() != OK)
+			return (ERROR);
 		if (_is_lookup_vector)
+		{
 			metadata = get_metadata(*_vector_ptr);
+			if (metadata == NULL)
+				return (ft_set_error(FT_ERROR_MALLOC));
+		}
 	}
 	element_size = metadata->element_size;
 	pushed_value_offset = metadata->size * element_size;
 	ft_memcpy((*_vector_ptr) + pushed_value_offset, value_ptr, element_size);
 	metadata->size++;
+	return (OK);
 }
 
-void	vector_free(void *vector)
+/**
+ * @brief Doesn't free vector contents, only the vector itself.
+ *
+ * @param vector
+ * @return Can return ERROR only when creating a vector since the most recent
+ * vector cleanup (or program start) failed. So, you should never have
+ * to check the return value of this function if you guard all previous calls.
+ */
+t_status	vector_free(void *vector)
 {
 	t_vector_metadata	**meta_metadata;
 	t_vector_metadata	*metadata;
@@ -170,19 +216,33 @@ void	vector_free(void *vector)
 	free(vector);
 	// TODO: Make meta_metadata single ptr
 	meta_metadata = get_meta_metadata_ptr();
+	if (meta_metadata == NULL)
+		return (ft_set_error(FT_ERROR_MALLOC));
 	metadata = get_metadata(vector);
+	if (metadata == NULL)
+		return (ft_set_error(FT_ERROR_MALLOC));
 	element_size = (*meta_metadata)[0].element_size;
 	ft_memmove(metadata, metadata + element_size, \
 		get_bytes_after_metadata(metadata, meta_metadata, element_size));
 	(*meta_metadata)[0].size--;
+	return (OK);
 }
 
-void	vector_clean_up(void)
+/**
+ * @brief Doesn't free vector contents, only the vectors themselves.
+ *
+ * @return Can return ERROR only when creating a vector since the most recent
+ * vector cleanup (or program start) failed. So, you should never have
+ * to check the return value of this function if you guard all previous calls.
+ */
+t_status	vector_clean_up(void)
 {
 	t_vector_metadata	**meta_metadata;
 	size_t				index;
 
 	meta_metadata = get_meta_metadata_ptr();
+	if (meta_metadata == NULL)
+		return (ft_set_error(FT_ERROR_MALLOC));
 	index = 1;
 	while (index < (*meta_metadata)[0].size)
 	{
@@ -191,14 +251,17 @@ void	vector_clean_up(void)
 	}
 	free(*meta_metadata);
 	*meta_metadata = NULL;
+	return (OK);
 }
 
-void	vector_push_new_vector(void *vector_ptr, size_t inner_element_size)
+t_status	vector_push_new_vector(void *vector_ptr, size_t inner_element_size)
 {
 	void	*new_vector;
 
 	new_vector = vector_new(inner_element_size);
-	vector_push(vector_ptr, &new_vector);
+	if (new_vector == NULL)
+		return (ft_set_error(FT_ERROR_MALLOC));
+	return (vector_push(vector_ptr, &new_vector));
 }
 
 ////////////////////////////////////////////////////////////////////////////////
