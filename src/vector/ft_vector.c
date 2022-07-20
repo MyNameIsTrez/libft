@@ -72,8 +72,7 @@ static t_status	vector_register(void *vector, size_t element_size,
 	metadata.capacity = capacity;
 	metadata.element_size = element_size;
 	metadata.address = vector;
-	vector_push(meta_metadata, &metadata);
-	return (OK);
+	return (vector_push(meta_metadata, &metadata));
 }
 
 static size_t	get_bytes_after_metadata(t_vector_metadata *metadata,
@@ -153,10 +152,12 @@ t_status	vector_reserve(void *vector_ptr, size_t additional_elements)
 }
 
 /**
- * @brief When you have nested vectors,
+ * @brief Note that when you have nested vectors,
  * vector_push(&inner_vector, &v) doesn't work
  * since whenever inner_vector is realloced,
  * outer_vector wouldn't be aware inner_vector its address moved.
+ * You can either use vector_push_new_vector() or
+ * vector_push(&outer_vector[inner_vector_index], &v).
  *
  * @param vector_ptr
  * @param value_ptr
