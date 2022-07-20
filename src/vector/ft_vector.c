@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 11:29:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 11:43:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_vector_metadata
 
 typedef struct s_vectors_metadata
 {
-	size_t				size;
 	t_vector_metadata	*metadata;
 }	t_vectors_metadata;
 
@@ -39,7 +38,6 @@ static t_vectors_metadata	*get_vectors_metadata_ptr(void)
 	{
 		did_init = true;
 		vectors_metadata.metadata = malloc(sizeof(t_vector_metadata));
-		vectors_metadata.size = 1;
 		vectors_metadata.metadata[0].size = 1;
 		vectors_metadata.metadata[0].capacity = 1;
 		vectors_metadata.metadata[0].element_size = sizeof(t_vector_metadata);
@@ -55,7 +53,7 @@ static t_vector_metadata	*vector_get_metadata(void *vector)
 
 	vectors_metadata = get_vectors_metadata_ptr();
 	index = 0;
-	while (index < vectors_metadata->size)
+	while (index < vectors_metadata->metadata[0].size)
 	{
 		t_vector_metadata	*tmp = &vectors_metadata->metadata[index];
 		(void)tmp;
@@ -72,7 +70,7 @@ static void	vector_register(void *vector, size_t element_size, size_t capacity)
 	t_vector_metadata	metadata;
 
 	vectors_metadata = get_vectors_metadata_ptr();
-	vectors_metadata->size++;
+	vectors_metadata->metadata[0].size++;
 	metadata.size = 0;
 	metadata.capacity = capacity;
 	metadata.element_size = element_size;
