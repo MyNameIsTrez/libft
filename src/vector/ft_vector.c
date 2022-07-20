@@ -177,9 +177,7 @@ t_status	vector_push(void *vector_ptr, void *value_ptr)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	if (metadata->size >= metadata->capacity)
 	{
-		_is_lookup_vector = false;
-		if (is_lookup_vector(metadata))
-			_is_lookup_vector = true;
+		_is_lookup_vector = is_lookup_vector(metadata);
 		if (metadata->capacity == 0)
 			vector_reserve(vector_ptr, 1);
 		else
