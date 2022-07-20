@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 11:43:45 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 12:09:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,41 +24,34 @@ typedef struct s_vector_metadata
 	void	*address;
 }	t_vector_metadata;
 
-typedef struct s_vectors_metadata
-{
-	t_vector_metadata	*metadata;
-}	t_vectors_metadata;
-
-static t_vectors_metadata	*get_vectors_metadata_ptr(void)
+static t_vector_metadata	**get_vectors_metadata_ptr(void)
 {
 	static bool					did_init = false;
-	static t_vectors_metadata	vectors_metadata;
+	static t_vector_metadata	*vectors_metadata;
 
 	if (!did_init)
 	{
 		did_init = true;
-		vectors_metadata.metadata = malloc(sizeof(t_vector_metadata));
-		vectors_metadata.metadata[0].size = 1;
-		vectors_metadata.metadata[0].capacity = 1;
-		vectors_metadata.metadata[0].element_size = sizeof(t_vector_metadata);
-		vectors_metadata.metadata[0].address = vectors_metadata.metadata;
+		vectors_metadata = malloc(sizeof(t_vector_metadata));
+		vectors_metadata[0].size = 1;
+		vectors_metadata[0].capacity = 1;
+		vectors_metadata[0].element_size = sizeof(t_vector_metadata);
+		vectors_metadata[0].address = vectors_metadata;
 	}
 	return (&vectors_metadata);
 }
 
 static t_vector_metadata	*vector_get_metadata(void *vector)
 {
-	t_vectors_metadata	*vectors_metadata;
+	t_vector_metadata	**vectors_metadata;
 	size_t				index;
 
 	vectors_metadata = get_vectors_metadata_ptr();
 	index = 0;
-	while (index < vectors_metadata->metadata[0].size)
+	while (index < (*vectors_metadata)[0].size)
 	{
-		t_vector_metadata	*tmp = &vectors_metadata->metadata[index];
-		(void)tmp;
-		if (vectors_metadata->metadata[index].address == vector)
-			return (&vectors_metadata->metadata[index]);
+		if ((*vectors_metadata)[index].address == vector)
+			return (&(*vectors_metadata)[index]);
 		index++;
 	}
 	return (NULL);
@@ -66,16 +59,15 @@ static t_vector_metadata	*vector_get_metadata(void *vector)
 
 static void	vector_register(void *vector, size_t element_size, size_t capacity)
 {
-	t_vectors_metadata	*vectors_metadata;
+	t_vector_metadata	**vectors_metadata;
 	t_vector_metadata	metadata;
 
 	vectors_metadata = get_vectors_metadata_ptr();
-	vectors_metadata->metadata[0].size++;
 	metadata.size = 0;
 	metadata.capacity = capacity;
 	metadata.element_size = element_size;
 	metadata.address = vector;
-	vector_push(&vectors_metadata->metadata, &metadata);
+	vector_push(vectors_metadata, &metadata);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
