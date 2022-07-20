@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 11:12:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 11:18:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,18 +108,20 @@ void	vector_reserve(void *vector, size_t additional_elements)
 {
 	void				**vector_;
 	t_vector_metadata	*metadata;
+	size_t				new_capacity;
 
 	vector_ = vector;
 	metadata = vector_get_metadata(*vector_);
 	metadata->size += additional_elements;
+	new_capacity = metadata->size * metadata->element_size;
 	// TODO: replace realloc with ft_realloc
 	if (metadata == metadata->address)
 	{
-		metadata = realloc(metadata->address, metadata->size * metadata->element_size);
+		metadata = realloc(metadata->address, new_capacity);
 		metadata->address = metadata;
 	}
 	else
-		metadata->address = realloc(metadata->address, metadata->size * metadata->element_size);
+		metadata->address = realloc(metadata->address, new_capacity);
 	*vector_ = metadata->address;
 }
 
