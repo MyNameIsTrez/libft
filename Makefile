@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/19 16:30:43 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/20 15:44:09 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,8 @@ SOURCES +=\
 	src/mem/ft_memcmp.c\
 	src/mem/ft_memcpy.c\
 	src/mem/ft_memmove.c\
-	src/mem/ft_memset.c
+	src/mem/ft_memset.c\
+	src/mem/ft_realloc.c
 
 SOURCES +=\
 	src/nbr/ft_atoi_range.c\

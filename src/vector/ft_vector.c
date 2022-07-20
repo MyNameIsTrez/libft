@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 15:08:10 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 15:47:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,24 +114,24 @@ void	vector_reserve(void *vector_ptr, size_t additional_elements)
 {
 	void				**_vector_ptr;
 	t_vector_metadata	*metadata;
+	size_t				old_capacity;
 	size_t				new_capacity;
 
 	_vector_ptr = vector_ptr;
 	metadata = get_metadata(*_vector_ptr);
-	metadata->capacity += additional_elements;
-	new_capacity = metadata->capacity * metadata->element_size;
-	// TODO: replace realloc with ft_realloc
+	old_capacity = metadata->capacity * metadata->element_size;
+	new_capacity = old_capacity + additional_elements * metadata->element_size;
 	if (is_lookup_vector(metadata))
 	{
-		metadata = realloc(metadata->address, new_capacity);
+		metadata = ft_realloc(metadata->address, old_capacity, new_capacity);
 		metadata->address = metadata;
 	}
 	else
-		metadata->address = realloc(metadata->address, new_capacity);
+		metadata->address = ft_realloc(metadata->address, old_capacity, \
+			new_capacity);
 	*_vector_ptr = metadata->address;
+	metadata->capacity += additional_elements;
 }
-
-#include <string.h>
 
 void	vector_push(void *vector_ptr, void *value_ptr)
 {
@@ -151,14 +151,13 @@ void	vector_push(void *vector_ptr, void *value_ptr)
 		if (metadata->capacity == 0)
 			vector_reserve(vector_ptr, 1);
 		else
-			vector_reserve(vector_ptr, metadata->capacity); // maybe *0.5 (because additional)
+			vector_reserve(vector_ptr, metadata->capacity);
 		if (_is_lookup_vector)
 			metadata = get_metadata(*_vector_ptr);
 	}
 	element_size = metadata->element_size;
 	pushed_value_offset = metadata->size * element_size;
-	// TODO: replace memcpy with ft_memcpy
-	memcpy((*_vector_ptr) + pushed_value_offset, value_ptr, element_size);
+	ft_memcpy((*_vector_ptr) + pushed_value_offset, value_ptr, element_size);
 	metadata->size++;
 }
 
