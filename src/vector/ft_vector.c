@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 11:18:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/20 11:23:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,8 @@ void	vector_push(void *vector, void *value_ptr)
 {
 	void				**vector_;
 	t_vector_metadata	*metadata;
+	size_t				element_size;
+	size_t				pushed_value_offset;
 
 	vector_ = vector;
 	metadata = vector_get_metadata(*vector_);
@@ -142,8 +144,10 @@ void	vector_push(void *vector, void *value_ptr)
 			vector_reserve(vector, metadata->size); // maybe *0.5 (because additional)
 	}
 	metadata = vector_get_metadata(*vector_);
+	element_size = metadata->element_size;
+	pushed_value_offset = metadata->count * element_size;
 	// TODO: replace memcpy with ft_memcpy
-	memcpy((*vector_) + metadata->count * metadata->element_size, value_ptr, metadata->element_size);
+	memcpy((*vector_) + pushed_value_offset, value_ptr, element_size);
 	metadata->count++;
 }
 
