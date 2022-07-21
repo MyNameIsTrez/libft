@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 14:47:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 12:19:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
  */
 ssize_t	ft_put_substr_fd(char *start_substr, char *end_substr, t_i32 fd)
 {
-	return (write(fd, start_substr, (size_t)(end_substr - start_substr)));
+	return (ft_write(fd, start_substr, (size_t)(end_substr - start_substr)));
 }
 
 ////////////////////////////////////////////////////////////////////////////////
