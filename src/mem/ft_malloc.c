@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 10:57:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 13:27:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 13:42:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_malloced
-{
-	void	**malloc_ptrs;
-	size_t	size;
-	size_t	capacity;
-}	t_malloced;
+#include "ft_malloced.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+#ifdef DEBUG
+# include "ctester_globals.h"
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -38,20 +39,6 @@ STATIC void	*_realloc(void *ptr, size_t old_size, size_t new_size)
 		ft_memcpy(new_ptr, ptr, old_size);
 	free(ptr);
 	return (new_ptr);
-}
-
-STATIC t_malloced	*get_malloced(void)
-{
-	static t_malloced	malloced = {\
-		.malloc_ptrs = NULL, .size = 0, .capacity = 1};
-
-	if (malloced.malloc_ptrs == NULL)
-	{
-		malloced.malloc_ptrs = malloc(sizeof(void *));
-		if (malloced.malloc_ptrs == NULL)
-			return (NULL);
-	}
-	return (&malloced);
 }
 
 STATIC void	*register_malloc(size_t size)
@@ -85,6 +72,22 @@ STATIC void	*register_malloc(size_t size)
 
 ////////////////////////////////////////////////////////////////////////////////
 
+t_malloced	*get_malloced(void)
+{
+	static t_malloced	malloced = {\
+		.malloc_ptrs = NULL, .size = 0, .capacity = 1};
+
+	if (malloced.malloc_ptrs == NULL)
+	{
+		malloced.malloc_ptrs = malloc(sizeof(void *));
+		if (malloced.malloc_ptrs == NULL)
+			return (NULL);
+	}
+	return (&malloced);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
 /**
  * @brief Used so my tester can check whether programs still work
  * when malloc() fails.
@@ -93,7 +96,6 @@ STATIC void	*register_malloc(size_t size)
  * @return NULL if this call was set to fail
  */
 #ifdef DEBUG
-# include "ctester_globals.h"
 
 void	*ft_malloc(size_t size)
 {
@@ -103,12 +105,14 @@ void	*ft_malloc(size_t size)
 	was_malloc_unstable = true;
 	return (NULL);
 }
+
 #else
 
 void	*ft_malloc(size_t size)
 {
 	return (register_malloc(size));
 }
+
 #endif
 
 ////////////////////////////////////////////////////////////////////////////////

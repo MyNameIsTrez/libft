@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/21 12:15:29 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/21 13:34:03 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ SOURCES +=\
 SOURCES +=\
 	src/mem/ft_bzero.c\
 	src/mem/ft_calloc.c\
+	src/mem/ft_free_mallocs.c\
 	src/mem/ft_free.c\
 	src/mem/ft_malloc.c\
 	src/mem/ft_memchr.c\
@@ -153,6 +154,7 @@ HEADERS +=\
 	src/error/ft_error.h\
 	src/file/ft_file.h\
 	src/lst/ft_lst.h\
+	src/mem/ft_malloced.h\
 	src/mem/ft_mem.h\
 	src/misc/ft_misc.h\
 	src/nbr/ft_nbr.h\
