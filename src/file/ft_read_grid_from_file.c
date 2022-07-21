@@ -63,7 +63,7 @@ t_status	ft_read_grid_from_file(t_grid *grid, char *filename)
 	ft_lst_reverse(&lst);
 	if (transfer_lst_to_array(lst, &grid->cells) != OK)
 	{
-		ft_lstclear(&lst, &ft_free);
+		ft_lstclear(&lst, NULL);
 		return (ft_any_error());
 	}
 	ft_lstclear(&lst, NULL);

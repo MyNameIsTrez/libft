@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/20 15:22:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 14:04:33 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 14:20:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	*ft_realloc(void *ptr, size_t old_size, size_t new_size)
 		return (NULL);
 	if (ptr != NULL)
 		ft_memcpy(new_ptr, ptr, old_size);
-	ft_free(ptr);
+	ft_free(&ptr);
 	return (new_ptr);
 }
 
