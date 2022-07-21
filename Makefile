@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/21 12:02:00 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/21 12:15:29 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -140,8 +140,25 @@ SOURCES +=\
 
 ################################################################################
 
-# TODO: Add all headers to HEADERS so compilation can detect when they change
-HEADERS +=
+HEADERS +=\
+	helper_headers/boolean_operators.h\
+	helper_headers/ft_helper_headers.h\
+	helper_headers/ft_iterators.h\
+	helper_headers/ft_types.h\
+	helper_headers/shared_system_headers.h\
+	helper_headers/whitespace.h
+
+HEADERS +=\
+	src/char/ft_char.h\
+	src/error/ft_error.h\
+	src/file/ft_file.h\
+	src/lst/ft_lst.h\
+	src/mem/ft_mem.h\
+	src/misc/ft_misc.h\
+	src/nbr/ft_nbr.h\
+	src/print/ft_print.h\
+	src/str/ft_str.h\
+	src/vector/ft_vector.h
 
 HEADERS +=\
 	libft.h

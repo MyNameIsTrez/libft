@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft_file.h                                       :+:    :+:            */
+/*   ft_vector.h                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 16:59:29 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/19 09:57:23 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/21 12:10:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_FILE_H
-# define LIBFT_FILE_H
+#ifndef FT_VECTOR_H
+# define FT_VECTOR_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -21,20 +21,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "fcntl.h"
+# define VECTOR_DEFAULT_ELEMENT_CAPACITY 1
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_grid
-{
-	char	**cells;
-	t_i32	width;
-	t_i32	height;
-}	t_grid;
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_status	ft_read_grid_from_file(t_grid *grid, char *filename);
+void		*vector_new(size_t element_size);
+void		*vector_new_reserved(size_t element_size, size_t initial_capacity);
+t_status	vector_reserve(void *vector, size_t additional_elements);
+t_status	vector_push(void *vector, void *value_ptr);
+t_status	vector_free(void *vector);
+t_status	vector_clean_up(void);
+t_status	vector_push_new_vector(void *vector_ptr, size_t inner_element_size);
 
 ////////////////////////////////////////////////////////////////////////////////
 

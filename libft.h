@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/19 16:30:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 12:05:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "src/error/libft_error.h"
+# include "src/error/ft_error.h"
 
-# include "src/char/libft_char.h"
-# include "src/file/libft_file.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/misc/libft_misc.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/print/libft_print.h"
-# include "src/str/libft_str.h"
-# include "src/vector/libft_vector.h"
+# include "src/char/ft_char.h"
+# include "src/file/ft_file.h"
+# include "src/lst/ft_lst.h"
+# include "src/mem/ft_mem.h"
+# include "src/misc/ft_misc.h"
+# include "src/nbr/ft_nbr.h"
+# include "src/print/ft_print.h"
+# include "src/str/ft_str.h"
+# include "src/vector/ft_vector.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
