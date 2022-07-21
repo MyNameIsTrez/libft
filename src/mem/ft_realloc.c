@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/20 15:22:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 15:44:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 11:33:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	*ft_realloc(void *ptr, size_t old_size, size_t new_size)
 
 	if (new_size == 0 && ptr != NULL)
 		new_size = 1;
-	new_ptr = malloc(new_size);
+	new_ptr = ft_malloc(new_size);
 	if (new_ptr == NULL)
 		return (NULL);
 	if (ptr != NULL)

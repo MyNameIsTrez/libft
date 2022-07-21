@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/20 15:44:09 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/21 11:37:54 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,12 +50,14 @@ SOURCES +=\
 	src/mem/ft_bzero.c\
 	src/mem/ft_calloc.c\
 	src/mem/ft_free.c\
+	src/mem/ft_malloc.c\
 	src/mem/ft_memchr.c\
 	src/mem/ft_memcmp.c\
 	src/mem/ft_memcpy.c\
 	src/mem/ft_memmove.c\
 	src/mem/ft_memset.c\
-	src/mem/ft_realloc.c
+	src/mem/ft_realloc.c\
+	src/mem/ft_write.c
 
 SOURCES +=\
 	src/nbr/ft_atoi_range.c\
@@ -138,6 +140,14 @@ SOURCES +=\
 
 ################################################################################
 
+# TODO: Add all headers to HEADERS so compilation can detect when they change
+HEADERS +=
+
+HEADERS +=\
+	libft.h
+
+################################################################################
+
 NAME := libft.a
 
 CC := cc
@@ -146,8 +156,6 @@ SRC_DIR := src
 OBJ_DIR := obj
 
 CFLAGS := -Wall -Wextra -Werror
-
-HEADERS := libft.h
 
 ################################################################################
 
@@ -165,7 +173,6 @@ FCLEANED_FILES := $(NAME)
 ifdef DEBUG
 CFLAGS += -DSTATIC=
 CFLAGS += -g3 -Wconversion
-CFLAGS += -Wno-nullability-completeness # Needed for intercepting stdlib.h
 endif
 
 ifdef SAN

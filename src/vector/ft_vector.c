@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/20 16:37:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 11:33:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static t_vector_metadata	**get_meta_metadata_ptr(void)
 
 	if (meta_metadata == NULL)
 	{
-		meta_metadata = malloc(sizeof(t_vector_metadata));
+		meta_metadata = ft_malloc(sizeof(t_vector_metadata));
 		if (meta_metadata == NULL)
 			return (NULL);
 		meta_metadata[0].size = 1;
@@ -99,7 +99,7 @@ void	*vector_new(size_t element_size)
 {
 	void	*vector;
 
-	vector = malloc(VECTOR_DEFAULT_ELEMENT_CAPACITY * element_size);
+	vector = ft_malloc(VECTOR_DEFAULT_ELEMENT_CAPACITY * element_size);
 	if (vector == NULL)
 		return (NULL);
 	if (vector_register(vector, element_size,
@@ -112,7 +112,7 @@ void	*vector_new_reserved(size_t element_size, size_t initial_capacity)
 {
 	void	*vector;
 
-	vector = malloc(initial_capacity * element_size);
+	vector = ft_malloc(initial_capacity * element_size);
 	if (vector == NULL)
 		return (NULL);
 	if (vector_register(vector, element_size, initial_capacity) != OK)

@@ -1,27 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   uncalled_tester_functions.h                        :+:    :+:            */
+/*   ft_write.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/05 15:33:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/04/07 16:00:26 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/21 11:01:27 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/21 11:36:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef UNCALLED_TESTER_FUNCTIONS_H
-# define UNCALLED_TESTER_FUNCTIONS_H
+#include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	*ft_unstable_malloc(size_t size);
-ssize_t	ft_unstable_write(int fildes, const void *buf, size_t nbyte);
+/**
+ * @brief Used so my tester can check whether programs still work
+ * when write() fails.
+ *
+ * @param fildes
+ * @param buf
+ * @param nbyte
+ * @return -1 if this call was set to fail
+ */
+#ifdef DEBUG
 
-////////////////////////////////////////////////////////////////////////////////
+ssize_t	ft_write(int fildes, const void *buf, size_t nbyte)
+{
+	write_call_count++;
+	if (write_call_count != write_call_count_to_fail)
+		return (write(fildes, buf, nbyte));
+	was_write_unstable = true;
+	return (-1);
+}
+#else
 
+ssize_t	ft_write(int fildes, const void *buf, size_t nbyte)
+{
+	return (write(fildes, buf, nbyte));
+}
 #endif
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lst_to_array.c                                  :+:    :+:            */
+/*   ft_malloc.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/21 12:04:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 11:33:28 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/21 10:57:52 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/21 11:36:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,29 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	**ft_lst_to_array(t_list *lst)
-{
-	void	**array;
-	t_i32	i;
+/**
+ * @brief Used so my tester can check whether programs still work
+ * when malloc() fails.
+ *
+ * @param size
+ * @return NULL if this call was set to fail
+ */
+#ifdef DEBUG
 
-	array = ft_malloc(sizeof(void *) * ft_lstsize(lst));
-	if (array == NULL)
-		return (NULL);
-	i = 0;
-	while (lst != NULL)
-	{
-		array[i] = lst->content;
-		lst = lst->next;
-		i++;
-	}
-	return (array);
+void	*ft_malloc(size_t size)
+{
+	malloc_call_count++;
+	if (malloc_call_count != malloc_call_count_to_fail)
+		return (malloc(size));
+	was_malloc_unstable = true;
+	return (NULL);
 }
+#else
+
+void	*ft_malloc(size_t size)
+{
+	return (malloc(size));
+}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////
