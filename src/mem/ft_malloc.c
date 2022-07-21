@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 10:57:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 11:36:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 11:55:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
  * @return NULL if this call was set to fail
  */
 #ifdef DEBUG
+# include "ctester_globals.h"
 
 void	*ft_malloc(size_t size)
 {

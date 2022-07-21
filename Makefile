@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/21 11:37:54 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/21 12:02:00 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -157,6 +157,8 @@ OBJ_DIR := obj
 
 CFLAGS := -Wall -Wextra -Werror
 
+INCLUDES_HEADERS += libft.h
+
 ################################################################################
 
 GET_NEXT_LINE_PATH := ./get_next_line
@@ -169,8 +171,11 @@ LIBS := $(GET_NEXT_LINE)
 
 FCLEANED_FILES := $(NAME)
 
-# DEBUG is set to 1 when tester.mk includes this file
+# DEBUG is set to 1 when libctester includes this file
 ifdef DEBUG
+CFLAGS += -DDEBUG=
+INCLUDES_HEADERS += ../libctester/src/ctester_globals.h
+
 CFLAGS += -DSTATIC=
 CFLAGS += -g3 -Wconversion
 endif
@@ -182,7 +187,7 @@ endif
 OBJECT_PATHS := $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:.c=.o))
 
 # sort removes duplicates
-INCLUDES := $(addprefix -I, $(sort $(dir $(HEADERS))) $(GET_NEXT_LINE_PATH))
+INCLUDES := $(addprefix -I, $(sort $(dir $(INCLUDES_HEADERS))) $(GET_NEXT_LINE_PATH))
 
 # Only cleans when MAKE_DATA changes.
 DATA_FILE := .make_data
