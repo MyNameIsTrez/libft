@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 10:57:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 13:42:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 15:33:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,18 @@ t_malloced	*get_malloced(void)
 
 void	*ft_malloc(size_t size)
 {
+	void	*ptr;
+
 	malloc_call_count++;
 	if (malloc_call_count != malloc_call_count_to_fail)
-		return (register_malloc(size));
+	{
+		ptr = register_malloc(size);
+		if (ptr == NULL)
+			ft_set_error(FT_ERROR_MALLOC);
+		return (ptr);
+	}
 	was_malloc_unstable = true;
+	ft_set_error(FT_ERROR_MALLOC);
 	return (NULL);
 }
 
@@ -110,7 +118,12 @@ void	*ft_malloc(size_t size)
 
 void	*ft_malloc(size_t size)
 {
-	return (register_malloc(size));
+	void	*ptr;
+
+	ptr = register_malloc(size);
+	if (ptr == NULL)
+		ft_set_error(FT_ERROR_MALLOC);
+	return (ptr);
 }
 
 #endif
