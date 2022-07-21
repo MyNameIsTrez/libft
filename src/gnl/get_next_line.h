@@ -1,44 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   get_next_line.h                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 16:19:24 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/18 17:35:33 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/21 16:19:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# ifndef STATIC
-#  define STATIC static
+# include "libft.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+// TODO: Remove these?
+# include <stddef.h> // size_t
+# include <sys/types.h> // ssize_t
+# include <limits.h> // OPEN_MAX
+# include <unistd.h> // read
+
+////////////////////////////////////////////////////////////////////////////////
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX FD_SETSIZE
+# endif
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
 # endif
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "helper_headers/ft_helper_headers.h"
+typedef struct s_buffer_list {
+	char					buf[BUFFER_SIZE];
+	ssize_t					size;
+	ssize_t					start;
+	struct s_buffer_list	*next;
+}	t_buffer_list;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "src/error/ft_error.h"
-
-# include "src/char/ft_char.h"
-# include "src/file/ft_file.h"
-# include "src/gnl/ft_gnl.h"
-# include "src/lst/ft_lst.h"
-# include "src/mem/ft_mem.h"
-# include "src/misc/ft_misc.h"
-# include "src/nbr/ft_nbr.h"
-# include "src/print/ft_print.h"
-# include "src/str/ft_str.h"
-# include "src/vector/ft_vector.h"
+t_buffer_list	*gnl_lst_new_back(t_buffer_list **lst);
+void			gnl_next(t_buffer_list **lst);
+char			*gnl_find_newline(t_buffer_list *lst);
+char			*gnl_lst_clear(t_buffer_list **lst);
 
 ////////////////////////////////////////////////////////////////////////////////
 

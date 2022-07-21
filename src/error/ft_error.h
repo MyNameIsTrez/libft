@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/22 16:15:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 12:08:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 15:35:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef enum e_ft_error
 {
 	FT_OK,
 	FT_ERROR_INVALID_FD,
+	FT_ERROR_READ,
 	FT_ERROR_MALLOC,
 	FT_ERROR_NON_RECTANGULAR_GRID,
 	FT_ERROR_TOO_FEW_ARGS,

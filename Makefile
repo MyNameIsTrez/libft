@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/21 13:34:03 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/21 16:20:03 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,10 @@ SOURCES +=\
 SOURCES +=\
 	src/file/ft_read_grid_from_file_utils.c\
 	src/file/ft_read_grid_from_file.c
+
+SOURCES +=\
+	src/gnl/get_next_line_utils.c\
+	src/gnl/get_next_line.c
 
 SOURCES +=\
 	src/lst/ft_lst_content_size.c\
@@ -153,6 +157,8 @@ HEADERS +=\
 	src/char/ft_char.h\
 	src/error/ft_error.h\
 	src/file/ft_file.h\
+	src/gnl/ft_gnl.h\
+	src/gnl/get_next_line.h\
 	src/lst/ft_lst.h\
 	src/mem/ft_malloced.h\
 	src/mem/ft_mem.h\
@@ -180,11 +186,7 @@ INCLUDES_HEADERS += libft.h
 
 ################################################################################
 
-GET_NEXT_LINE_PATH := ./get_next_line
-GET_NEXT_LINE_LIB_PATH := $(GET_NEXT_LINE_PATH)/libget_next_line.a
-GET_NEXT_LINE := -L$(GET_NEXT_LINE_PATH) -lget_next_line
-
-LIBS := $(GET_NEXT_LINE)
+LIBS :=
 
 ################################################################################
 
@@ -206,7 +208,7 @@ endif
 OBJECT_PATHS := $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:.c=.o))
 
 # sort removes duplicates
-INCLUDES := $(addprefix -I, $(sort $(dir $(INCLUDES_HEADERS))) $(GET_NEXT_LINE_PATH))
+INCLUDES := $(addprefix -I, $(sort $(dir $(INCLUDES_HEADERS))))
 
 # Only cleans when MAKE_DATA changes.
 DATA_FILE := .make_data
@@ -219,17 +221,11 @@ endif
 ################################################################################
 
 .PHONY: all
-all: $(PRE_RULES) $(GET_NEXT_LINE_LIB_PATH) $(NAME)
-
-################################################################################
-
-$(GET_NEXT_LINE_LIB_PATH):
-	$(MAKE) -C $(GET_NEXT_LINE_PATH)
+all: $(PRE_RULES) $(NAME)
 
 ################################################################################
 
 $(NAME): $(OBJECT_PATHS)
-	cp $(GET_NEXT_LINE_LIB_PATH) $(NAME)
 	ar rcs $(NAME) $(OBJECT_PATHS)
 	@echo "$(MAKE_DATA)" > $(DATA_FILE)
 
@@ -246,12 +242,10 @@ debug:
 .PHONY: clean
 clean:
 	rm -rf $(OBJ_DIR)
-	$(MAKE) -C $(GET_NEXT_LINE_PATH) clean
 
 .PHONY: fclean
 fclean: clean
 	rm -f $(FCLEANED_FILES)
-	$(MAKE) -C $(GET_NEXT_LINE_PATH) fclean
 
 .PHONY: re
 re: fclean all
