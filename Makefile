@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/21 16:20:03 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/21 17:11:51 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -195,7 +195,6 @@ FCLEANED_FILES := $(NAME)
 # DEBUG is set to 1 when libctester includes this file
 ifdef DEBUG
 CFLAGS += -DDEBUG=
-INCLUDES_HEADERS += ../libctester/src/ctester_globals.h
 
 CFLAGS += -DSTATIC=
 CFLAGS += -g3 -Wconversion
@@ -203,6 +202,11 @@ endif
 
 ifdef SAN
 CFLAGS += -fsanitize=address
+endif
+
+ifdef CTESTER
+INCLUDES_HEADERS += ../libctester/src/ctester_globals.h
+CFLAGS += -DCTESTER=
 endif
 
 OBJECT_PATHS := $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:.c=.o))

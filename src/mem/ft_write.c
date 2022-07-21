@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 11:01:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 11:55:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 17:12:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
  * @param nbyte
  * @return -1 if this call was set to fail
  */
-#ifdef DEBUG
+#ifdef CTESTER
 # include "ctester_globals.h"
 
 ssize_t	ft_write(int fildes, const void *buf, size_t nbyte)

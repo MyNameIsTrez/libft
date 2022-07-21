@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 10:57:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 15:33:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 17:12:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifdef DEBUG
+#ifdef CTESTER
 # include "ctester_globals.h"
 #endif
 
@@ -95,7 +95,7 @@ t_malloced	*get_malloced(void)
  * @param size
  * @return NULL if this call was set to fail
  */
-#ifdef DEBUG
+#ifdef CTESTER
 
 void	*ft_malloc(size_t size)
 {
