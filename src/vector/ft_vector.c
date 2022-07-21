@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 11:33:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 14:04:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,7 +212,7 @@ t_status	vector_free(void *vector)
 	t_vector_metadata	*metadata;
 	size_t				element_size;
 
-	free(vector);
+	ft_free(vector);
 	// TODO: Make meta_metadata single ptr
 	meta_metadata = get_meta_metadata_ptr();
 	if (meta_metadata == NULL)
@@ -245,10 +245,10 @@ t_status	vector_clean_up(void)
 	index = 1;
 	while (index < (*meta_metadata)[0].size)
 	{
-		free((*meta_metadata)[index].address);
+		ft_free((*meta_metadata)[index].address);
 		index++;
 	}
-	free(*meta_metadata);
+	ft_free(*meta_metadata);
 	*meta_metadata = NULL;
 	return (OK);
 }
