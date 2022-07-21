@@ -16,19 +16,36 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+#include "ft_malloced.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
 /**
  * @brief Frees a variable pointing to a string, and sets the variable to NULL.
  *
  * @param ptr This should be the address of a variable pointing to
  * something that has been allocated, like a string.
  */
-void	ft_free(void *ptr)
+void	ft_free(void *ptrptr)
 {
-	void	**ptrptr;
+	void		**_ptrptr;
+	t_malloced	*malloced;
+	size_t		index;
 
-	ptrptr = ptr;
-	free(*ptrptr);
-	*ptrptr = NULL;
+	_ptrptr = ptrptr;
+	malloced = get_malloced();
+	index = 0;
+	while (index < malloced->size)
+	{
+		if (malloced->malloc_ptrs[index] == *_ptrptr)
+		{
+			malloced->malloc_ptrs[index] = NULL;
+			break ;
+		}
+		index++;
+	}
+	free(*_ptrptr);
+	*_ptrptr = NULL;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
