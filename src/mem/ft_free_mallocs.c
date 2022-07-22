@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 13:32:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 13:39:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 12:23:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	ft_free_mallocs(void)
 	size_t		index;
 
 	malloced = get_malloced();
+	if (malloced == NULL)
+		return ;
 	index = 0;
 	while (index < malloced->size)
 	{
