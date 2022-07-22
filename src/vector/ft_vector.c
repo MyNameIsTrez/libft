@@ -76,14 +76,16 @@ static t_status	vector_register(void *vector, size_t element_size,
 }
 
 static size_t	get_bytes_after_metadata(t_metadata *metadata_ptr,
-			t_metadata **vector_of_metadata, size_t element_size)
+			size_t element_size)
 {
-	size_t	metadata_index;
-	size_t	total_elements;
-	size_t	shifted_elements;
+	t_metadata	*vector_of_metadata;
+	size_t		metadata_index;
+	size_t		total_elements;
+	size_t		shifted_elements;
 
-	metadata_index = (size_t)(metadata_ptr - (*vector_of_metadata));
-	total_elements = (*vector_of_metadata)[0].size;
+	vector_of_metadata = get_vector_of_metadata();
+	metadata_index = (size_t)(metadata_ptr - vector_of_metadata);
+	total_elements = vector_of_metadata[0].size;
 	shifted_elements = metadata_index + 1;
 	return ((total_elements - shifted_elements) * element_size);
 }
@@ -222,7 +224,7 @@ t_status	vector_free(void *vector)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	element_size = (*vector_of_metadata)[0].element_size;
 	ft_memmove(metadata_ptr, metadata_ptr + element_size, \
-		get_bytes_after_metadata(metadata_ptr, vector_of_metadata, element_size));
+		get_bytes_after_metadata(metadata_ptr, element_size));
 	(*vector_of_metadata)[0].size--;
 	return (OK);
 }
