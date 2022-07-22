@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   getters.c                                          :+:    :+:            */
+/*   ft_getters.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/22 13:55:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 13:56:45 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 20:53:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_metadata	**get_vector_of_metadata_ptr(void)
 
 	if (vector_of_metadata == NULL)
 	{
-		vector_of_metadata = ft_malloc(sizeof(t_metadata));
+		vector_of_metadata = ft_malloc(1, sizeof(t_metadata));
 		if (vector_of_metadata == NULL)
 			return (NULL);
 		vector_of_metadata[0].size = 1;

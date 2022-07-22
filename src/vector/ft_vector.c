@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 20:11:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 21:00:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	*ft_vector_new(size_t element_size)
 {
 	void	*vector;
 
-	vector = ft_malloc(VECTOR_DEFAULT_ELEMENT_CAPACITY * element_size);
+	vector = ft_malloc(VECTOR_DEFAULT_ELEMENT_CAPACITY, element_size);
 	if (vector == NULL)
 		return (NULL);
 	if (vector_register(vector, element_size,
@@ -56,7 +56,7 @@ void	*ft_vector_new_reserved(size_t element_size, size_t initial_capacity)
 {
 	void	*vector;
 
-	vector = ft_malloc(initial_capacity * element_size);
+	vector = ft_malloc(initial_capacity, element_size);
 	if (vector == NULL)
 		return (NULL);
 	if (vector_register(vector, element_size, initial_capacity) != OK)
@@ -69,24 +69,24 @@ t_status	ft_vector_reserve(void *vector_ptr, size_t additional_elements)
 	void		**_vector_ptr;
 	t_metadata	*metadata_ptr;
 	t_metadata	*temp_metadata_ptr;
-	size_t		old_capacity;
-	size_t		new_capacity;
+	size_t		old_count;
+	size_t		new_count;
 
 	_vector_ptr = vector_ptr;
 	metadata_ptr = get_metadata_ptr(*_vector_ptr);
 	if (metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
-	old_capacity = metadata_ptr->capacity * metadata_ptr->element_size;
-	new_capacity = old_capacity + additional_elements * metadata_ptr->element_size;
+	old_count = metadata_ptr->capacity;
+	new_count = old_count + additional_elements;
 	if (is_bookkeeping_vector(metadata_ptr))
 	{
-		temp_metadata_ptr = ft_remalloc(metadata_ptr->address, old_capacity, \
-									new_capacity);
+		temp_metadata_ptr = ft_remalloc(metadata_ptr->address, old_count, \
+								new_count, metadata_ptr->element_size);
 		metadata_ptr = temp_metadata_ptr;
 	}
 	else
-		temp_metadata_ptr = ft_remalloc(metadata_ptr->address, old_capacity, \
-			new_capacity);
+		temp_metadata_ptr = ft_remalloc(metadata_ptr->address, old_count, \
+								new_count, metadata_ptr->element_size);
 	if (temp_metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	metadata_ptr->address = temp_metadata_ptr;

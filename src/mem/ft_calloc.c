@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 13:21:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 20:49:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
-	ptr = ft_malloc(count * size);
+	ptr = ft_malloc(count, size);
 	if (ptr == NULL)
 		return (NULL);
 	ft_bzero(ptr, count * size);

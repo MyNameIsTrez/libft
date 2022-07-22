@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:26 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 11:33:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 20:52:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	**ft_split(const char *str, char sep)
 	char	**split;
 
 	word_count = get_word_count((char *)str, sep);
-	split = ft_malloc((word_count + 1) * sizeof(char *));
+	split = ft_malloc((word_count + 1), sizeof(char *));
 	if (split == NULL)
 		return (NULL);
 	split[word_count] = NULL;

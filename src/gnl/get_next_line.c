@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/18 17:35:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 14:34:09 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 20:51:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static char	*gnl_malloc_line(t_buffer_list *lst)
 		len += (size_t)lst->size;
 	else
 		len += (size_t)(nl - (lst->buf + lst->start)) + 1;
-	line = ft_malloc(len + 1);
+	line = ft_malloc(len + 1, sizeof(char));
 	if (line == NULL)
 		return (NULL);
 	if (nl != NULL)

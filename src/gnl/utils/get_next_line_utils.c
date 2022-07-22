@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/18 17:35:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 14:19:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 20:51:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static t_buffer_list	*gnl_lst_new(void)
 {
 	t_buffer_list	*new;
 
-	new = ft_malloc(sizeof(t_buffer_list));
+	new = ft_malloc(1, sizeof(t_buffer_list));
 	if (new == NULL)
 		return (NULL);
 	new->start = 0;
