@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/22 13:06:25 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/22 14:35:08 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -135,6 +135,7 @@ SOURCES +=\
 	src/str/ft_substr.c
 
 SOURCES +=\
+	src/vector/utils/ft_getters.c\
 	src/vector/ft_vector.c
 
 SOURCES +=\
@@ -171,7 +172,11 @@ HEADERS +=\
 	src/misc/ft_misc.h\
 	src/nbr/ft_nbr.h\
 	src/print/ft_print.h\
-	src/str/ft_str.h\
+	src/str/ft_str.h
+
+HEADERS +=\
+	src/vector/utils/ft_vector_getters.h\
+	src/vector/utils/ft_vector_utils.h\
 	src/vector/ft_vector.h
 
 HEADERS +=\

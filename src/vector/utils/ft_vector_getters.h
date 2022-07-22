@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_vector.h                                        :+:    :+:            */
+/*   ft_vector_getters.h                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/19 09:57:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 14:03:20 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/22 13:55:48 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/22 14:11:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_VECTOR_H
-# define FT_VECTOR_H
+#ifndef FT_VECTOR_GETTERS_H
+# define FT_VECTOR_GETTERS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "libft.h"
+t_metadata	**get_vector_of_metadata_ptr(void);
+t_metadata	*get_vector_of_metadata(void);
+t_metadata	*get_metadata_ptr(void *vector);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "utils/ft_vector_utils.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-# define VECTOR_DEFAULT_ELEMENT_CAPACITY 1
-
-////////////////////////////////////////////////////////////////////////////////
-
-void		*ft_vector_new(size_t element_size);
-void		*ft_vector_new_reserved(size_t element_size,
-				size_t initial_capacity);
-t_status	ft_vector_reserve(void *vector, size_t additional_elements);
-t_status	ft_vector_push(void *vector, void *value_ptr);
-t_status	ft_vector_free(void *vector);
-t_status	ft_vector_clean_up(void);
-t_status	ft_vector_push_new_vector(void *vector_ptr,
-				size_t inner_element_size);
+size_t		get_bytes_after_metadata(t_metadata *metadata_ptr,
+				size_t element_size);
 
 ////////////////////////////////////////////////////////////////////////////////
 
