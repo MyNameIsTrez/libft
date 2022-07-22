@@ -53,7 +53,7 @@ SOURCES +=\
 SOURCES +=\
 	src/mem/ft_bzero.c\
 	src/mem/ft_calloc.c\
-	src/mem/ft_free_mallocs.c\
+	src/mem/ft_free_allocations.c\
 	src/mem/ft_free.c\
 	src/mem/ft_malloc.c\
 	src/mem/ft_memchr.c\

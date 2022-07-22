@@ -23,7 +23,7 @@
 
 void	ft_bzero(void *ptr, size_t size);
 void	*ft_calloc(size_t count, size_t size);
-void	ft_free_mallocs(void);
+void	ft_free_allocations(void);
 void	ft_free(void *ptr);
 void	*ft_malloc(size_t size);
 void	*ft_memchr(const void *ptr, t_i32 chr, size_t len);
