@@ -150,6 +150,7 @@ HEADERS +=\
 	helper_headers/boolean_operators.h\
 	helper_headers/ft_helper_headers.h\
 	helper_headers/ft_iterators.h\
+	helper_headers/ft_open_fd_max.h\
 	helper_headers/ft_types.h\
 	helper_headers/shared_system_headers.h\
 	helper_headers/whitespace.h
