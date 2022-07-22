@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 10:57:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 17:12:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 13:21:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ STATIC void	*register_malloc(size_t size)
 	size_t		new_capacity;
 	void		*temp;
 
+	if (size == 0)
+		return (NULL);
 	malloced = get_malloced();
 	if (malloced == NULL)
 		return (NULL);
@@ -92,8 +94,8 @@ t_malloced	*get_malloced(void)
  * @brief Used so my tester can check whether programs still work
  * when malloc() fails.
  *
- * @param size
- * @return NULL if this call was set to fail
+ * @param size FT_ERROR_MALLOC is set if this is 0
+ * @return Allocated bytes. When CTESTER is defined, NULL can be returned
  */
 #ifdef CTESTER
 

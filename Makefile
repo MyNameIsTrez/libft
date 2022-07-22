@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/22 12:08:52 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/22 13:06:25 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,8 @@ SOURCES +=\
 	src/mem/ft_memcpy.c\
 	src/mem/ft_memmove.c\
 	src/mem/ft_memset.c\
-	src/mem/ft_realloc.c\
+	src/mem/ft_recalloc.c\
+	src/mem/ft_remalloc.c\
 	src/mem/ft_write.c
 
 SOURCES +=\

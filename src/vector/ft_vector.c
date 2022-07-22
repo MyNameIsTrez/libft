@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 12:51:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 13:06:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,12 +148,12 @@ t_status	vector_reserve(void *vector_ptr, size_t additional_elements)
 	new_capacity = old_capacity + additional_elements * metadata_ptr->element_size;
 	if (is_lookup_vector(metadata_ptr))
 	{
-		temp_metadata_ptr = ft_realloc(metadata_ptr->address, old_capacity, \
+		temp_metadata_ptr = ft_remalloc(metadata_ptr->address, old_capacity, \
 									new_capacity);
 		metadata_ptr = temp_metadata_ptr;
 	}
 	else
-		temp_metadata_ptr = ft_realloc(metadata_ptr->address, old_capacity, \
+		temp_metadata_ptr = ft_remalloc(metadata_ptr->address, old_capacity, \
 			new_capacity);
 	if (temp_metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
