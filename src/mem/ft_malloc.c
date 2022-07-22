@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 10:57:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 18:03:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 19:02:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ STATIC void	*_recalloc(void *ptr, size_t old_size, size_t new_size)
 {
 	void	*new_ptr;
 
-	if (new_size == 0 && ptr != NULL)
-		new_size = 1;
 	new_ptr = _calloc(new_size);
 	if (new_ptr == NULL)
 		return (NULL);
 	if (ptr != NULL)
+	{
 		ft_memcpy(new_ptr, ptr, old_size);
-	free(ptr);
+		free(ptr);
+	}
 	return (new_ptr);
 }
 
