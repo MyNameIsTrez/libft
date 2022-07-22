@@ -31,7 +31,7 @@ SOURCES +=\
 	src/file/ft_read_grid_from_file.c
 
 SOURCES +=\
-	src/gnl/get_next_line_utils.c\
+	src/gnl/utils/get_next_line_utils.c\
 	src/gnl/get_next_line.c
 
 SOURCES +=\
@@ -158,9 +158,13 @@ HEADERS +=\
 HEADERS +=\
 	src/char/ft_char.h\
 	src/error/ft_error.h\
-	src/file/ft_file.h\
-	src/gnl/ft_gnl.h\
-	src/gnl/get_next_line.h\
+	src/file/ft_file.h
+
+HEADERS +=\
+	src/gnl/utils/get_next_line_utils.h\
+	src/gnl/get_next_line.h
+
+HEADERS +=\
 	src/lst/ft_lst.h\
 	src/mem/ft_malloced.h\
 	src/mem/ft_mem.h\

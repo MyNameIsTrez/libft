@@ -6,11 +6,19 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/18 17:35:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 16:17:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 14:34:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+////////////////////////////////////////////////////////////////////////////////
+
+#include "libft.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+#include "utils/get_next_line_utils.h"
+
+////////////////////////////////////////////////////////////////////////////////
 
 static char	*gnl_malloc_line(t_buffer_list *lst)
 {
@@ -73,10 +81,12 @@ static char	*gnl_create_line(t_buffer_list **lst)
 
 STATIC t_buffer_list	**get_lst_fd(int fd)
 {
-	static t_buffer_list	*lst_fds[OPEN_MAX];
+	static t_buffer_list	*lst_fds[OPEN_FD_MAX];
 
 	return (&lst_fds[fd]);
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 void	clear_get_next_line(int fd)
 {
@@ -93,7 +103,7 @@ char	*get_next_line(int fd)
 	t_buffer_list			**lst;
 	t_buffer_list			*cur;
 
-	if (fd < 0 || fd >= OPEN_MAX || BUFFER_SIZE < 1)
+	if (fd < 0 || fd >= OPEN_FD_MAX || BUFFER_SIZE < 1)
 		return (NULL);
 	lst = get_lst_fd(fd);
 	if (gnl_find_newline(*lst))
@@ -116,3 +126,5 @@ char	*get_next_line(int fd)
 	}
 	return (gnl_create_line(lst));
 }
+
+////////////////////////////////////////////////////////////////////////////////
