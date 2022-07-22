@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 13:32:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 12:52:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 19:50:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_free_allocations(void)
 	size_t		index;
 
 	malloced = get_malloced();
-	if (malloced == NULL)
+	if (malloced == NULL || malloced->malloc_ptrs == NULL)
 		return ;
 	index = 0;
 	while (index < malloced->size)
