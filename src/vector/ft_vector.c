@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 12:26:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 12:31:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,35 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_vector_metadata
+typedef struct s_metadata
 {
 	size_t	size;
 	size_t	capacity;
 	size_t	element_size;
 	void	*address;
-}	t_vector_metadata;
+}	t_metadata;
 
-static t_vector_metadata	**get_vector_of_metadata_ptr(void)
+static t_metadata	**get_vector_of_metadata_ptr(void)
 {
-	static t_vector_metadata	*vector_of_metadata = NULL;
+	static t_metadata	*vector_of_metadata = NULL;
 
 	if (vector_of_metadata == NULL)
 	{
-		vector_of_metadata = ft_malloc(sizeof(t_vector_metadata));
+		vector_of_metadata = ft_malloc(sizeof(t_metadata));
 		if (vector_of_metadata == NULL)
 			return (NULL);
 		vector_of_metadata[0].size = 1;
 		vector_of_metadata[0].capacity = 1;
-		vector_of_metadata[0].element_size = sizeof(t_vector_metadata);
+		vector_of_metadata[0].element_size = sizeof(t_metadata);
 		vector_of_metadata[0].address = vector_of_metadata;
 	}
 	return (&vector_of_metadata);
 }
 
-static t_vector_metadata	*get_metadata(void *vector)
+static t_metadata	*get_metadata(void *vector)
 {
-	t_vector_metadata	**vector_of_metadata;
-	size_t				index;
+	t_metadata	**vector_of_metadata;
+	size_t		index;
 
 	vector_of_metadata = get_vector_of_metadata_ptr();
 	if (vector_of_metadata == NULL)
@@ -62,8 +62,8 @@ static t_vector_metadata	*get_metadata(void *vector)
 static t_status	vector_register(void *vector, size_t element_size,
 			size_t capacity)
 {
-	t_vector_metadata	**vector_of_metadata;
-	t_vector_metadata	metadata;
+	t_metadata	**vector_of_metadata;
+	t_metadata	metadata;
 
 	vector_of_metadata = get_vector_of_metadata_ptr();
 	if (vector_of_metadata == NULL)
@@ -75,8 +75,8 @@ static t_status	vector_register(void *vector, size_t element_size,
 	return (vector_push(vector_of_metadata, &metadata));
 }
 
-static size_t	get_bytes_after_metadata(t_vector_metadata *metadata,
-			t_vector_metadata **vector_of_metadata, size_t element_size)
+static size_t	get_bytes_after_metadata(t_metadata *metadata,
+			t_metadata **vector_of_metadata, size_t element_size)
 {
 	size_t	metadata_index;
 	size_t	total_elements;
@@ -88,7 +88,7 @@ static size_t	get_bytes_after_metadata(t_vector_metadata *metadata,
 	return ((total_elements - shifted_elements) * element_size);
 }
 
-static bool	is_lookup_vector(t_vector_metadata *metadata)
+static bool	is_lookup_vector(t_metadata *metadata)
 {
 	return (metadata == metadata->address);
 }
@@ -122,11 +122,11 @@ void	*vector_new_reserved(size_t element_size, size_t initial_capacity)
 
 t_status	vector_reserve(void *vector_ptr, size_t additional_elements)
 {
-	void				**_vector_ptr;
-	t_vector_metadata	*metadata;
-	t_vector_metadata	*temp_metadata;
-	size_t				old_capacity;
-	size_t				new_capacity;
+	void		**_vector_ptr;
+	t_metadata	*metadata;
+	t_metadata	*temp_metadata;
+	size_t		old_capacity;
+	size_t		new_capacity;
 
 	_vector_ptr = vector_ptr;
 	metadata = get_metadata(*_vector_ptr);
@@ -165,11 +165,11 @@ t_status	vector_reserve(void *vector_ptr, size_t additional_elements)
  */
 t_status	vector_push(void *vector_ptr, void *value_ptr)
 {
-	void				**_vector_ptr;
-	t_vector_metadata	*metadata;
-	size_t				element_size;
-	size_t				pushed_value_offset;
-	bool				_is_lookup_vector;
+	void		**_vector_ptr;
+	t_metadata	*metadata;
+	size_t		element_size;
+	size_t		pushed_value_offset;
+	bool		_is_lookup_vector;
 
 	_vector_ptr = vector_ptr;
 	metadata = get_metadata(*_vector_ptr);
@@ -208,9 +208,9 @@ t_status	vector_push(void *vector_ptr, void *value_ptr)
  */
 t_status	vector_free(void *vector)
 {
-	t_vector_metadata	**vector_of_metadata;
-	t_vector_metadata	*metadata;
-	size_t				element_size;
+	t_metadata	**vector_of_metadata;
+	t_metadata	*metadata;
+	size_t		element_size;
 
 	// TODO: Make vector_of_metadata single ptr
 	vector_of_metadata = get_vector_of_metadata_ptr();
@@ -236,8 +236,8 @@ t_status	vector_free(void *vector)
  */
 t_status	vector_clean_up(void)
 {
-	t_vector_metadata	**vector_of_metadata;
-	size_t				index;
+	t_metadata	**vector_of_metadata;
+	size_t		index;
 
 	vector_of_metadata = get_vector_of_metadata_ptr();
 	if (vector_of_metadata == NULL)
