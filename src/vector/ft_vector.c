@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 18:53:19 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 20:11:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static t_status	vector_register(void *vector, size_t element_size,
 	return (ft_vector_push(vector_of_metadata_ptr, &metadata));
 }
 
-static bool	is_lookup_vector(t_metadata *metadata_ptr)
+static bool	is_bookkeeping_vector(t_metadata *metadata_ptr)
 {
 	return (metadata_ptr == metadata_ptr->address);
 }
@@ -78,7 +78,7 @@ t_status	ft_vector_reserve(void *vector_ptr, size_t additional_elements)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	old_capacity = metadata_ptr->capacity * metadata_ptr->element_size;
 	new_capacity = old_capacity + additional_elements * metadata_ptr->element_size;
-	if (is_lookup_vector(metadata_ptr))
+	if (is_bookkeeping_vector(metadata_ptr))
 	{
 		temp_metadata_ptr = ft_remalloc(metadata_ptr->address, old_capacity, \
 									new_capacity);
@@ -113,7 +113,7 @@ t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
 	t_metadata	*metadata_ptr;
 	size_t		element_size;
 	size_t		pushed_value_offset;
-	bool		_is_lookup_vector;
+	bool		_is_bookkeeping_vector;
 
 	_vector_ptr = vector_ptr;
 	metadata_ptr = get_metadata_ptr(*_vector_ptr);
@@ -121,14 +121,14 @@ t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	if (metadata_ptr->size >= metadata_ptr->capacity)
 	{
-		_is_lookup_vector = is_lookup_vector(metadata_ptr);
+		_is_bookkeeping_vector = is_bookkeeping_vector(metadata_ptr);
 		if (metadata_ptr->capacity == 0)
 			ft_vector_reserve(vector_ptr, 1);
 		else
 			ft_vector_reserve(vector_ptr, metadata_ptr->capacity);
 		if (ft_any_error() != OK)
 			return (ERROR);
-		if (_is_lookup_vector)
+		if (_is_bookkeeping_vector)
 		{
 			metadata_ptr = get_metadata_ptr(*_vector_ptr);
 			if (metadata_ptr == NULL)
