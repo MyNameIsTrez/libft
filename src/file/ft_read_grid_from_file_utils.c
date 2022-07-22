@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 15:46:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 15:38:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 17:25:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ STATIC char	*get_next_line_without_newline(t_i32 fd)
 }
 
 STATIC t_status	helper_read_into_lst(t_grid *grid, t_i32 fd, char *line,
-											t_list **lst_ptr)
+					t_list **lst_ptr)
 {
 	grid->width = 0;
 	grid->height = 0;

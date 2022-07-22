@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 STATIC void	add_unsigned_digits_to_str(char *str, uintmax_t nbr,
-										size_t number_len, t_u32 base)
+				size_t number_len, t_u32 base)
 {
 	t_i32	digit;
 
