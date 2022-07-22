@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 12:39:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 12:49:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,29 @@ static t_metadata	**get_vector_of_metadata_ptr(void)
 	return (&vector_of_metadata);
 }
 
+static t_metadata	*get_vector_of_metadata(void)
+{
+	t_metadata	**vector_of_metadata_ptr;
+
+	vector_of_metadata_ptr = get_vector_of_metadata_ptr();
+	if (vector_of_metadata_ptr == NULL)
+		return (NULL);
+	return (*vector_of_metadata_ptr);
+}
+
 static t_metadata	*get_metadata_ptr(void *vector)
 {
-	t_metadata	**vector_of_metadata;
+	t_metadata	*vector_of_metadata;
 	size_t		index;
 
-	vector_of_metadata = get_vector_of_metadata_ptr();
+	vector_of_metadata = get_vector_of_metadata();
 	if (vector_of_metadata == NULL)
 		return (NULL);
 	index = 0;
-	while (index < (*vector_of_metadata)[0].size)
+	while (index < vector_of_metadata[0].size)
 	{
-		if ((*vector_of_metadata)[index].address == vector)
-			return (&(*vector_of_metadata)[index]);
+		if (vector_of_metadata[index].address == vector)
+			return (&vector_of_metadata[index]);
 		index++;
 	}
 	return (NULL);
@@ -62,17 +72,17 @@ static t_metadata	*get_metadata_ptr(void *vector)
 static t_status	vector_register(void *vector, size_t element_size,
 			size_t capacity)
 {
-	t_metadata	**vector_of_metadata;
+	t_metadata	**vector_of_metadata_ptr;
 	t_metadata	metadata;
 
-	vector_of_metadata = get_vector_of_metadata_ptr();
-	if (vector_of_metadata == NULL)
+	vector_of_metadata_ptr = get_vector_of_metadata_ptr();
+	if (vector_of_metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	metadata.size = 0;
 	metadata.capacity = capacity;
 	metadata.element_size = element_size;
 	metadata.address = vector;
-	return (vector_push(vector_of_metadata, &metadata));
+	return (vector_push(vector_of_metadata_ptr, &metadata));
 }
 
 static size_t	get_bytes_after_metadata(t_metadata *metadata_ptr,
@@ -210,22 +220,22 @@ t_status	vector_push(void *vector_ptr, void *value_ptr)
  */
 t_status	vector_free(void *vector)
 {
-	t_metadata	**vector_of_metadata;
+	t_metadata	*vector_of_metadata;
 	t_metadata	*metadata_ptr;
 	size_t		element_size;
 
 	// TODO: Make vector_of_metadata single ptr
-	vector_of_metadata = get_vector_of_metadata_ptr();
+	vector_of_metadata = get_vector_of_metadata();
 	if (vector_of_metadata == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	metadata_ptr = get_metadata_ptr(vector);
 	ft_free(&vector);
 	if (metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
-	element_size = (*vector_of_metadata)[0].element_size;
+	element_size = vector_of_metadata[0].element_size;
 	ft_memmove(metadata_ptr, metadata_ptr + element_size, \
 		get_bytes_after_metadata(metadata_ptr, element_size));
-	(*vector_of_metadata)[0].size--;
+	vector_of_metadata[0].size--;
 	return (OK);
 }
 
