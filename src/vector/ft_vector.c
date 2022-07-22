@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 12:31:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 12:37:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static t_metadata	**get_vector_of_metadata_ptr(void)
 	return (&vector_of_metadata);
 }
 
-static t_metadata	*get_metadata(void *vector)
+static t_metadata	*get_metadata_ptr(void *vector)
 {
 	t_metadata	**vector_of_metadata;
 	size_t		index;
@@ -123,31 +123,31 @@ void	*vector_new_reserved(size_t element_size, size_t initial_capacity)
 t_status	vector_reserve(void *vector_ptr, size_t additional_elements)
 {
 	void		**_vector_ptr;
-	t_metadata	*metadata;
-	t_metadata	*temp_metadata;
+	t_metadata	*metadata_ptr;
+	t_metadata	*temp_metadata_ptr;
 	size_t		old_capacity;
 	size_t		new_capacity;
 
 	_vector_ptr = vector_ptr;
-	metadata = get_metadata(*_vector_ptr);
-	if (metadata == NULL)
+	metadata_ptr = get_metadata_ptr(*_vector_ptr);
+	if (metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
-	old_capacity = metadata->capacity * metadata->element_size;
-	new_capacity = old_capacity + additional_elements * metadata->element_size;
-	if (is_lookup_vector(metadata))
+	old_capacity = metadata_ptr->capacity * metadata_ptr->element_size;
+	new_capacity = old_capacity + additional_elements * metadata_ptr->element_size;
+	if (is_lookup_vector(metadata_ptr))
 	{
-		temp_metadata = ft_realloc(metadata->address, old_capacity, \
+		temp_metadata_ptr = ft_realloc(metadata_ptr->address, old_capacity, \
 									new_capacity);
-		metadata = temp_metadata;
+		metadata_ptr = temp_metadata_ptr;
 	}
 	else
-		temp_metadata = ft_realloc(metadata->address, old_capacity, \
+		temp_metadata_ptr = ft_realloc(metadata_ptr->address, old_capacity, \
 			new_capacity);
-	if (temp_metadata == NULL)
+	if (temp_metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
-	metadata->address = temp_metadata;
-	*_vector_ptr = metadata->address;
-	metadata->capacity += additional_elements;
+	metadata_ptr->address = temp_metadata_ptr;
+	*_vector_ptr = metadata_ptr->address;
+	metadata_ptr->capacity += additional_elements;
 	return (OK);
 }
 
@@ -166,35 +166,35 @@ t_status	vector_reserve(void *vector_ptr, size_t additional_elements)
 t_status	vector_push(void *vector_ptr, void *value_ptr)
 {
 	void		**_vector_ptr;
-	t_metadata	*metadata;
+	t_metadata	*metadata_ptr;
 	size_t		element_size;
 	size_t		pushed_value_offset;
 	bool		_is_lookup_vector;
 
 	_vector_ptr = vector_ptr;
-	metadata = get_metadata(*_vector_ptr);
-	if (metadata == NULL)
+	metadata_ptr = get_metadata_ptr(*_vector_ptr);
+	if (metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
-	if (metadata->size >= metadata->capacity)
+	if (metadata_ptr->size >= metadata_ptr->capacity)
 	{
-		_is_lookup_vector = is_lookup_vector(metadata);
-		if (metadata->capacity == 0)
+		_is_lookup_vector = is_lookup_vector(metadata_ptr);
+		if (metadata_ptr->capacity == 0)
 			vector_reserve(vector_ptr, 1);
 		else
-			vector_reserve(vector_ptr, metadata->capacity);
+			vector_reserve(vector_ptr, metadata_ptr->capacity);
 		if (ft_any_error() != OK)
 			return (ERROR);
 		if (_is_lookup_vector)
 		{
-			metadata = get_metadata(*_vector_ptr);
-			if (metadata == NULL)
+			metadata_ptr = get_metadata_ptr(*_vector_ptr);
+			if (metadata_ptr == NULL)
 				return (ft_set_error(FT_ERROR_MALLOC));
 		}
 	}
-	element_size = metadata->element_size;
-	pushed_value_offset = metadata->size * element_size;
+	element_size = metadata_ptr->element_size;
+	pushed_value_offset = metadata_ptr->size * element_size;
 	ft_memcpy((*_vector_ptr) + pushed_value_offset, value_ptr, element_size);
-	metadata->size++;
+	metadata_ptr->size++;
 	return (OK);
 }
 
@@ -209,20 +209,20 @@ t_status	vector_push(void *vector_ptr, void *value_ptr)
 t_status	vector_free(void *vector)
 {
 	t_metadata	**vector_of_metadata;
-	t_metadata	*metadata;
+	t_metadata	*metadata_ptr;
 	size_t		element_size;
 
 	// TODO: Make vector_of_metadata single ptr
 	vector_of_metadata = get_vector_of_metadata_ptr();
 	if (vector_of_metadata == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
-	metadata = get_metadata(vector);
+	metadata_ptr = get_metadata_ptr(vector);
 	ft_free(&vector);
-	if (metadata == NULL)
+	if (metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	element_size = (*vector_of_metadata)[0].element_size;
-	ft_memmove(metadata, metadata + element_size, \
-		get_bytes_after_metadata(metadata, vector_of_metadata, element_size));
+	ft_memmove(metadata_ptr, metadata_ptr + element_size, \
+		get_bytes_after_metadata(metadata_ptr, vector_of_metadata, element_size));
 	(*vector_of_metadata)[0].size--;
 	return (OK);
 }
