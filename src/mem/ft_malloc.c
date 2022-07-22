@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 10:57:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 13:21:47 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 18:03:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,25 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	*_realloc(void *ptr, size_t old_size, size_t new_size)
+// TODO: Am I allowed to just call C's calloc() directly instead?
+STATIC void	*_calloc(size_t size)
+{
+	void	*ptr;
+
+	ptr = malloc(size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, size);
+	return (ptr);
+}
+
+STATIC void	*_recalloc(void *ptr, size_t old_size, size_t new_size)
 {
 	void	*new_ptr;
 
 	if (new_size == 0 && ptr != NULL)
 		new_size = 1;
-	new_ptr = malloc(new_size);
+	new_ptr = _calloc(new_size);
 	if (new_ptr == NULL)
 		return (NULL);
 	if (ptr != NULL)
@@ -61,7 +73,7 @@ STATIC void	*register_malloc(size_t size)
 	{
 		old_capacity = sizeof(void *) * malloced->capacity;
 		new_capacity = old_capacity * 2;
-		temp = _realloc(malloced->malloc_ptrs, old_capacity, new_capacity);
+		temp = _recalloc(malloced->malloc_ptrs, old_capacity, new_capacity);
 		if (temp == NULL)
 			return (NULL);
 		malloced->malloc_ptrs = temp;
@@ -81,7 +93,7 @@ t_malloced	*get_malloced(void)
 
 	if (malloced.malloc_ptrs == NULL)
 	{
-		malloced.malloc_ptrs = malloc(sizeof(void *));
+		malloced.malloc_ptrs = _calloc(sizeof(void *));
 		if (malloced.malloc_ptrs == NULL)
 			return (NULL);
 	}
