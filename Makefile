@@ -176,6 +176,7 @@ HEADERS +=\
 
 HEADERS +=\
 	src/vector/utils/ft_vector_getters.h\
+	src/vector/utils/ft_vector_metadata_struct.h\
 	src/vector/utils/ft_vector_utils.h\
 	src/vector/ft_vector.h
 
