@@ -41,7 +41,10 @@ void	ft_free(void *ptrptr)
 		{
 			if (malloced->malloc_ptrs[index] == *_ptrptr)
 			{
-				malloced->malloc_ptrs[index] = NULL;
+				if (index != malloced->size - 1)
+					malloced->malloc_ptrs[index] = malloced->malloc_ptrs[malloced->size - 1];
+				malloced->malloc_ptrs[malloced->size - 1] = NULL;
+				malloced->size--;
 				break ;
 			}
 			index++;
