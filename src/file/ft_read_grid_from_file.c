@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 16:17:30 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 14:34:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_status	ft_read_grid_from_file(t_grid *grid, char *filename)
 	t_list	*lst;
 
 	fd = open(filename, O_RDONLY);
-	if (fd < 0)
+	if (fd < 0 || fd >= OPEN_FD_MAX)
 		return (ft_set_error(FT_ERROR_INVALID_FD));
 	lst = NULL;
 	if (read_into_lst(grid, fd, &lst) != OK)
