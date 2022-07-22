@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/22 11:48:10 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/22 12:08:52 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -181,7 +181,6 @@ SRC_DIR := src
 OBJ_DIR := obj
 
 CFLAGS := -Wall -Wextra -Werror
-CFLAGS += -O3
 
 INCLUDES_HEADERS += libft.h
 
@@ -208,6 +207,10 @@ endif
 ifdef CTESTER
 INCLUDES_HEADERS += ../libctester/src/ctester_globals.h
 CFLAGS += -DCTESTER=
+endif
+
+ifdef O3
+CFLAGS += -O3
 endif
 
 OBJECT_PATHS := $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:.c=.o))
