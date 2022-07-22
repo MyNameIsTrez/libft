@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 12:49:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 12:51:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,20 +248,20 @@ t_status	vector_free(void *vector)
  */
 t_status	vector_clean_up(void)
 {
-	t_metadata	**vector_of_metadata;
+	t_metadata	**vector_of_metadata_ptr;
 	size_t		index;
 
-	vector_of_metadata = get_vector_of_metadata_ptr();
-	if (vector_of_metadata == NULL)
+	vector_of_metadata_ptr = get_vector_of_metadata_ptr();
+	if (vector_of_metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	index = 1;
-	while (index < (*vector_of_metadata)[0].size)
+	while (index < (*vector_of_metadata_ptr)[0].size)
 	{
-		ft_free(&(*vector_of_metadata)[index].address);
+		ft_free(&(*vector_of_metadata_ptr)[index].address);
 		index++;
 	}
-	ft_free(vector_of_metadata);
-	*vector_of_metadata = NULL;
+	ft_free(vector_of_metadata_ptr);
+	*vector_of_metadata_ptr = NULL;
 	return (OK);
 }
 
