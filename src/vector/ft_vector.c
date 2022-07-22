@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 14:20:54 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 18:53:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,13 +146,14 @@ t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
  * @brief Doesn't free vector contents, only the vector itself.
  *
  * @param vector
- * @return Can return ERROR only when creating a vector since the most recent
- * vector cleanup (or program start) failed. So, you should never have
- * to check the return value of this function if you guard all previous calls.
+ * @return Can return ERROR only when vector_of_metadata didn't already exist.
+ * So, you should never have to check the return value of this function
+ * if you guard all previous ft_vector calls.
  */
 t_status	ft_vector_free(void *vector)
 {
 	t_metadata	*vector_of_metadata;
+	void		**_vector;
 	t_metadata	*metadata_ptr;
 	size_t		element_size;
 
@@ -160,8 +161,9 @@ t_status	ft_vector_free(void *vector)
 	vector_of_metadata = get_vector_of_metadata();
 	if (vector_of_metadata == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
-	metadata_ptr = get_metadata_ptr(vector);
-	ft_free(&vector);
+	_vector = vector;
+	metadata_ptr = get_metadata_ptr(*_vector);
+	ft_free(_vector);
 	if (metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	element_size = vector_of_metadata[0].element_size;
