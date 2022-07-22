@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 13:06:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 13:48:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,15 @@ static size_t	get_bytes_after_metadata(t_metadata *metadata_ptr,
 	t_metadata	*vector_of_metadata;
 	size_t		metadata_index;
 	size_t		total_elements;
+	size_t		metadata_position;
 	size_t		shifted_elements;
 
 	vector_of_metadata = get_vector_of_metadata();
 	metadata_index = (size_t)(metadata_ptr - vector_of_metadata);
 	total_elements = vector_of_metadata[0].size;
-	shifted_elements = metadata_index + 1;
-	return ((total_elements - shifted_elements) * element_size);
+	metadata_position = metadata_index + 1;
+	shifted_elements = total_elements - metadata_position;
+	return (shifted_elements * element_size);
 }
 
 static bool	is_lookup_vector(t_metadata *metadata_ptr)
