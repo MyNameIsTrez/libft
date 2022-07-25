@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   shared_system_headers.h                            :+:    :+:            */
+/*   ft_whitespace.h                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/03/29 17:34:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/04/07 17:48:48 by sbos          ########   odam.nl         */
+/*   Created: 2022/03/22 16:15:39 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/25 15:54:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SHARED_SYSTEM_HEADERS_H
-# define SHARED_SYSTEM_HEADERS_H
+#ifndef FT_WHITESPACE_H
+# define FT_WHITESPACE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include <stdlib.h>	// size_t, ssize_t, intmax_t, NULL, malloc, free
-# include <unistd.h>	// write
-# include <stdbool.h>	// bool
-# include <stdarg.h>	// va_list
+# define WHITESPACE " \t\n\v\f\r"
 
 ////////////////////////////////////////////////////////////////////////////////
 
