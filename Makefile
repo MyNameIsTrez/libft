@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/25 13:43:36 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/25 15:26:40 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -162,10 +162,10 @@ SOURCES +=\
 
 HEADERS +=\
 	helper_headers/boolean_operators.h\
-	helper_headers/helper_headers.h\
-	helper_headers/iterators.h\
-	helper_headers/open_fd_max.h\
-	helper_headers/types.h\
+	helper_headers/ft_helper_headers.h\
+	helper_headers/ft_iterators.h\
+	helper_headers/ft_open_fd_max.h\
+	helper_headers/ft_types.h\
 	helper_headers/shared_system_headers.h\
 	helper_headers/whitespace.h
 
