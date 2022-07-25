@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 11:12:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 11:19:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "src/error/ft_error.h"
+# include "src/error/error.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "src/char/ft_char.h"
-# include "src/file/ft_file.h"
+# include "src/char/char.h"
+# include "src/file/file.h"
 # include "src/gnl/get_next_line.h"
-# include "src/lst/ft_lst.h"
-# include "src/mem/ft_mem.h"
-# include "src/misc/ft_misc.h"
-# include "src/nbr/ft_nbr.h"
-# include "src/print/ft_print.h"
-# include "src/str/ft_str.h"
-# include "src/vector/ft_vector.h"
+# include "src/lst/lst.h"
+# include "src/mem/mem.h"
+# include "src/misc/misc.h"
+# include "src/nbr/nbr.h"
+# include "src/print/print.h"
+# include "src/str/str.h"
+# include "src/vector/vector.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

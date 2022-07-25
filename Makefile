@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/25 11:12:25 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/25 11:20:34 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -157,28 +157,28 @@ HEADERS +=\
 	helper_headers/whitespace.h
 
 HEADERS +=\
-	src/char/ft_char.h\
-	src/error/ft_error.h\
-	src/file/ft_file.h
+	src/char/char.h\
+	src/error/error.h\
+	src/file/file.h
 
 HEADERS +=\
 	src/gnl/utils/get_next_line_utils.h\
 	src/gnl/get_next_line.h
 
 HEADERS +=\
-	src/lst/ft_lst.h\
-	src/mem/ft_malloced.h\
-	src/mem/ft_mem.h\
-	src/misc/ft_misc.h\
-	src/nbr/ft_nbr.h\
-	src/print/ft_print.h\
-	src/str/ft_str.h
+	src/lst/lst.h\
+	src/mem/malloced.h\
+	src/mem/mem.h\
+	src/misc/misc.h\
+	src/nbr/nbr.h\
+	src/print/print.h\
+	src/str/str.h
 
 HEADERS +=\
-	src/vector/utils/ft_vector_getters.h\
-	src/vector/utils/ft_vector_metadata_struct.h\
-	src/vector/utils/ft_vector_utils.h\
-	src/vector/ft_vector.h
+	src/vector/utils/vector_getters.h\
+	src/vector/utils/vector_metadata_struct.h\
+	src/vector/utils/vector_utils.h\
+	src/vector/vector.h
 
 HEADERS +=\
 	libft.h

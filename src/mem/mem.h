@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_print.h                                         :+:    :+:            */
+/*   ft_mem.h                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 12:09:57 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/25 17:26:21 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/25 11:17:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_PRINT_H
-# define FT_PRINT_H
+#ifndef MEM_H
+# define MEM_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -21,18 +21,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-ssize_t	ft_print_fd(char *str, t_i32 fd);
-ssize_t	ft_print(char *str);
-ssize_t	ft_put_substr_fd(char *start_substr, char *end_substr, t_i32 fd);
-ssize_t	ft_put_substr(char *start_substr, char *end_substr);
-ssize_t	ft_putchar_fd(char chr, t_i32 fd);
-ssize_t	ft_putchar(char chr);
-ssize_t	ft_putendl_fd(char *str, t_i32 fd);
-ssize_t	ft_putendl(char *str);
-ssize_t	ft_putnbr_fd(t_i32 nbr, t_i32 fd);
-ssize_t	ft_putnbr(t_i32 nbr);
-ssize_t	ft_putstr_fd(char *str, t_i32 fd);
-ssize_t	ft_putstr(char *str);
+void	ft_bzero(void *ptr, size_t size);
+void	*ft_calloc(size_t count, size_t size);
+void	ft_free_allocations(void);
+void	ft_free(void *ptr);
+void	*ft_malloc(size_t count, size_t size);
+void	*ft_memchr(const void *ptr, t_i32 chr, size_t len);
+t_i32	ft_memcmp(const void *src1, const void *src2, size_t len);
+void	*ft_memcpy(void *dst, const void *src, size_t len);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memset(void *dst, t_i32 chr, size_t len);
+void	*ft_recalloc(void *ptr, size_t old_size, size_t new_size,
+			size_t type_size);
+void	*ft_remalloc(void *ptr, size_t old_size, size_t new_size,
+			size_t type_size);
+ssize_t	ft_write(int fildes, const void *buf, size_t nbyte);
 
 ////////////////////////////////////////////////////////////////////////////////
 

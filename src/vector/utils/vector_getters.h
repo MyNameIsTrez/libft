@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_malloced.h                                      :+:    :+:            */
+/*   vector_getters.h                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/21 13:34:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 13:41:50 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/22 13:55:48 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/25 11:18:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_MALLOCED_H
-# define FT_MALLOCED_H
+#ifndef VECTOR_GETTERS_H
+# define VECTOR_GETTERS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_malloced
-{
-	void	**malloc_ptrs;
-	size_t	size;
-	size_t	capacity;
-}	t_malloced;
+t_metadata	**get_vector_of_metadata_ptr(void);
+t_metadata	*get_vector_of_metadata(void);
+t_metadata	*get_metadata_ptr(void *vector);
 
-t_malloced	*get_malloced(void);
+////////////////////////////////////////////////////////////////////////////////
+
+size_t		get_bytes_after_metadata(t_metadata *metadata_ptr,
+				size_t element_size);
 
 ////////////////////////////////////////////////////////////////////////////////
 

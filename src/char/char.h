@@ -1,48 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_error.h                                         :+:    :+:            */
+/*   char.h                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/03/22 16:15:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 15:35:11 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/25 17:17:31 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/25 11:13:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_ERROR_H
-# define FT_ERROR_H
+#ifndef CHAR_H
+# define CHAR_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef enum e_status
-{
-	OK,
-	ERROR,
-}	t_status;
-
-typedef enum e_ft_error
-{
-	FT_OK,
-	FT_ERROR_INVALID_FD,
-	FT_ERROR_READ,
-	FT_ERROR_MALLOC,
-	FT_ERROR_NON_RECTANGULAR_GRID,
-	FT_ERROR_TOO_FEW_ARGS,
-	FT_ERROR_TOO_MANY_ARGS,
-}	t_ft_error;
+# include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	ft_any_error(void);
-t_ft_error	*ft_get_error_ptr(void);
-t_ft_error	ft_get_error(void);
-void		ft_print_error(void);
-t_status	ft_set_error(t_ft_error ft_error);
+# define LOWER_UPPER_DIFFERENCE ('a' - 'A')
 
 ////////////////////////////////////////////////////////////////////////////////
+
+t_i32	ft_char_to_digit(const char chr);
+char	*ft_char_to_str(const char chr);
+bool	ft_is_lower(char chr);
+bool	ft_is_upper(char chr);
+t_i32	ft_isalnum(t_i32 chr);
+t_i32	ft_isalpha(t_i32 chr);
+t_i32	ft_isascii(t_i32 chr);
+t_i32	ft_isdigit(t_i32 chr);
+t_i32	ft_isprint(t_i32 chr);
+bool	ft_isspace(const t_i32 chr);
+t_i32	ft_tolower(t_i32 chr);
+t_i32	ft_toupper(t_i32 chr);
 
 #endif
 

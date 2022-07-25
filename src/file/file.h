@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_char.h                                          :+:    :+:            */
+/*   file.h                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:17:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 12:08:40 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/25 11:14:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_CHAR_H
-# define FT_CHAR_H
+#ifndef FILE_H
+# define FILE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -21,22 +21,22 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define LOWER_UPPER_DIFFERENCE ('a' - 'A')
+# include "fcntl.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	ft_char_to_digit(const char chr);
-char	*ft_char_to_str(const char chr);
-bool	ft_is_lower(char chr);
-bool	ft_is_upper(char chr);
-t_i32	ft_isalnum(t_i32 chr);
-t_i32	ft_isalpha(t_i32 chr);
-t_i32	ft_isascii(t_i32 chr);
-t_i32	ft_isdigit(t_i32 chr);
-t_i32	ft_isprint(t_i32 chr);
-bool	ft_isspace(const t_i32 chr);
-t_i32	ft_tolower(t_i32 chr);
-t_i32	ft_toupper(t_i32 chr);
+typedef struct s_grid
+{
+	char	**cells;
+	t_i32	width;
+	t_i32	height;
+}	t_grid;
+
+////////////////////////////////////////////////////////////////////////////////
+
+t_status	ft_read_grid_from_file(t_grid *grid, char *filename);
+
+////////////////////////////////////////////////////////////////////////////////
 
 #endif
 

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_vector_metadata_struct.h                        :+:    :+:            */
+/*   malloced.h                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/22 14:02:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 14:10:55 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/21 13:34:18 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/25 11:17:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_VECTOR_METADATA_STRUCT_H
-# define FT_VECTOR_METADATA_STRUCT_H
+#ifndef MALLOCED_H
+# define MALLOCED_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_metadata
+typedef struct s_malloced
 {
+	void	**malloc_ptrs;
 	size_t	size;
 	size_t	capacity;
-	size_t	element_size;
-	void	*address;
-}	t_metadata;
+}	t_malloced;
+
+t_malloced	*get_malloced(void);
 
 ////////////////////////////////////////////////////////////////////////////////
 
