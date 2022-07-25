@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/18 17:35:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 20:51:19 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 14:56:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static char	*gnl_malloc_line(t_buffer_list *lst)
+STATIC char	*gnl_malloc_line(t_buffer_list *lst)
 {
 	size_t	len;
 	char	*line;
@@ -50,7 +50,7 @@ static char	*gnl_malloc_line(t_buffer_list *lst)
 
 // if (j != (*lst)->size && j + 1 < (*lst)->size)
 // if (j < (*lst)->size && j + 1 < (*lst)->size)
-static char	*gnl_create_line(t_buffer_list **lst)
+STATIC char	*gnl_create_line(t_buffer_list **lst)
 {
 	char			*line;
 	ssize_t			i;

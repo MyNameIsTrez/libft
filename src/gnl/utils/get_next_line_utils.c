@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/18 17:35:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 20:51:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 14:56:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static t_buffer_list	*gnl_lst_new(void)
+STATIC t_buffer_list	*gnl_lst_new(void)
 {
 	t_buffer_list	*new;
 

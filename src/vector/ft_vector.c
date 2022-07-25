@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 21:00:45 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 14:56:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static t_status	vector_register(void *vector, size_t element_size,
+STATIC t_status	vector_register(void *vector, size_t element_size,
 					size_t capacity)
 {
 	t_metadata	**vector_of_metadata_ptr;
@@ -32,7 +32,7 @@ static t_status	vector_register(void *vector, size_t element_size,
 	return (ft_vector_push(vector_of_metadata_ptr, &metadata));
 }
 
-static bool	is_bookkeeping_vector(t_metadata *metadata_ptr)
+STATIC bool	is_bookkeeping_vector(t_metadata *metadata_ptr)
 {
 	return (metadata_ptr == metadata_ptr->address);
 }
