@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 13:32:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 11:48:12 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 14:52:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_free_allocations(void)
 {
 	t_malloced	*malloced;
 
+	ft_vector_clean_up();
 	malloced = get_malloced();
 	if (malloced == NULL || malloced->malloc_ptrs == NULL)
 		return ;
