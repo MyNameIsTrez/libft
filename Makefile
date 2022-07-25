@@ -6,9 +6,22 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/25 11:20:34 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/25 13:43:36 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
+
+################################################################################
+
+NAME := libft.a
+
+CC := cc
+
+SRC_DIR := src
+OBJ_DIR := obj
+
+CFLAGS := -Wall -Wextra -Werror
+
+INCLUDES_HEADERS += libft.h
 
 ################################################################################
 
@@ -180,26 +193,6 @@ HEADERS +=\
 	src/vector/utils/vector_utils.h\
 	src/vector/vector.h
 
-HEADERS +=\
-	libft.h
-
-################################################################################
-
-NAME := libft.a
-
-CC := cc
-
-SRC_DIR := src
-OBJ_DIR := obj
-
-CFLAGS := -Wall -Wextra -Werror
-
-INCLUDES_HEADERS += libft.h
-
-################################################################################
-
-LIBS :=
-
 ################################################################################
 
 FCLEANED_FILES := $(NAME)
@@ -219,7 +212,7 @@ CFLAGS += -fsanitize=address
 endif
 
 ifdef CTESTER
-INCLUDES_HEADERS += /Users/sbos/Documents/Programming/Project-Testers/ft_printf_tester/libctester/src/ctester_globals.h
+INCLUDES_HEADERS += /Users/sbos/Documents/Programming/libctester/src/ctester_globals.h
 CFLAGS += -DCTESTER=
 endif
 
@@ -230,6 +223,8 @@ endif
 ################################################################################
 
 OBJECT_PATHS := $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:.c=.o))
+
+HEADERS += $(INCLUDES_HEADERS)
 
 # sort removes duplicates
 INCLUDES := $(addprefix -I, $(sort $(dir $(INCLUDES_HEADERS))))

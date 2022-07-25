@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 10:57:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 11:21:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 11:46:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,14 @@ STATIC void	*register_malloc(size_t count, size_t size)
 t_malloced	*get_malloced(void)
 {
 	static t_malloced	malloced = {\
-		.malloc_ptrs = NULL, .size = 0, .capacity = 1};
+		.malloc_ptrs = NULL, .size = 0, .capacity = 0};
 
 	if (malloced.malloc_ptrs == NULL)
 	{
 		malloced.malloc_ptrs = _calloc(1, sizeof(void *));
 		if (malloced.malloc_ptrs == NULL)
 			return (NULL);
+		malloced.capacity = 1;
 	}
 	return (&malloced);
 }
