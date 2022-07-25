@@ -1,46 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   ft_malloced.h                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 16:23:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:29:58 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/21 13:34:18 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/25 15:31:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_MALLOCED_H
+# define FT_MALLOCED_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# ifndef STATIC
-#  define STATIC static
-# endif
+typedef struct s_malloced
+{
+	void	**malloc_ptrs;
+	size_t	size;
+	size_t	capacity;
+}	t_malloced;
 
-////////////////////////////////////////////////////////////////////////////////
-
-# include "helper_headers/ft_helper_headers.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-# include "src/error/ft_error.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-# include "src/char/ft_char.h"
-# include "src/file/ft_file.h"
-# include "src/gnl/get_next_line.h"
-# include "src/lst/ft_lst.h"
-# include "src/mem/ft_mem.h"
-# include "src/misc/ft_misc.h"
-# include "src/nbr/ft_nbr.h"
-# include "src/print/ft_print.h"
-# include "src/str/ft_str.h"
-# include "src/vector/ft_vector.h"
+t_malloced	*get_malloced(void);
 
 ////////////////////////////////////////////////////////////////////////////////
 

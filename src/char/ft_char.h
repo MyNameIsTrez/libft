@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_mem.h                                           :+:    :+:            */
+/*   ft_char.h                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:26:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 11:17:11 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/25 17:17:31 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/25 15:30:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef MEM_H
-# define MEM_H
+#ifndef FT_CHAR_H
+# define FT_CHAR_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -21,23 +21,22 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	ft_bzero(void *ptr, size_t size);
-void	*ft_calloc(size_t count, size_t size);
-void	ft_free_allocations(void);
-void	ft_free(void *ptr);
-void	*ft_malloc(size_t count, size_t size);
-void	*ft_memchr(const void *ptr, t_i32 chr, size_t len);
-t_i32	ft_memcmp(const void *src1, const void *src2, size_t len);
-void	*ft_memcpy(void *dst, const void *src, size_t len);
-void	*ft_memmove(void *dst, const void *src, size_t len);
-void	*ft_memset(void *dst, t_i32 chr, size_t len);
-void	*ft_recalloc(void *ptr, size_t old_size, size_t new_size,
-			size_t type_size);
-void	*ft_remalloc(void *ptr, size_t old_size, size_t new_size,
-			size_t type_size);
-ssize_t	ft_write(int fildes, const void *buf, size_t nbyte);
+# define LOWER_UPPER_DIFFERENCE ('a' - 'A')
 
 ////////////////////////////////////////////////////////////////////////////////
+
+t_i32	ft_char_to_digit(const char chr);
+char	*ft_char_to_str(const char chr);
+bool	ft_is_lower(char chr);
+bool	ft_is_upper(char chr);
+t_i32	ft_isalnum(t_i32 chr);
+t_i32	ft_isalpha(t_i32 chr);
+t_i32	ft_isascii(t_i32 chr);
+t_i32	ft_isdigit(t_i32 chr);
+t_i32	ft_isprint(t_i32 chr);
+bool	ft_isspace(const t_i32 chr);
+t_i32	ft_tolower(t_i32 chr);
+t_i32	ft_toupper(t_i32 chr);
 
 #endif
 

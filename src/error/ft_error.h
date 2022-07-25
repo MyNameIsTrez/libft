@@ -1,29 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_vector_metadata_struct.h                        :+:    :+:            */
+/*   ft_error.h                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/22 14:02:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 11:19:25 by sbos          ########   odam.nl         */
+/*   Created: 2022/03/22 16:15:18 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/25 15:30:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef VECTOR_METADATA_STRUCT_H
-# define VECTOR_METADATA_STRUCT_H
+#ifndef FT_ERROR_H
+# define FT_ERROR_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_metadata
+typedef enum e_status
 {
-	size_t	size;
-	size_t	capacity;
-	size_t	element_size;
-	void	*address;
-}	t_metadata;
+	OK,
+	ERROR,
+}	t_status;
+
+typedef enum e_ft_error
+{
+	FT_OK,
+	FT_ERROR_INVALID_FD,
+	FT_ERROR_READ,
+	FT_ERROR_MALLOC,
+	FT_ERROR_NON_RECTANGULAR_GRID,
+	FT_ERROR_TOO_FEW_ARGS,
+	FT_ERROR_TOO_MANY_ARGS,
+}	t_ft_error;
+
+////////////////////////////////////////////////////////////////////////////////
+
+t_status	ft_any_error(void);
+t_ft_error	*ft_get_error_ptr(void);
+t_ft_error	ft_get_error(void);
+void		ft_print_error(void);
+t_status	ft_set_error(t_ft_error ft_error);
 
 ////////////////////////////////////////////////////////////////////////////////
 

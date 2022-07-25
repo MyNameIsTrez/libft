@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   char.h                                             :+:    :+:            */
+/*   ft_nbr.h                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:17:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 11:13:44 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/25 17:27:42 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/25 15:31:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef CHAR_H
-# define CHAR_H
+#ifndef FT_NBR_H
+# define FT_NBR_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -21,22 +21,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define LOWER_UPPER_DIFFERENCE ('a' - 'A')
+t_i32		ft_atoi_range(const char *str, bool *out_of_range);
+t_status	ft_atoi_safe(const char *str, t_i32 *nbr);
+t_i32		ft_atoi(const char *str);
+char		ft_digit_to_char_base(t_i32 nbr, t_u32 base);
+char		ft_digit_to_char(t_i32 nbr);
+size_t		ft_get_digit_count_base_unsigned(uintmax_t nbr, t_u32 base);
+size_t		ft_get_digit_count_base(intmax_t nbr, t_u32 base);
+size_t		ft_get_digit_count(intmax_t nbr);
+char		*ft_itoa(t_i32 nbr);
+t_i32		ft_max(const t_i32 a, const t_i32 b);
+t_i32		ft_min(const t_i32 a, const t_i32 b);
+char		*ft_nbr_to_str(intmax_t number, t_u32 base);
+char		*ft_unsigned_nbr_to_str(uintmax_t number, t_u32 base);
 
 ////////////////////////////////////////////////////////////////////////////////
-
-t_i32	ft_char_to_digit(const char chr);
-char	*ft_char_to_str(const char chr);
-bool	ft_is_lower(char chr);
-bool	ft_is_upper(char chr);
-t_i32	ft_isalnum(t_i32 chr);
-t_i32	ft_isalpha(t_i32 chr);
-t_i32	ft_isascii(t_i32 chr);
-t_i32	ft_isdigit(t_i32 chr);
-t_i32	ft_isprint(t_i32 chr);
-bool	ft_isspace(const t_i32 chr);
-t_i32	ft_tolower(t_i32 chr);
-t_i32	ft_toupper(t_i32 chr);
 
 #endif
 

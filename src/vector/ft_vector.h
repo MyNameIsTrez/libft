@@ -1,46 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   error.h                                            :+:    :+:            */
+/*   ft_vector.h                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/03/22 16:15:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 11:14:07 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/19 09:57:23 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/25 15:32:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef ERROR_H
-# define ERROR_H
+#ifndef FT_VECTOR_H
+# define FT_VECTOR_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef enum e_status
-{
-	OK,
-	ERROR,
-}	t_status;
-
-typedef enum e_ft_error
-{
-	FT_OK,
-	FT_ERROR_INVALID_FD,
-	FT_ERROR_READ,
-	FT_ERROR_MALLOC,
-	FT_ERROR_NON_RECTANGULAR_GRID,
-	FT_ERROR_TOO_FEW_ARGS,
-	FT_ERROR_TOO_MANY_ARGS,
-}	t_ft_error;
+# include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	ft_any_error(void);
-t_ft_error	*ft_get_error_ptr(void);
-t_ft_error	ft_get_error(void);
-void		ft_print_error(void);
-t_status	ft_set_error(t_ft_error ft_error);
+# include "utils/ft_vector_utils.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+# define VECTOR_DEFAULT_ELEMENT_CAPACITY 1
+
+////////////////////////////////////////////////////////////////////////////////
+
+void		*ft_vector_new(size_t element_size);
+void		*ft_vector_new_reserved(size_t element_size,
+				size_t initial_capacity);
+t_status	ft_vector_reserve(void *vector, size_t additional_elements);
+t_status	ft_vector_push(void *vector, void *value_ptr);
+t_status	ft_vector_free(void *vector);
+t_status	ft_vector_clean_up(void);
+t_status	ft_vector_push_new_vector(void *vector_ptr,
+				size_t inner_element_size);
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   nbr.h                                              :+:    :+:            */
+/*   ft_mem.h                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:27:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 11:17:42 by sbos          ########   odam.nl         */
+/*   Created: 2021/11/25 17:26:21 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/25 15:31:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef NBR_H
-# define NBR_H
+#ifndef FT_MEM_H
+# define FT_MEM_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -21,19 +21,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32		ft_atoi_range(const char *str, bool *out_of_range);
-t_status	ft_atoi_safe(const char *str, t_i32 *nbr);
-t_i32		ft_atoi(const char *str);
-char		ft_digit_to_char_base(t_i32 nbr, t_u32 base);
-char		ft_digit_to_char(t_i32 nbr);
-size_t		ft_get_digit_count_base_unsigned(uintmax_t nbr, t_u32 base);
-size_t		ft_get_digit_count_base(intmax_t nbr, t_u32 base);
-size_t		ft_get_digit_count(intmax_t nbr);
-char		*ft_itoa(t_i32 nbr);
-t_i32		ft_max(const t_i32 a, const t_i32 b);
-t_i32		ft_min(const t_i32 a, const t_i32 b);
-char		*ft_nbr_to_str(intmax_t number, t_u32 base);
-char		*ft_unsigned_nbr_to_str(uintmax_t number, t_u32 base);
+void	ft_bzero(void *ptr, size_t size);
+void	*ft_calloc(size_t count, size_t size);
+void	ft_free_allocations(void);
+void	ft_free(void *ptr);
+void	*ft_malloc(size_t count, size_t size);
+void	*ft_memchr(const void *ptr, t_i32 chr, size_t len);
+t_i32	ft_memcmp(const void *src1, const void *src2, size_t len);
+void	*ft_memcpy(void *dst, const void *src, size_t len);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memset(void *dst, t_i32 chr, size_t len);
+void	*ft_recalloc(void *ptr, size_t old_size, size_t new_size,
+			size_t type_size);
+void	*ft_remalloc(void *ptr, size_t old_size, size_t new_size,
+			size_t type_size);
+ssize_t	ft_write(int fildes, const void *buf, size_t nbyte);
 
 ////////////////////////////////////////////////////////////////////////////////
 
