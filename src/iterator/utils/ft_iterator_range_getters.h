@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_iterator_getters.h                              :+:    :+:            */
+/*   ft_iterator_range_getters.h                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/26 12:05:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 12:06:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/26 13:47:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_ITERATOR_GETTERS_H
-# define FT_ITERATOR_GETTERS_H
+#ifndef FT_ITERATOR_RANGE_GETTERS_H
+# define FT_ITERATOR_RANGE_GETTERS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator	ft_get_step_range_iterator(t_i32 start, t_i32 end, t_i32 step);
-t_iterator	ft_get_range_iterator(t_i32 start, t_i32 end);
-t_iterator	ft_get_0_range_iterator(t_i32 end);
+t_iterator	ft_get_step_range_iterator(t_i32 start, t_i32 stop, t_i32 step);
+t_iterator	ft_get_range_iterator(t_i32 start, t_i32 stop);
+t_iterator	ft_get_0_range_iterator(t_i32 stop);
 
 ////////////////////////////////////////////////////////////////////////////////
 

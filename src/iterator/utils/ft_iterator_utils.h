@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/26 11:42:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 12:25:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/26 12:47:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # include "ft_iterator_status_struct.h"
 # include "ft_iterator_struct.h"
+# include "ft_iterator_range_getters.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
