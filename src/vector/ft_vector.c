@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 14:56:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/26 11:13:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,10 +150,10 @@ t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
  * So, you should never have to check the return value of this function
  * if you guard all previous ft_vector calls.
  */
-t_status	ft_vector_free(void *vector)
+t_status	ft_vector_free(void *vector_ptr)
 {
 	t_metadata	*vector_of_metadata;
-	void		**_vector;
+	void		**_vector_ptr;
 	t_metadata	*metadata_ptr;
 	size_t		element_size;
 
@@ -161,9 +161,9 @@ t_status	ft_vector_free(void *vector)
 	vector_of_metadata = get_vector_of_metadata();
 	if (vector_of_metadata == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
-	_vector = vector;
-	metadata_ptr = get_metadata_ptr(*_vector);
-	ft_free(_vector);
+	_vector_ptr = vector_ptr;
+	metadata_ptr = get_metadata_ptr(*_vector_ptr);
+	ft_free(_vector_ptr);
 	if (metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	element_size = vector_of_metadata[0].element_size;
@@ -208,6 +208,16 @@ t_status	ft_vector_push_new_vector(void *vector_ptr,
 	if (new_vector == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	return (ft_vector_push(vector_ptr, &new_vector));
+}
+
+size_t	ft_vector_get_size(void *vector)
+{
+	t_metadata	*metadata_ptr;
+
+	metadata_ptr = get_metadata_ptr(vector);
+	if (metadata_ptr == NULL)
+		return (0);
+	return (metadata_ptr->size);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
