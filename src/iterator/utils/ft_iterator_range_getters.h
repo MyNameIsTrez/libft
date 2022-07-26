@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/26 12:05:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 13:47:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/26 14:40:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 t_iterator	ft_get_step_range_iterator(t_i32 start, t_i32 stop, t_i32 step);
 t_iterator	ft_get_range_iterator(t_i32 start, t_i32 stop);
-t_iterator	ft_get_0_range_iterator(t_i32 stop);
+t_iterator	ft_get_range_start_0_iterator(t_i32 stop);
 
 ////////////////////////////////////////////////////////////////////////////////
 
