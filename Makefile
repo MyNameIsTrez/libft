@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/26 12:33:31 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/26 12:38:38 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,8 +48,8 @@ SOURCES +=\
 	src/gnl/get_next_line.c
 
 SOURCES +=\
-	src/it/utils/ft_iterator_range_getters.c\
-	src/it/iterator.c
+	src/iterator/utils/ft_iterator_range_getters.c\
+	src/iterator/iterator.c
 
 SOURCES +=\
 	src/lst/ft_lst_content_size.c\
@@ -182,11 +182,11 @@ HEADERS +=\
 	src/gnl/get_next_line.h
 
 HEADERS +=\
-	src/it/utils/ft_iterator_range_getters.h\
-	src/it/utils/ft_iterator_status_struct.h\
-	src/it/utils/ft_iterator_struct.h\
-	src/it/utils/ft_iterator_utils.h\
-	src/it/ft_iterator.h
+	src/iterator/utils/ft_iterator_range_getters.h\
+	src/iterator/utils/ft_iterator_status_struct.h\
+	src/iterator/utils/ft_iterator_struct.h\
+	src/iterator/utils/ft_iterator_utils.h\
+	src/iterator/ft_iterator.h
 
 HEADERS +=\
 	src/lst/ft_lst.h\
