@@ -148,7 +148,7 @@ SOURCES +=\
 	src/str/ft_substr.c
 
 SOURCES +=\
-	src/vector/utils/ft_getters.c\
+	src/vector/utils/ft_vector_getters.c\
 	src/vector/ft_vector.c
 
 SOURCES +=\
