@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_helper_headers.h                                :+:    :+:            */
+/*   iterator.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/14 14:09:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 11:46:02 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/26 11:33:55 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/26 12:34:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_HELPER_HEADERS_H
-# define FT_HELPER_HEADERS_H
+#include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "helper_headers/ft_boolean_operators.h"
-# include "helper_headers/ft_shared_system_headers.h"
-# include "helper_headers/ft_types.h"
-# include "helper_headers/ft_open_fd_max.h"
-# include "helper_headers/ft_whitespace.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+t_iterator_status	ft_iterate(t_iterator *it)
+{
+	while (it->current < it->end)
+	{
+		it->current += it->step;
+		return (LOOPED);
+	}
+	// TODO: Reset iterator?
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

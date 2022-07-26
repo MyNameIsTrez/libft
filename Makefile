@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/25 15:55:17 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/26 12:33:31 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,10 @@ SOURCES +=\
 SOURCES +=\
 	src/gnl/utils/get_next_line_utils.c\
 	src/gnl/get_next_line.c
+
+SOURCES +=\
+	src/it/utils/ft_iterator_range_getters.c\
+	src/it/iterator.c
 
 SOURCES +=\
 	src/lst/ft_lst_content_size.c\
@@ -163,7 +167,6 @@ SOURCES +=\
 HEADERS +=\
 	helper_headers/ft_boolean_operators.h\
 	helper_headers/ft_helper_headers.h\
-	helper_headers/ft_iterators.h\
 	helper_headers/ft_open_fd_max.h\
 	helper_headers/ft_types.h\
 	helper_headers/ft_shared_system_headers.h\
@@ -177,6 +180,13 @@ HEADERS +=\
 HEADERS +=\
 	src/gnl/utils/get_next_line_utils.h\
 	src/gnl/get_next_line.h
+
+HEADERS +=\
+	src/it/utils/ft_iterator_range_getters.h\
+	src/it/utils/ft_iterator_status_struct.h\
+	src/it/utils/ft_iterator_struct.h\
+	src/it/utils/ft_iterator_utils.h\
+	src/it/ft_iterator.h
 
 HEADERS +=\
 	src/lst/ft_lst.h\

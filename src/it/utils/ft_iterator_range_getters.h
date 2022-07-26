@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_helper_headers.h                                :+:    :+:            */
+/*   ft_iterator_getters.h                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/14 14:09:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 11:46:02 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/26 12:05:27 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/26 12:06:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_HELPER_HEADERS_H
-# define FT_HELPER_HEADERS_H
+#ifndef FT_ITERATOR_GETTERS_H
+# define FT_ITERATOR_GETTERS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "helper_headers/ft_boolean_operators.h"
-# include "helper_headers/ft_shared_system_headers.h"
-# include "helper_headers/ft_types.h"
-# include "helper_headers/ft_open_fd_max.h"
-# include "helper_headers/ft_whitespace.h"
+t_iterator	ft_get_step_range_iterator(t_i32 start, t_i32 end, t_i32 step);
+t_iterator	ft_get_range_iterator(t_i32 start, t_i32 end);
+t_iterator	ft_get_0_range_iterator(t_i32 end);
 
 ////////////////////////////////////////////////////////////////////////////////
 

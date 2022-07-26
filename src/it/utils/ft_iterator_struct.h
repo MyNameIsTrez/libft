@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_helper_headers.h                                :+:    :+:            */
+/*   ft_iterator_struct.h                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/14 14:09:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 11:46:02 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/26 12:25:08 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/26 12:30:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_HELPER_HEADERS_H
-# define FT_HELPER_HEADERS_H
+#ifndef FT_ITERATOR_STRUCT_H
+# define FT_ITERATOR_STRUCT_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "helper_headers/ft_boolean_operators.h"
-# include "helper_headers/ft_shared_system_headers.h"
-# include "helper_headers/ft_types.h"
-# include "helper_headers/ft_open_fd_max.h"
-# include "helper_headers/ft_whitespace.h"
+typedef struct s_iterator
+{
+	t_u8	*current;
+	t_u8	*end;
+	t_i32	step;
+}	t_iterator;
 
 ////////////////////////////////////////////////////////////////////////////////
 
