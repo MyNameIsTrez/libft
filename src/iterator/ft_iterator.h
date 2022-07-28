@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/26 11:34:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 11:30:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 12:55:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+t_iterator			ft_get_iterator(intptr_t start, intptr_t stop,
+						intptr_t step);
+t_iterator			ft_get_array_iterator(void *start, size_t count,
+						size_t size);
 t_iterator_status	ft_iterate(t_iterator *it);
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_iterator_range_getters.c                        :+:    :+:            */
+/*   ft_array_iterator.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/26 11:42:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 12:29:53 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/28 12:19:09 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/28 12:44:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator	ft_get_step_range_iterator(t_i32 start, t_i32 stop, t_i32 step)
+t_iterator	ft_get_array_iterator(void *start, size_t count, size_t size)
 {
-	return (ft_get_iterator(start, stop, step));
-}
+	uintptr_t	stop;
 
-t_iterator	ft_get_range_iterator(t_i32 start, t_i32 stop)
-{
-	return (ft_get_step_range_iterator(start, stop, 1));
-}
-
-t_iterator	ft_get_range_start_0_iterator(t_i32 stop)
-{
-	return (ft_get_range_iterator(0, stop));
+	stop = ((uintptr_t)start) + count * size;
+	return (ft_get_iterator((intptr_t)start, (intptr_t)stop, (intptr_t)size));
 }
 
 ////////////////////////////////////////////////////////////////////////////////
