@@ -16,14 +16,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_list	*ft_lst_new_back(t_list **lst, void *content)
+t_list	*ft_lst_new_back(t_list **lst_ptr, void *content)
 {
 	t_list	*new_lst;
 
 	new_lst = ft_lstnew(content);
 	if (new_lst == NULL)
 		return (NULL);
-	ft_lstadd_back(lst, new_lst);
+	ft_lstadd_back(lst_ptr, new_lst);
 	return (new_lst);
 }
 

@@ -17,22 +17,22 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Deletes the content of and frees @p lst and all of its successors.
+ * @brief Deletes the content of and frees @p lst_ptr and all of its successors.
  *
- * @param lst The address of a pointer to an element.
+ * @param lst_ptr The address of a pointer to an element.
  * @param del The address of the function used to delete the content
    of the element.
  * @return
  */
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst_ptr, void (*del)(void *))
 {
 	t_list	*next_lst;
 
-	while (*lst != NULL)
+	while (*lst_ptr != NULL)
 	{
-		next_lst = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = next_lst;
+		next_lst = (*lst_ptr)->next;
+		ft_lstdelone(*lst_ptr, del);
+		*lst_ptr = next_lst;
 	}
 }
 
