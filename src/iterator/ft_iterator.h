@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/26 11:34:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 13:15:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 20:27:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_iterator			ft_get_iterator(intptr_t start, intptr_t stop,
 t_iterator			ft_get_range_iterator(t_i32 start, t_i32 stop);
 t_iterator			ft_get_step_range_iterator(t_i32 start, t_i32 stop,
 						t_i32 step);
+t_iterator			ft_get_vector_iterator(void *vector);
 
 ////////////////////////////////////////////////////////////////////////////////
 

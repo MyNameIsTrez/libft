@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_getters.c                                       :+:    :+:            */
+/*   ft_vector_getters.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/22 13:55:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 20:53:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 20:22:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ t_metadata	*get_metadata_ptr(void *vector)
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// TODO: Rename to get_remaining_byte_count or get_byte_count_on_right
 size_t	get_bytes_after_metadata(t_metadata *metadata_ptr, size_t element_size)
 {
 	t_metadata	*vector_of_metadata;
