@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 20:39:39 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 22:08:10 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ SOURCES +=\
 	src/iterator/ft_get_range_iterator.c\
 	src/iterator/ft_get_step_range_iterator.c\
 	src/iterator/ft_get_vector_iterator.c\
+	src/iterator/ft_init_it.c\
 	src/iterator/ft_iterate.c
 
 SOURCES +=\

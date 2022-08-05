@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 11:13:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 15:45:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,6 +167,7 @@ t_status	ft_vector_free(void *vector_ptr)
 	if (metadata_ptr == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	element_size = vector_of_metadata[0].element_size;
+	// TODO: Use swapping for freeing stuff?
 	ft_memmove(metadata_ptr, metadata_ptr + element_size, \
 		get_bytes_after_metadata(metadata_ptr, element_size));
 	vector_of_metadata[0].size--;
