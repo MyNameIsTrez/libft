@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/26 12:25:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 12:36:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 12:47:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 typedef struct s_iterator
 {
+	intptr_t	start;
 	intptr_t	current;
 	intptr_t	next;
 	intptr_t	stop;
