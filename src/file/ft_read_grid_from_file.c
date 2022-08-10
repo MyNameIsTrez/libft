@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 17:14:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 12:44:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ STATIC t_status	transfer_lst_to_array(t_list *lst, char ***cells)
 {
 	*cells = (char **)ft_lst_to_array(lst);
 	if (*cells == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
+		return (ERROR);
 	return (OK);
 }
 

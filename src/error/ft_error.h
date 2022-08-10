@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/22 16:15:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:30:45 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 12:33:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ typedef enum e_ft_error
 	FT_ERROR_NON_RECTANGULAR_GRID,
 	FT_ERROR_TOO_FEW_ARGS,
 	FT_ERROR_TOO_MANY_ARGS,
+	FT_ERROR_OUT_OF_BOUNDS,
+	FT_ERROR_VECTOR_NOT_FOUND,
+	FT_ERROR_COUNT,
 }	t_ft_error;
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 15:45:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 12:50:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ STATIC t_status	vector_register(void *vector, size_t element_size,
 
 	vector_of_metadata_ptr = get_vector_of_metadata_ptr();
 	if (vector_of_metadata_ptr == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
+		return (ERROR);
 	metadata.size = 0;
 	metadata.capacity = capacity;
 	metadata.element_size = element_size;
@@ -75,7 +75,7 @@ t_status	ft_vector_reserve(void *vector_ptr, size_t additional_elements)
 	_vector_ptr = vector_ptr;
 	metadata_ptr = get_metadata_ptr(*_vector_ptr);
 	if (metadata_ptr == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
+		return (ERROR);
 	old_count = metadata_ptr->capacity;
 	new_count = old_count + additional_elements;
 	if (is_bookkeeping_vector(metadata_ptr))
@@ -88,7 +88,7 @@ t_status	ft_vector_reserve(void *vector_ptr, size_t additional_elements)
 		temp_metadata_ptr = ft_remalloc(metadata_ptr->address, old_count, \
 								new_count, metadata_ptr->element_size);
 	if (temp_metadata_ptr == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
+		return (ERROR);
 	metadata_ptr->address = temp_metadata_ptr;
 	*_vector_ptr = metadata_ptr->address;
 	metadata_ptr->capacity += additional_elements;
@@ -118,7 +118,7 @@ t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
 	_vector_ptr = vector_ptr;
 	metadata_ptr = get_metadata_ptr(*_vector_ptr);
 	if (metadata_ptr == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
+		return (ERROR);
 	if (metadata_ptr->size >= metadata_ptr->capacity)
 	{
 		_is_bookkeeping_vector = is_bookkeeping_vector(metadata_ptr);
@@ -132,12 +132,12 @@ t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
 		{
 			metadata_ptr = get_metadata_ptr(*_vector_ptr);
 			if (metadata_ptr == NULL)
-				return (ft_set_error(FT_ERROR_MALLOC));
+				return (ERROR);
 		}
 	}
 	element_size = metadata_ptr->element_size;
 	pushed_value_offset = metadata_ptr->size * element_size;
-	ft_memcpy((*_vector_ptr) + pushed_value_offset, value_ptr, element_size);
+	ft_memmove((*_vector_ptr) + pushed_value_offset, value_ptr, element_size);
 	metadata_ptr->size++;
 	return (OK);
 }
@@ -160,12 +160,12 @@ t_status	ft_vector_free(void *vector_ptr)
 	// TODO: Make vector_of_metadata single ptr
 	vector_of_metadata = get_vector_of_metadata();
 	if (vector_of_metadata == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
+		return (ERROR);
 	_vector_ptr = vector_ptr;
 	metadata_ptr = get_metadata_ptr(*_vector_ptr);
 	ft_free(_vector_ptr);
 	if (metadata_ptr == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
+		return (ERROR);
 	element_size = vector_of_metadata[0].element_size;
 	// TODO: Use swapping for freeing stuff?
 	ft_memmove(metadata_ptr, metadata_ptr + element_size, \
@@ -188,7 +188,7 @@ t_status	ft_vector_clean_up(void)
 
 	vector_of_metadata_ptr = get_vector_of_metadata_ptr();
 	if (vector_of_metadata_ptr == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
+		return (ERROR);
 	index = 1;
 	while (index < (*vector_of_metadata_ptr)[0].size)
 	{
@@ -207,7 +207,7 @@ t_status	ft_vector_push_new_vector(void *vector_ptr,
 
 	new_vector = ft_vector_new(inner_element_size);
 	if (new_vector == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
+		return (ERROR);
 	return (ft_vector_push(vector_ptr, &new_vector));
 }
 
@@ -219,6 +219,32 @@ size_t	ft_vector_get_size(void *vector)
 	if (metadata_ptr == NULL)
 		return (0);
 	return (metadata_ptr->size);
+}
+
+// TODO: write
+// Maybe let this shrink the vector back down?
+// t_status	ft_vector_remove(void)
+// {
+// }
+
+// Maybe let this shrink the vector back down?
+t_status	ft_vector_swap_remove(void *vector_ptr, size_t index)
+{
+	void		**_vector_ptr;
+	t_metadata	*metadata_ptr;
+	size_t		element_size;
+
+	_vector_ptr = vector_ptr;
+	metadata_ptr = get_metadata_ptr(*_vector_ptr);
+	if (metadata_ptr == NULL)
+		return (ERROR);
+	if (index >= metadata_ptr->size)
+		return (ft_set_error(FT_ERROR_OUT_OF_BOUNDS));
+	element_size = metadata_ptr->element_size;
+	ft_memmove(*_vector_ptr + index * element_size, \
+		*_vector_ptr + (metadata_ptr->size - 1) * element_size, element_size);
+	metadata_ptr->size--;
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/22 13:55:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 20:22:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 12:52:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ t_metadata	*get_metadata_ptr(void *vector)
 			return (&vector_of_metadata[index]);
 		index++;
 	}
+	ft_set_error(FT_ERROR_VECTOR_NOT_FOUND);
 	return (NULL);
 }
 
