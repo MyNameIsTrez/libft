@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_vector_of_metadata.c                           :+:    :+:            */
+/*   is_bookkeeping_vector.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/11 12:58:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 16:19:06 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/11 16:07:51 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 16:18:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../../ft_private_vector.h"
+#include "ft_private_vector.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_metadata	*get_vector_of_metadata(void)
+bool	is_bookkeeping_vector(t_metadata *metadata_ptr)
 {
-	return (*get_vector_of_metadata_ptr());
+	return (metadata_ptr == metadata_ptr->address);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

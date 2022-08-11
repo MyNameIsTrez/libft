@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   vector_get_element_size.c                          :+:    :+:            */
+/*   ft_vector_remove.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 20:32:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 14:02:35 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/11 16:04:04 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 16:17:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+// #include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-/**
- * @brief Passing an invalid `vector` is UB.
- *
- * @param vector
- * @return
- */
-size_t	vector_get_element_size(void *vector)
-{
-	return (get_metadata_ptr(vector)->element_size);
-}
+// #include "private/ft_private_vector.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+// /**
+//  * @brief
+//  *
+//  * @param vector_ptr
+//  * @param index
+//  * @return
+//  */
+// void	ft_vector_remove(void *vector_ptr, size_t index)
+// {
+// 	return (OK);
+// }
 
 ////////////////////////////////////////////////////////////////////////////////

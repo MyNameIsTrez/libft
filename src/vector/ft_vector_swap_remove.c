@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_vector_of_metadata.c                           :+:    :+:            */
+/*   ft_vector_swap_remove.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/11 12:58:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 16:19:06 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/11 16:04:30 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 16:17:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,28 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../../ft_private_vector.h"
+#include "private/ft_private_vector.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_metadata	*get_vector_of_metadata(void)
+/**
+ * @brief Passing an `index` that is out of bounds is UB.
+ *
+ * @param vector_ptr
+ * @param index
+ */
+void	ft_vector_swap_remove(void *vector_ptr, size_t index)
 {
-	return (*get_vector_of_metadata_ptr());
+	void		**_vector_ptr;
+	t_metadata	*metadata_ptr;
+	size_t		element_size;
+
+	_vector_ptr = vector_ptr;
+	metadata_ptr = get_metadata_ptr(*_vector_ptr);
+	element_size = metadata_ptr->element_size;
+	ft_memmove(*_vector_ptr + index * element_size, \
+		*_vector_ptr + (metadata_ptr->size - 1) * element_size, element_size);
+	metadata_ptr->size--;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_vector_of_metadata.c                           :+:    :+:            */
+/*   ft_vector_back.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/11 12:58:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 16:19:06 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/11 16:05:07 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 16:14:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,22 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../../ft_private_vector.h"
+#include "private/ft_private_vector.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_metadata	*get_vector_of_metadata(void)
+/**
+ * @brief Passing an empty/invalid `vector_ptr` is UB.
+ *
+ * @param vector
+ * @return
+ */
+void	*ft_vector_back(void *vector)
 {
-	return (*get_vector_of_metadata_ptr());
+	t_metadata	*metadata_ptr;
+
+	metadata_ptr = get_metadata_ptr(vector);
+	return (&vector[(metadata_ptr->size - 1) * metadata_ptr->element_size]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
