@@ -1,48 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_error.h                                         :+:    :+:            */
+/*   ft_private_vector_metadata_struct.h                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/03/22 16:15:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 12:51:12 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/22 14:02:33 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 12:56:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_ERROR_H
-# define FT_ERROR_H
+#ifndef FT_PRIVATE_VECTOR_METADATA_STRUCT_H
+# define FT_PRIVATE_VECTOR_METADATA_STRUCT_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef enum e_status
+typedef struct s_metadata
 {
-	OK,
-	ERROR,
-}	t_status;
-
-typedef enum e_ft_error
-{
-	FT_OK,
-	FT_ERROR_INVALID_FD,
-	FT_ERROR_READ,
-	FT_ERROR_MALLOC,
-	FT_ERROR_NON_RECTANGULAR_GRID,
-	FT_ERROR_TOO_FEW_ARGS,
-	FT_ERROR_TOO_MANY_ARGS,
-	FT_ERROR_VECTOR_NOT_FOUND,
-	FT_ERROR_COUNT,
-}	t_ft_error;
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_status	ft_any_error(void);
-t_ft_error	*ft_get_error_ptr(void);
-t_ft_error	ft_get_error(void);
-void		ft_print_error(void);
-t_status	ft_set_error(t_ft_error ft_error);
+	size_t	size;
+	size_t	capacity;
+	size_t	element_size;
+	void	*address;
+}	t_metadata;
 
 ////////////////////////////////////////////////////////////////////////////////
 

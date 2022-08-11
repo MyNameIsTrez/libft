@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/10 12:50:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 13:28:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,24 +211,57 @@ t_status	ft_vector_push_new_vector(void *vector_ptr,
 	return (ft_vector_push(vector_ptr, &new_vector));
 }
 
+/**
+ * @brief Calling this on invalid `vector` is UB.
+ *
+ * @param vector
+ * @return
+ */
 size_t	ft_vector_get_size(void *vector)
 {
 	t_metadata	*metadata_ptr;
 
 	metadata_ptr = get_metadata_ptr(vector);
-	if (metadata_ptr == NULL)
-		return (0);
 	return (metadata_ptr->size);
 }
 
-// TODO: write
-// Maybe let this shrink the vector back down?
-// t_status	ft_vector_remove(void)
-// {
-// }
+/**
+ * @brief Calling this on an empty/invalid `vector` is UB.
+ *
+ * @param vector
+ * @return
+ */
+void	*ft_vector_back(void *vector)
+{
+	t_metadata	*metadata_ptr;
 
-// Maybe let this shrink the vector back down?
-t_status	ft_vector_swap_remove(void *vector_ptr, size_t index)
+	metadata_ptr = get_metadata_ptr(vector);
+	return (&vector[(metadata_ptr->size - 1) * metadata_ptr->element_size]);
+}
+
+/**
+ * @brief Calling this on an empty/invalid `vector_ptr` is UB.
+ *
+ * @param vector_ptr
+ * @return
+ */
+void	ft_vector_pop_back(void *vector_ptr)
+{
+	void		**_vector_ptr;
+	t_metadata	*metadata_ptr;
+
+	_vector_ptr = vector_ptr;
+	metadata_ptr = get_metadata_ptr(*_vector_ptr);
+	metadata_ptr->size--;
+}
+
+/**
+ * @brief Passing an `index` that is out of bounds is UB.
+ *
+ * @param vector_ptr
+ * @param index
+ */
+void	ft_vector_swap_remove(void *vector_ptr, size_t index)
 {
 	void		**_vector_ptr;
 	t_metadata	*metadata_ptr;
@@ -236,15 +269,22 @@ t_status	ft_vector_swap_remove(void *vector_ptr, size_t index)
 
 	_vector_ptr = vector_ptr;
 	metadata_ptr = get_metadata_ptr(*_vector_ptr);
-	if (metadata_ptr == NULL)
-		return (ERROR);
-	if (index >= metadata_ptr->size)
-		return (ft_set_error(FT_ERROR_OUT_OF_BOUNDS));
 	element_size = metadata_ptr->element_size;
 	ft_memmove(*_vector_ptr + index * element_size, \
 		*_vector_ptr + (metadata_ptr->size - 1) * element_size, element_size);
 	metadata_ptr->size--;
-	return (OK);
 }
+
+// /**
+//  * @brief
+//  *
+//  * @param vector_ptr
+//  * @param index
+//  * @return
+//  */
+// void	ft_vector_remove(void *vector_ptr, size_t index)
+// {
+// 	return (OK);
+// }
 
 ////////////////////////////////////////////////////////////////////////////////

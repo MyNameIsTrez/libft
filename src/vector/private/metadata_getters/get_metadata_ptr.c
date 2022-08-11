@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_vector_metadata_struct.h                        :+:    :+:            */
+/*   get_metadata_ptr.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/22 14:02:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:32:20 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/11 12:58:08 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 13:16:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_VECTOR_METADATA_STRUCT_H
-# define FT_VECTOR_METADATA_STRUCT_H
+#include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_metadata
+t_metadata	*get_metadata_ptr(void *vector)
 {
-	size_t	size;
-	size_t	capacity;
-	size_t	element_size;
-	void	*address;
-}	t_metadata;
+	t_metadata	*vector_of_metadata;
+	size_t		index;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	vector_of_metadata = get_vector_of_metadata();
+	if (vector_of_metadata == NULL)
+		return (NULL);
+	index = 0;
+	while (index < vector_of_metadata[0].size)
+	{
+		if (vector_of_metadata[index].address == vector)
+			return (&vector_of_metadata[index]);
+		index++;
+	}
+	ft_set_error(FT_ERROR_VECTOR_NOT_FOUND);
+	return (NULL);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

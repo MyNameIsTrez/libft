@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_vector_element_size.c                          :+:    :+:            */
+/*   ft_private_vector.h                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 20:32:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 20:41:12 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/22 13:57:13 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 13:26:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#ifndef FT_PRIVATE_VECTOR_H
+# define FT_PRIVATE_VECTOR_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-size_t	ft_vector_get_element_size(void *vector)
-{
-	if (vector == NULL)
-		return (0);
-	return (get_metadata_ptr(vector)->element_size);
-}
+# include "metadata_getters/ft_private_vector_metadata_getters.h"
+# include "ft_private_vector_metadata_struct.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+size_t		get_bytes_after_metadata(t_metadata *metadata_ptr,
+				size_t element_size);
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

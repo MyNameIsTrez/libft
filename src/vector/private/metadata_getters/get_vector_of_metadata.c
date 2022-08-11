@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_print_error.c                                   :+:    :+:            */
+/*   get_vector_of_metadata.c                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/06 13:20:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 12:51:14 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/11 12:58:19 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 13:16:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// TODO: Add tests.
-void	ft_print_error(void)
+t_metadata	*get_vector_of_metadata(void)
 {
-	// TODO: Make sure all error enums have an error message
-	char*const	ft_error_messages[] = {
-	[FT_ERROR_INVALID_FD] = "Invalid file descriptor.",
-	[FT_ERROR_READ] = "Read failure.",
-	[FT_ERROR_MALLOC] = "Malloc failure.",
-	[FT_ERROR_NON_RECTANGULAR_GRID] = "The input map is not rectangular.",
-	[FT_ERROR_TOO_FEW_ARGS] = "Too few program arguments were provided.",
-	[FT_ERROR_TOO_MANY_ARGS] = "Too many program arguments were provided.",
-	[FT_ERROR_VECTOR_NOT_FOUND] = "Vector not found in vector metadata.",
-	};
+	t_metadata	**vector_of_metadata_ptr;
 
-	ft_print("Error: ");
-	ft_putendl(ft_error_messages[ft_get_error()]);
+	vector_of_metadata_ptr = get_vector_of_metadata_ptr();
+	if (vector_of_metadata_ptr == NULL)
+		return (NULL);
+	return (*vector_of_metadata_ptr);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
