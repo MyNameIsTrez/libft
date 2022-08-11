@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/11 17:21:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 17:40:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 18:12:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	read_into_lst(t_u8_grid *grid, t_i32 fd, t_list **lst_ptr)
+t_status	read_into_lst(t_char_grid *grid, t_i32 fd, t_list **lst_ptr)
 {
 	char	*line;
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 16:53:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 17:39:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 18:12:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
  * @param filename
  * @return
  */
-t_status	ft_read_grid_from_file(t_u8_grid *grid, char *filename)
+t_status	ft_read_grid_from_file(t_char_grid *grid, char *filename)
 {
 	t_i32	fd;
 	t_list	*lst;

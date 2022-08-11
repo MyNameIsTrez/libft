@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 17:31:35 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 18:12:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ typedef struct s_u8_grid
 	t_u8	*cells;
 	size_t	width;
 	size_t	height;
-}	t_u8_grid;
+}	t_char_grid;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	ft_read_grid_from_file(t_u8_grid *grid, char *filename);
+t_status	ft_read_grid_from_file(t_char_grid *grid, char *filename);
 
 ////////////////////////////////////////////////////////////////////////////////
 
