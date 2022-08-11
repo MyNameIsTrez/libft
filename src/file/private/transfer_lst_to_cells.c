@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_file.h                                          :+:    :+:            */
+/*   transfer_lst_to_cells.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:21:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 17:31:35 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/11 17:21:47 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 18:04:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_FILE_H
-# define FT_FILE_H
+#include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "libft.h" // TODO: Remove?
-
-////////////////////////////////////////////////////////////////////////////////
-
-# include "fcntl.h" // TODO: Move to helper header?
-
-////////////////////////////////////////////////////////////////////////////////
-
-typedef struct s_u8_grid
+t_status	transfer_lst_to_cells(t_list *lst, t_u8_grid *grid)
 {
-	t_u8	*cells;
-	size_t	width;
-	size_t	height;
-}	t_u8_grid;
+	size_t	i;
 
-////////////////////////////////////////////////////////////////////////////////
-
-t_status	ft_read_grid_from_file(t_u8_grid *grid, char *filename);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	if (grid->width == 0 || grid->height == 0)
+		return (ft_set_error(FT_ERROR_EMPTY_FILE));
+	grid->cells = ft_malloc(grid->width * grid->height, sizeof(t_u8));
+	if (grid->cells == NULL)
+		return (ERROR);
+	i = 0;
+	while (lst != NULL)
+	{
+		ft_memcpy(&grid->cells[i * grid->width], lst->content, grid->width);
+		lst = lst->next;
+		i++;
+	}
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

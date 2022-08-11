@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_read_grid_from_file_utils.c                     :+:    :+:            */
+/*   helper_read_into_lst.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 15:46:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/10 12:44:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 17:40:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC char	*get_next_line_without_newline(t_i32 fd)
-{
-	char	*line;
-	char	*nl_ptr;
+#include "ft_private_file.h"
 
-	line = get_next_line(fd);
-	if (line == NULL)
-		return (NULL);
-	nl_ptr = ft_strchr(line, '\n');
-	if (nl_ptr != NULL)
-		*nl_ptr = '\0';
-	return (line);
-}
+////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_status	helper_read_into_lst(t_grid *grid, t_i32 fd, char *line,
+t_status	helper_read_into_lst(t_u8_grid *grid, t_i32 fd, char *line,
 					t_list **lst_ptr)
 {
 	grid->width = 0;
@@ -55,25 +45,6 @@ STATIC t_status	helper_read_into_lst(t_grid *grid, t_i32 fd, char *line,
 		}
 	}
 	return (ft_any_error());
-}
-
-t_status	read_into_lst(t_grid *grid, t_i32 fd, t_list **lst_ptr)
-{
-	char	*line;
-
-	line = get_next_line_without_newline(fd);
-	if (ft_lst_new_front(lst_ptr, line) == NULL)
-	{
-		ft_lstclear(lst_ptr, NULL);
-		ft_free(&line);
-		return (ERROR);
-	}
-	if (helper_read_into_lst(grid, fd, line, lst_ptr) != OK)
-	{
-		ft_lstclear(lst_ptr, NULL);
-		return (ft_any_error());
-	}
-	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
