@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:26:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:31:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 15:57:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ t_i32	ft_memcmp(const void *src1, const void *src2, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *dst, t_i32 chr, size_t len);
-void	*ft_recalloc(void *ptr, size_t old_size, size_t new_size,
+void	*ft_recalloc(void *ptrptr, size_t old_count, size_t new_count,
 			size_t type_size);
-void	*ft_remalloc(void *ptr, size_t old_size, size_t new_size,
+void	*ft_remalloc(void *ptrptr, size_t old_count, size_t new_count,
 			size_t type_size);
 ssize_t	ft_write(int fildes, const void *buf, size_t nbyte);
 

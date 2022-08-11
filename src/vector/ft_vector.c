@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 15:14:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 15:52:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ t_status	ft_vector_reserve(void *vector_ptr, size_t additional_elements)
 	t_metadata	*temp_metadata_ptr;
 	size_t		old_count;
 	size_t		new_count;
+	bool		_is_bookkeeping_vector;
 
 	_vector_ptr = vector_ptr;
 	metadata_ptr = get_metadata_ptr(*_vector_ptr);
@@ -88,9 +89,10 @@ t_status	ft_vector_reserve(void *vector_ptr, size_t additional_elements)
 		return (ERROR);
 	old_count = metadata_ptr->capacity;
 	new_count = old_count + additional_elements;
-	temp_metadata_ptr = ft_remalloc(metadata_ptr->address, old_count, \
+	_is_bookkeeping_vector = is_bookkeeping_vector(metadata_ptr);
+	temp_metadata_ptr = ft_remalloc(&metadata_ptr->address, old_count, \
 							new_count, metadata_ptr->element_size);
-	if (is_bookkeeping_vector(metadata_ptr))
+	if (_is_bookkeeping_vector)
 		metadata_ptr = temp_metadata_ptr;
 	if (temp_metadata_ptr == NULL)
 		return (ERROR);
