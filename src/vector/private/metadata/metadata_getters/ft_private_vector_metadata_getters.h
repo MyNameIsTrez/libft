@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   vector_get_element_size.c                          :+:    :+:            */
+/*   ft_private_vector_metadata_getters.h               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 20:32:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 12:54:26 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/22 13:55:48 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 14:04:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#ifndef FT_PRIVATE_VECTOR_METADATA_GETTERS_H
+# define FT_PRIVATE_VECTOR_METADATA_GETTERS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-size_t	ft_vector_get_element_size(void *vector)
-{
-	if (vector == NULL)
-		return (0);
-	return (get_metadata_ptr(vector)->element_size);
-}
+# include "../../ft_private_vector_metadata_struct.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+t_metadata	**get_vector_of_metadata_ptr(void);
+t_metadata	*get_vector_of_metadata(void);
+t_metadata	*get_metadata_ptr(void *vector);
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

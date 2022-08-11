@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 13:28:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 15:14:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @brief Calling this before `try_init_vector_of_metadata_ptr()` is UB.
+ *
+ * @param vector
+ * @param element_size
+ * @param capacity
+ * @return
+ */
 STATIC t_status	vector_register(void *vector, size_t element_size,
 					size_t capacity)
 {
@@ -23,8 +31,6 @@ STATIC t_status	vector_register(void *vector, size_t element_size,
 	t_metadata	metadata;
 
 	vector_of_metadata_ptr = get_vector_of_metadata_ptr();
-	if (vector_of_metadata_ptr == NULL)
-		return (ERROR);
 	metadata.size = 0;
 	metadata.capacity = capacity;
 	metadata.element_size = element_size;
@@ -46,6 +52,8 @@ void	*ft_vector_new(size_t element_size)
 	vector = ft_malloc(VECTOR_DEFAULT_ELEMENT_CAPACITY, element_size);
 	if (vector == NULL)
 		return (NULL);
+	if (try_init_vector_of_metadata_ptr() != OK)
+		return (NULL);
 	if (vector_register(vector, element_size,
 			VECTOR_DEFAULT_ELEMENT_CAPACITY) != OK)
 		return (NULL);
@@ -58,6 +66,8 @@ void	*ft_vector_new_reserved(size_t element_size, size_t initial_capacity)
 
 	vector = ft_malloc(initial_capacity, element_size);
 	if (vector == NULL)
+		return (NULL);
+	if (try_init_vector_of_metadata_ptr() != OK)
 		return (NULL);
 	if (vector_register(vector, element_size, initial_capacity) != OK)
 		return (NULL);
@@ -78,15 +88,10 @@ t_status	ft_vector_reserve(void *vector_ptr, size_t additional_elements)
 		return (ERROR);
 	old_count = metadata_ptr->capacity;
 	new_count = old_count + additional_elements;
+	temp_metadata_ptr = ft_remalloc(metadata_ptr->address, old_count, \
+							new_count, metadata_ptr->element_size);
 	if (is_bookkeeping_vector(metadata_ptr))
-	{
-		temp_metadata_ptr = ft_remalloc(metadata_ptr->address, old_count, \
-								new_count, metadata_ptr->element_size);
 		metadata_ptr = temp_metadata_ptr;
-	}
-	else
-		temp_metadata_ptr = ft_remalloc(metadata_ptr->address, old_count, \
-								new_count, metadata_ptr->element_size);
 	if (temp_metadata_ptr == NULL)
 		return (ERROR);
 	metadata_ptr->address = temp_metadata_ptr;
@@ -143,52 +148,48 @@ t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
 }
 
 /**
- * @brief Doesn't free vector contents, only the vector itself.
+ * @brief Doesn't ft_free vector contents, only the `vector_ptr` itself,
+ * along with its metadata.
  *
  * @param vector
- * @return Can return ERROR only when vector_of_metadata didn't already exist.
- * So, you should never have to check the return value of this function
- * if you guard all previous ft_vector calls.
+ * @return
  */
-t_status	ft_vector_free(void *vector_ptr)
+void	ft_vector_free(void *vector_ptr)
 {
-	t_metadata	*vector_of_metadata;
 	void		**_vector_ptr;
 	t_metadata	*metadata_ptr;
+	t_metadata	*vector_of_metadata;
 	size_t		element_size;
 
-	// TODO: Make vector_of_metadata single ptr
-	vector_of_metadata = get_vector_of_metadata();
-	if (vector_of_metadata == NULL)
-		return (ERROR);
 	_vector_ptr = vector_ptr;
+	if (*_vector_ptr == NULL)
+		return ;
 	metadata_ptr = get_metadata_ptr(*_vector_ptr);
 	ft_free(_vector_ptr);
 	if (metadata_ptr == NULL)
-		return (ERROR);
+		return ;
+	vector_of_metadata = get_vector_of_metadata();
 	element_size = vector_of_metadata[0].element_size;
 	// TODO: Use swapping for freeing stuff?
 	ft_memmove(metadata_ptr, metadata_ptr + element_size, \
 		get_bytes_after_metadata(metadata_ptr, element_size));
 	vector_of_metadata[0].size--;
-	return (OK);
 }
 
 /**
- * @brief Doesn't free vector contents, only the vectors themselves.
+ * @brief Doesn't free vector contents, only the vectors,
+ * along with their metadata.
  *
- * @return Can return ERROR only when creating a vector since the most recent
- * vector cleanup (or program start) failed. So, you should never have
- * to check the return value of this function if you guard all previous calls.
+ * @return
  */
-t_status	ft_vector_clean_up(void)
+void	ft_vector_clean_up(void)
 {
 	t_metadata	**vector_of_metadata_ptr;
 	size_t		index;
 
 	vector_of_metadata_ptr = get_vector_of_metadata_ptr();
-	if (vector_of_metadata_ptr == NULL)
-		return (ERROR);
+	if (*vector_of_metadata_ptr == NULL)
+		return ;
 	index = 1;
 	while (index < (*vector_of_metadata_ptr)[0].size)
 	{
@@ -197,7 +198,6 @@ t_status	ft_vector_clean_up(void)
 	}
 	ft_free(vector_of_metadata_ptr);
 	*vector_of_metadata_ptr = NULL;
-	return (OK);
 }
 
 t_status	ft_vector_push_new_vector(void *vector_ptr,
@@ -212,21 +212,18 @@ t_status	ft_vector_push_new_vector(void *vector_ptr,
 }
 
 /**
- * @brief Calling this on invalid `vector` is UB.
+ * @brief Passing an invalid `vector_ptr` is UB.
  *
  * @param vector
  * @return
  */
 size_t	ft_vector_get_size(void *vector)
 {
-	t_metadata	*metadata_ptr;
-
-	metadata_ptr = get_metadata_ptr(vector);
-	return (metadata_ptr->size);
+	return (get_metadata_ptr(vector)->size);
 }
 
 /**
- * @brief Calling this on an empty/invalid `vector` is UB.
+ * @brief Passing an empty/invalid `vector_ptr` is UB.
  *
  * @param vector
  * @return
@@ -240,7 +237,7 @@ void	*ft_vector_back(void *vector)
 }
 
 /**
- * @brief Calling this on an empty/invalid `vector_ptr` is UB.
+ * @brief Passing an empty/invalid `vector_ptr` is UB.
  *
  * @param vector_ptr
  * @return
@@ -248,11 +245,9 @@ void	*ft_vector_back(void *vector)
 void	ft_vector_pop_back(void *vector_ptr)
 {
 	void		**_vector_ptr;
-	t_metadata	*metadata_ptr;
 
 	_vector_ptr = vector_ptr;
-	metadata_ptr = get_metadata_ptr(*_vector_ptr);
-	metadata_ptr->size--;
+	get_metadata_ptr(*_vector_ptr)->size--;
 }
 
 /**

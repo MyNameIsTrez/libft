@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_vector_of_metadata.c                           :+:    :+:            */
+/*   ft_private_vector_metadata.h                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/11 12:58:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 13:16:38 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/11 13:33:26 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 14:11:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#ifndef FT_PRIVATE_VECTOR_METADATA_H
+# define FT_PRIVATE_VECTOR_METADATA_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_metadata	*get_vector_of_metadata(void)
-{
-	t_metadata	**vector_of_metadata_ptr;
+# include "metadata_getters/ft_private_vector_metadata_getters.h"
 
-	vector_of_metadata_ptr = get_vector_of_metadata_ptr();
-	if (vector_of_metadata_ptr == NULL)
-		return (NULL);
-	return (*vector_of_metadata_ptr);
-}
+////////////////////////////////////////////////////////////////////////////////
+
+t_status	try_init_vector_of_metadata_ptr(void);
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

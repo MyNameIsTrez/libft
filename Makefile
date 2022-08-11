@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/11 13:15:39 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/11 15:00:44 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SOURCES += $(shell find ./src -type f -name "*.c")
 
 ################################################################################
 
+# TODO: Move helper_headers into libft/src
 HEADERS +=\
 	helper_headers/ft_boolean_operators.h\
 	helper_headers/ft_helper_headers.h\

@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_private_vector_metadata_getters.h               :+:    :+:            */
+/*   try_init_vector_of_metadata_ptr.c                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/22 13:55:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 13:18:20 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/11 13:33:40 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 14:12:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_PRIVATE_VECTOR_METADATA_GETTERS_H
-# define FT_PRIVATE_VECTOR_METADATA_GETTERS_H
+#include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../ft_private_vector_metadata_struct.h"
+/**
+ * @brief Doesn't re-init if this function was called before.
+ *
+ * @return
+ */
+t_status	try_init_vector_of_metadata_ptr(void)
+{
+	t_metadata	**vector_of_metadata_ptr;
 
-////////////////////////////////////////////////////////////////////////////////
-
-t_metadata	**get_vector_of_metadata_ptr(void);
-t_metadata	*get_vector_of_metadata(void);
-t_metadata	*get_metadata_ptr(void *vector);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	vector_of_metadata_ptr = get_vector_of_metadata_ptr();
+	if (*vector_of_metadata_ptr == NULL)
+	{
+		*vector_of_metadata_ptr = ft_malloc(1, sizeof(t_metadata));
+		if (*vector_of_metadata_ptr == NULL)
+			return (ERROR);
+		(*vector_of_metadata_ptr)[0].size = 1;
+		(*vector_of_metadata_ptr)[0].capacity = 1;
+		(*vector_of_metadata_ptr)[0].element_size = sizeof(t_metadata);
+		(*vector_of_metadata_ptr)[0].address = *vector_of_metadata_ptr;
+	}
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
