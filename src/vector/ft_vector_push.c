@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/11 16:06:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 16:17:03 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/12 17:03:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
 		if (metadata_ptr->capacity == 0)
 			ft_vector_reserve(vector_ptr, 1);
 		else
-			ft_vector_reserve(vector_ptr, metadata_ptr->capacity);
+			ft_vector_reserve(vector_ptr, 2 * metadata_ptr->capacity);
 		if (ft_any_error() != OK)
 			return (ERROR);
 		if (_is_bookkeeping_vector)

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 16:12:47 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/12 17:03:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 void		*ft_vector_new(size_t element_size);
 void		*ft_vector_new_reserved(size_t element_size,
 				size_t initial_capacity);
-t_status	ft_vector_reserve(void *vector, size_t additional_elements);
+t_status	ft_vector_reserve(void *vector, size_t new_count);
 t_status	ft_vector_push(void *vector, void *value_ptr);
 void		ft_vector_free(void *vector);
 size_t		ft_vector_get_element_size(void *vector);
