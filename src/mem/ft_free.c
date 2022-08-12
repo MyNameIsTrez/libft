@@ -31,6 +31,7 @@ void	ft_free(void *ptrptr)
 	void		**_ptrptr;
 	t_malloced	*malloced;
 	size_t		index;
+	void		*ptr;
 
 	_ptrptr = ptrptr;
 	malloced = get_malloced();
@@ -50,8 +51,9 @@ void	ft_free(void *ptrptr)
 			index++;
 		}
 	}
-	free(*_ptrptr);
+	ptr = *_ptrptr;
 	*_ptrptr = NULL;
+	free(ptr);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
