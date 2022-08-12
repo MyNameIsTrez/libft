@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/11 16:07:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 16:16:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/12 17:23:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,10 @@ void	*ft_vector_new_reserved(size_t element_size, size_t initial_capacity)
 {
 	void	*vector;
 
-	vector = ft_malloc(initial_capacity, element_size);
+	vector = ft_vector_new(element_size);
 	if (vector == NULL)
 		return (NULL);
-	if (try_init_vector_of_metadata_ptr() != OK)
-		return (NULL);
-	if (vector_register(vector, element_size, initial_capacity) != OK)
+	if (ft_vector_reserve(&vector, initial_capacity) != OK)
 		return (NULL);
 	return (vector);
 }
