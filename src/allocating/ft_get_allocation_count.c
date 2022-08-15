@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_mem.h                                           :+:    :+:            */
+/*   ft_get_allocation_count.c                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 17:26:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/15 15:16:16 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/15 14:39:11 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/15 14:40:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_MEM_H
-# define FT_MEM_H
+#include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "libft.h"
+#include "private/ft_private_mem_allocating.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	ft_bzero(void *ptr, size_t size);
-void	*ft_memchr(const void *ptr, t_i32 chr, size_t len);
-t_i32	ft_memcmp(const void *src1, const void *src2, size_t len);
-void	*ft_memcpy(void *dst, const void *src, size_t len);
-void	*ft_memmove(void *dst, const void *src, size_t len);
-void	*ft_memset(void *dst, t_i32 chr, size_t len);
-ssize_t	ft_write(int fildes, const void *buf, size_t nbyte);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+size_t	ft_get_allocation_count(void)
+{
+	return (get_malloced()->size);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
