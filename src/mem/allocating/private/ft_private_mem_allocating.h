@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_free_allocations.c                              :+:    :+:            */
+/*   ft_private_mem_allocating.h                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/21 13:32:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/15 14:31:17 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/15 14:30:47 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/15 14:36:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#ifndef FT_PRIVATE_MEM_ALLOCATING_H
+# define FT_PRIVATE_MEM_ALLOCATING_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/ft_private_mem_allocating.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-void	ft_free_allocations(void)
+typedef struct s_malloced
 {
-	t_malloced	*malloced;
+	void	**malloc_ptrs;
+	size_t	size;
+	size_t	capacity;
+}	t_malloced;
 
-	ft_vector_clean_up();
-	malloced = get_malloced();
-	if (malloced == NULL || malloced->malloc_ptrs == NULL)
-		return ;
-	while (malloced->size > 0)
-	{
-		malloced->size--;
-		free(malloced->malloc_ptrs[malloced->size]);
-	}
-	free(malloced->malloc_ptrs);
-	malloced->malloc_ptrs = NULL;
-	malloced->capacity = 0;
-}
+////////////////////////////////////////////////////////////////////////////////
+
+void		*_calloc(size_t count, size_t size);
+t_malloced	*get_malloced(void);
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

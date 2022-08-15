@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_malloc.c                                        :+:    :+:            */
+/*   register_malloc.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/21 10:57:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/15 14:37:32 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/15 14:32:55 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/15 14:35:34 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,54 +16,44 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/ft_malloc/ft_private_ft_malloc.h"
+#include "../ft_private_mem_allocating.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifdef CTESTER
-# include "ctester_globals.h"
-#endif
+#include "ft_private_ft_malloc.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-/**
- * @brief Used so my tester can check whether programs still work
- * when malloc() fails.
- *
- * @param size FT_ERROR_MALLOC is set if this is 0
- * @return Allocated bytes. When CTESTER is defined, NULL can be returned
- */
-#ifdef CTESTER
-
-void	*ft_malloc(size_t count, size_t size)
+void	*register_malloc(size_t count, size_t size)
 {
-	void	*ptr;
+	t_malloced	*malloced;
+	void		*malloc_ptr;
+	size_t		old_capacity;
+	size_t		new_capacity;
+	void		*temp;
 
-	malloc_call_count++;
-	if (malloc_call_count != malloc_call_count_to_fail)
+	if (count == 0 || size == 0)
+		return (NULL);
+	malloced = get_malloced();
+	if (malloced == NULL)
+		return (NULL);
+	malloc_ptr = malloc(count * size);
+	if (malloc_ptr == NULL)
+		return (NULL);
+	if (malloced->size >= malloced->capacity)
 	{
-		ptr = register_malloc(count, size);
-		if (ptr == NULL)
-			ft_set_error(FT_ERROR_MALLOC);
-		return (ptr);
+		old_capacity = malloced->capacity;
+		new_capacity = old_capacity * 2;
+		temp = _recalloc(malloced->malloc_ptrs, old_capacity, new_capacity, \
+				sizeof(void *));
+		if (temp == NULL)
+			return (NULL);
+		malloced->malloc_ptrs = temp;
+		malloced->capacity *= 2;
 	}
-	was_malloc_unstable = true;
-	ft_set_error(FT_ERROR_MALLOC);
-	return (NULL);
+	malloced->malloc_ptrs[malloced->size] = malloc_ptr;
+	malloced->size++;
+	return (malloc_ptr);
 }
-
-#else
-
-void	*ft_malloc(size_t count, size_t size)
-{
-	void	*ptr;
-
-	ptr = register_malloc(count, size);
-	if (ptr == NULL)
-		ft_set_error(FT_ERROR_MALLOC);
-	return (ptr);
-}
-
-#endif
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_malloced.h                                      :+:    :+:            */
+/*   ft_private_ft_malloc.h                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/21 13:34:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/15 14:28:50 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/15 14:33:47 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/15 14:36:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_MALLOCED_H
-# define FT_MALLOCED_H
+#ifndef FT_PRIVATE_FT_MALLOC_H
+# define FT_PRIVATE_FT_MALLOC_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_malloced
-{
-	void	**malloc_ptrs;
-	size_t	size;
-	size_t	capacity;
-}	t_malloced;
-
-t_malloced	*get_malloced(void);
+void	*_recalloc(void *ptr, size_t old_count, size_t new_count,
+			size_t type_size);
+void	*register_malloc(size_t count, size_t size);
 
 ////////////////////////////////////////////////////////////////////////////////
 

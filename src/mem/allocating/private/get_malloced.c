@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_free_allocations.c                              :+:    :+:            */
+/*   get_malloced.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/21 13:32:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/15 14:31:17 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/15 14:30:26 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/15 14:36:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,23 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/ft_private_mem_allocating.h"
+#include "ft_private_mem_allocating.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	ft_free_allocations(void)
+t_malloced	*get_malloced(void)
 {
-	t_malloced	*malloced;
+	static t_malloced	malloced = {\
+		.malloc_ptrs = NULL, .size = 0, .capacity = 0};
 
-	ft_vector_clean_up();
-	malloced = get_malloced();
-	if (malloced == NULL || malloced->malloc_ptrs == NULL)
-		return ;
-	while (malloced->size > 0)
+	if (malloced.malloc_ptrs == NULL)
 	{
-		malloced->size--;
-		free(malloced->malloc_ptrs[malloced->size]);
+		malloced.malloc_ptrs = _calloc(1, sizeof(void *));
+		if (malloced.malloc_ptrs == NULL)
+			return (NULL);
+		malloced.capacity = 1;
 	}
-	free(malloced->malloc_ptrs);
-	malloced->malloc_ptrs = NULL;
-	malloced->capacity = 0;
+	return (&malloced);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
