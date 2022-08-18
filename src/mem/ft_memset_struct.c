@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/16 16:55:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/16 17:07:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/18 13:56:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,14 @@ void	*ft_memset_struct(void *dst, void *struct_, size_t struct_size,
 {
 	size_t	i;
 	size_t	struct_count;
+	t_u8	*_dst;
 
 	i = 0;
 	struct_count = dst_length / struct_size;
+	_dst = dst;
 	while (i < struct_count)
 	{
-		ft_memcpy(&dst[i * struct_size], struct_, struct_size);
+		ft_memcpy(&_dst[i * struct_size], struct_, struct_size);
 		i++;
 	}
 	return (dst);

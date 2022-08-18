@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/29 17:34:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:54:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/18 13:33:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <unistd.h>	// write
 # include <stdbool.h>	// bool
 # include <stdarg.h>	// va_list
+# include <stdint.h>	// make stdint types available for linux
 
 ////////////////////////////////////////////////////////////////////////////////
 

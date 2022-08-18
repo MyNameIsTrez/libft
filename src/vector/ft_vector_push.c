@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/11 16:06:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 17:03:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/18 13:54:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
 	}
 	element_size = metadata_ptr->element_size;
 	pushed_value_offset = metadata_ptr->size * element_size;
-	ft_memmove((*_vector_ptr) + pushed_value_offset, value_ptr, element_size);
+	ft_memmove(((t_u8 *)*_vector_ptr) + pushed_value_offset, value_ptr, element_size);
 	metadata_ptr->size++;
 	return (OK);
 }

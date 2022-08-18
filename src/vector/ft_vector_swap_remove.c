@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/11 16:04:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 16:17:33 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/18 14:01:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	ft_vector_swap_remove(void *vector_ptr, size_t index)
 	_vector_ptr = vector_ptr;
 	metadata_ptr = get_metadata_ptr(*_vector_ptr);
 	element_size = metadata_ptr->element_size;
-	ft_memmove(*_vector_ptr + index * element_size, \
-		*_vector_ptr + (metadata_ptr->size - 1) * element_size, element_size);
+	ft_memmove((t_u8 *)*_vector_ptr + index * element_size, \
+		(t_u8 *)*_vector_ptr + (metadata_ptr->size - 1) * element_size, element_size);
 	metadata_ptr->size--;
 }
 
