@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/18 13:43:15 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/18 15:01:43 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC := cc
 SRC_DIR := ./src
 OBJ_DIR := ./obj
 
-CFLAGS := -Wall -Wextra -Werror -pedantic-errors -Werror-pointer-arith
+CFLAGS := -Wall -Wextra -Werror -Wconversion -Wpedantic -Werror-pointer-arith
 
 INCLUDES_HEADERS += libft.h
 
@@ -50,10 +50,10 @@ FCLEANED_FILES := $(NAME)
 
 # DEBUG is set to 1 when libctester includes this file
 ifdef DEBUG
-CFLAGS += -DDEBUG=
+CFLAGS += -DDEBUG=1
 
 CFLAGS += -DSTATIC=
-CFLAGS += -g3 -Wconversion
+CFLAGS += -g3
 endif
 
 ifdef SAN
@@ -62,7 +62,7 @@ endif
 
 ifdef CTESTER
 INCLUDES_HEADERS += /Users/sbos/Documents/Programming/libctester/src/ctester_globals.h
-CFLAGS += -DCTESTER=
+CFLAGS += -DCTESTER=1
 endif
 
 ifdef O3
