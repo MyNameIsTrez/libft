@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:26:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/16 17:03:58 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 14:09:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 void	ft_bzero(void *ptr, size_t size);
+bool	ft_mem_equal(const void *src1, const void *src2, size_t len);
 void	*ft_memchr(const void *ptr, t_i32 chr, size_t len);
 t_i32	ft_memcmp(const void *src1, const void *src2, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t len);

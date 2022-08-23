@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_vector_back.c                                   :+:    :+:            */
+/*   ft_mem_equal.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/11 16:05:07 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/22 16:54:38 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/23 14:08:09 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/23 14:09:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/ft_private_vector.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
 /**
- * @brief Passing an empty/invalid `vector` is UB.
+ * @brief Returns whether two memory areas are equal, and at most @p len bytes.
  *
- * @param vector
+ * @param src1
+ * @param src2
+ * @param len
  * @return
  */
-void	*ft_vector_back(void *vector)
+bool	ft_mem_equal(const void *src1, const void *src2, size_t len)
 {
-	t_metadata	*metadata_ptr;
-	t_u8		*_vector;
-
-	metadata_ptr = get_metadata_ptr(vector);
-	_vector = vector;
-	return (&_vector[(metadata_ptr->size - 1) * metadata_ptr->element_size]);
+	return (ft_memcmp(src1, src2, len) == 0);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
