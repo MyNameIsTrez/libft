@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/26 16:21:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 16:57:13 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 17:18:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 void		add_vector_value(t_metadata *metadata_ptr, t_u8 *vector,
 				void *value_ptr);
-t_status	grow_vector_ptr(void *vector_ptr, t_metadata *metadata_ptr);
 
 ////////////////////////////////////////////////////////////////////////////////
 

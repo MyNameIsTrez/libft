@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/11 16:07:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 17:08:12 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 17:22:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @brief The minimum @p initial_capacity is 1.
+ *
+ * @param element_size
+ * @param initial_capacity
+ * @return
+ */
 void	*ft_vector_new_reserved(size_t element_size, size_t initial_capacity)
 {
 	void	*vector;
