@@ -1,57 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_free.c                                    :+:    :+:            */
+/*   ft_private_ft_free.h                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/21 13:27:37 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/03 16:42:02 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 16:01:23 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 16:04:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#ifndef FT_PRIVATE_FT_FREE_H
+# define FT_PRIVATE_FT_FREE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/ft_private_mem_allocating.h"
-#include "private/ft_free/ft_private_ft_free.h"
+void	free_malloc_ptr(size_t index, t_malloced *malloced);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-/**
- * @brief Frees a variable pointing to a string, and sets the variable to NULL.
- *
- * @param ptr This should be the address of a variable pointing to
- * something that has been allocated, like a string.
- */
-void	ft_free(void *ptrptr)
-{
-	void		**_ptrptr;
-	t_malloced	*malloced;
-	size_t		index;
-	void		*ptr;
-
-	_ptrptr = ptrptr;
-	malloced = get_malloced();
-	if (malloced != NULL)
-	{
-		index = 0;
-		while (index < malloced->size)
-		{
-			if (malloced->malloc_ptrs[index] == *_ptrptr)
-			{
-				free_malloc_ptr(index, malloced);
-				break ;
-			}
-			index++;
-		}
-	}
-	ptr = *_ptrptr;
-	*_ptrptr = NULL;
-	free(ptr);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////
