@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/11 16:07:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 17:23:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 17:08:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	*ft_vector_new_reserved(size_t element_size, size_t initial_capacity)
 {
 	void	*vector;
 
+	if (initial_capacity < 1)
+		return (NULL);
 	vector = ft_vector_new(element_size);
 	if (vector == NULL)
 		return (NULL);
