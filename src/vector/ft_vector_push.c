@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/11 16:06:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/18 13:54:44 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 16:57:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "private/ft_private_vector.h"
+#include "private/vector_push/ft_private_vector_push.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -34,10 +35,8 @@
  */
 t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
 {
-	void		**_vector_ptr;
+	t_u8		**_vector_ptr;
 	t_metadata	*metadata_ptr;
-	size_t		element_size;
-	size_t		pushed_value_offset;
 	bool		_is_bookkeeping_vector;
 
 	_vector_ptr = vector_ptr;
@@ -47,11 +46,7 @@ t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
 	if (metadata_ptr->size >= metadata_ptr->capacity)
 	{
 		_is_bookkeeping_vector = is_bookkeeping_vector(metadata_ptr);
-		if (metadata_ptr->capacity == 0)
-			ft_vector_reserve(vector_ptr, 1);
-		else
-			ft_vector_reserve(vector_ptr, 2 * metadata_ptr->capacity);
-		if (ft_any_error() != OK)
+		if (grow_vector_ptr(vector_ptr, metadata_ptr) != OK)
 			return (ERROR);
 		if (_is_bookkeeping_vector)
 		{
@@ -60,10 +55,7 @@ t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
 				return (ERROR);
 		}
 	}
-	element_size = metadata_ptr->element_size;
-	pushed_value_offset = metadata_ptr->size * element_size;
-	ft_memmove(((t_u8 *)*_vector_ptr) + pushed_value_offset, value_ptr, element_size);
-	metadata_ptr->size++;
+	add_vector_value(metadata_ptr, *_vector_ptr, value_ptr);
 	return (OK);
 }
 

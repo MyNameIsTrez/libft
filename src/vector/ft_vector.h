@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 17:03:40 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 16:34:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,19 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void		*ft_vector_new(size_t element_size);
+void		*ft_vector_back(void *vector);
+void		ft_vector_clean_up(void);
+void		ft_vector_free(void *vector_ptr);
+size_t		ft_vector_get_element_size(void *vector);
+size_t		ft_vector_get_size(void *vector);
 void		*ft_vector_new_reserved(size_t element_size,
 				size_t initial_capacity);
-t_status	ft_vector_reserve(void *vector, size_t new_count);
-t_status	ft_vector_push(void *vector, void *value_ptr);
-void		ft_vector_free(void *vector);
-size_t		ft_vector_get_element_size(void *vector);
-void		ft_vector_clean_up(void);
+void		*ft_vector_new(size_t element_size);
+void		ft_vector_pop_back(void *vector_ptr);
 t_status	ft_vector_push_new_vector(void *vector_ptr,
 				size_t inner_element_size);
-size_t		ft_vector_get_size(void *vector);
-void		*ft_vector_back(void *vector);
-void		ft_vector_pop_back(void *vector_ptr);
+t_status	ft_vector_push(void *vector_ptr, void *value_ptr);
+t_status	ft_vector_reserve(void *vector_ptr, size_t new_count);
 void		ft_vector_swap_remove(void *vector_ptr, size_t index);
 // void	ft_vector_remove(void *vector_ptr, size_t index)
 

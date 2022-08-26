@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_vector_free.c                                   :+:    :+:            */
+/*   add_vector_value.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/11 16:06:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 16:12:28 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 16:54:19 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 16:56:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,20 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/ft_private_vector.h"
+#include "../ft_private_vector_metadata_struct.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-/**
- * @brief Doesn't ft_free vector contents, only the `vector_ptr` itself,
- * along with its metadata. TODO: Use swapping for freeing stuff?
- *
- * @param vector
- * @return
- */
-void	ft_vector_free(void *vector_ptr)
+void	add_vector_value(t_metadata *metadata_ptr, t_u8 *vector,
+			void *value_ptr)
 {
-	void		**_vector_ptr;
-	t_metadata	*metadata_ptr;
-	t_metadata	*vector_of_metadata;
 	size_t		element_size;
+	size_t		pushed_value_offset;
 
-	_vector_ptr = vector_ptr;
-	if (*_vector_ptr == NULL)
-		return ;
-	metadata_ptr = get_metadata_ptr(*_vector_ptr);
-	ft_free(_vector_ptr);
-	if (metadata_ptr == NULL)
-		return ;
-	vector_of_metadata = get_vector_of_metadata();
-	element_size = vector_of_metadata[0].element_size;
-	ft_memmove(metadata_ptr, metadata_ptr + element_size, \
-		get_bytes_after_metadata(metadata_ptr, element_size));
-	vector_of_metadata[0].size--;
+	element_size = metadata_ptr->element_size;
+	pushed_value_offset = metadata_ptr->size * element_size;
+	ft_memmove(vector + pushed_value_offset, value_ptr, element_size);
+	metadata_ptr->size++;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
