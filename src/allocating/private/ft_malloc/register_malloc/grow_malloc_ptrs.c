@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   register_malloc.c                                  :+:    :+:            */
+/*   grow_malloc_ptrs.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/15 14:32:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 15:57:47 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 15:53:48 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 15:59:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,26 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../ft_private_mem_allocating.h"
-#include "ft_private_ft_malloc.h"
-#include "register_malloc/ft_private_register_malloc.h"
+#include "../ft_private_ft_malloc.h"
+#include "../../ft_private_mem_allocating.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	*register_malloc(size_t count, size_t size)
+bool	grow_malloc_ptrs(t_malloced *malloced)
 {
-	t_malloced	*malloced;
-	void		*malloc_ptr;
+	size_t		old_capacity;
+	size_t		new_capacity;
+	void		*temp;
 
-	if (count == 0 || size == 0)
-		return (NULL);
-	malloced = get_malloced();
-	if (malloced == NULL)
-		return (NULL);
-	malloc_ptr = malloc(count * size);
-	if (malloc_ptr == NULL)
-		return (NULL);
-	if (malloced->size >= malloced->capacity)
-		if (!grow_malloc_ptrs(malloced))
-			return (NULL);
-	malloced->malloc_ptrs[malloced->size] = malloc_ptr;
-	malloced->size++;
-	return (malloc_ptr);
+	old_capacity = malloced->capacity;
+	new_capacity = old_capacity * 2;
+	temp = _recalloc(malloced->malloc_ptrs, old_capacity, new_capacity, \
+			sizeof(void *));
+	if (temp == NULL)
+		return (false);
+	malloced->malloc_ptrs = temp;
+	malloced->capacity *= 2;
+	return (true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
