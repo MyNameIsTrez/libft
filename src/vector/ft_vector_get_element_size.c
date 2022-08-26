@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 20:32:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 16:16:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 17:14:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Passing an invalid `vector` is UB.
+ * @brief Passing an invalid @p vector is UB.
  *
  * @param vector
  * @return

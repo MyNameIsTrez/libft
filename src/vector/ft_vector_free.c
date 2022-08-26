@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/11 16:06:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 16:12:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 17:14:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Doesn't ft_free vector contents, only the `vector_ptr` itself,
+ * @brief Doesn't ft_free vector contents, only the @p vector_ptr itself,
  * along with its metadata. TODO: Use swapping for freeing stuff?
  *
  * @param vector

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:40:44 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 15:01:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 17:14:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
  * @param src1
  * @param src2
  * @param len
- * @return 0 if the two strings are identical;\n
+ * @return 0 if the two strings are identical;
    Otherwise, the difference between the first two differing bytes
    (treated as t_u8 values,
-   so that `\200' is greater than `\0', for example).\n
+   so that `\200` is greater than `\0`, for example).
    This behavior is not required by C and portable code should only depend
    on the sign of the returned value.
  */
