@@ -28,8 +28,8 @@
  */
 STATIC t_i32	get_negative_value(const char *str, bool *out_of_range)
 {
-	const static t_i32	range_mult_ten = INT_MIN / 10;
-	const static t_i32	range_last_digit = -(INT_MIN % 10);
+	static const t_i32	range_mult_ten = INT_MIN / 10;
+	static const t_i32	range_last_digit = -(INT_MIN % 10);
 	t_i32				value;
 	size_t				i;
 	t_i32				digit;

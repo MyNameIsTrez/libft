@@ -19,7 +19,7 @@ CC := cc
 SRC_DIR := ./src
 OBJ_DIR := ./obj
 
-CFLAGS := -Wall -Wextra -Werror -Wconversion -Wpedantic -Werror-pointer-arith
+CFLAGS := -Wall -Wextra -Werror -Wconversion -Wpedantic -Wfatal-errors
 
 INCLUDES_HEADERS += libft.h
 
