@@ -28,6 +28,7 @@
 void		*ft_vector_back(void *vector);
 void		ft_vector_clean_up(void);
 void		ft_vector_free(void *vector_ptr);
+size_t		ft_vector_get_capacity(void *vector);
 size_t		ft_vector_get_element_size(void *vector);
 size_t		ft_vector_get_size(void *vector);
 void		*ft_vector_new_reserved(size_t element_size,

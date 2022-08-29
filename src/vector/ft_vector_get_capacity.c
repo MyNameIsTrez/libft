@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_vector_get_size.c                               :+:    :+:            */
+/*   ft_vector_get_capacity.c                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
@@ -26,9 +26,9 @@
  * @param vector
  * @return
  */
-size_t	ft_vector_get_size(void *vector)
+size_t	ft_vector_get_capacity(void *vector)
 {
-	return (get_metadata_ptr(vector)->size);
+	return (get_metadata_ptr(vector)->capacity);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
