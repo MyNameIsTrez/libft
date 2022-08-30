@@ -17,11 +17,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "helper_headers/ft_boolean_operators.h"
-# include "helper_headers/ft_shared_system_headers.h"
-# include "helper_headers/ft_types.h"
-# include "helper_headers/ft_open_fd_max.h"
-# include "helper_headers/ft_whitespace.h"
+# include "ft_boolean_operators.h"
+# include "ft_shared_system_headers.h"
+# include "ft_types.h"
+# include "ft_open_fd_max.h"
+# include "ft_whitespace.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
