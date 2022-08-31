@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:20:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 16:09:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/31 16:22:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_print_error(void)
 	[FT_ERROR_VECTOR_NOT_FOUND] = "Vector not found in vector metadata.",
 	};
 
-	ft_print("Error: ");
+	ft_print("Error\n");
 	ft_putendl(ft_error_messages[ft_get_error()]);
 }
 
