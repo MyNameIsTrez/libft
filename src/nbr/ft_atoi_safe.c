@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 12:41:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 15:40:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/09/01 14:38:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
  * The dereferenced value won't be touched if no number was found in the string.
  * @return true if a number was found in @p str, false otherwise.
  */
-t_status	ft_atoi_safe(const char *str, t_i32 *nbr)
+bool	ft_atoi_safe(const char *str, t_i32 *nbr)
 {
 	bool	out_of_range;
 	t_i32	i;
@@ -43,11 +43,11 @@ t_status	ft_atoi_safe(const char *str, t_i32 *nbr)
 	else if (str[i] == '+')
 		i++;
 	if (NOT ft_isdigit(str[i]))
-		return (ERROR);
+		return (false);
 	*nbr = ft_atoi_range(str, &out_of_range);
 	if (out_of_range)
-		return (ERROR);
-	return (OK);
+		return (false);
+	return (true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
