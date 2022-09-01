@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/09/01 15:50:52 by sbos          ########   odam.nl          #
+#    Updated: 2022/09/01 16:42:12 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,6 +98,7 @@ SOURCES +=\
 	./src/mem/ft_nd_array.c\
 	./src/mem/ft_write.c\
 	./src/nbr/ft_atoi.c\
+	./src/nbr/ft_bubble_sort.c\
 	./src/nbr/ft_atoi_range.c\
 	./src/nbr/ft_atoi_safe.c\
 	./src/nbr/ft_digit_to_char.c\

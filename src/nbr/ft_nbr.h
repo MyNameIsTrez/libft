@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 17:27:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/09/01 14:39:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/09/01 16:41:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 t_i32	ft_atoi_range(const char *str, bool *out_of_range);
 bool	ft_atoi_safe(const char *str, t_i32 *nbr);
 t_i32	ft_atoi(const char *str);
+void	ft_bubble_sort(t_i32 *array, size_t len);
 char	ft_digit_to_char_base(t_i32 nbr, t_u32 base);
 char	ft_digit_to_char(t_i32 nbr);
 size_t	ft_get_digit_count_base_unsigned(uintmax_t nbr, t_u32 base);

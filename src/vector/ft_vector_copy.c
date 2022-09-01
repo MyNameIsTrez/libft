@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/01 15:45:11 by sbos          #+#    #+#                 */
-/*   Updated: 2022/09/01 15:56:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/09/01 16:39:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @brief Returns a copy of @p vector. Copies up to size, not capacity.
+ *
+ * @param vector
+ * @return void*
+ */
 void	*ft_vector_copy(void *vector)
 {
 	t_metadata	*vector_metadata_ptr;
