@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/04 14:13:55 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/18 15:01:43 by sbos          ########   odam.nl          #
+#    Updated: 2022/09/01 15:50:52 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -170,6 +170,7 @@ SOURCES +=\
 	./src/vector/private/vector_register.c\
 	./src/vector/ft_vector_back.c\
 	./src/vector/ft_vector_clean_up.c\
+	./src/vector/ft_vector_copy.c\
 	./src/vector/ft_vector_free.c\
 	./src/vector/ft_vector_get_capacity.c\
 	./src/vector/ft_vector_get_element_size.c\

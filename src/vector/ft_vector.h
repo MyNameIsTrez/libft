@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/19 09:57:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 16:34:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/09/01 15:50:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 
 void		*ft_vector_back(void *vector);
 void		ft_vector_clean_up(void);
+void		*ft_vector_copy(void *vector);
 void		ft_vector_free(void *vector_ptr);
 size_t		ft_vector_get_capacity(void *vector);
 size_t		ft_vector_get_element_size(void *vector);
