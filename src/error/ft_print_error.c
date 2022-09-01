@@ -30,8 +30,8 @@ void	ft_print_error(void)
 	[FT_ERROR_VECTOR_NOT_FOUND] = "Vector not found in vector metadata.",
 	};
 
-	ft_putendl("Error");
-	ft_putendl(ft_error_messages[ft_get_error()]);
+	ft_putendl_fd("Error", STDERR_FILENO);
+	ft_putendl_fd(ft_error_messages[ft_get_error()], STDERR_FILENO);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
