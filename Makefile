@@ -56,6 +56,7 @@ SOURCES +=\
 	./src/deque/ft_deque_at.c\
 	./src/deque/ft_deque_new_reserved.c\
 	./src/deque/ft_deque_push_back.c\
+	./src/deque/ft_deque_size.c\
 	./src/error/ft_any_error.c\
 	./src/error/ft_get_error.c\
 	./src/error/ft_get_error_ptr.c\
