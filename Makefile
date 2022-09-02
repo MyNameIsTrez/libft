@@ -176,6 +176,7 @@ SOURCES +=\
 	./src/vector/ft_vector_clean_up.c\
 	./src/vector/ft_vector_copy.c\
 	./src/vector/ft_vector_free.c\
+	./src/vector/ft_vector_from_deque.c\
 	./src/vector/ft_vector_get_capacity.c\
 	./src/vector/ft_vector_get_element_size.c\
 	./src/vector/ft_vector_get_size.c\

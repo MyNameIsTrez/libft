@@ -29,6 +29,7 @@ void		*ft_vector_back(void *vector);
 void		ft_vector_clean_up(void);
 void		*ft_vector_copy(void *vector);
 void		ft_vector_free(void *vector_ptr);
+void		*ft_vector_from_deque(t_deque *deque);
 size_t		ft_vector_get_capacity(void *vector);
 size_t		ft_vector_get_element_size(void *vector);
 size_t		ft_vector_get_size(void *vector);
