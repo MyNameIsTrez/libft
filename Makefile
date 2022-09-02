@@ -53,6 +53,7 @@ SOURCES +=\
 	./src/char/ft_isspace.c\
 	./src/char/ft_tolower.c\
 	./src/char/ft_toupper.c\
+	./src/deque/ft_deque_new_reserved.c\
 	./src/error/ft_any_error.c\
 	./src/error/ft_get_error.c\
 	./src/error/ft_get_error_ptr.c\
