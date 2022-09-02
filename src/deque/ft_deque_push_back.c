@@ -16,17 +16,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "ft_deque_struct.h"
+#include "ft_deque.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
 t_status	ft_deque_push_back(t_deque *deque, void *value_ptr)
 {
-	void	*dst;
-
 	// TODO: Remalloc when pushing past the end
-	dst = ((t_u8 *)deque->data) + (deque->start_index + deque->size) * deque->element_size;
-	ft_memcpy(dst, value_ptr, deque->element_size);
+	ft_memcpy(ft_deque_at(deque, deque->size), value_ptr, deque->element_size);
 	deque->size++;
 	return (OK);
 }
