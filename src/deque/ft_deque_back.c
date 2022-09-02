@@ -1,44 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_deque.h                                         :+:    :+:            */
+/*   ft_deque_back.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/19 09:57:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/09/01 15:50:21 by sbos          ########   odam.nl         */
+/*   Created: 2022/09/02 17:14:47 by sbos          #+#    #+#                 */
+/*   Updated: 2022/09/02 17:14:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_DEQUE_H
-# define FT_DEQUE_H
+#include "libft.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "libft.h"
+#include "ft_deque.h"
+#include "ft_deque_struct.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// # define DEQUE_DEFAULT_ELEMENT_CAPACITY 1
-
-////////////////////////////////////////////////////////////////////////////////
-
-typedef struct s_deque	t_deque;
-
-////////////////////////////////////////////////////////////////////////////////
-
-void		*ft_deque_at(t_deque *deque, size_t index);
-void		*ft_deque_back(t_deque *deque);
-t_deque		*ft_deque_new_reserved(size_t element_size,
-				size_t initial_capacity);
-void		ft_deque_pop_back(t_deque *deque);
-t_status	ft_deque_push_back(t_deque *deque, void *value_ptr);
-size_t		ft_deque_size(t_deque *deque);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+void	*ft_deque_back(t_deque *deque)
+{
+	return (ft_deque_at(deque, deque->size - 1));
+}
 
 ////////////////////////////////////////////////////////////////////////////////

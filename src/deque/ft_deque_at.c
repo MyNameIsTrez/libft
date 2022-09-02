@@ -22,6 +22,7 @@
 
 void	*ft_deque_at(t_deque *deque, size_t index)
 {
+	// TODO: Take wraparound into account
 	return (((t_u8 *)deque->data) + (deque->start_index + index) * deque->element_size);
 }
 
