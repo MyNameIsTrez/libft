@@ -18,19 +18,21 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
+ * @brief These fields are all internal.
+ *
  * @param data The content of the deque.
- * @param _start_index Internal field. Used for calculating end_index.
- * @param _size Internal field. Tracks the number of elements.
- * @param _capacity Internal field. Tracks the number of elements that fit.
- * @param _element_size Internal field. Tracks the size of an element.
+ * @param _start_index Used for calculating end_index.
+ * @param _size Tracks the number of elements.
+ * @param _capacity Tracks the number of elements that fit.
+ * @param _element_size Tracks the size of an element.
  */
 typedef struct s_deque
 {
 	void	*data;
-	size_t	_start_index;
-	size_t	_size;
-	size_t	_capacity;
-	size_t	_element_size;
+	size_t	start_index;
+	size_t	size;
+	size_t	capacity;
+	size_t	element_size;
 }	t_deque;
 
 ////////////////////////////////////////////////////////////////////////////////
