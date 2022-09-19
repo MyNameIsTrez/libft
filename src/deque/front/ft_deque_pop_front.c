@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_deque_push_back.c                               :+:    :+:            */
+/*   ft_deque_pop_front.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
@@ -18,16 +18,14 @@
 
 #include "../ft_deque.h"
 #include "../ft_deque_struct.h"
+#include "deque/private/ft_private_deque.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	ft_deque_push_back(t_deque *deque, void *value_ptr)
+void	ft_deque_pop_front(t_deque *deque)
 {
-	// TODO: Remalloc when pushing past the end
-	ft_memcpy(ft_deque_at(deque, (intptr_t)deque->size),
-		value_ptr, deque->element_size);
-	deque->size++;
-	return (OK);
+	deque->size--;
+	deque->start_index = deque_get_wrapped_index(deque, 1);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_deque_push_back.c                               :+:    :+:            */
+/*   ft_private_deque.h                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/09/02 15:17:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/09/02 15:17:08 by sbos          ########   odam.nl         */
+/*   Created: 2022/09/19 16:13:25 by sbos          #+#    #+#                 */
+/*   Updated: 2022/09/19 16:13:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#ifndef FT_PRIVATE_DEQUE_H
+# define FT_PRIVATE_DEQUE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../ft_deque.h"
-#include "../ft_deque_struct.h"
+size_t	deque_get_wrapped_index(t_deque *deque, intptr_t index);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	ft_deque_push_back(t_deque *deque, void *value_ptr)
-{
-	// TODO: Remalloc when pushing past the end
-	ft_memcpy(ft_deque_at(deque, (intptr_t)deque->size),
-		value_ptr, deque->element_size);
-	deque->size++;
-	return (OK);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

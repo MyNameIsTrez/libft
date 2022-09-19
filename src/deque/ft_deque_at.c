@@ -16,14 +16,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "ft_deque_struct.h"
+#include "deque/ft_deque_struct.h"
+#include "deque/private/ft_private_deque.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	*ft_deque_at(t_deque *deque, size_t index)
+void	*ft_deque_at(t_deque *deque, intptr_t index)
 {
-	// TODO: Take wraparound into account
-	return (((t_u8 *)deque->data) + (deque->start_index + index) * deque->element_size);
+	size_t	wrapped_index;
+
+	wrapped_index = deque_get_wrapped_index(deque, index);
+	return (((t_u8 *)deque->data) + wrapped_index * deque->element_size);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -56,6 +56,10 @@ SOURCES +=\
 	./src/deque/back/ft_deque_back.c\
 	./src/deque/back/ft_deque_pop_back.c\
 	./src/deque/back/ft_deque_push_back.c\
+	./src/deque/front/ft_deque_front.c\
+	./src/deque/front/ft_deque_pop_front.c\
+	./src/deque/front/ft_deque_push_front.c\
+	./src/deque/private/deque_get_wrapped_index.c\
 	./src/deque/ft_deque_at.c\
 	./src/deque/ft_deque_new_reserved.c\
 	./src/deque/ft_deque_size.c\
@@ -264,7 +268,7 @@ OBJECT_PATHS := $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:.c=.o))
 HEADERS += $(INCLUDES_HEADERS)
 
 # sort removes duplicates
-INCLUDES := $(addprefix -I, $(sort $(dir $(INCLUDES_HEADERS))))
+INCLUDES := $(addprefix -I, $(sort $(dir $(INCLUDES_HEADERS)) src))
 
 # Only cleans when MAKE_DATA changes.
 DATA_FILE := .make_data

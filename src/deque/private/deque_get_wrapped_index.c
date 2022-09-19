@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_deque_push_back.c                               :+:    :+:            */
+/*   deque_get_wrapped_index.c                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/09/02 15:17:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/09/02 15:17:08 by sbos          ########   odam.nl         */
+/*   Created: 2022/09/19 15:26:12 by sbos          #+#    #+#                 */
+/*   Updated: 2022/09/19 15:26:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../ft_deque.h"
-#include "../ft_deque_struct.h"
+#include "deque/ft_deque_struct.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	ft_deque_push_back(t_deque *deque, void *value_ptr)
+size_t	deque_get_wrapped_index(t_deque *deque, intptr_t index)
 {
-	// TODO: Remalloc when pushing past the end
-	ft_memcpy(ft_deque_at(deque, (intptr_t)deque->size),
-		value_ptr, deque->element_size);
-	deque->size++;
-	return (OK);
+	size_t	tentative_index;
+
+	tentative_index = (size_t)((intptr_t)deque->start_index + index
+			+ (intptr_t)deque->capacity);
+	return (tentative_index % deque->capacity);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
