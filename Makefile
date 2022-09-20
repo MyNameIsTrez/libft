@@ -59,6 +59,7 @@ SOURCES +=\
 	./src/deque/front/ft_deque_front.c\
 	./src/deque/front/ft_deque_pop_front.c\
 	./src/deque/front/ft_deque_push_front.c\
+	./src/deque/private/deque_at_wrapping.c\
 	./src/deque/private/deque_get_wrapped_index.c\
 	./src/deque/ft_deque_at.c\
 	./src/deque/ft_deque_new_reserved.c\

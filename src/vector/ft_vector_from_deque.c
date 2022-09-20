@@ -31,7 +31,7 @@ void	*ft_vector_from_deque(t_deque *deque)
 	i = 0;
 	while (i < deque->size)
 	{
-		ft_vector_push(&vector, ft_deque_at(deque, (intptr_t)i));
+		ft_vector_push(&vector, ft_deque_at(deque, i));
 		i++;
 	}
 	return (vector);

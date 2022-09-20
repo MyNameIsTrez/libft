@@ -25,7 +25,7 @@
 t_status	ft_deque_push_front(t_deque *deque, void *value_ptr)
 {
 	// TODO: Remalloc when pushing past the end
-	ft_memcpy(ft_deque_at(deque, -1), value_ptr, deque->element_size);
+	ft_memcpy(deque_at_wrapping(deque, -1), value_ptr, deque->element_size);
 	deque->size++;
 	deque->start_index = deque_get_wrapped_index(deque, -1);
 	return (OK);

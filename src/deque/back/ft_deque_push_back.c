@@ -24,8 +24,7 @@
 t_status	ft_deque_push_back(t_deque *deque, void *value_ptr)
 {
 	// TODO: Remalloc when pushing past the end
-	ft_memcpy(ft_deque_at(deque, (intptr_t)deque->size),
-		value_ptr, deque->element_size);
+	ft_memcpy(ft_deque_at(deque, deque->size), value_ptr, deque->element_size);
 	deque->size++;
 	return (OK);
 }

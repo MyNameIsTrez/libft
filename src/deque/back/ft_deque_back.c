@@ -23,7 +23,7 @@
 
 void	*ft_deque_back(t_deque *deque)
 {
-	return (ft_deque_at(deque, (intptr_t)deque->size - 1));
+	return (ft_deque_at(deque, deque->size - 1));
 }
 
 ////////////////////////////////////////////////////////////////////////////////

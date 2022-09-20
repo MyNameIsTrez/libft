@@ -34,7 +34,7 @@ typedef struct s_deque	t_deque;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void		*ft_deque_at(t_deque *deque, intptr_t index);
+void		*ft_deque_at(t_deque *deque, size_t index);
 t_deque		*ft_deque_new_reserved(size_t element_size,
 				size_t initial_capacity);
 size_t		ft_deque_size(t_deque *deque);
