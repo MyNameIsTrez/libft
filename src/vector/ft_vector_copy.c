@@ -21,7 +21,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Returns a copy of @p vector. Copies up to size, not capacity.
+ * @brief Returns a shallow copy of @p vector. Copies up to size, not capacity.
  *
  * @param vector
  * @return void*

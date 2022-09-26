@@ -95,6 +95,7 @@ void	clear_get_next_line(int fd)
 
 /**
  * @brief Gets the next line from @p fd, including the newline.
+ * In order to check for errors, use ft_any_error()
  * @param fd The file descriptor to read from.
  * @return The next line from @p fd.
  */
