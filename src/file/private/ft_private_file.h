@@ -17,7 +17,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-char		*get_next_line_without_newline(t_i32 fd);
 t_status	helper_read_into_lst(t_char_grid *grid, t_i32 fd, char *line,
 				t_list **lst_ptr);
 t_status	read_into_lst(t_char_grid *grid, t_i32 fd, t_list **lst_ptr);

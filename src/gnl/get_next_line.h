@@ -17,6 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+char	*get_next_line_without_newline(t_i32 fd);
 char	*get_next_line(int fd);
 void	clear_get_next_line(int fd);
 
