@@ -69,12 +69,12 @@ SOURCES +=\
 	./src/error/ft_get_error_ptr.c\
 	./src/error/ft_print_error.c\
 	./src/error/ft_set_error.c\
-	./src/file/private/get_next_line_without_newline.c\
 	./src/file/private/helper_read_into_lst.c\
 	./src/file/private/read_into_lst.c\
 	./src/file/private/transfer_lst_to_cells.c\
 	./src/file/ft_read_grid_from_file.c\
-	./src/gnl/utils/get_next_line_utils.c\
+	./src/gnl/private/get_next_line_utils.c\
+	./src/gnl/get_next_line_without_newline.c\
 	./src/gnl/get_next_line.c\
 	./src/iterator/ft_get_array_iterator.c\
 	./src/iterator/ft_get_count_iterator.c\
@@ -106,7 +106,6 @@ SOURCES +=\
 	./src/mem/ft_memmove.c\
 	./src/mem/ft_memset.c\
 	./src/mem/ft_memset_struct.c\
-	./src/mem/ft_nd_array.c\
 	./src/mem/ft_write.c\
 	./src/nbr/ft_atoi.c\
 	./src/nbr/ft_bubble_sort.c\
@@ -210,7 +209,7 @@ HEADERS +=\
 	./src/error/ft_error.h\
 	./src/file/private/ft_private_file.h\
 	./src/file/ft_file.h\
-	./src/gnl/utils/get_next_line_utils.h\
+	./src/gnl/private/gnl_private.h\
 	./src/gnl/get_next_line.h\
 	./src/helper_headers/ft_boolean_operators.h\
 	./src/helper_headers/ft_helper_headers.h\
@@ -218,9 +217,9 @@ HEADERS +=\
 	./src/helper_headers/ft_shared_system_headers.h\
 	./src/helper_headers/ft_types.h\
 	./src/helper_headers/ft_whitespace.h\
-	./src/iterator/utils/ft_iterator_status_struct.h\
-	./src/iterator/utils/ft_iterator_struct.h\
-	./src/iterator/utils/ft_iterator_utils.h\
+	./src/iterator/private/ft_iterator_status_struct.h\
+	./src/iterator/private/ft_iterator_struct.h\
+	./src/iterator/private/ft_iterator_utils.h\
 	./src/iterator/ft_iterator.h\
 	./src/lst/ft_lst.h\
 	./src/mem/ft_mem.h\
