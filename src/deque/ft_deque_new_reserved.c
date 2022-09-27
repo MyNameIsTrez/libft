@@ -37,8 +37,11 @@ t_deque	*ft_deque_new_reserved(size_t element_size, size_t initial_capacity)
 	if (deque == NULL)
 		return (NULL);
 	deque->data = ft_malloc(initial_capacity, element_size);
-	if (deque->data == NULL) // TODO: Maybe also free deque here?
+	if (deque->data == NULL)
+	{
+		ft_free(&deque);
 		return (NULL);
+	}
 	deque->capacity = initial_capacity;
 	deque->element_size = element_size;
 	deque->size = 0;
