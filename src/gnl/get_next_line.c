@@ -111,7 +111,7 @@ char	*get_next_line(int fd)
 		return (gnl_create_line(lst));
 	cur = gnl_lst_new_back(lst);
 	if (cur == NULL)
-		return (NULL);
+		return (gnl_lst_clear(lst));
 	cur->size = read(fd, cur->buf, BUFFER_SIZE);
 	while (gnl_find_newline(cur) == NULL && cur->size > 0)
 	{
