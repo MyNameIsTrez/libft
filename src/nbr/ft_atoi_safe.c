@@ -47,7 +47,11 @@ bool	ft_atoi_safe(const char *str, t_i32 *nbr)
 	*nbr = ft_atoi_range(str, &out_of_range);
 	if (out_of_range)
 		return (false);
-	return (true);
+	while (ft_isdigit(str[i]))
+		i++;
+	while (ft_isspace(str[i]))
+		i++;
+	return (str[i] == '\0');
 }
 
 ////////////////////////////////////////////////////////////////////////////////
