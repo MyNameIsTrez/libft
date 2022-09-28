@@ -17,14 +17,15 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Checks whether @p chr is whitespace.
+ * @brief Checks whether @p chr is whitespace. Always returns false
+ * if @p chr is '\0'.
  *
  * @param chr
  * @return
  */
 bool	ft_isspace(const t_i32 chr)
 {
-	if (ft_strchr(WHITESPACE, chr))
+	if (chr != '\0' && ft_strchr(WHITESPACE, chr))
 		return (true);
 	return (false);
 }
