@@ -77,6 +77,8 @@ char	**ft_split(const char *str, char sep)
 	size_t	word_count;
 	char	**split;
 
+	if (str == NULL)
+		return (NULL);
 	word_count = get_word_count((char *)str, sep);
 	split = ft_malloc((word_count + 1), sizeof(char *));
 	if (split == NULL)
