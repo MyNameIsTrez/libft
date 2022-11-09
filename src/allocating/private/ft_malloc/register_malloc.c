@@ -27,7 +27,7 @@ void	*register_malloc(size_t count, size_t size)
 	t_malloced	*malloced;
 	void		*malloc_ptr;
 
-	if (count == 0 || size == 0)
+	if (count == 0 || size == 0 || SIZE_MAX / count < size)
 		return (NULL);
 	malloced = get_malloced();
 	if (malloced == NULL)

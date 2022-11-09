@@ -45,7 +45,7 @@ STATIC ssize_t	write_digits(t_i32 nbr, size_t nbr_len, t_i32 fd)
 }
 
 /**
- * @brief Writes an t_i32.
+ * @brief Writes a t_i32.
  *
  * @param nbr The integer to output.
  * @param fd The file descriptor to write to.
