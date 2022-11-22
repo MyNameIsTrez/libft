@@ -30,6 +30,8 @@ char	*ft_strjoin(const char *str1, const char *str2)
 	size_t	str2_len;
 	char	*joined;
 
+	if (str1 == NULL || str2 == NULL)
+		return (NULL);
 	str1_len = ft_strlen(str1);
 	str2_len = ft_strlen(str2);
 	joined = ft_stralloc(str1_len + str2_len);
