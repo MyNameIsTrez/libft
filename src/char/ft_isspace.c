@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isspace.c                                 :+:    :+:            */
+/*   ft_isspace.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Checks whether @p chr is whitespace. Always returns false
+ * @brief Checks whether @p chr is whitespace. Returns false
  * if @p chr is '\0'.
  *
  * @param chr
@@ -25,9 +25,7 @@
  */
 bool	ft_isspace(const t_i32 chr)
 {
-	if (chr != '\0' && ft_strchr(WHITESPACE, chr))
-		return (true);
-	return (false);
+	return (chr != '\0' && ft_strchr(WHITESPACE, chr));
 }
 
 ////////////////////////////////////////////////////////////////////////////////
