@@ -26,19 +26,22 @@
  */
 char	*ft_strjoin(const char *str1, const char *str2)
 {
-	size_t	str1_len;
-	size_t	str2_len;
+	size_t	len;
 	char	*joined;
 
-	if (str1 == NULL || str2 == NULL)
-		return (NULL);
-	str1_len = ft_strlen(str1);
-	str2_len = ft_strlen(str2);
-	joined = ft_stralloc(str1_len + str2_len);
-	if (joined == NULL)
-		return (NULL);
-	ft_memcpy(joined, str1, str1_len);
-	ft_memcpy(&joined[str1_len], str2, str2_len);
+	len = 0;
+	if (str1)
+		len += ft_strlen(str1);
+	if (str2)
+		len += ft_strlen(str2);
+	joined = ft_stralloc(len);
+	if (joined)
+	{
+		if (str1)
+			ft_strlcpy(joined, str1, len + 1);
+		if (str2)
+			ft_strlcat(joined, str2, len + 1);
+	}
 	return (joined);
 }
 
