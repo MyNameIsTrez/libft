@@ -46,6 +46,7 @@ char		*ft_strchr(const char *str, t_i32 chr);
 t_i32		ft_strcmp(const char *str1, const char *str2);
 char		*ft_strdup(const char *str);
 void		ft_striteri(char *str, void (*fun)(t_u32, char*));
+char		*ft_strjoin_and_free_left(char *left, char *right);
 char		*ft_strjoin(const char *str1, const char *str2);
 size_t		ft_strlcat(char *dst, const char *src, size_t dst_size);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dst_size);

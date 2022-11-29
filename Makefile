@@ -157,6 +157,7 @@ SOURCES +=\
 	./src/str/ft_strchr.c\
 	./src/str/ft_strcmp.c\
 	./src/str/ft_strdup.c\
+	./src/str/ft_strjoin_and_free_left.c\
 	./src/str/ft_striteri.c\
 	./src/str/ft_strjoin.c\
 	./src/str/ft_strlcat.c\
