@@ -87,6 +87,7 @@ SOURCES +=\
 	./src/lst/ft_lst_content_size.c\
 	./src/lst/ft_lst_new_back.c\
 	./src/lst/ft_lst_new_front.c\
+	./src/lst/ft_lst_remove_if.c\
 	./src/lst/ft_lst_reverse.c\
 	./src/lst/ft_lst_to_array.c\
 	./src/lst/ft_lstadd_back.c\
