@@ -39,7 +39,7 @@ size_t	ft_lst_content_size(t_list *lst, size_t (*counter)(const void *));
 t_list	*ft_lst_new_back(t_list **lst_ptr, void *content);
 t_list	*ft_lst_new_front(t_list **lst_ptr, void *content);
 void	ft_lst_remove_if(t_list **lst, void *needle,
-			int (*cmp_fn)(void *lst_data, void *needle));
+			int (*cmp_fn)(void *lst_content, void *needle));
 t_list	*ft_lst_reverse(t_list **lst_ptr);
 void	**ft_lst_to_array(t_list *lst);
 void	ft_lstadd_back(t_list **lst_ptr, t_list *new);

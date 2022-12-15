@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 void	ft_lst_remove_if(t_list **lst, void *needle,
-			int (*cmp_fn)(void *content, void *needle))
+			int (*cmp_fn)(void *lst_content, void *needle))
 {
 	t_list	*prev;
 	t_list	*current;
