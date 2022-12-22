@@ -16,6 +16,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @brief Removes all linked list nodes that have content @p needle.
+ *
+ * @param lst
+ * @param needle
+ * @param cmp_fn
+ */
 void	ft_lst_remove_if(t_list **lst, void *needle,
 			int (*cmp_fn)(void *lst_content, void *needle))
 {
@@ -27,19 +34,18 @@ void	ft_lst_remove_if(t_list **lst, void *needle,
 	current = *lst;
 	while (current != NULL)
 	{
+		next = current->next;
 		if (cmp_fn(current->content, needle) == 0)
 		{
 			if (prev == NULL)
-				*lst = current->next;
+				*lst = next;
 			else
-				prev->next = current->next;
-			next = current->next;
+				prev->next = next;
 			ft_free(&current);
-			current = next;
 		}
-		prev = current;
-		if (current != NULL)
-			current = current->next;
+		else
+			prev = current;
+		current = next;
 	}
 }
 
