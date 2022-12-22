@@ -170,6 +170,7 @@ SOURCES +=\
 	./src/str/ft_strnlen.c\
 	./src/str/ft_strnstr.c\
 	./src/str/ft_strrchr.c\
+	./src/str/ft_strset.c\
 	./src/str/ft_strstr.c\
 	./src/str/ft_strtrim.c\
 	./src/str/ft_strtrim_whitespace.c\

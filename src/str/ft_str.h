@@ -57,6 +57,7 @@ t_i32		ft_strncmp(const char *str1, const char *str2, size_t len);
 size_t		ft_strnlen(const char *str, const size_t max_len);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		*ft_strrchr(const char *str, t_i32 chr);
+char		*ft_strset(char *haystack, char *set);
 char		*ft_strstr(const char *haystack, const char *needle);
 char		*ft_strtrim_whitespace(const char *str);
 char		*ft_strtrim(const char *str, const char *trim_set);
