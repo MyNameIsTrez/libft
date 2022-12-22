@@ -17,18 +17,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Deletes the content of a single @p lst using @p del,
-   and then frees lst.
+ * @brief Deletes the content of a single lst using @p lst_ptr and @p del,
+   and then ft_frees lst.
  *
- * @param lst The element to free.
- * @param del The address of the function used to delete the content.
+ * @param lst_ptr The address of a pointer to an element.
+ * @param del The address of the function used to delete the content
+   of the element.
  * @return
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list **lst_ptr, void (*del)(void *))
 {
 	if (del != NULL)
-		del(lst->content);
-	ft_free(&lst);
+		del((*lst_ptr)->content);
+	ft_free(lst_ptr);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
