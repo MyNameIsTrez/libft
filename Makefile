@@ -290,12 +290,21 @@ all: $(PRE_RULES) $(NAME)
 ################################################################################
 
 $(NAME): $(OBJECT_PATHS)
-	ar rcs $(NAME) $(OBJECT_PATHS)
+	@ar rcs $(NAME) $(OBJECT_PATHS)
 	@echo "$(MAKE_DATA)" > $(DATA_FILE)
+	@echo Compiled libft
+
+################################################################################
+
+define tidy_compilation
+	@printf "%s\e[K\n" "$(1)"
+	@$(1)
+	@printf "\e[A\e[K"
+endef
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@$(call tidy_compilation,$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@)
 
 ################################################################################
 
