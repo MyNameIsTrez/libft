@@ -37,6 +37,7 @@ bool		ft_str_eq(const char *str1, const char *str2);
 bool		ft_str_is_empty(const char *str);
 char		*ft_str_lower(char *str);
 char		*ft_str_not_chr(const char *str, const t_i32 chr);
+char		*ft_str_not_set(char *haystack, char *set);
 char		*ft_str_not_str(const char *haystack, const char *needle);
 char		*ft_str_repeat(char *str, size_t repeat);
 char		*ft_str_replace(char *str, char *str_search, char *str_replace);

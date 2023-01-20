@@ -150,6 +150,7 @@ SOURCES +=\
 	./src/str/ft_str_is_empty.c\
 	./src/str/ft_str_lower.c\
 	./src/str/ft_str_not_chr.c\
+	./src/str/ft_str_not_set.c\
 	./src/str/ft_str_not_str.c\
 	./src/str/ft_str_repeat.c\
 	./src/str/ft_str_replace.c\
