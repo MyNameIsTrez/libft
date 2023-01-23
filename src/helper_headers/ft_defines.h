@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_whitespace.h                                    :+:    :+:            */
+/*   ft_defines.h                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
@@ -12,12 +12,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef FT_WHITESPACE_H
-# define FT_WHITESPACE_H
+#ifndef FT_DEFINES_H
+# define FT_DEFINES_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
 # define WHITESPACE " \t\n\v\f\r"
+# define DIGITS "1234567890"
+
+# define NOT !
+# define AND &&
+# define OR ||
+
+# ifndef OPEN_FD_MAX
+#  define OPEN_FD_MAX FD_SETSIZE
+# endif
 
 ////////////////////////////////////////////////////////////////////////////////
 

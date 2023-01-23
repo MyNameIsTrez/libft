@@ -121,6 +121,7 @@ SOURCES +=\
 	./src/nbr/ft_max.c\
 	./src/nbr/ft_min.c\
 	./src/nbr/ft_nbr_to_str.c\
+	./src/nbr/ft_strtof.c\
 	./src/nbr/ft_unsigned_nbr_to_str.c\
 	./src/print/ft_print.c\
 	./src/print/ft_print_fd.c\
@@ -216,12 +217,10 @@ HEADERS +=\
 	./src/file/ft_file.h\
 	./src/gnl/private/gnl_private.h\
 	./src/gnl/get_next_line.h\
-	./src/helper_headers/ft_boolean_operators.h\
+	./src/helper_headers/ft_defines.h\
 	./src/helper_headers/ft_helper_headers.h\
-	./src/helper_headers/ft_open_fd_max.h\
 	./src/helper_headers/ft_shared_system_headers.h\
 	./src/helper_headers/ft_types.h\
-	./src/helper_headers/ft_whitespace.h\
 	./src/iterator/private/ft_iterator_status_struct.h\
 	./src/iterator/private/ft_iterator_struct.h\
 	./src/iterator/private/ft_iterator_utils.h\

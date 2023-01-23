@@ -34,6 +34,7 @@ char	*ft_itoa(t_i32 nbr);
 t_i32	ft_max(const t_i32 a, const t_i32 b);
 t_i32	ft_min(const t_i32 a, const t_i32 b);
 char	*ft_nbr_to_str(intmax_t number, t_u32 base);
+float	ft_strtof(char *nptr, char **endptr);
 char	*ft_unsigned_nbr_to_str(uintmax_t number, t_u32 base);
 
 ////////////////////////////////////////////////////////////////////////////////
