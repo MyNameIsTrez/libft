@@ -16,6 +16,43 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+static char	*loop_digits(char *nptr, float *result_ptr, float *factor_ptr)
+{
+	bool	point_seen;
+
+	point_seen = false;
+	while (*nptr)
+	{
+		if (*nptr == '.')
+			point_seen = true;
+		else if (!ft_isdigit(*nptr))
+			break ;
+		if (point_seen && *nptr != '.')
+			*factor_ptr /= 10;
+		if (*nptr != '.')
+			*result_ptr = *result_ptr * 10 + *nptr - '0';
+		nptr++;
+	}
+	return (nptr);
+}
+
+static bool	validate_start(char **nptr_ptr)
+{
+	if (!ft_strset(*nptr_ptr, DIGITS))
+		return (false);
+	while (ft_isspace(**nptr_ptr))
+		(*nptr_ptr)++;
+	if ((*nptr_ptr)[0] == '-' || (*nptr_ptr)[0] == '+')
+	{
+		if ((!ft_isdigit((*nptr_ptr)[1]) && (*nptr_ptr)[1] != '.')
+			|| ((*nptr_ptr)[1] == '.' && !ft_isdigit((*nptr_ptr)[2])))
+			return (false);
+	}
+	if ((*nptr_ptr)[0] == '.' && !ft_isdigit((*nptr_ptr)[1]))
+		return (false);
+	return (true);
+}
+
 /**
  * @brief Imitation of strtof()
  *
@@ -25,29 +62,11 @@
  */
 float	ft_strtof(char *nptr, char **endptr)
 {
-	float	factor;
-	bool	point_seen;
 	float	result;
+	float	factor;
 
 	result = 0;
-	if (!ft_strset(nptr, DIGITS))
-	{
-		*endptr = nptr;
-		return (result);
-	}
-	while (ft_isspace(*nptr))
-		nptr++;
-	if ((nptr[0] == '-' || nptr[0] == '+') && !ft_isdigit(nptr[1]) && nptr[1] != '.')
-	{
-		*endptr = nptr;
-		return (result);
-	}
-	if (nptr[0] == '.' && !ft_isdigit(nptr[1]))
-	{
-		*endptr = nptr;
-		return (result);
-	}
-	if ((nptr[0] == '-' || nptr[0] == '+') && nptr[1] == '.' && !ft_isdigit(nptr[2]))
+	if (!validate_start(&nptr))
 	{
 		*endptr = nptr;
 		return (result);
@@ -57,20 +76,7 @@ float	ft_strtof(char *nptr, char **endptr)
 		factor = -1;
 	if (*nptr == '-' || *nptr == '+')
 		nptr++;
-	point_seen = false;
-	while (*nptr)
-	{
-		if (*nptr == '.')
-			point_seen = true;
-		else if (!ft_isdigit(*nptr))
-			break ;
-		if (point_seen && *nptr != '.')
-			factor /= 10;
-		if (*nptr != '.')
-			result = result * 10 + *nptr - '0';
-		nptr++;
-	}
-	*endptr = nptr;
+	*endptr = loop_digits(nptr, &result, &factor);
 	return (result * factor);
 }
 
