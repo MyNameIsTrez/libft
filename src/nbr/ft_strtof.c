@@ -37,7 +37,17 @@ float	ft_strtof(char *nptr, char **endptr)
 	}
 	while (ft_isspace(*nptr))
 		nptr++;
-	if (nptr[1] == '-' || nptr[1] == '+')
+	if ((nptr[0] == '-' || nptr[0] == '+') && !ft_isdigit(nptr[1]) && nptr[1] != '.')
+	{
+		*endptr = nptr;
+		return (result);
+	}
+	if (nptr[0] == '.' && !ft_isdigit(nptr[1]))
+	{
+		*endptr = nptr;
+		return (result);
+	}
+	if ((nptr[0] == '-' || nptr[0] == '+') && nptr[1] == '.' && !ft_isdigit(nptr[2]))
 	{
 		*endptr = nptr;
 		return (result);
