@@ -36,26 +36,27 @@ static char	*loop_digits(char *nptr, float *result_ptr, float *factor_ptr)
 	return (nptr);
 }
 
-static bool	validate_start(char **nptr_ptr)
+static bool	validate_start(char *nptr)
 {
-	if (!ft_strset(*nptr_ptr, DIGITS))
-		return (false);
-	while (ft_isspace(**nptr_ptr))
-		(*nptr_ptr)++;
-	if ((*nptr_ptr)[0] == '-' || (*nptr_ptr)[0] == '+')
+	while (ft_isspace(*nptr))
+		nptr++;
+	if (nptr[0] == '-' || nptr[0] == '+')
 	{
-		if ((!ft_isdigit((*nptr_ptr)[1]) && (*nptr_ptr)[1] != '.')
-			|| ((*nptr_ptr)[1] == '.' && !ft_isdigit((*nptr_ptr)[2])))
+		if ((!ft_isdigit(nptr[1]) && nptr[1] != '.')
+			|| (nptr[1] == '.' && !ft_isdigit(nptr[2])))
 			return (false);
 	}
-	if ((*nptr_ptr)[0] == '.' && !ft_isdigit((*nptr_ptr)[1]))
+	if (nptr[0] == '.' && !ft_isdigit(nptr[1]))
+		return (false);
+	if (nptr[0] == '\0')
+		return (false);
+	if (!ft_chr_in_str(nptr[0], "-+.") && !ft_isdigit(nptr[0]))
 		return (false);
 	return (true);
 }
 
 /**
- * @brief Imitation of strtof(). Doesn't try to handle octal/hex/infinity/NAN/
- * exponents.
+ * @brief Imitates strtof(). Doesn't try to handle octal/hex/NAN/exponents.
  *
  * @param nptr
  * @param endptr If endptr is not NULL, a pointer to the character
@@ -74,11 +75,13 @@ float	ft_strtof(char *nptr, char **endptr)
 	float	factor;
 
 	result = 0;
-	if (!validate_start(&nptr))
+	if (!validate_start(nptr))
 	{
 		*endptr = nptr;
 		return (result);
 	}
+	while (ft_isspace(*nptr))
+		nptr++;
 	factor = 1;
 	if (*nptr == '-')
 		factor = -1;
