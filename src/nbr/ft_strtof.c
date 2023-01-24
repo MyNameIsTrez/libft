@@ -54,11 +54,19 @@ static bool	validate_start(char **nptr_ptr)
 }
 
 /**
- * @brief Imitation of strtof()
+ * @brief Imitation of strtof(). Doesn't try to handle octal/hex/infinity/NAN/
+ * exponents.
  *
  * @param nptr
- * @param endptr
- * @return float
+ * @param endptr If endptr is not NULL, a pointer to the character
+ * after the last character used in the conversion is stored
+ * in the location referenced by endptr.
+ * @return float The converted value, if any. If no conversion is performed,
+ * zero is returned and the value of nptr is stored
+ * in the location referenced by endptr.
+ * If the correct value would cause overflow, plus or minus INFINITY is returned
+ * (according to the sign of the value).
+ * If the correct value would cause underflow, zero is returned.
  */
 float	ft_strtof(char *nptr, char **endptr)
 {
