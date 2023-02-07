@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strcmp.c                             :+:    :+:            */
+/*   ft_min_size.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/11 12:40:04 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/14 10:20:47 by sbos          ########   odam.nl         */
+/*   Created: 2023/02/07 14:08:31 by sbos          #+#    #+#                 */
+/*   Updated: 2023/02/07 14:08:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,17 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Compares two strings.
+ * @brief Checks whether @p a is smaller than @p b.
  *
- * @param str1
- * @param str2
- * @return 0 if @p str1 and @p str2 are equal;\n
-   a negative value if @p str1 is less than @p str2;\n
-   a positive value if @p str1 is greater than @p str2.
+ * @param a
+ * @param b
+ * @return The smallest number.
  */
-t_i32	ft_strcmp(const char *str1, const char *str2)
+size_t	ft_min_size(const size_t a, const size_t b)
 {
-	return (ft_strncmp(str1, str2,
-			ft_max_size(ft_strlen(str1), ft_strlen(str2))));
+	if (a < b)
+		return (a);
+	return (b);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

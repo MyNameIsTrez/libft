@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_max.c                                     :+:    :+:            */
+/*   ft_max_size.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/19 14:34:05 by sbos          #+#    #+#                 */
-/*   Updated: 2021/11/10 16:26:06 by sbos          ########   odam.nl         */
+/*   Created: 2023/02/07 14:09:43 by sbos          #+#    #+#                 */
+/*   Updated: 2023/02/07 14:09:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  * @param b
  * @return The biggest number.
  */
-t_i32	ft_max(const t_i32 a, const t_i32 b)
+size_t	ft_max_size(const size_t a, const size_t b)
 {
 	if (a > b)
 		return (a);

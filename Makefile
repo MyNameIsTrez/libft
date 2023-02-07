@@ -118,8 +118,10 @@ SOURCES +=\
 	./src/nbr/ft_get_digit_count_base.c\
 	./src/nbr/ft_get_digit_count_base_unsigned.c\
 	./src/nbr/ft_itoa.c\
-	./src/nbr/ft_max.c\
-	./src/nbr/ft_min.c\
+	./src/nbr/ft_max_int.c\
+	./src/nbr/ft_max_size.c\
+	./src/nbr/ft_min_int.c\
+	./src/nbr/ft_min_size.c\
 	./src/nbr/ft_nbr_to_str.c\
 	./src/nbr/ft_strtof.c\
 	./src/nbr/ft_unsigned_nbr_to_str.c\

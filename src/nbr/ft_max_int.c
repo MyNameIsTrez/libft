@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strcmp.c                             :+:    :+:            */
+/*   ft_max_int.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/11 12:40:04 by sbos          #+#    #+#                 */
-/*   Updated: 2021/10/14 10:20:47 by sbos          ########   odam.nl         */
+/*   Created: 2023/02/07 14:09:43 by sbos          #+#    #+#                 */
+/*   Updated: 2023/02/07 14:09:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,17 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Compares two strings.
+ * @brief Checks whether @p a is bigger than @p b.
  *
- * @param str1
- * @param str2
- * @return 0 if @p str1 and @p str2 are equal;\n
-   a negative value if @p str1 is less than @p str2;\n
-   a positive value if @p str1 is greater than @p str2.
+ * @param a
+ * @param b
+ * @return The biggest number.
  */
-t_i32	ft_strcmp(const char *str1, const char *str2)
+t_i32	ft_max_int(const t_i32 a, const t_i32 b)
 {
-	return (ft_strncmp(str1, str2,
-			ft_max_size(ft_strlen(str1), ft_strlen(str2))));
+	if (a > b)
+		return (a);
+	return (b);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
