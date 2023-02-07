@@ -33,6 +33,8 @@ t_status	ft_str_assign(char **dst, char *src);
 size_t		ft_str_count_chr(char *str, const char chr);
 size_t		ft_str_count_str_overlap(char *str1, const char *str2);
 size_t		ft_str_count_str(char *str1, const char *str2);
+bool		ft_str_starts_with(const char *str1, const char *str2);
+bool		ft_str_ends_with(const char *str1, const char *str2);
 bool		ft_str_eq(const char *str1, const char *str2);
 bool		ft_str_is_empty(const char *str);
 char		*ft_str_lower(char *str);

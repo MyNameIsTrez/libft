@@ -149,6 +149,7 @@ SOURCES +=\
 	./src/str/ft_str_count_chr.c\
 	./src/str/ft_str_count_str.c\
 	./src/str/ft_str_count_str_overlap.c\
+	./src/str/ft_str_ends_with.c\
 	./src/str/ft_str_eq.c\
 	./src/str/ft_str_is_empty.c\
 	./src/str/ft_str_lower.c\
@@ -157,6 +158,7 @@ SOURCES +=\
 	./src/str/ft_str_not_str.c\
 	./src/str/ft_str_repeat.c\
 	./src/str/ft_str_replace.c\
+	./src/str/ft_str_starts_with.c\
 	./src/str/ft_str_upper.c\
 	./src/str/ft_stralloc.c\
 	./src/str/ft_strchr.c\
