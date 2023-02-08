@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC ssize_t	write_digits(t_i32 nbr, size_t nbr_len, t_i32 fd)
+static ssize_t	write_digits(t_i32 nbr, size_t nbr_len, t_i32 fd)
 {
 	t_i32	nbr_copy;
 	t_i32	digit;

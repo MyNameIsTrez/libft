@@ -12,11 +12,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#include "allocating/ft_allocating.h"
+#include "str/ft_str.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC size_t	get_word_count_str(char str[], const char sep[])
+static size_t	get_word_count_str(char str[], const char sep[])
 {
 	size_t	sep_len;
 	size_t	word_count;
@@ -24,7 +25,7 @@ STATIC size_t	get_word_count_str(char str[], const char sep[])
 
 	sep_len = ft_strlen(sep);
 	word_count = 1;
-	while (str != NULL AND str[0] != '\0')
+	while (str != NULL && str[0] != '\0')
 	{
 		sep_pos = ft_strstr(str, sep);
 		if (sep_pos == NULL)
@@ -35,7 +36,7 @@ STATIC size_t	get_word_count_str(char str[], const char sep[])
 	return (word_count);
 }
 
-STATIC bool	add_last_word(char *str, char ***split, size_t i)
+static bool	add_last_word(char *str, char ***split, size_t i)
 {
 	(*split)[i] = ft_strdup(str);
 	if ((*split)[i] == NULL)
@@ -46,7 +47,7 @@ STATIC bool	add_last_word(char *str, char ***split, size_t i)
 	return (true);
 }
 
-STATIC bool	add_words_to_split_str(char *str, const char *sep, char ***split)
+static bool	add_words_to_split_str(char *str, const char *sep, char ***split)
 {
 	size_t	sep_len;
 	char	*sep_pos;

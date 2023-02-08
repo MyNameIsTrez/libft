@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	*ft_memcpy_reverse(void *dst, const void *src, size_t len)
+static void	*ft_memcpy_reverse(void *dst, const void *src, size_t len)
 {
 	char	*dst_copy;
 	char	*src_copy;

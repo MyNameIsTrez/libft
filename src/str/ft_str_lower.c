@@ -12,11 +12,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#include "char/ft_char.h"
+#include "str/ft_str.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	striteri_tolower(t_u32 i, char *chr)
+static void	striteri_tolower(t_u32 i, char *chr)
 {
 	(void)i;
 	(*chr) = (char)ft_tolower(*chr);

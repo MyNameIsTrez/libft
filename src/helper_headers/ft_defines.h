@@ -18,11 +18,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 # define WHITESPACE " \t\n\v\f\r"
-# define DIGITS "1234567890"
-
-# define NOT !
-# define AND &&
-# define OR ||
+# define DIGITS "0123456789"
+# define HEX_BASE_CHARACTERS "0123456789abcdef"
 
 # ifndef OPEN_FD_MAX
 #  define OPEN_FD_MAX FD_SETSIZE

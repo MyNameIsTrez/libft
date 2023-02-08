@@ -12,11 +12,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#include "nbr/ft_nbr.h"
+#include "str/ft_str.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	add_digits_to_str(char *str, intmax_t nbr, size_t number_len,
+static void	add_digits_to_str(char *str, intmax_t nbr, size_t number_len,
 				t_u32 base)
 {
 	t_i32	digit;

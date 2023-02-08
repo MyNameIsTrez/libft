@@ -20,7 +20,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC char	*gnl_malloc_line(t_buffer_list *lst)
+static char	*gnl_malloc_line(t_buffer_list *lst)
 {
 	size_t	len;
 	char	*line;
@@ -50,7 +50,7 @@ STATIC char	*gnl_malloc_line(t_buffer_list *lst)
 
 // if (j != (*lst)->size && j + 1 < (*lst)->size)
 // if (j < (*lst)->size && j + 1 < (*lst)->size)
-STATIC char	*gnl_create_line(t_buffer_list **lst)
+static char	*gnl_create_line(t_buffer_list **lst)
 {
 	char			*line;
 	ssize_t			i;
@@ -79,7 +79,7 @@ STATIC char	*gnl_create_line(t_buffer_list **lst)
 	return (line);
 }
 
-STATIC t_buffer_list	**get_lst_fd(int fd)
+static t_buffer_list	**get_lst_fd(int fd)
 {
 	static t_buffer_list	*lst_fds[OPEN_FD_MAX];
 

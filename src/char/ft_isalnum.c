@@ -24,7 +24,7 @@
  */
 t_i32	ft_isalnum(t_i32 chr)
 {
-	return (ft_isalpha(chr) OR ft_isdigit(chr));
+	return (ft_isalpha(chr) || ft_isdigit(chr));
 }
 
 ////////////////////////////////////////////////////////////////////////////////

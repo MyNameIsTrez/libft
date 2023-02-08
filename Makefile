@@ -231,7 +231,6 @@ HEADERS +=\
 	./src/iterator/ft_iterator.h\
 	./src/lst/ft_lst.h\
 	./src/mem/ft_mem.h\
-	./src/misc/ft_misc.h\
 	./src/nbr/ft_nbr.h\
 	./src/print/ft_print.h\
 	./src/str/ft_str.h\
@@ -251,8 +250,6 @@ FCLEANED_FILES := $(NAME)
 # DEBUG is set to 1 when libctester includes this file
 ifdef DEBUG
 CFLAGS += -DDEBUG=1
-
-CFLAGS += -DSTATIC=
 CFLAGS += -g3
 endif
 

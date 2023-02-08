@@ -20,7 +20,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_buffer_list	*gnl_lst_new(void)
+static t_buffer_list	*gnl_lst_new(void)
 {
 	t_buffer_list	*new;
 

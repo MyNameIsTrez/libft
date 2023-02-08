@@ -12,11 +12,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#include "char/ft_char.h"
+#include "str/ft_str.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	striteri_toupper(t_u32 i, char *chr)
+static void	striteri_toupper(t_u32 i, char *chr)
 {
 	(void)i;
 	(*chr) = (char)ft_toupper(*chr);

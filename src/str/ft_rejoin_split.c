@@ -12,11 +12,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#include "str/ft_str.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC size_t	get_rejoined_len(char **split, size_t sep_len)
+static size_t	get_rejoined_len(char **split, size_t sep_len)
 {
 	size_t	i;
 	size_t	len;
@@ -31,7 +31,7 @@ STATIC size_t	get_rejoined_len(char **split, size_t sep_len)
 	return (len - sep_len);
 }
 
-STATIC void	fill_rejoin(char *rejoined, char **split, char *sep,
+static void	fill_rejoin(char *rejoined, char **split, char *sep,
 				size_t rejoined_len)
 {
 	size_t	i;

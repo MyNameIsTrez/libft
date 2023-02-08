@@ -12,11 +12,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#include "nbr/ft_nbr.h"
+#include "str/ft_str.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	add_unsigned_digits_to_str(char *str, uintmax_t nbr,
+static void	add_unsigned_digits_to_str(char *str, uintmax_t nbr,
 				size_t number_len, t_u32 base)
 {
 	t_i32	digit;

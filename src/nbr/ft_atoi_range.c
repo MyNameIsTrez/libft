@@ -12,8 +12,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#include "char/ft_char.h"
+#include "helper_headers/ft_types.h"
+
 #include <limits.h>
+#include <stdbool.h>
+#include <stddef.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -26,7 +30,7 @@
  * or subtracting a digit results in underflow.
  * @return
  */
-STATIC t_i32	get_negative_value(const char *str, bool *out_of_range)
+static t_i32	get_negative_value(const char *str, bool *out_of_range)
 {
 	static const t_i32	range_mult_ten = INT_MIN / 10;
 	static const t_i32	range_last_digit = -(INT_MIN % 10);

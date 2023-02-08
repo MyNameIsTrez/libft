@@ -12,7 +12,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#include "helper_headers/ft_types.h"
+
+#include <stddef.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -37,7 +39,7 @@ t_i32	ft_strncmp(const char *str1, const char *str2, size_t len)
 	str1_ = (t_u8 *)str1;
 	str2_ = (t_u8 *)str2;
 	i = 0;
-	while (i < len - 1 AND str1_[i] - str2_[i] == 0 AND str1_[i] != '\0')
+	while (i < len - 1 && str1_[i] - str2_[i] == 0 && str1_[i] != '\0')
 		i++;
 	return (str1_[i] - str2_[i]);
 }

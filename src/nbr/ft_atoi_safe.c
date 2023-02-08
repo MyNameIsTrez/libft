@@ -12,7 +12,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#include "char/ft_char.h"
+#include "nbr/ft_nbr.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -42,7 +43,7 @@ bool	ft_atoi_safe(const char *str, t_i32 *nbr)
 		i++;
 	else if (str[i] == '+')
 		i++;
-	if (NOT ft_isdigit(str[i]))
+	if (! ft_isdigit(str[i]))
 		return (false);
 	*nbr = ft_atoi_range(str, &out_of_range);
 	if (out_of_range)

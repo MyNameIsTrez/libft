@@ -12,7 +12,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#include "str/ft_str.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -31,7 +31,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size)
 	size_t	i;
 
 	i = 0;
-	while (i + 1 < dst_size AND src[i] != '\0')
+	while (i + 1 < dst_size && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;

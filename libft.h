@@ -17,12 +17,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# ifndef STATIC
-#  define STATIC static
-# endif
-
-////////////////////////////////////////////////////////////////////////////////
-
 # include "src/helper_headers/ft_helper_headers.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -39,7 +33,6 @@
 # include "src/iterator/ft_iterator.h"
 # include "src/lst/ft_lst.h"
 # include "src/mem/ft_mem.h"
-# include "src/misc/ft_misc.h"
 # include "src/nbr/ft_nbr.h"
 # include "src/print/ft_print.h"
 # include "src/str/ft_str.h"

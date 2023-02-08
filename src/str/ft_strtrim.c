@@ -12,26 +12,26 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
+#include "str/ft_str.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_u32	get_start_index(const char *str, const char *trim_set)
+static t_u32	get_start_index(const char *str, const char *trim_set)
 {
 	t_u32	start;
 
 	start = 0;
-	while (str[start] != '\0' AND ft_strchr(trim_set, str[start]) != NULL)
+	while (str[start] != '\0' && ft_strchr(trim_set, str[start]) != NULL)
 		start++;
 	return (start);
 }
 
-STATIC size_t	get_end_index(const char *str, const char *trim_set)
+static size_t	get_end_index(const char *str, const char *trim_set)
 {
 	size_t	end;
 
 	end = ft_strlen(str) - 1;
-	while (end > 0 AND ft_strchr(trim_set, str[end]) != NULL)
+	while (end > 0 && ft_strchr(trim_set, str[end]) != NULL)
 		end--;
 	return (end);
 }

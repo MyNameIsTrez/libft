@@ -12,11 +12,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "libft.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-#define BASE_CHARACTERS "0123456789abcdef"
+#include "helper_headers/ft_defines.h"
+#include "helper_headers/ft_types.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -28,8 +25,8 @@
  */
 char	ft_digit_to_char_base(t_i32 nbr, t_u32 base)
 {
-	if (0 <= nbr AND nbr < (t_i32)base)
-		return (BASE_CHARACTERS[nbr]);
+	if (0 <= nbr && nbr < (t_i32)base)
+		return (HEX_BASE_CHARACTERS[nbr]);
 	else
 		return ('\0');
 }
