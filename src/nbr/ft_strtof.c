@@ -16,27 +16,31 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static char	*loop_digits(char *nptr, float *result_ptr, float *factor_ptr)
+static char	*parse_decimal_part(char *nptr, float *result_ptr)
 {
-	bool	point_seen;
+	float	divider;
 
-	point_seen = false;
-	while (*nptr)
+	divider = 1;
+	while (ft_isdigit(*nptr))
 	{
-		if (*nptr == '.')
-			point_seen = true;
-		else if (!ft_isdigit(*nptr))
-			break ;
-		if (point_seen && *nptr != '.')
-			*factor_ptr /= 10;
-		if (*nptr != '.')
-			*result_ptr = *result_ptr * 10 + *nptr - '0';
+		divider /= 10;
+		*result_ptr += (*nptr - '0') * divider;
 		nptr++;
 	}
 	return (nptr);
 }
 
-static bool	validate_start(char *nptr)
+static char	*parse_integer_part(char *nptr, float *result_ptr)
+{
+	while (ft_isdigit(*nptr))
+	{
+		*result_ptr = *result_ptr * 10 + *nptr - '0';
+		nptr++;
+	}
+	return (nptr);
+}
+
+static bool	valid_input(char *nptr)
 {
 	while (ft_isspace(*nptr))
 		nptr++;
@@ -72,23 +76,27 @@ static bool	validate_start(char *nptr)
 float	ft_strtof(char *nptr, char **endptr)
 {
 	float	result;
-	float	factor;
+	float	sign;
 
 	result = 0;
-	if (!validate_start(nptr))
+	if (!valid_input(nptr))
 	{
 		*endptr = nptr;
 		return (result);
 	}
 	while (ft_isspace(*nptr))
 		nptr++;
-	factor = 1;
+	sign = 1;
 	if (*nptr == '-')
-		factor = -1;
+		sign = -1;
 	if (*nptr == '-' || *nptr == '+')
 		nptr++;
-	*endptr = loop_digits(nptr, &result, &factor);
-	return (result * factor);
+	nptr = parse_integer_part(nptr, &result);
+	if (*nptr == '.')
+		nptr++;
+	nptr = parse_decimal_part(nptr, &result);
+	*endptr = nptr;
+	return (sign * result);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
