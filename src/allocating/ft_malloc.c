@@ -13,7 +13,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "private/ft_malloc/ft_private_ft_malloc.h"
-#include "error/ft_error.h"
+#include "src/error/ft_error.h"
 
 #include <stddef.h>
 
