@@ -16,7 +16,7 @@
 #include <stddef.h>
 
 #ifdef CTESTER
-# include "src/ctester_globals.h"
+# include "ctester_globals.h"
 #endif
 
 /**
