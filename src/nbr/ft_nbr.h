@@ -17,7 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "src/helper_headers/ft_types.h"
+# include "helper_headers/ft_types.h"
 
 # include <stddef.h>
 # include <stdbool.h>

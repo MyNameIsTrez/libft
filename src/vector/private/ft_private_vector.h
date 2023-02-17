@@ -20,6 +20,8 @@
 # include "metadata/ft_private_vector_metadata.h"
 # include "ft_private_vector_metadata_struct.h"
 
+# include <stdbool.h>
+
 ////////////////////////////////////////////////////////////////////////////////
 
 size_t		get_bytes_after_metadata(t_metadata *metadata_ptr,

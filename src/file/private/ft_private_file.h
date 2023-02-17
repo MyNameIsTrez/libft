@@ -17,6 +17,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+# include "error/ft_error.h"
+# include "file/ft_file.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
 t_status	helper_read_into_lst(t_char_grid *grid, t_i32 fd, char *line,
 				t_list **lst_ptr);
 t_status	read_into_lst(t_char_grid *grid, t_i32 fd, t_list **lst_ptr);

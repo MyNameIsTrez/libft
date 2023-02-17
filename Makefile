@@ -216,6 +216,12 @@ HEADERS +=\
 	./src/allocating/private/ft_private_mem_allocating.h\
 	./src/allocating/ft_allocating.h\
 	./src/char/ft_char.h\
+	./src/deque/back/ft_deque_back.h\
+	./src/deque/front/ft_deque_front.h\
+	./src/deque/private/ft_private_deque.h\
+	./src/deque/ft_deque_struct.h\
+	./src/deque/ft_deque_typedef.h\
+	./src/deque/ft_deque.h\
 	./src/error/ft_error.h\
 	./src/file/private/ft_private_file.h\
 	./src/file/ft_file.h\
