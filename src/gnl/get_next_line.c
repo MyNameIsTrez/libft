@@ -12,10 +12,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "allocating/ft_allocating.h"
-#include "helper_headers/ft_defines.h"
-#include "private/gnl_private.h"
-#include "error/ft_error.h"
+#include "src/allocating/ft_allocating.h"
+#include "src/helper_headers/ft_defines.h"
+#include "src/gnl/private/gnl_private.h"
+#include "src/error/ft_error.h"
 
 #include <stddef.h>
 #include <unistd.h>

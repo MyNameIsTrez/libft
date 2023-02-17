@@ -15,6 +15,8 @@
 #ifndef FT_DEFINES_H
 # define FT_DEFINES_H
 
+# include <sys/select.h>
+
 ////////////////////////////////////////////////////////////////////////////////
 
 # define WHITESPACE " \t\n\v\f\r"

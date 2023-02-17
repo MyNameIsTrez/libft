@@ -17,8 +17,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "metadata_getters/ft_private_vector_metadata_getters.h"
-# include "error/ft_error.h"
+# include "src/vector/private/metadata/metadata_getters/\
+ft_private_vector_metadata_getters.h"
+# include "src/error/ft_error.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

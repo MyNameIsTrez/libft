@@ -12,8 +12,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/ft_private_mem_allocating.h"
-#include "private/ft_free/ft_private_ft_free.h"
+#include "src/allocating/private/ft_private_mem_allocating.h"
+#include "src/allocating/private/ft_free/ft_private_ft_free.h"
 
 #include <stdlib.h>
 

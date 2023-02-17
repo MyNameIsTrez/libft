@@ -279,7 +279,7 @@ OBJECT_PATHS := $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:.c=.o))
 HEADERS += $(INCLUDES_HEADERS)
 
 # sort removes duplicates
-INCLUDES := $(addprefix -I, $(sort $(dir $(INCLUDES_HEADERS)) src))
+INCLUDES := $(addprefix -I, $(sort $(dir $(INCLUDES_HEADERS))))
 
 # Only cleans when MAKE_DATA changes.
 DATA_FILE := .make_data

@@ -16,9 +16,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../ft_deque.h"
-#include "../ft_deque_struct.h"
-#include "deque/private/ft_private_deque.h"
+#include "src/deque/ft_deque.h"
+#include "src/deque/ft_deque_struct.h"
+#include "src/deque/private/ft_private_deque.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

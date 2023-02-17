@@ -17,9 +17,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "ft_defines.h"
-# include "ft_shared_system_headers.h"
-# include "ft_types.h"
+# include "src/helper_headers/ft_defines.h"
+# include "src/helper_headers/ft_shared_system_headers.h"
+# include "src/helper_headers/ft_types.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

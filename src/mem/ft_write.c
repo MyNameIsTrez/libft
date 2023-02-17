@@ -27,7 +27,7 @@
  * @return -1 if this call was set to fail
  */
 #ifdef CTESTER
-# include "ctester_globals.h"
+# include "src/ctester_globals.h"
 
 ssize_t	ft_write(int fildes, const void *buf, size_t nbyte)
 {

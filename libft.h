@@ -17,26 +17,26 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "helper_headers/ft_helper_headers.h"
+# include "src/helper_headers/ft_helper_headers.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "error/ft_error.h"
+# include "src/error/ft_error.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "allocating/ft_allocating.h"
-# include "char/ft_char.h"
-# include "deque/ft_deque.h"
-# include "file/ft_file.h"
-# include "gnl/get_next_line.h"
-# include "iterator/ft_iterator.h"
-# include "lst/ft_lst.h"
-# include "mem/ft_mem.h"
-# include "nbr/ft_nbr.h"
-# include "print/ft_print.h"
-# include "str/ft_str.h"
-# include "vector/ft_vector.h"
+# include "src/allocating/ft_allocating.h"
+# include "src/char/ft_char.h"
+# include "src/deque/ft_deque.h"
+# include "src/file/ft_file.h"
+# include "src/gnl/get_next_line.h"
+# include "src/iterator/ft_iterator.h"
+# include "src/lst/ft_lst.h"
+# include "src/mem/ft_mem.h"
+# include "src/nbr/ft_nbr.h"
+# include "src/print/ft_print.h"
+# include "src/str/ft_str.h"
+# include "src/vector/ft_vector.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -12,8 +12,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "mem/ft_mem.h"
-#include "private/ft_private_vector.h"
+#include "src/allocating/ft_allocating.h"
+#include "src/mem/ft_mem.h"
+#include "src/vector/private/ft_private_vector.h"
 
 #include <stddef.h>
 

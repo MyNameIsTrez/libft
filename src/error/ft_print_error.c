@@ -12,8 +12,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "error/ft_error.h"
-#include "print/ft_print.h"
+#include "src/error/ft_error.h"
+#include "src/print/ft_print.h"
 
 #include <unistd.h>
 

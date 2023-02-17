@@ -13,6 +13,8 @@
 #ifndef FT_DEQUE_BACK_H
 # define FT_DEQUE_BACK_H
 
+# include "src/error/ft_error.h"
+
 typedef struct s_deque	t_deque;
 
 void		*ft_deque_back(t_deque *deque);

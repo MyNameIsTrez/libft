@@ -12,9 +12,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "helper_headers/ft_defines.h"
-#include "helper_headers/ft_types.h"
-#include "str/ft_str.h"
+#include "src/helper_headers/ft_defines.h"
+#include "src/helper_headers/ft_types.h"
+#include "src/str/ft_str.h"
 
 #include <stdbool.h>
 

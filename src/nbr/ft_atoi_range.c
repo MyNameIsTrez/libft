@@ -12,8 +12,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "char/ft_char.h"
-#include "helper_headers/ft_types.h"
+#include "src/char/ft_char.h"
+#include "src/helper_headers/ft_types.h"
 
 #include <limits.h>
 #include <stdbool.h>

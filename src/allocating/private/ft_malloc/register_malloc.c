@@ -12,9 +12,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../ft_private_mem_allocating.h"
-#include "ft_private_ft_malloc.h"
-#include "register_malloc/ft_private_register_malloc.h"
+#include "src/allocating/private/ft_private_mem_allocating.h"
+#include "src/allocating/private/ft_malloc/ft_private_ft_malloc.h"
+#include "src/allocating/private/ft_malloc/register_malloc/\
+ft_private_register_malloc.h"
 
 #include <stdint.h>
 #include <stdlib.h>

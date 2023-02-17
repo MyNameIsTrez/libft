@@ -17,10 +17,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// # include "helper_headers/ft_types.h"
-// # include <unistd.h> // maybe needed for ssize_t
-// # include <stdlib.h> // maybe needed for ssize_t
-# include "libft.h"
+# include "src/helper_headers/ft_types.h"
+
+# include <sys/types.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 

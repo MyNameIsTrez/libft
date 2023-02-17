@@ -17,7 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "helper_headers/ft_types.h"
+# include "src/helper_headers/ft_types.h"
 
 void		add_vector_value(t_metadata *metadata_ptr, t_u8 *vector,
 				void *value_ptr);

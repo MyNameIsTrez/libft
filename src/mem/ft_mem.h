@@ -17,11 +17,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// # include "helper_headers/ft_types.h"
-// # include <stddef.h>
-// # include <unistd.h> // maybe needed for ssize_t
-// # include <stdlib.h> // maybe needed for ssize_t
-# include "libft.h"
+# include "src/helper_headers/ft_types.h"
+
+# include <stdbool.h>
+# include <stddef.h>
+# include <sys/types.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 

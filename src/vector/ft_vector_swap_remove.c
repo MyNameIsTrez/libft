@@ -12,9 +12,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "helper_headers/ft_types.h"
-#include "mem/ft_mem.h"
-#include "private/ft_private_vector.h"
+#include "src/helper_headers/ft_types.h"
+#include "src/mem/ft_mem.h"
+#include "src/vector/private/ft_private_vector.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

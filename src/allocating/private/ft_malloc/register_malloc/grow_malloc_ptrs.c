@@ -12,8 +12,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../ft_private_ft_malloc.h"
-#include "../../ft_private_mem_allocating.h"
+#include "src/allocating/private/ft_malloc/ft_private_ft_malloc.h"
+#include "src/allocating/private/ft_private_mem_allocating.h"
 
 #include <stdbool.h>
 

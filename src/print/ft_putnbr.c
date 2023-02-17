@@ -12,8 +12,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "helper_headers/ft_types.h"
-#include "print/ft_print.h"
+#include "src/helper_headers/ft_types.h"
+#include "src/print/ft_print.h"
 
 #include <sys/types.h>
 #include <unistd.h>

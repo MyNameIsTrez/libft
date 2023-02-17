@@ -12,7 +12,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "deque/ft_deque_struct.h"
+#include "src/deque/ft_deque_struct.h"
 
 #include <stdint.h>
 

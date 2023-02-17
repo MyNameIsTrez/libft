@@ -12,9 +12,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/ft_private_vector.h"
-#include "private/vector_push/ft_private_vector_push.h"
-#include "vector/ft_vector.h"
+#include "src/vector/private/ft_private_vector.h"
+#include "src/vector/private/vector_push/ft_private_vector_push.h"
+#include "src/vector/ft_vector.h"
 
 #include <stddef.h>
 

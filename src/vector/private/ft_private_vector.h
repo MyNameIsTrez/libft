@@ -17,8 +17,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "metadata/ft_private_vector_metadata.h"
-# include "ft_private_vector_metadata_struct.h"
+# include "src/vector/private/metadata/ft_private_vector_metadata.h"
+# include "src/vector/private/ft_private_vector_metadata_struct.h"
 
 # include <stdbool.h>
 

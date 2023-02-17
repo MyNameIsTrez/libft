@@ -12,9 +12,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "deque/ft_deque_struct.h"
-#include "deque/private/ft_private_deque.h"
-#include "helper_headers/ft_types.h"
+#include "src/deque/ft_deque_struct.h"
+#include "src/deque/private/ft_private_deque.h"
+#include "src/helper_headers/ft_types.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

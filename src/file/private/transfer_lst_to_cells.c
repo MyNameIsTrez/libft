@@ -12,8 +12,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "error/ft_error.h"
-#include "lst/ft_lst.h"
+#include "src/allocating/ft_allocating.h"
+#include "src/error/ft_error.h"
+#include "src/file/ft_file.h"
+#include "src/lst/ft_lst.h"
+#include "src/mem/ft_mem.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

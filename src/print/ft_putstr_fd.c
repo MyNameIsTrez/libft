@@ -12,8 +12,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "helper_headers/ft_types.h"
-#include "mem/ft_mem.h"
+#include "src/helper_headers/ft_types.h"
+#include "src/mem/ft_mem.h"
+#include "src/str/ft_str.h"
 
 #include <sys/types.h>
 
