@@ -17,17 +17,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "src/helper_headers/ft_helper_headers.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-# include "src/error/ft_error.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
 # include "src/allocating/ft_allocating.h"
 # include "src/char/ft_char.h"
 # include "src/deque/ft_deque.h"
+# include "src/error/ft_error.h"
 # include "src/file/ft_file.h"
 # include "src/gnl/get_next_line.h"
 # include "src/iterator/ft_iterator.h"

@@ -18,7 +18,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 # include "src/helper_headers/ft_types.h"
-# include "src/iterator/private/ft_iterator_utils.h"
+# include "src/iterator/private/ft_iterator_status_struct.h"
+# include "src/iterator/private/ft_iterator_struct.h"
 
 # include <stddef.h>
 

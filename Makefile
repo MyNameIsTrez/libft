@@ -228,12 +228,9 @@ HEADERS +=\
 	./src/gnl/private/gnl_private.h\
 	./src/gnl/get_next_line.h\
 	./src/helper_headers/ft_defines.h\
-	./src/helper_headers/ft_helper_headers.h\
-	./src/helper_headers/ft_shared_system_headers.h\
 	./src/helper_headers/ft_types.h\
 	./src/iterator/private/ft_iterator_status_struct.h\
 	./src/iterator/private/ft_iterator_struct.h\
-	./src/iterator/private/ft_iterator_utils.h\
 	./src/iterator/ft_iterator.h\
 	./src/lst/ft_lst.h\
 	./src/mem/ft_mem.h\

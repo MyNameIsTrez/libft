@@ -14,6 +14,7 @@
 
 #include "src/deque/ft_deque.h"
 #include "src/deque/ft_deque_struct.h"
+#include "src/error/ft_error.h"
 #include "src/mem/ft_mem.h"
 
 ////////////////////////////////////////////////////////////////////////////////

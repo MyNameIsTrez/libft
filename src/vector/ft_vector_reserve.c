@@ -14,6 +14,8 @@
 
 #include "src/allocating/ft_allocating.h"
 #include "src/vector/private/ft_private_vector.h"
+#include "src/vector/private/metadata/metadata_getters/\
+ft_private_vector_metadata_getters.h"
 
 #include <stddef.h>
 
