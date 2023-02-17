@@ -10,16 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/ft_allocating.h"
 #include "src/helper_headers/ft_types.h"
 #include "src/mem/ft_mem.h"
 #include "src/str/ft_str.h"
 
 #include <sys/types.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 // TODO: Make this work for any special characters, not just \n
 ssize_t	ft_print_fd(char *str, t_i32 fd)
@@ -36,5 +32,3 @@ ssize_t	ft_print_fd(char *str, t_i32 fd)
 		return (-1);
 	return (len);
 }
-
-////////////////////////////////////////////////////////////////////////////////

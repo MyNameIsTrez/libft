@@ -10,12 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/ft_allocating.h"
 #include "src/str/ft_str.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Allocates and returns a substring from the string @p str.\n
@@ -41,5 +37,3 @@ char	*ft_substr(const char *str, t_u32 start, size_t len)
 	ft_strlcpy(substr, &str[start], new_len + 1);
 	return (substr);
 }
-
-////////////////////////////////////////////////////////////////////////////////

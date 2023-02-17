@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/ft_vector.h"
 
 #include <stddef.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 t_status	ft_vector_push_new_vector(void *vector_ptr,
 				size_t inner_element_size)
@@ -29,5 +25,3 @@ t_status	ft_vector_push_new_vector(void *vector_ptr,
 		return (ERROR);
 	return (ft_vector_push(vector_ptr, &new_vector));
 }
-
-////////////////////////////////////////////////////////////////////////////////

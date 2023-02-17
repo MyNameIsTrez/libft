@@ -10,20 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/private/ft_malloc/ft_private_ft_malloc.h"
 #include "src/error/ft_error.h"
 
 #include <stddef.h>
 
-////////////////////////////////////////////////////////////////////////////////
-
 #ifdef CTESTER
 # include "src/ctester_globals.h"
 #endif
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Used so my tester can check whether programs still work
@@ -64,5 +58,3 @@ void	*ft_malloc(size_t count, size_t size)
 }
 
 #endif
-
-////////////////////////////////////////////////////////////////////////////////

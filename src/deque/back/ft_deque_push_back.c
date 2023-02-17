@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/deque/ft_deque.h"
 #include "src/deque/ft_deque_struct.h"
 #include "src/error/ft_error.h"
 #include "src/mem/ft_mem.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 // TODO: Remalloc when pushing past the end
 t_status	ft_deque_push_back(t_deque *deque, void *value_ptr)
@@ -26,5 +22,3 @@ t_status	ft_deque_push_back(t_deque *deque, void *value_ptr)
 	deque->size++;
 	return (OK);
 }
-
-////////////////////////////////////////////////////////////////////////////////

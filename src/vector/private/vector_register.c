@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/vector/ft_vector.h"
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/metadata/metadata_getters/\
 ft_private_vector_metadata_getters.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Calling this before `try_init_vector_of_metadata_ptr()` is UB.
@@ -40,5 +36,3 @@ t_status	vector_register(void *vector, size_t element_size,
 	metadata.address = vector;
 	return (ft_vector_push(vector_of_metadata_ptr, &metadata));
 }
-
-////////////////////////////////////////////////////////////////////////////////

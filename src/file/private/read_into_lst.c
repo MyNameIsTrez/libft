@@ -10,13 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/ft_allocating.h"
 #include "src/file/private/ft_private_file.h"
 #include "src/gnl/get_next_line.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 t_status	read_into_lst(t_char_grid *grid, t_i32 fd, t_list **lst_ptr)
 {
@@ -36,5 +32,3 @@ t_status	read_into_lst(t_char_grid *grid, t_i32 fd, t_list **lst_ptr)
 	}
 	return (OK);
 }
-
-////////////////////////////////////////////////////////////////////////////////

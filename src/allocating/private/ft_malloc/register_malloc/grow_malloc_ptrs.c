@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/private/ft_malloc/ft_private_ft_malloc.h"
 #include "src/allocating/private/ft_private_mem_allocating.h"
 
 #include <stdbool.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 bool	grow_malloc_ptrs(t_malloced *malloced)
 {
@@ -35,5 +31,3 @@ bool	grow_malloc_ptrs(t_malloced *malloced)
 	malloced->capacity *= 2;
 	return (true);
 }
-
-////////////////////////////////////////////////////////////////////////////////

@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/helper_headers/ft_types.h"
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/metadata/metadata_getters/\
 ft_private_vector_metadata_getters.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Passing an empty/invalid @p vector is UB.
@@ -34,5 +30,3 @@ void	*ft_vector_back(void *vector)
 	_vector = vector;
 	return (&_vector[(metadata_ptr->size - 1) * metadata_ptr->element_size]);
 }
-
-////////////////////////////////////////////////////////////////////////////////

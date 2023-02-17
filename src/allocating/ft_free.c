@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/private/ft_private_mem_allocating.h"
 #include "src/allocating/private/ft_free/ft_private_ft_free.h"
 
 #include <stdlib.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Frees a variable pointing to a string, and sets the variable to NULL.
@@ -51,5 +47,3 @@ void	ft_free(void *ptrptr)
 	*_ptrptr = NULL;
 	free(ptr);
 }
-
-////////////////////////////////////////////////////////////////////////////////

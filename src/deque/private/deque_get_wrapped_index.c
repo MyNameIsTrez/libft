@@ -10,13 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/deque/ft_deque_struct.h"
 
 #include <stdint.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 size_t	deque_get_wrapped_index(t_deque *deque, intptr_t index)
 {
@@ -26,5 +22,3 @@ size_t	deque_get_wrapped_index(t_deque *deque, intptr_t index)
 			+ (intptr_t)deque->capacity);
 	return (unwrapped_index % deque->capacity);
 }
-
-////////////////////////////////////////////////////////////////////////////////

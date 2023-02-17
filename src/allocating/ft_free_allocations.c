@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/private/ft_private_mem_allocating.h"
 #include "src/vector/ft_vector.h"
 
 #include <stdlib.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 void	ft_free_allocations(void)
 {
@@ -36,5 +32,3 @@ void	ft_free_allocations(void)
 	malloced->malloc_ptrs = NULL;
 	malloced->capacity = 0;
 }
-
-////////////////////////////////////////////////////////////////////////////////

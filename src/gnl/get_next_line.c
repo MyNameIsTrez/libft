@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/ft_allocating.h"
 #include "src/helper_headers/ft_defines.h"
 #include "src/gnl/private/gnl_private.h"
@@ -19,8 +17,6 @@
 
 #include <stddef.h>
 #include <unistd.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 static char	*gnl_malloc_line(t_buffer_list *lst)
 {
@@ -88,8 +84,6 @@ static t_buffer_list	**get_lst_fd(int fd)
 	return (&lst_fds[fd]);
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
 void	clear_get_next_line(int fd)
 {
 	gnl_lst_clear(get_lst_fd(fd));
@@ -129,5 +123,3 @@ char	*get_next_line(int fd)
 	}
 	return (gnl_create_line(lst));
 }
-
-////////////////////////////////////////////////////////////////////////////////

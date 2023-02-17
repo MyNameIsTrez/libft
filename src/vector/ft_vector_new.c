@@ -10,16 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/ft_allocating.h"
 #include "src/vector/ft_vector.h"
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/metadata/ft_private_vector_metadata.h"
 
 #include <stddef.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 void	*ft_vector_new(size_t element_size)
 {
@@ -35,5 +31,3 @@ void	*ft_vector_new(size_t element_size)
 		return (NULL);
 	return (vector);
 }
-
-////////////////////////////////////////////////////////////////////////////////

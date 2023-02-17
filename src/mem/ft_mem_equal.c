@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/mem/ft_mem.h"
 
 #include <stdbool.h>
 #include <stddef.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Returns whether two memory areas are equal, and at most @p len bytes.
@@ -31,5 +27,3 @@ bool	ft_mem_equal(const void *src1, const void *src2, size_t len)
 {
 	return (ft_memcmp(src1, src2, len) == 0);
 }
-
-////////////////////////////////////////////////////////////////////////////////

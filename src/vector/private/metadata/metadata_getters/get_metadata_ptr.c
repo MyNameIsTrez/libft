@@ -10,15 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/metadata/metadata_getters/\
 ft_private_vector_metadata_getters.h"
 
 #include <stddef.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 t_metadata	*get_metadata_ptr(void *vector)
 {
@@ -36,5 +32,3 @@ t_metadata	*get_metadata_ptr(void *vector)
 	ft_set_error(FT_ERROR_VECTOR_NOT_FOUND);
 	return (NULL);
 }
-
-////////////////////////////////////////////////////////////////////////////////

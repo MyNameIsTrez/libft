@@ -10,12 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/iterator/ft_iterator.h"
 #include "src/vector/ft_vector.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 t_iterator	ft_get_vector_iterator(void *vector)
 {
@@ -28,5 +24,3 @@ t_iterator	ft_get_vector_iterator(void *vector)
 	element_size = ft_vector_get_element_size(vector);
 	return (ft_get_array_iterator(start, count, element_size));
 }
-
-////////////////////////////////////////////////////////////////////////////////

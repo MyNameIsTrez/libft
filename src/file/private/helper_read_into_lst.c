@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/ft_allocating.h"
 #include "src/file/private/ft_private_file.h"
 #include "src/gnl/get_next_line.h"
@@ -19,8 +17,6 @@
 #include "src/str/ft_str.h"
 
 #include <stddef.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 t_status	helper_read_into_lst(t_char_grid *grid, t_i32 fd, char *line,
 					t_list **lst_ptr)
@@ -48,5 +44,3 @@ t_status	helper_read_into_lst(t_char_grid *grid, t_i32 fd, char *line,
 	}
 	return (ft_any_error());
 }
-
-////////////////////////////////////////////////////////////////////////////////

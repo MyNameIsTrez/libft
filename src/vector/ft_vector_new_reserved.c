@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/ft_vector.h"
 
 #include <stddef.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief The minimum @p initial_capacity is 1.
@@ -39,5 +35,3 @@ void	*ft_vector_new_reserved(size_t element_size, size_t initial_capacity)
 		return (NULL);
 	return (vector);
 }
-
-////////////////////////////////////////////////////////////////////////////////

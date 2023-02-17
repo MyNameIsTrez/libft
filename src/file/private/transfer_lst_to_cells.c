@@ -10,15 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/ft_allocating.h"
 #include "src/error/ft_error.h"
 #include "src/file/ft_file.h"
 #include "src/lst/ft_lst.h"
 #include "src/mem/ft_mem.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 t_status	transfer_lst_to_cells(t_list *lst, t_char_grid *grid)
 {
@@ -38,5 +34,3 @@ t_status	transfer_lst_to_cells(t_list *lst, t_char_grid *grid)
 	}
 	return (OK);
 }
-
-////////////////////////////////////////////////////////////////////////////////

@@ -10,15 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/vector/private/ft_private_vector_metadata_struct.h"
 #include "src/helper_headers/ft_types.h"
 #include "src/mem/ft_mem.h"
 
 #include <stddef.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 void	add_vector_value(t_metadata *metadata_ptr, t_u8 *vector,
 			void *value_ptr)
@@ -31,5 +27,3 @@ void	add_vector_value(t_metadata *metadata_ptr, t_u8 *vector,
 	ft_memmove(vector + pushed_value_offset, value_ptr, element_size);
 	metadata_ptr->size++;
 }
-
-////////////////////////////////////////////////////////////////////////////////

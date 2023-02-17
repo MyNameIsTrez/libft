@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/private/ft_private_mem_allocating.h"
 #include "src/mem/ft_mem.h"
 
 #include <stdlib.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 void	*_recalloc(void *ptr, size_t old_count, size_t new_count,
 			size_t type_size)
@@ -34,5 +30,3 @@ void	*_recalloc(void *ptr, size_t old_count, size_t new_count,
 	}
 	return (new_ptr);
 }
-
-////////////////////////////////////////////////////////////////////////////////

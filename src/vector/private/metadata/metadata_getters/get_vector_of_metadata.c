@@ -10,17 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/metadata/metadata_getters/\
 ft_private_vector_metadata_getters.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 t_metadata	*get_vector_of_metadata(void)
 {
 	return (*get_vector_of_metadata_ptr());
 }
-
-////////////////////////////////////////////////////////////////////////////////

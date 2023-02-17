@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/vector/ft_vector.h"
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/vector_push/ft_private_vector_push.h"
@@ -19,8 +17,6 @@
 ft_private_vector_metadata_getters.h"
 
 #include <stddef.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Note that when you have nested vectors,
@@ -59,5 +55,3 @@ t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
 	add_vector_value(metadata_ptr, *_vector_ptr, value_ptr);
 	return (OK);
 }
-
-////////////////////////////////////////////////////////////////////////////////

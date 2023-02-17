@@ -10,13 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/metadata/metadata_getters/\
 ft_private_vector_metadata_getters.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Passing an invalid @p vector is UB.
@@ -28,5 +24,3 @@ size_t	ft_vector_get_size(void *vector)
 {
 	return (get_metadata_ptr(vector)->size);
 }
-
-////////////////////////////////////////////////////////////////////////////////

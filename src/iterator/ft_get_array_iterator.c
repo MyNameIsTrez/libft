@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/iterator/ft_iterator.h"
 
 #include <stddef.h>
 #include <stdint.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 t_iterator	ft_get_array_iterator(void *start, size_t count, size_t size)
 {
@@ -26,5 +22,3 @@ t_iterator	ft_get_array_iterator(void *start, size_t count, size_t size)
 	stop = ((uintptr_t)start) + count * size;
 	return (ft_get_iterator((intptr_t)start, (intptr_t)stop, (intptr_t)size));
 }
-
-////////////////////////////////////////////////////////////////////////////////

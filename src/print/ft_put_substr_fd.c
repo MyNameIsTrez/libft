@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/helper_headers/ft_types.h"
 #include "src/mem/ft_mem.h"
 
 #include <sys/types.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Writes a substring to @p fd.
@@ -30,5 +26,3 @@ ssize_t	ft_put_substr_fd(char *start_substr, char *end_substr, t_i32 fd)
 {
 	return (ft_write(fd, start_substr, (size_t)(end_substr - start_substr)));
 }
-
-////////////////////////////////////////////////////////////////////////////////

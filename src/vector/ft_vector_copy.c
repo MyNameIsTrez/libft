@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/mem/ft_mem.h"
 #include "src/vector/ft_vector.h"
 #include "src/vector/private/ft_private_vector.h"
@@ -19,8 +17,6 @@
 ft_private_vector_metadata_getters.h"
 
 #include <stddef.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Returns a shallow copy of @p vector. Copies up to size, not capacity.
@@ -47,5 +43,3 @@ void	*ft_vector_copy(void *vector)
 	get_metadata_ptr(vector2)->size = size;
 	return (vector2);
 }
-
-////////////////////////////////////////////////////////////////////////////////

@@ -10,12 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/deque/ft_deque_struct.h"
 #include "src/allocating/ft_allocating.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief The minimum @p initial_capacity is 1.
@@ -45,5 +41,3 @@ t_deque	*ft_deque_new_reserved(size_t element_size, size_t initial_capacity)
 	deque->start_index = 0;
 	return (deque);
 }
-
-////////////////////////////////////////////////////////////////////////////////

@@ -10,12 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/nbr/ft_nbr.h"
 #include "src/str/ft_str.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 static void	add_unsigned_digits_to_str(char *str, uintmax_t nbr,
 				size_t number_len, t_u32 base)
@@ -53,5 +49,3 @@ char	*ft_unsigned_nbr_to_str(uintmax_t number, t_u32 base)
 	add_unsigned_digits_to_str(str, number, number_len, base);
 	return (str);
 }
-
-////////////////////////////////////////////////////////////////////////////////

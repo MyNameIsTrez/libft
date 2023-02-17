@@ -10,20 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #ifndef FT_STR_H
 # define FT_STR_H
-
-////////////////////////////////////////////////////////////////////////////////
 
 # include "src/helper_headers/ft_types.h"
 # include "src/error/ft_error.h"
 
 # include <stddef.h>
 # include <stdbool.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 bool		ft_chr_in_str(const t_i32 chr, const char *str);
 char		*ft_chr_repeat(const char chr, size_t repeat);
@@ -70,8 +64,4 @@ char		*ft_strtrim_whitespace(const char *str);
 char		*ft_strtrim(const char *str, const char *trim_set);
 char		*ft_substr(const char *str, t_u32 start, size_t len);
 
-////////////////////////////////////////////////////////////////////////////////
-
 #endif
-
-////////////////////////////////////////////////////////////////////////////////

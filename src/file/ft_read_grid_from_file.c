@@ -10,16 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/file/private/ft_private_file.h"
 #include "src/gnl/get_next_line.h"
 #include "src/helper_headers/ft_defines.h"
 
 #include <fcntl.h>
 #include <unistd.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief
@@ -56,5 +52,3 @@ t_status	ft_read_grid_from_file(t_char_grid *grid, char *filename)
 	ft_lstclear(&lst, NULL);
 	return (OK);
 }
-
-////////////////////////////////////////////////////////////////////////////////

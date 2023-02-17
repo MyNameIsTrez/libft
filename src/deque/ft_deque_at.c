@@ -10,13 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/deque/ft_deque_struct.h"
 #include "src/deque/private/ft_private_deque.h"
 #include "src/helper_headers/ft_types.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 void	*ft_deque_at(t_deque *deque, size_t index)
 {
@@ -25,5 +21,3 @@ void	*ft_deque_at(t_deque *deque, size_t index)
 	wrapped_index = deque_get_wrapped_index(deque, (intptr_t)index);
 	return (((t_u8 *)deque->data) + wrapped_index * deque->element_size);
 }
-
-////////////////////////////////////////////////////////////////////////////////

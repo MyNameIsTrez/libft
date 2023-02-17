@@ -10,19 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #ifndef FT_NBR_H
 # define FT_NBR_H
-
-////////////////////////////////////////////////////////////////////////////////
 
 # include "src/helper_headers/ft_types.h"
 
 # include <stddef.h>
 # include <stdbool.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 t_i32	ft_atoi_range(const char *str, bool *out_of_range);
 bool	ft_atoi_safe(const char *str, t_i32 *nbr);
@@ -42,8 +36,4 @@ char	*ft_nbr_to_str(intmax_t number, t_u32 base);
 float	ft_strtof(char *nptr, char **endptr);
 char	*ft_unsigned_nbr_to_str(uintmax_t number, t_u32 base);
 
-////////////////////////////////////////////////////////////////////////////////
-
 #endif
-
-////////////////////////////////////////////////////////////////////////////////

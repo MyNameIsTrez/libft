@@ -10,13 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/ft_allocating.h"
 #include "src/mem/ft_mem.h"
 #include "src/str/ft_str.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Returns @p chr repeated @p repeat times.
@@ -35,5 +31,3 @@ char	*ft_chr_repeat(const char chr, size_t repeat)
 	ft_memset(str, chr, repeat);
 	return (str);
 }
-
-////////////////////////////////////////////////////////////////////////////////

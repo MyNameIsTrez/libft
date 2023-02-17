@@ -10,13 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/metadata/metadata_getters/\
 ft_private_vector_metadata_getters.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 // TODO: Rename to get_remaining_byte_count or get_byte_count_on_right
 size_t	get_bytes_after_metadata(t_metadata *metadata_ptr, size_t element_size)
@@ -34,5 +30,3 @@ size_t	get_bytes_after_metadata(t_metadata *metadata_ptr, size_t element_size)
 	shifted_elements = total_elements - metadata_position;
 	return (shifted_elements * element_size);
 }
-
-////////////////////////////////////////////////////////////////////////////////

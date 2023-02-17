@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/ft_allocating.h"
 #include "src/mem/ft_mem.h"
 #include "src/vector/private/ft_private_vector.h"
@@ -19,8 +17,6 @@
 ft_private_vector_metadata_getters.h"
 
 #include <stddef.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Doesn't free vector contents, only the vectors,
@@ -45,5 +41,3 @@ void	ft_vector_clean_up(void)
 	ft_free(vector_of_metadata_ptr);
 	*vector_of_metadata_ptr = NULL;
 }
-
-////////////////////////////////////////////////////////////////////////////////

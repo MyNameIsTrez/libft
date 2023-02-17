@@ -10,15 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/deque/ft_deque.h"
 #include "src/deque/ft_deque_struct.h"
 #include "src/deque/private/ft_private_deque.h"
 #include "src/error/ft_error.h"
 #include "src/mem/ft_mem.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 // TODO: Remalloc when pushing past the start
 t_status	ft_deque_push_front(t_deque *deque, void *value_ptr)
@@ -28,5 +24,3 @@ t_status	ft_deque_push_front(t_deque *deque, void *value_ptr)
 	deque->start_index = deque_get_wrapped_index(deque, -1);
 	return (OK);
 }
-
-////////////////////////////////////////////////////////////////////////////////

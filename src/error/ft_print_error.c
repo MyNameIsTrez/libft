@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/error/ft_error.h"
 #include "src/print/ft_print.h"
 
 #include <unistd.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 // TODO: Add tests.
 void	ft_print_error(void)
@@ -36,5 +32,3 @@ void	ft_print_error(void)
 	ft_putendl_fd("Error", STDERR_FILENO);
 	ft_putendl_fd(ft_error_messages[ft_get_error()], STDERR_FILENO);
 }
-
-////////////////////////////////////////////////////////////////////////////////

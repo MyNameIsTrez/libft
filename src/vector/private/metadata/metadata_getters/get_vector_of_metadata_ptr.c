@@ -10,13 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/vector/private/ft_private_vector.h"
 
 #include <stddef.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 // TODO: It is annoying how this function is also responsible for the allocation
 // Try splitting this up into subfunctions and rewriting code which uses this.
@@ -27,5 +23,3 @@ t_metadata	**get_vector_of_metadata_ptr(void)
 
 	return (&vector_of_metadata);
 }
-
-////////////////////////////////////////////////////////////////////////////////

@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/allocating/private/ft_private_mem_allocating.h"
-
-////////////////////////////////////////////////////////////////////////////////
 
 void	free_malloc_ptr(size_t index, t_malloced *malloced)
 {
@@ -26,5 +22,3 @@ void	free_malloc_ptr(size_t index, t_malloced *malloced)
 	malloc_ptrs[malloced->size - 1] = NULL;
 	malloced->size--;
 }
-
-////////////////////////////////////////////////////////////////////////////////

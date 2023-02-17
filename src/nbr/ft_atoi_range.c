@@ -10,16 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////////////////////////////////////////////////////////
-
 #include "src/char/ft_char.h"
 #include "src/helper_headers/ft_types.h"
 
 #include <limits.h>
 #include <stdbool.h>
 #include <stddef.h>
-
-////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief Takes a @p str like "123" and returns -123. It returns a negative
@@ -87,5 +83,3 @@ t_i32	ft_atoi_range(const char *str, bool *out_of_range)
 		*out_of_range = true;
 	return (-sign * value);
 }
-
-////////////////////////////////////////////////////////////////////////////////
