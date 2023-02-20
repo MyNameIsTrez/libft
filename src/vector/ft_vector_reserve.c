@@ -11,15 +11,16 @@
 /* ************************************************************************** */
 
 #include "src/allocating/ft_allocating.h"
+#include "src/vector/ft_vector.h"
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/metadata/metadata_getters/\
 ft_private_vector_metadata_getters.h"
 
 #include <stddef.h>
 
-t_status	ft_vector_reserve(void *vector_ptr, size_t new_count)
+t_status	ft_vector_reserve(t_vector_ptr vector_ptr, size_t new_count)
 {
-	void		**_vector_ptr;
+	t_vector	*_vector_ptr;
 	t_metadata	*metadata_ptr;
 	t_metadata	*temp_metadata_ptr;
 	bool		_is_bookkeeping_vector;

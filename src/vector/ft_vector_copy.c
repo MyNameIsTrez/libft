@@ -24,12 +24,12 @@ ft_private_vector_metadata_getters.h"
  * @param vector
  * @return void*
  */
-void	*ft_vector_copy(void *vector)
+t_vector	ft_vector_copy(t_vector vector)
 {
 	t_metadata	*vector_metadata_ptr;
 	size_t		element_size;
 	size_t		size;
-	void		*vector2;
+	t_vector	vector2;
 
 	vector_metadata_ptr = get_metadata_ptr(vector);
 	if (vector_metadata_ptr == NULL)

@@ -12,6 +12,7 @@
 
 #include "src/allocating/ft_allocating.h"
 #include "src/mem/ft_mem.h"
+#include "src/vector/ft_vector.h"
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/metadata/metadata_getters/\
 ft_private_vector_metadata_getters.h"
@@ -25,9 +26,9 @@ ft_private_vector_metadata_getters.h"
  * @param vector
  * @return
  */
-void	ft_vector_free(void *vector_ptr)
+void	ft_vector_free(t_vector_ptr vector_ptr)
 {
-	void		**_vector_ptr;
+	t_vector	*_vector_ptr;
 	t_metadata	*metadata_ptr;
 	t_metadata	*vector_of_metadata;
 	size_t		element_size;

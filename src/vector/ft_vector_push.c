@@ -30,7 +30,7 @@ ft_private_vector_metadata_getters.h"
  * @param value_ptr
  * @return
  */
-t_status	ft_vector_push(void *vector_ptr, void *value_ptr)
+t_status	ft_vector_push(t_vector_ptr vector_ptr, void *value_ptr)
 {
 	t_u8		**_vector_ptr;
 	t_metadata	*metadata_ptr;

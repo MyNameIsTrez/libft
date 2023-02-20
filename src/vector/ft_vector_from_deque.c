@@ -13,10 +13,10 @@
 #include "src/deque/ft_deque_struct.h"
 #include "src/vector/ft_vector.h"
 
-void	*ft_vector_from_deque(t_deque *deque)
+t_vector	ft_vector_from_deque(t_deque *deque)
 {
-	void	*vector;
-	size_t	i;
+	t_vector	vector;
+	size_t		i;
 
 	vector = ft_vector_new_reserved(deque->element_size, deque->size);
 	if (vector == NULL)

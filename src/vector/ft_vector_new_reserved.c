@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src/vector/private/ft_private_vector.h"
 #include "src/vector/ft_vector.h"
+#include "src/vector/private/ft_private_vector.h"
 
 #include <stddef.h>
 
@@ -22,9 +22,9 @@
  * @param initial_capacity
  * @return
  */
-void	*ft_vector_new_reserved(size_t element_size, size_t initial_capacity)
+t_vector	ft_vector_new_reserved(size_t element_size, size_t initial_capacity)
 {
-	void	*vector;
+	t_vector	vector;
 
 	if (initial_capacity < 1)
 		return (NULL);

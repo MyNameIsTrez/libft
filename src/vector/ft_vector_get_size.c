@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "src/vector/ft_vector.h"
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/metadata/metadata_getters/\
 ft_private_vector_metadata_getters.h"
@@ -20,7 +21,7 @@ ft_private_vector_metadata_getters.h"
  * @param vector
  * @return
  */
-size_t	ft_vector_get_size(void *vector)
+size_t	ft_vector_get_size(t_vector vector)
 {
 	return (get_metadata_ptr(vector)->size);
 }

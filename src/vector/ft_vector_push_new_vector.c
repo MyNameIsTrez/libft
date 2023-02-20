@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src/vector/private/ft_private_vector.h"
 #include "src/vector/ft_vector.h"
+#include "src/vector/private/ft_private_vector.h"
 
 #include <stddef.h>
 
-t_status	ft_vector_push_new_vector(void *vector_ptr,
+t_status	ft_vector_push_new_vector(t_vector_ptr vector_ptr,
 				size_t inner_element_size)
 {
-	void	*new_vector;
+	t_vector	new_vector;
 
 	new_vector = ft_vector_new(inner_element_size);
 	if (new_vector == NULL)

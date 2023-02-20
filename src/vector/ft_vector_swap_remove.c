@@ -12,6 +12,7 @@
 
 #include "src/helper_headers/ft_types.h"
 #include "src/mem/ft_mem.h"
+#include "src/vector/ft_vector.h"
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/metadata/metadata_getters/\
 ft_private_vector_metadata_getters.h"
@@ -22,7 +23,7 @@ ft_private_vector_metadata_getters.h"
  * @param vector_ptr
  * @param index
  */
-void	ft_vector_swap_remove(void *vector_ptr, size_t index)
+void	ft_vector_swap_remove(t_vector_ptr vector_ptr, size_t index)
 {
 	t_u8		**_vector_ptr;
 	t_metadata	*metadata_ptr;

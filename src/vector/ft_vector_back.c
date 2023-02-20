@@ -14,6 +14,7 @@
 #include "src/vector/private/ft_private_vector.h"
 #include "src/vector/private/metadata/metadata_getters/\
 ft_private_vector_metadata_getters.h"
+#include "src/vector/ft_vector.h"
 
 /**
  * @brief Passing an empty/invalid @p vector is UB.
@@ -21,7 +22,7 @@ ft_private_vector_metadata_getters.h"
  * @param vector
  * @return
  */
-void	*ft_vector_back(void *vector)
+void	*ft_vector_back(t_vector vector)
 {
 	t_metadata	*metadata_ptr;
 	t_u8		*_vector;
