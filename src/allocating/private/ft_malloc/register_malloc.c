@@ -34,7 +34,8 @@ void	*register_malloc(size_t count, size_t size)
 	if (malloced->size >= malloced->capacity)
 		if (!grow_malloc_ptrs(malloced))
 			return (NULL);
-	malloced->malloc_ptrs[malloced->size] = malloc_ptr;
+	malloced->malloc_ptrs[malloced->size].ptr = malloc_ptr;
+	malloced->malloc_ptrs[malloced->size].capacity = count * size;
 	malloced->size++;
 	return (malloc_ptr);
 }

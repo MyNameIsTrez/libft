@@ -14,12 +14,11 @@
 
 t_malloced	*get_malloced(void)
 {
-	static t_malloced	malloced = {\
-		.malloc_ptrs = NULL, .size = 0, .capacity = 0};
+	static t_malloced	malloced;
 
 	if (malloced.malloc_ptrs == NULL)
 	{
-		malloced.malloc_ptrs = _calloc(1, sizeof(void *));
+		malloced.malloc_ptrs = _calloc(1, sizeof(*malloced.malloc_ptrs));
 		if (malloced.malloc_ptrs == NULL)
 			return (NULL);
 		malloced.capacity = 1;

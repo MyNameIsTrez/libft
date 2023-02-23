@@ -15,11 +15,17 @@
 
 # include <stddef.h>
 
+typedef struct s_single_malloc
+{
+	void	*ptr;
+	size_t	capacity;
+}	t_single_malloc;
+
 typedef struct s_malloced
 {
-	void	**malloc_ptrs;
-	size_t	size;
-	size_t	capacity;
+	t_single_malloc	*malloc_ptrs;
+	size_t			size;
+	size_t			capacity;
 }	t_malloced;
 
 void		*_calloc(size_t count, size_t size);

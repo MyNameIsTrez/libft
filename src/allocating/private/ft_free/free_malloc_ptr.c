@@ -14,11 +14,12 @@
 
 void	free_malloc_ptr(size_t index, t_malloced *malloced)
 {
-	void	**malloc_ptrs;
+	t_single_malloc	*malloc_ptrs;
 
 	malloc_ptrs = malloced->malloc_ptrs;
 	if (index != malloced->size - 1)
 		malloc_ptrs[index] = malloc_ptrs[malloced->size - 1];
-	malloc_ptrs[malloced->size - 1] = NULL;
+	malloc_ptrs[malloced->size - 1].ptr = NULL;
+	malloc_ptrs[malloced->size - 1].capacity = 0;
 	malloced->size--;
 }

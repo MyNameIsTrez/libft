@@ -35,7 +35,7 @@ void	ft_free(void *ptrptr)
 		index = 0;
 		while (index < malloced->size)
 		{
-			if (malloced->malloc_ptrs[index] == *_ptrptr)
+			if (malloced->malloc_ptrs[index].ptr == *_ptrptr)
 			{
 				free_malloc_ptr(index, malloced);
 				break ;

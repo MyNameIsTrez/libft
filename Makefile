@@ -36,6 +36,7 @@ SOURCES +=\
 	src/allocating/ft_free.c\
 	src/allocating/ft_free_allocations.c\
 	src/allocating/ft_get_allocation_count.c\
+	src/allocating/ft_get_bytes_allocated.c\
 	src/allocating/ft_malloc.c\
 	src/allocating/ft_recalloc.c\
 	src/allocating/ft_remalloc.c\
@@ -205,10 +206,6 @@ SOURCES +=\
 
 ################################################################################
 
-FCLEANED_FILES := $(NAME)
-
-################################################################################
-
 # DEBUG is set to 1 when libctester includes this file
 ifdef DEBUG
 CFLAGS += -DDEBUG=1
@@ -276,7 +273,7 @@ clean:
 
 .PHONY: fclean
 fclean: clean
-	$(RM) -f $(FCLEANED_FILES)
+	$(RM) -f $(NAME)
 
 .PHONY: re
 re: fclean all
