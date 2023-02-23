@@ -18,7 +18,7 @@
 t_status	ft_vector_push_new_vector(t_vector_ptr vector_ptr,
 				size_t inner_element_size)
 {
-	t_vector	new_vector;
+	t_vector_	new_vector;
 
 	new_vector = ft_vector_new(inner_element_size);
 	if (new_vector == NULL)

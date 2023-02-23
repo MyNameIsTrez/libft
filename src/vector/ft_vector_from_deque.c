@@ -13,9 +13,9 @@
 #include "src/deque/ft_deque_struct.h"
 #include "src/vector/ft_vector.h"
 
-t_vector	ft_vector_from_deque(t_deque *deque)
+t_vector_	ft_vector_from_deque(t_deque *deque)
 {
-	t_vector	vector;
+	t_vector_	vector;
 	size_t		i;
 
 	vector = ft_vector_new_reserved(deque->element_size, deque->size);

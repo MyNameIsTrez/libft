@@ -22,7 +22,7 @@ ft_private_vector_metadata_getters.h"
  * @param vector
  * @return
  */
-void	*ft_vector_back(t_vector vector)
+void	*ft_vector_back(t_vector_ vector)
 {
 	t_metadata	*metadata_ptr;
 	t_u8		*_vector;

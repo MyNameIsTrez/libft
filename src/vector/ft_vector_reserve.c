@@ -20,7 +20,7 @@ ft_private_vector_metadata_getters.h"
 
 t_status	ft_vector_reserve(t_vector_ptr vector_ptr, size_t new_count)
 {
-	t_vector	*_vector_ptr;
+	t_vector_	*_vector_ptr;
 	t_metadata	*metadata_ptr;
 	t_metadata	*temp_metadata_ptr;
 	bool		_is_bookkeeping_vector;

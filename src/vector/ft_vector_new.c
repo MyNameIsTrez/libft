@@ -17,9 +17,9 @@
 
 #include <stddef.h>
 
-t_vector	ft_vector_new(size_t element_size)
+t_vector_	ft_vector_new(size_t element_size)
 {
-	t_vector	vector;
+	t_vector_	vector;
 
 	vector = ft_malloc(VECTOR_DEFAULT_ELEMENT_CAPACITY, element_size);
 	if (vector == NULL)

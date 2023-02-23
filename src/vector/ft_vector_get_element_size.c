@@ -21,7 +21,7 @@ ft_private_vector_metadata_getters.h"
  * @param vector
  * @return
  */
-size_t	ft_vector_get_element_size(t_vector vector)
+size_t	ft_vector_get_element_size(t_vector_ vector)
 {
 	return (get_metadata_ptr(vector)->element_size);
 }

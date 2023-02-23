@@ -28,7 +28,7 @@ ft_private_vector_metadata_getters.h"
  */
 void	ft_vector_free(t_vector_ptr vector_ptr)
 {
-	t_vector	*_vector_ptr;
+	t_vector_	*_vector_ptr;
 	t_metadata	*metadata_ptr;
 	t_metadata	*vector_of_metadata;
 	size_t		element_size;

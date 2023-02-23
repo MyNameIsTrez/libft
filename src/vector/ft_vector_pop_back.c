@@ -23,7 +23,7 @@ ft_private_vector_metadata_getters.h"
  */
 void	ft_vector_pop_back(t_vector_ptr vector_ptr)
 {
-	t_vector	*_vector_ptr;
+	t_vector_	*_vector_ptr;
 
 	_vector_ptr = vector_ptr;
 	get_metadata_ptr(*_vector_ptr)->size--;
