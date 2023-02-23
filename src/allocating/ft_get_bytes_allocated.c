@@ -26,7 +26,7 @@ size_t	ft_get_bytes_allocated(void)
 	while (index < malloced->size)
 	{
 		bytes_allocated += malloced->malloc_ptrs[index].capacity;
-		index--;
+		index++;
 	}
 	return (bytes_allocated);
 }
