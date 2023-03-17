@@ -38,6 +38,7 @@ SOURCES +=\
 	src/allocating/ft_get_allocation_count.c\
 	src/allocating/ft_get_bytes_allocated.c\
 	src/allocating/ft_malloc.c\
+	src/allocating/ft_print_allocations.c\
 	src/allocating/ft_recalloc.c\
 	src/allocating/ft_remalloc.c\
 	src/char/ft_char_to_digit.c\

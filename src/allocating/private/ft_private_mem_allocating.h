@@ -18,6 +18,8 @@
 typedef struct s_single_malloc
 {
 	void	*ptr;
+	size_t	count;
+	size_t	size;
 	size_t	capacity;
 }	t_single_malloc;
 
