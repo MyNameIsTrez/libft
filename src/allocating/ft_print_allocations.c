@@ -27,8 +27,9 @@ void	ft_print_allocations(void)
 	while (i < malloced->size)
 	{
 		m = malloced->malloc_ptrs[i];
-		printf("%zu bytes capacity of count %zu and size %zu at address %p\n",
-			m.capacity, m.count, m.size, m.ptr);
+		printf("%zu bytes capacity", m.capacity);
+		printf(" of count %zu and size %zu", m.count, m.size);
+		printf(" with description '%s' at address %p\n", m.description, m.ptr);
 		i++;
 	}
 }

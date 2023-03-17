@@ -21,6 +21,7 @@ typedef struct s_single_malloc
 	size_t	count;
 	size_t	size;
 	size_t	capacity;
+	char	*description;
 }	t_single_malloc;
 
 typedef struct s_malloced

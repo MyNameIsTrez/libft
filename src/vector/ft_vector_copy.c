@@ -36,7 +36,8 @@ t_vector_	ft_vector_copy(t_vector_ vector)
 		return (NULL);
 	element_size = vector_metadata_ptr->element_size;
 	size = vector_metadata_ptr->size;
-	vector2 = ft_vector_new_reserved(element_size, size);
+	vector2 = ft_vector_new_reserved(element_size, size,
+			vector_metadata_ptr->description);
 	if (vector2 == NULL)
 		return (NULL);
 	ft_memcpy(vector2, vector, element_size * size);

@@ -25,6 +25,7 @@ typedef struct s_metadata
 	size_t	capacity;
 	size_t	element_size;
 	void	*address;
+	char	*description;
 }	t_metadata;
 
 #endif

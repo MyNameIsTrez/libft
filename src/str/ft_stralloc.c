@@ -18,7 +18,7 @@
  * @param len Doesn't include the null terminator.
  * @return The allocated string.
  */
-char	*ft_stralloc(const size_t len)
+char	*ft_stralloc(const size_t len, char *description)
 {
-	return (ft_calloc(len + 1, sizeof(char)));
+	return (ft_calloc(len + 1, sizeof(char), description));
 }

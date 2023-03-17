@@ -19,7 +19,7 @@
  * @param str
  * @return The trimmed string.
  */
-char	*ft_strtrim_whitespace(const char *str)
+char	*ft_strtrim_whitespace(const char *str, char *description)
 {
-	return (ft_strtrim(str, WHITESPACE));
+	return (ft_strtrim(str, WHITESPACE, description));
 }

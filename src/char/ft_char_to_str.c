@@ -24,7 +24,7 @@ char	*ft_char_to_str(const char chr)
 
 	if (chr == '\0')
 		return (ft_empty_str());
-	str = ft_stralloc(2 * sizeof(char));
+	str = ft_stralloc(2 * sizeof(char), "char");
 	if (str == NULL)
 		return (str);
 	str[0] = chr;

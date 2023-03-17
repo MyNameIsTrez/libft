@@ -28,14 +28,14 @@
  */
 #ifdef CTESTER
 
-void	*ft_malloc(size_t count, size_t size)
+void	*ft_malloc(size_t count, size_t size, char *description)
 {
 	void	*ptr;
 
 	malloc_call_count++;
 	if (malloc_call_count != malloc_call_count_to_fail)
 	{
-		ptr = register_malloc(count, size);
+		ptr = register_malloc(count, size, description);
 		if (ptr == NULL)
 			ft_set_error(FT_ERROR_MALLOC);
 		return (ptr);
@@ -47,11 +47,11 @@ void	*ft_malloc(size_t count, size_t size)
 
 #else
 
-void	*ft_malloc(size_t count, size_t size)
+void	*ft_malloc(size_t count, size_t size, char *description)
 {
 	void	*ptr;
 
-	ptr = register_malloc(count, size);
+	ptr = register_malloc(count, size, description);
 	if (ptr == NULL)
 		ft_set_error(FT_ERROR_MALLOC);
 	return (ptr);

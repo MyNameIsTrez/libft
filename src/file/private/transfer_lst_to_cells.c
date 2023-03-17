@@ -16,13 +16,15 @@
 #include "src/lst/ft_lst.h"
 #include "src/mem/ft_mem.h"
 
-t_status	transfer_lst_to_cells(t_list *lst, t_char_grid *grid)
+t_status	transfer_lst_to_cells(t_list *lst, t_char_grid *grid,
+				char *description)
 {
 	size_t	i;
 
 	if (grid->width == 0 || grid->height == 0)
 		return (ft_set_error(FT_ERROR_EMPTY_FILE));
-	grid->cells = ft_malloc(grid->width * grid->height, sizeof(t_u8));
+	grid->cells = ft_malloc(grid->width * grid->height, sizeof(t_u8),
+			description);
 	if (grid->cells == NULL)
 		return (ERROR);
 	i = 0;

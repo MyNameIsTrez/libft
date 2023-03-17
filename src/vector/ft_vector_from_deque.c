@@ -18,7 +18,8 @@ t_vector_	ft_vector_from_deque(t_deque *deque)
 	t_vector_	vector;
 	size_t		i;
 
-	vector = ft_vector_new_reserved(deque->element_size, deque->size);
+	vector = ft_vector_new_reserved(deque->element_size, deque->size,
+			deque->description);
 	if (vector == NULL)
 		return (NULL);
 	i = 0;

@@ -17,11 +17,12 @@
 
 #include <stddef.h>
 
-t_vector_	ft_vector_new(size_t element_size)
+t_vector_	ft_vector_new(size_t element_size, char *description)
 {
 	t_vector_	vector;
 
-	vector = ft_malloc(VECTOR_DEFAULT_ELEMENT_CAPACITY, element_size);
+	vector = ft_malloc(VECTOR_DEFAULT_ELEMENT_CAPACITY, element_size,
+			description);
 	if (vector == NULL)
 		return (NULL);
 	if (try_init_vector_of_metadata_ptr() != OK)

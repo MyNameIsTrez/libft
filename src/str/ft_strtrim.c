@@ -42,7 +42,7 @@ static size_t	get_end_index(const char *str, const char *trim_set)
  * @return The trimmed string;\n
    NULL if the allocation fails.
  */
-char	*ft_strtrim(const char *str, const char *trim_set)
+char	*ft_strtrim(const char *str, const char *trim_set, char *description)
 {
 	t_u32	start;
 	size_t	end;
@@ -53,5 +53,5 @@ char	*ft_strtrim(const char *str, const char *trim_set)
 		return (ft_empty_str());
 	end = get_end_index(str, trim_set);
 	len = end - start;
-	return (ft_substr(str, start, len + 1));
+	return (ft_substr(str, start, len + 1, description));
 }

@@ -22,13 +22,14 @@
  * @param initial_capacity
  * @return
  */
-t_vector_	ft_vector_new_reserved(size_t element_size, size_t initial_capacity)
+t_vector_	ft_vector_new_reserved(size_t element_size, size_t initial_capacity,
+				char *description)
 {
 	t_vector_	vector;
 
 	if (initial_capacity < 1)
 		return (NULL);
-	vector = ft_vector_new(element_size);
+	vector = ft_vector_new(element_size, description);
 	if (vector == NULL)
 		return (NULL);
 	if (ft_vector_reserve(&vector, initial_capacity) != OK)

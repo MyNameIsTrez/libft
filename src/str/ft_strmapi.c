@@ -24,12 +24,13 @@
    NULL if the allocation fails, or if either @p input_str or
    @p fun are NULL.
  */
-char	*ft_strmapi(const char *input_str, char (*fun)(t_u32, char))
+char	*ft_strmapi(const char *input_str, char (*fun)(t_u32, char),
+			char *description)
 {
 	char	*output_str;
 	t_u32	i;
 
-	output_str = ft_stralloc(ft_strlen(input_str));
+	output_str = ft_stralloc(ft_strlen(input_str), description);
 	if (output_str == NULL)
 		return (NULL);
 	i = 0;

@@ -49,7 +49,7 @@ static void	fill_rejoin(char *rejoined, char **split, char *sep,
  * @param sep
  * @return
  */
-char	*ft_rejoin_split(char **split, char *sep)
+char	*ft_rejoin_split(char **split, char *sep, char *description)
 {
 	size_t	sep_len;
 	char	*rejoined;
@@ -57,7 +57,7 @@ char	*ft_rejoin_split(char **split, char *sep)
 
 	sep_len = ft_strlen(sep);
 	rejoined_len = get_rejoined_len(split, sep_len);
-	rejoined = ft_stralloc(rejoined_len);
+	rejoined = ft_stralloc(rejoined_len, description);
 	if (rejoined == NULL)
 		return (NULL);
 	fill_rejoin(rejoined, split, sep, rejoined_len);

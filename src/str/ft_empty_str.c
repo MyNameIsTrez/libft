@@ -19,5 +19,5 @@
  */
 char	*ft_empty_str(void)
 {
-	return (ft_strdup(""));
+	return (ft_strdup("", "empty string"));
 }

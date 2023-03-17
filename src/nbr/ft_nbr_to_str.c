@@ -46,7 +46,7 @@ char	*ft_nbr_to_str(intmax_t number, t_u32 base)
 	number_len = ft_get_digit_count_base(number, base);
 	if (number < 0)
 		++number_len;
-	str = ft_stralloc(number_len);
+	str = ft_stralloc(number_len, "number string");
 	if (str == NULL)
 		return (NULL);
 	if (number >= 0)

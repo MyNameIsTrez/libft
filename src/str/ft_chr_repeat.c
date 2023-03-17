@@ -21,11 +21,11 @@
  * @param repeat
  * @return
  */
-char	*ft_chr_repeat(const char chr, size_t repeat)
+char	*ft_chr_repeat(const char chr, size_t repeat, char *description)
 {
 	char	*str;
 
-	str = ft_stralloc(repeat);
+	str = ft_stralloc(repeat, description);
 	if (str == NULL)
 		return (NULL);
 	ft_memset(str, chr, repeat);

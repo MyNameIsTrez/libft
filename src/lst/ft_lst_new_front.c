@@ -12,11 +12,11 @@
 
 #include "src/lst/ft_lst.h"
 
-t_list	*ft_lst_new_front(t_list **lst_ptr, void *content)
+t_list	*ft_lst_new_front(t_list **lst_ptr, void *content, char *description)
 {
 	t_list	*new_lst;
 
-	new_lst = ft_lstnew(content);
+	new_lst = ft_lstnew(content, description);
 	if (new_lst == NULL)
 		return (NULL);
 	ft_lstadd_front(lst_ptr, new_lst);

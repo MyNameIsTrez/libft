@@ -43,7 +43,7 @@ char	*ft_unsigned_nbr_to_str(uintmax_t number, t_u32 base)
 	size_t	number_len;
 
 	number_len = ft_get_digit_count_base_unsigned(number, base);
-	str = ft_stralloc(number_len);
+	str = ft_stralloc(number_len, "unsigned number");
 	if (str == NULL)
 		return (NULL);
 	add_unsigned_digits_to_str(str, number, number_len, base);

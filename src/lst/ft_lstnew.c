@@ -19,11 +19,11 @@
  * @param content The content to create the new element with.
  * @return The new element.
  */
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content, char *description)
 {
 	t_list	*lst;
 
-	lst = ft_malloc(1, sizeof(t_list));
+	lst = ft_malloc(1, sizeof(t_list), description);
 	if (lst == NULL)
 		return (NULL);
 	lst->content = content;

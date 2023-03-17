@@ -37,7 +37,7 @@ static char	*gnl_malloc_line(t_buffer_list *lst)
 		len += (size_t)lst->size;
 	else
 		len += (size_t)(nl - (lst->buf + lst->start)) + 1;
-	line = ft_malloc(len + 1, sizeof(char));
+	line = ft_malloc(len + 1, sizeof(char), "line");
 	if (line == NULL)
 		return (NULL);
 	if (nl != NULL)

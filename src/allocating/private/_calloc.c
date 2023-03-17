@@ -14,7 +14,6 @@
 
 #include <stdlib.h>
 
-// TODO: Am I allowed to just call C's calloc() directly instead?
 void	*_calloc(size_t count, size_t size)
 {
 	void	*ptr;

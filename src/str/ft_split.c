@@ -32,7 +32,8 @@ static size_t	get_word_count(char *str, char sep)
 	return (word_count);
 }
 
-static bool	add_words_to_split(char *str, char sep, char ***split)
+static bool	add_words_to_split(char *str, char sep, char ***split,
+				char *description)
 {
 	size_t	i;
 	char	*start_of_word;
@@ -49,7 +50,7 @@ static bool	add_words_to_split(char *str, char sep, char ***split)
 		end_of_word = ft_strchr(start_of_word, sep);
 		start_index = (t_u32)(start_of_word - str);
 		len = (size_t)(end_of_word - start_of_word);
-		(*split)[i] = ft_substr(str, start_index, len);
+		(*split)[i] = ft_substr(str, start_index, len, description);
 		if ((*split)[i] == NULL)
 		{
 			ft_free_split(split);
@@ -69,7 +70,7 @@ static bool	add_words_to_split(char *str, char sep, char ***split)
  * @return The array of new strings resulting from the split;\n
    NULL if the allocation fails.
  */
-char	**ft_split(const char *str, char sep)
+char	**ft_split(const char *str, char sep, char *description)
 {
 	size_t	word_count;
 	char	**split;
@@ -77,11 +78,11 @@ char	**ft_split(const char *str, char sep)
 	if (str == NULL)
 		return (NULL);
 	word_count = get_word_count((char *)str, sep);
-	split = ft_malloc((word_count + 1), sizeof(char *));
+	split = ft_malloc((word_count + 1), sizeof(char *), description);
 	if (split == NULL)
 		return (NULL);
 	split[word_count] = NULL;
-	if (add_words_to_split((char *)str, sep, &split) == false)
+	if (add_words_to_split((char *)str, sep, &split, description) == false)
 		return (NULL);
 	return (split);
 }

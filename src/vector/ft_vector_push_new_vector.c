@@ -16,11 +16,11 @@
 #include <stddef.h>
 
 t_status	ft_vector_push_new_vector(t_vector_ptr vector_ptr,
-				size_t inner_element_size)
+				size_t inner_element_size, char *description)
 {
 	t_vector_	new_vector;
 
-	new_vector = ft_vector_new(inner_element_size);
+	new_vector = ft_vector_new(inner_element_size, description);
 	if (new_vector == NULL)
 		return (ERROR);
 	return (ft_vector_push(vector_ptr, &new_vector));

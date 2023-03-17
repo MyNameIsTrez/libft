@@ -20,8 +20,8 @@
 // # define DEQUE_DEFAULT_ELEMENT_CAPACITY 1
 
 void		*ft_deque_at(t_deque *deque, size_t index);
-t_deque		*ft_deque_new_reserved(size_t element_size,
-				size_t initial_capacity);
+t_deque		*ft_deque_new_reserved(size_t element_size, size_t initial_capacity,
+				char *description);
 size_t		ft_deque_size(t_deque *deque);
 
 #endif

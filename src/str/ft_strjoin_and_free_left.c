@@ -13,11 +13,11 @@
 #include "src/allocating/ft_allocating.h"
 #include "src/str/ft_str.h"
 
-char	*ft_strjoin_and_free_left(char *left, char *right)
+char	*ft_strjoin_and_free_left(char *left, char *right, char *description)
 {
 	char	*result;
 
-	result = ft_strjoin(left, right);
+	result = ft_strjoin(left, right, description);
 	ft_free(&left);
 	return (result);
 }

@@ -33,7 +33,7 @@
  * or @p type_size is zero.
  */
 void	*ft_remalloc(void *ptrptr, size_t old_count, size_t new_count,
-			size_t type_size)
+			size_t type_size, char *description)
 {
 	void	*new_ptr;
 	void	**_ptrptr;
@@ -41,7 +41,7 @@ void	*ft_remalloc(void *ptrptr, size_t old_count, size_t new_count,
 	_ptrptr = ptrptr;
 	if (_ptrptr == NULL)
 		return (NULL);
-	new_ptr = ft_malloc(new_count, type_size);
+	new_ptr = ft_malloc(new_count, type_size, description);
 	if (new_ptr == NULL)
 		return (NULL);
 	if (*_ptrptr != NULL)

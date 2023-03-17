@@ -20,7 +20,7 @@
  * @param repeat
  * @return
  */
-char	*ft_str_repeat(char *str, size_t repeat)
+char	*ft_str_repeat(char *str, size_t repeat, char *description)
 {
 	size_t	str_len;
 	size_t	new_bytes;
@@ -29,7 +29,7 @@ char	*ft_str_repeat(char *str, size_t repeat)
 
 	str_len = ft_strlen(str);
 	new_bytes = str_len * repeat;
-	new_str = ft_stralloc(new_bytes);
+	new_str = ft_stralloc(new_bytes, description);
 	if (new_str == NULL)
 		return (NULL);
 	i = 0;

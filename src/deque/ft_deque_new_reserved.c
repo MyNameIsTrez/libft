@@ -20,16 +20,17 @@
  * @param initial_capacity
  * @return t_deque*
  */
-t_deque	*ft_deque_new_reserved(size_t element_size, size_t initial_capacity)
+t_deque	*ft_deque_new_reserved(size_t element_size, size_t initial_capacity,
+			char *description)
 {
 	t_deque	*deque;
 
 	if (initial_capacity < 1)
 		return (NULL);
-	deque = ft_malloc(1, sizeof(t_deque));
+	deque = ft_malloc(1, sizeof(t_deque), description);
 	if (deque == NULL)
 		return (NULL);
-	deque->data = ft_malloc(initial_capacity, element_size);
+	deque->data = ft_malloc(initial_capacity, element_size, description);
 	if (deque->data == NULL)
 	{
 		ft_free(&deque);

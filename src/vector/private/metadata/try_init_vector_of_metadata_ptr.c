@@ -30,13 +30,15 @@ t_status	try_init_vector_of_metadata_ptr(void)
 	vector_of_metadata_ptr = get_vector_of_metadata_ptr();
 	if (*vector_of_metadata_ptr == NULL)
 	{
-		*vector_of_metadata_ptr = ft_malloc(1, sizeof(t_metadata));
+		*vector_of_metadata_ptr = ft_malloc(1, sizeof(t_metadata),
+				"vector of t_metadata");
 		if (*vector_of_metadata_ptr == NULL)
 			return (ERROR);
 		(*vector_of_metadata_ptr)[0].size = 1;
 		(*vector_of_metadata_ptr)[0].capacity = 1;
 		(*vector_of_metadata_ptr)[0].element_size = sizeof(t_metadata);
 		(*vector_of_metadata_ptr)[0].address = *vector_of_metadata_ptr;
+		(*vector_of_metadata_ptr)[0].description = "vector of t_metadata";
 	}
 	return (OK);
 }

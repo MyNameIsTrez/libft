@@ -19,13 +19,14 @@
  *
  * @param count
  * @param size FT_ERROR_MALLOC is set if this is 0
+ * @param description
  * @return Allocated bytes
  */
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size, char *description)
 {
 	void	*ptr;
 
-	ptr = ft_malloc(count, size);
+	ptr = ft_malloc(count, size, description);
 	if (ptr == NULL)
 		return (NULL);
 	ft_bzero(ptr, count * size);

@@ -36,7 +36,7 @@ t_status	helper_read_into_lst(t_char_grid *grid, t_i32 fd, char *line,
 			ft_free(&line);
 			return (ft_set_error(FT_ERROR_NON_RECTANGULAR_GRID));
 		}
-		if (ft_lst_new_front(lst_ptr, line) == NULL)
+		if (ft_lst_new_front(lst_ptr, line, "line t_list node") == NULL)
 		{
 			ft_free(&line);
 			return (ERROR);

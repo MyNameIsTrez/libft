@@ -23,7 +23,7 @@ ssize_t	ft_print_fd(char *str, t_i32 fd)
 	char	*replaced;
 	ssize_t	len;
 
-	replaced = ft_str_replace(str, "\n", "\\n");
+	replaced = ft_str_replace(str, "\n", "\\n", "ft_print_fd() replaced str");
 	if (replaced == NULL)
 		return (-1);
 	len = ft_write(fd, replaced, ft_strlen(replaced));

@@ -31,6 +31,7 @@ typedef struct s_deque
 	size_t	size;
 	size_t	capacity;
 	size_t	element_size;
+	char	*description;
 }	t_deque;
 
 #endif

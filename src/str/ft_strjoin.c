@@ -20,7 +20,7 @@
  * @return The new string;\n
    NULL if the allocation fails.
  */
-char	*ft_strjoin(const char *str1, const char *str2)
+char	*ft_strjoin(const char *str1, const char *str2, char *description)
 {
 	size_t	len;
 	char	*joined;
@@ -30,7 +30,7 @@ char	*ft_strjoin(const char *str1, const char *str2)
 		len += ft_strlen(str1);
 	if (str2)
 		len += ft_strlen(str2);
-	joined = ft_stralloc(len);
+	joined = ft_stralloc(len, description);
 	if (joined)
 	{
 		if (str1)

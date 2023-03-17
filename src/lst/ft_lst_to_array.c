@@ -14,12 +14,12 @@
 #include "src/helper_headers/ft_types.h"
 #include "src/lst/ft_lst.h"
 
-void	**ft_lst_to_array(t_list *lst)
+void	**ft_lst_to_array(t_list *lst, char *description)
 {
 	void	**array;
 	t_i32	i;
 
-	array = ft_malloc(ft_lstsize(lst), sizeof(void *));
+	array = ft_malloc(ft_lstsize(lst), sizeof(void *), description);
 	if (array == NULL)
 		return (NULL);
 	i = 0;

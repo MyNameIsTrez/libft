@@ -23,7 +23,7 @@
  * @return The substring;\n
    NULL if the allocation fails.
  */
-char	*ft_substr(const char *str, t_u32 start, size_t len)
+char	*ft_substr(const char *str, t_u32 start, size_t len, char *description)
 {
 	size_t	new_len;
 	char	*substr;
@@ -31,7 +31,7 @@ char	*ft_substr(const char *str, t_u32 start, size_t len)
 	if (ft_strlen(str) <= start)
 		return (ft_empty_str());
 	new_len = ft_strnlen(&str[start], len);
-	substr = ft_malloc((new_len + 1), sizeof(char));
+	substr = ft_malloc((new_len + 1), sizeof(char), description);
 	if (substr == NULL)
 		return (NULL);
 	ft_strlcpy(substr, &str[start], new_len + 1);

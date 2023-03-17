@@ -20,15 +20,16 @@
  * @param str_search
  * @param str_replace
  */
-char	*ft_str_replace(char *str, char *str_search, char *str_replace)
+char	*ft_str_replace(char *str, char *str_search, char *str_replace,
+			char *description)
 {
 	char	**split;
 	char	*rejoined;
 
-	split = ft_split_str(str, str_search);
+	split = ft_split_str(str, str_search, description);
 	if (split == NULL)
 		return (NULL);
-	rejoined = ft_rejoin_split(split, str_replace);
+	rejoined = ft_rejoin_split(split, str_replace, description);
 	ft_free_split(&split);
 	return (rejoined);
 }

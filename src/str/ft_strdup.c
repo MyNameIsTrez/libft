@@ -19,11 +19,11 @@
  * @param str
  * @return The duplicated string.
  */
-char	*ft_strdup(const char *str)
+char	*ft_strdup(const char *str, char *description)
 {
 	char	*dup;
 
-	dup = ft_stralloc(ft_strlen(str));
+	dup = ft_stralloc(ft_strlen(str), description);
 	if (dup == NULL)
 		return (NULL);
 	ft_memcpy(dup, str, ft_strlen(str));

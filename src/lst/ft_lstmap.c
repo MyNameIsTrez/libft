@@ -23,7 +23,8 @@
  * @return The new list;\n
    NULL if the allocation fails.
  */
-t_list	*ft_lstmap(t_list *lst, void *(*fun)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*fun)(void *), void (*del)(void *),
+			char *description)
 {
 	t_list	*mapped_lst_head;
 	t_list	**mapped_lst;
@@ -32,7 +33,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*fun)(void *), void (*del)(void *))
 	mapped_lst = &mapped_lst_head;
 	while (lst != NULL)
 	{
-		*mapped_lst = ft_lstnew(fun(lst->content));
+		*mapped_lst = ft_lstnew(fun(lst->content), description);
 		if (*mapped_lst == NULL)
 		{
 			ft_lstclear(&mapped_lst_head, del);

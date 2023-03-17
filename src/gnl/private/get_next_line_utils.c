@@ -17,7 +17,7 @@ static t_buffer_list	*gnl_lst_new(void)
 {
 	t_buffer_list	*new;
 
-	new = ft_malloc(1, sizeof(t_buffer_list));
+	new = ft_malloc(1, sizeof(t_buffer_list), "t_buffer_list");
 	if (new == NULL)
 		return (NULL);
 	new->start = 0;
