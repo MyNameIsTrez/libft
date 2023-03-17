@@ -28,7 +28,7 @@ t_vector_	ft_vector_new(size_t element_size, char *description)
 	if (try_init_vector_of_metadata_ptr() != OK)
 		return (NULL);
 	if (vector_register(vector, element_size,
-			VECTOR_DEFAULT_ELEMENT_CAPACITY) != OK)
+			VECTOR_DEFAULT_ELEMENT_CAPACITY, description) != OK)
 		return (NULL);
 	return (vector);
 }

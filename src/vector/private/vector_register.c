@@ -23,8 +23,8 @@ ft_private_vector_metadata_getters.h"
  * @param capacity
  * @return
  */
-t_status	vector_register(void *vector, size_t element_size,
-				size_t capacity)
+t_status	vector_register(t_vector_ptr vector, size_t element_size,
+				size_t capacity, char *description)
 {
 	t_metadata	**vector_of_metadata_ptr;
 	t_metadata	metadata;
@@ -34,5 +34,6 @@ t_status	vector_register(void *vector, size_t element_size,
 	metadata.capacity = capacity;
 	metadata.element_size = element_size;
 	metadata.address = vector;
+	metadata.description = description;
 	return (ft_vector_push(vector_of_metadata_ptr, &metadata));
 }
