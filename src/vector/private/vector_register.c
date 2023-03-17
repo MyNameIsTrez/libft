@@ -23,7 +23,7 @@ ft_private_vector_metadata_getters.h"
  * @param capacity
  * @return
  */
-t_status	vector_register(t_vector_ptr vector, size_t element_size,
+t_status	vector_register(t_vector_ vector, size_t element_size,
 				size_t capacity, char *description)
 {
 	t_metadata	**vector_of_metadata_ptr;
