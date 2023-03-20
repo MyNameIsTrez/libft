@@ -19,7 +19,7 @@ static void	free_malloc_ptr(void *ptr)
 {
 	ssize_t			index;
 	t_malloced		*malloced;
-	t_single_malloc	*malloc_ptrs;
+	t_single_malloc	*last_malloc_ptr;
 
 	index = find_malloc_ptr_index(ptr);
 	if (index == -1)
@@ -27,15 +27,14 @@ static void	free_malloc_ptr(void *ptr)
 	malloced = get_malloced();
 	if (malloced == NULL)
 		return ;
-	// TODO: Refactor so malloc_ptrs is replaced with malloc_ptr
-	malloc_ptrs = malloced->malloc_ptrs;
+	last_malloc_ptr = &malloced->malloc_ptrs[malloced->size - 1];
 	if ((size_t)index != malloced->size - 1)
-		malloc_ptrs[index] = malloc_ptrs[malloced->size - 1];
-	malloc_ptrs[malloced->size - 1].ptr = NULL;
-	malloc_ptrs[malloced->size - 1].count = 0;
-	malloc_ptrs[malloced->size - 1].size = 0;
-	malloc_ptrs[malloced->size - 1].capacity = 0;
-	malloc_ptrs[malloced->size - 1].description = NULL;
+		malloced->malloc_ptrs[index] = *last_malloc_ptr;
+	last_malloc_ptr->ptr = NULL;
+	last_malloc_ptr->count = 0;
+	last_malloc_ptr->size = 0;
+	last_malloc_ptr->capacity = 0;
+	last_malloc_ptr->description = NULL;
 	malloced->size--;
 }
 
