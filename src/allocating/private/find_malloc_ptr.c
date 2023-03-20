@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_find_malloc_ptr_index.c                         :+:    :+:            */
+/*   find_malloc_ptr.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
@@ -14,21 +14,16 @@
 
 #include <sys/types.h>
 
-ssize_t	ft_find_malloc_ptr_index(void *ptr)
+t_single_malloc	*find_malloc_ptr(void *ptr)
 {
+	ssize_t		index;
 	t_malloced	*malloced;
-	size_t		index;
 
+	index = find_malloc_ptr_index(ptr);
+	if (index == -1)
+		return (NULL);
 	malloced = get_malloced();
-	if (malloced != NULL)
-	{
-		index = 0;
-		while (index < malloced->size)
-		{
-			if (malloced->malloc_ptrs[index].ptr == ptr)
-				return (index);
-			index++;
-		}
-	}
-	return (-1);
+	if (malloced == NULL)
+		return (NULL);
+	return (&malloced->malloc_ptrs[(size_t)index]);
 }

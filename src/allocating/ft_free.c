@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "src/allocating/private/ft_private_mem_allocating.h"
-#include "src/allocating/private/ft_free/ft_private_ft_free.h"
 
 #include <stdlib.h>
 #include <sys/types.h>
@@ -22,7 +21,7 @@ static void	free_malloc_ptr(void *ptr)
 	t_malloced		*malloced;
 	t_single_malloc	*malloc_ptrs;
 
-	index = ft_find_malloc_ptr_index(ptr);
+	index = find_malloc_ptr_index(ptr);
 	if (index == -1)
 		return ;
 	malloced = get_malloced();
@@ -30,8 +29,8 @@ static void	free_malloc_ptr(void *ptr)
 		return ;
 	// TODO: Refactor so malloc_ptrs is replaced with malloc_ptr
 	malloc_ptrs = malloced->malloc_ptrs;
-	if (index != malloced->size - 1)
-		malloc_ptrs[index] = malloc_ptrs[malloced->size - 1];
+	if ((size_t)index != malloced->size - 1)
+		malloc_ptrs[(size_t)index] = malloc_ptrs[malloced->size - 1];
 	malloc_ptrs[malloced->size - 1].ptr = NULL;
 	malloc_ptrs[malloced->size - 1].count = 0;
 	malloc_ptrs[malloced->size - 1].size = 0;

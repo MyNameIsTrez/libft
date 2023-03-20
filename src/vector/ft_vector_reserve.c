@@ -30,9 +30,7 @@ t_status	ft_vector_reserve(t_vector_ptr vector_ptr, size_t new_count)
 	if (metadata_ptr == NULL)
 		return (ERROR);
 	_is_bookkeeping_vector = is_bookkeeping_vector(metadata_ptr);
-	temp_metadata_ptr = ft_remalloc(&metadata_ptr->address,
-			metadata_ptr->capacity, new_count, metadata_ptr->element_size,
-			metadata_ptr->description);
+	temp_metadata_ptr = ft_remalloc(&metadata_ptr->address, new_count);
 	if (_is_bookkeeping_vector)
 		metadata_ptr = temp_metadata_ptr;
 	if (temp_metadata_ptr == NULL)

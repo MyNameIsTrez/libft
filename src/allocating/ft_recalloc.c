@@ -38,7 +38,7 @@ void	*ft_recalloc(void *ptrptr, size_t new_count)
 	if (_ptrptr == NULL)
 		return (NULL);
 	ptr = *_ptrptr;
-	malloc_ptr = ft_find_malloc_ptr(ptr);
+	malloc_ptr = find_malloc_ptr(ptr);
 	if (malloc_ptr == NULL)
 		return (NULL);
 	new_ptr = ft_calloc(new_count, malloc_ptr->size, malloc_ptr->description);

@@ -14,6 +14,7 @@
 # define FT_PRIVATE_MEM_ALLOCATING_H
 
 # include <stddef.h>
+# include <sys/types.h>
 
 typedef struct s_single_malloc
 {
@@ -32,8 +33,8 @@ typedef struct s_malloced
 }	t_malloced;
 
 void			*_calloc(size_t count, size_t size);
-ssize_t			ft_find_malloc_ptr_index(void *ptr);
-t_single_malloc	*ft_find_malloc_ptr(void *ptr);
+ssize_t			find_malloc_ptr_index(void *ptr);
+t_single_malloc	*find_malloc_ptr(void *ptr);
 t_malloced		*get_malloced(void);
 
 #endif
