@@ -31,7 +31,9 @@ typedef struct s_malloced
 	size_t			capacity;
 }	t_malloced;
 
-void		*_calloc(size_t count, size_t size);
-t_malloced	*get_malloced(void);
+void			*_calloc(size_t count, size_t size);
+ssize_t			ft_find_malloc_ptr_index(void *ptr);
+t_single_malloc	*ft_find_malloc_ptr(void *ptr);
+t_malloced		*get_malloced(void);
 
 #endif

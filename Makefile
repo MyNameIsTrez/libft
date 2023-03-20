@@ -26,7 +26,6 @@ INCLUDES_HEADERS += libft.h
 ################################################################################
 
 SOURCES +=\
-	src/allocating/private/ft_free/free_malloc_ptr.c\
 	src/allocating/private/ft_malloc/register_malloc/grow_malloc_ptrs.c\
 	src/allocating/private/ft_malloc/_recalloc.c\
 	src/allocating/private/ft_malloc/register_malloc.c\

@@ -22,9 +22,7 @@ size_t	ft_get_allocation_count(void);
 size_t	ft_get_bytes_allocated(void);
 void	*ft_malloc(size_t count, size_t size, char *description);
 void	ft_print_allocations(void);
-void	*ft_recalloc(void *ptrptr, size_t old_count, size_t new_count,
-			size_t type_size, char *description);
-void	*ft_remalloc(void *ptrptr, size_t old_count, size_t new_count,
-			size_t type_size, char *description);
+void	*ft_recalloc(void *ptrptr, size_t new_count);
+void	*ft_remalloc(void *ptrptr, size_t new_count);
 
 #endif

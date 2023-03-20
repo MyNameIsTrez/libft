@@ -11,42 +11,42 @@
 /* ************************************************************************** */
 
 #include "src/allocating/ft_allocating.h"
+#include "src/allocating/private/ft_private_mem_allocating.h"
 #include "src/mem/ft_mem.h"
 
 /**
- * @brief Unlike realloc(),
- * this function will always call ft_calloc(@p new_count, @p type_size).
- * If it is successfull, it will free the original @p ptrptr
- * and return the calloc.
- * It copies @p old_count elements pointed to by @p ptrptr to the new pointer.
+ * @brief It copies old_count elements pointed to by @p ptrptr
+ * to the new pointer.
  * If @p ptrptr is NULL, nothing will be allocated and NULL will be returned.
  * Recallocing will always be done by calloc(), so it guarantees that
  * the memory is zero-filled.
- * Just like the standard realloc(), @p ptrptr won't be changed
- * to the reallocated address.
+ * @p ptrptr won't be changed to the reallocated address.
  *
  * @param ptrptr The address of a pointer to recalloc.
- * @param old_count The old count of @p ptrptr.
  * @param new_count The new count of the returned pointer.
- * @param type_size The type size of @p ptrptr and the returned pointer.
- * @return The calloced pointer. NULL if @p ptrptr is NULL, @p new_count is zero
- * or @p type_size is zero.
+ * @return The calloced pointer. NULL if @p ptrptr is NULL, or
+ * @p new_count is zero.
  */
-void	*ft_recalloc(void *ptrptr, size_t old_count, size_t new_count,
-			size_t type_size, char *description)
+void	*ft_recalloc(void *ptrptr, size_t new_count)
 {
-	void	*new_ptr;
-	void	**_ptrptr;
+	void			**_ptrptr;
+	void			*ptr;
+	t_single_malloc	*malloc_ptr;
+	void			*new_ptr;
 
 	_ptrptr = ptrptr;
 	if (_ptrptr == NULL)
 		return (NULL);
-	new_ptr = ft_calloc(new_count, type_size, description);
+	ptr = *_ptrptr;
+	malloc_ptr = ft_find_malloc_ptr(ptr);
+	if (malloc_ptr == NULL)
+		return (NULL);
+	new_ptr = ft_calloc(new_count, malloc_ptr->size, malloc_ptr->description);
 	if (new_ptr == NULL)
 		return (NULL);
-	if (*_ptrptr != NULL)
+	if (ptr != NULL)
 	{
-		ft_memcpy(new_ptr, *_ptrptr, old_count * type_size);
+		ft_memcpy(new_ptr, ptr, malloc_ptr->count * malloc_ptr->size);
 		ft_free(_ptrptr);
 	}
 	return (new_ptr);

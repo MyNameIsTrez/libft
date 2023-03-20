@@ -14,6 +14,31 @@
 #include "src/allocating/private/ft_free/ft_private_ft_free.h"
 
 #include <stdlib.h>
+#include <sys/types.h>
+
+static void	free_malloc_ptr(void *ptr)
+{
+	ssize_t			index;
+	t_malloced		*malloced;
+	t_single_malloc	*malloc_ptrs;
+
+	index = ft_find_malloc_ptr_index(ptr);
+	if (index == -1)
+		return ;
+	malloced = get_malloced();
+	if (malloced == NULL)
+		return ;
+	// TODO: Refactor so malloc_ptrs is replaced with malloc_ptr
+	malloc_ptrs = malloced->malloc_ptrs;
+	if (index != malloced->size - 1)
+		malloc_ptrs[index] = malloc_ptrs[malloced->size - 1];
+	malloc_ptrs[malloced->size - 1].ptr = NULL;
+	malloc_ptrs[malloced->size - 1].count = 0;
+	malloc_ptrs[malloced->size - 1].size = 0;
+	malloc_ptrs[malloced->size - 1].capacity = 0;
+	malloc_ptrs[malloced->size - 1].description = NULL;
+	malloced->size--;
+}
 
 /**
  * @brief Frees a variable pointing to a string, and sets the variable to NULL.
@@ -24,26 +49,11 @@
 void	ft_free(void *ptrptr)
 {
 	void		**_ptrptr;
-	t_malloced	*malloced;
-	size_t		index;
 	void		*ptr;
 
 	_ptrptr = ptrptr;
-	malloced = get_malloced();
-	if (malloced != NULL)
-	{
-		index = 0;
-		while (index < malloced->size)
-		{
-			if (malloced->malloc_ptrs[index].ptr == *_ptrptr)
-			{
-				free_malloc_ptr(index, malloced);
-				break ;
-			}
-			index++;
-		}
-	}
 	ptr = *_ptrptr;
+	free_malloc_ptr(ptr);
 	*_ptrptr = NULL;
 	free(ptr);
 }
