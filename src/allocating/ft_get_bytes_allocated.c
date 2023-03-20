@@ -19,7 +19,7 @@ size_t	ft_get_bytes_allocated(void)
 	size_t		bytes_allocated;
 
 	malloced = get_malloced();
-	if (malloced == NULL || malloced->malloc_ptrs == NULL)
+	if (malloced == NULL)
 		return (0);
 	bytes_allocated = 0;
 	index = 0;

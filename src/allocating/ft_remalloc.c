@@ -31,22 +31,28 @@ void	*ft_remalloc(void *ptrptr, size_t new_count)
 {
 	void			**_ptrptr;
 	void			*ptr;
-	t_single_malloc	*malloc_ptr;
+	ssize_t			index;
+	t_malloced		*malloced;
 	void			*new_ptr;
 
 	_ptrptr = ptrptr;
 	if (_ptrptr == NULL)
 		return (NULL);
 	ptr = *_ptrptr;
-	malloc_ptr = find_malloc_ptr(ptr);
-	if (malloc_ptr == NULL)
+	index = find_malloc_ptr_index(ptr);
+	if (index == -1)
 		return (NULL);
-	new_ptr = ft_malloc(new_count, malloc_ptr->size, malloc_ptr->description);
+	malloced = get_malloced();
+	if (malloced == NULL)
+		return (NULL);
+	new_ptr = ft_malloc(new_count, malloced->malloc_ptrs[index].size,
+			malloced->malloc_ptrs[index].description);
 	if (new_ptr == NULL)
 		return (NULL);
 	if (ptr != NULL)
 	{
-		ft_memcpy(new_ptr, ptr, malloc_ptr->count * malloc_ptr->size);
+		ft_memcpy(new_ptr, ptr, malloced->malloc_ptrs[index].count
+			* malloced->malloc_ptrs[index].size);
 		ft_free(_ptrptr);
 	}
 	return (new_ptr);

@@ -32,7 +32,7 @@ void	ft_vector_swap_remove(t_vector_ptr vector_ptr, size_t index)
 	_vector_ptr = vector_ptr;
 	metadata_ptr = get_metadata_ptr(*_vector_ptr);
 	element_size = metadata_ptr->element_size;
-	ft_memmove(*_vector_ptr + index * element_size, \
+	ft_memmove(*_vector_ptr + index * element_size,
 		*_vector_ptr + (metadata_ptr->size - 1) * element_size, element_size);
 	metadata_ptr->size--;
 }

@@ -23,7 +23,7 @@ bool	grow_malloc_ptrs(t_malloced *malloced)
 
 	old_capacity = malloced->capacity;
 	new_capacity = old_capacity * 2;
-	temp = _recalloc(malloced->malloc_ptrs, old_capacity, new_capacity, \
+	temp = _recalloc(malloced->malloc_ptrs, old_capacity, new_capacity,
 			sizeof(*malloced->malloc_ptrs));
 	if (temp == NULL)
 		return (false);

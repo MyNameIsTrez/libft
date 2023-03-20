@@ -30,7 +30,7 @@ static void	free_malloc_ptr(void *ptr)
 	// TODO: Refactor so malloc_ptrs is replaced with malloc_ptr
 	malloc_ptrs = malloced->malloc_ptrs;
 	if ((size_t)index != malloced->size - 1)
-		malloc_ptrs[(size_t)index] = malloc_ptrs[malloced->size - 1];
+		malloc_ptrs[index] = malloc_ptrs[malloced->size - 1];
 	malloc_ptrs[malloced->size - 1].ptr = NULL;
 	malloc_ptrs[malloced->size - 1].count = 0;
 	malloc_ptrs[malloced->size - 1].size = 0;

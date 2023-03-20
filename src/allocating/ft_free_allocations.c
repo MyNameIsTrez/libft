@@ -21,7 +21,7 @@ void	ft_free_allocations(void)
 
 	ft_vector_clean_up();
 	malloced = get_malloced();
-	if (malloced == NULL || malloced->malloc_ptrs == NULL)
+	if (malloced == NULL)
 		return ;
 	while (malloced->size > 0)
 	{

@@ -14,8 +14,8 @@
 
 t_iterator_status	ft_iterate(t_iterator *it_ptr)
 {
-	if ((it_ptr->step > 0 && it_ptr->next < it_ptr->stop) || \
-		(it_ptr->step < 0 && it_ptr->next > it_ptr->stop))
+	if ((it_ptr->step > 0 && it_ptr->next < it_ptr->stop)
+		|| (it_ptr->step < 0 && it_ptr->next > it_ptr->stop))
 	{
 		it_ptr->current = it_ptr->next;
 		it_ptr->next += it_ptr->step;

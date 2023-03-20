@@ -42,7 +42,7 @@ void	ft_vector_free(t_vector_ptr vector_ptr)
 		return ;
 	vector_of_metadata = get_vector_of_metadata();
 	element_size = vector_of_metadata[0].element_size;
-	ft_memmove(metadata_ptr, metadata_ptr + element_size, \
+	ft_memmove(metadata_ptr, metadata_ptr + element_size,
 		get_bytes_after_metadata(metadata_ptr, element_size));
 	vector_of_metadata[0].size--;
 }

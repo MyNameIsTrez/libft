@@ -21,7 +21,7 @@ void	ft_print_allocations(void)
 	t_single_malloc	m;
 
 	malloced = get_malloced();
-	if (malloced == NULL || malloced->malloc_ptrs == NULL)
+	if (malloced == NULL)
 		return ;
 	i = 0;
 	while (i < malloced->size)

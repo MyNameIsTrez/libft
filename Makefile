@@ -31,7 +31,6 @@ SOURCES +=\
 	src/allocating/private/ft_malloc/register_malloc.c\
 	src/allocating/private/_calloc.c\
 	src/allocating/private/find_malloc_ptr_index.c\
-	src/allocating/private/find_malloc_ptr.c\
 	src/allocating/private/get_malloced.c\
 	src/allocating/ft_calloc.c\
 	src/allocating/ft_free.c\
